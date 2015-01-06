@@ -43,7 +43,6 @@ bindkey "^[[1;5D" backward-word
 
 
 synclient TapButton3=2
-alias git="/home/ewnd9/git-stats/bin/git-stats"
 alias ls="ls --color=auto"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
