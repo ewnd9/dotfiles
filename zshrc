@@ -47,3 +47,9 @@ alias ls="ls --color=auto"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export ANDROID_HOME="$HOME/soft/android-sdk"
+export PATH="$HOME/soft/android-sdk/tools:$PATH"
+export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

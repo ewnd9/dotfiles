@@ -1,4 +1,5 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_transmit_bg_color = "#d30102"
   focus = system
 [keybindings]
@@ -30,4 +31,66 @@
     [[[window0]]]
       type = Window
       parent = ""
+  [[ninja]]
+    [[[child0]]]
+      position = 0:19
+      type = Window
+      order = 0
+      parent = ""
+      size = 1906, 1039
+    [[[child1]]]
+      position = 519
+      type = VPaned
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 953
+      type = HPaned
+      order = 0
+      parent = child1
+    [[[child4]]]
+      position = 259
+      type = VPaned
+      order = 1
+      parent = child2
+    [[[child7]]]
+      position = 953
+      type = HPaned
+      order = 1
+      parent = child1
+    [[[child8]]]
+      position = 257
+      type = VPaned
+      order = 0
+      parent = child7
+    [[[terminal11]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child7
+    [[[terminal10]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child8
+    [[[terminal3]]]
+      profile = solarized-dark
+      type = Terminal
+      order = 0
+      parent = child2
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child4
+    [[[terminal6]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child4
+    [[[terminal9]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child8
 [plugins]

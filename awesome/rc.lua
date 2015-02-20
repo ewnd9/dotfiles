@@ -201,7 +201,7 @@ dateicon.image = image(beautiful.widget_date)
 -- Initialize widget
 datewidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(datewidget, vicious.widgets.date, date_format, 61)
+--vicious.register(datewidget, vicious.widgets.date, date_format, 61)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -496,7 +496,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 run_once("wmname", "LG3D") -- java fix
 run_once("unity-settings-daemon")
---run_once("xfsettingsd") -- xfce4 settings daemon
+run_once("xfsettingsd") -- xfce4 settings daemon
 run_once("chromium-browser")
 run_once("skype")
 run_once("guake")
@@ -507,7 +507,7 @@ run_once("geary")
 --run_once("awsetbg", "/home/ewnd9/Pictures/Wallpapers/bluedeath.jpg")
 --run_once("xchat")
 run_once("setxkbmap", "-layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:none'")
-
+run_once("dropbox start")
 run_once("lastfmsubmitd")
 run_once("xmodmap", "~/.Xmodmap") -- caps lock to delete
 run_once("synclient", "TapButton3=2") -- middle mouse button on triple touch pad

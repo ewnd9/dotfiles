@@ -10,12 +10,14 @@ sudo apt-get install -y vlc
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:skunk/pepper-flash
 
 sudo apt-get update
 
 sudo apt-get install -y nemo nemo-fileroller
 sudo apt-get install -y atom
 sudo apt-get install -y oracle-java8-installer
+sudo apt-get install -y pepflashplugin-installer
 
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 exec $SHELL

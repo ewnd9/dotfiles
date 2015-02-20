@@ -9,3 +9,7 @@ ln -s /home/ewnd9/dotfiles/vim /home/ewnd9/.vim
 ln -s /home/ewnd9/dotfiles/zshrc /home/ewnd9/.zshrc
 
 ln -s /home/ewnd9/dotfiles/vimrc /home/ewnd9/.vimrc
+
+# memo
+
+Atom font: Liberation Mono, size: 14
