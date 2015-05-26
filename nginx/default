@@ -1,0 +1,16 @@
+server {
+    listen      80 default_server;
+    server_name example.net www.example.net;
+
+    root /usr/share/nginx/html;
+
+    error_page 404 /404.html;
+
+    location / {
+        return 404;
+    }
+
+    location = /404.html {
+        internal;
+    }
+}

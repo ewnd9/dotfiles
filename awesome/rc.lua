@@ -497,7 +497,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 run_once("wmname", "LG3D") -- java fix
 run_once("unity-settings-daemon")
 run_once("xfsettingsd") -- xfce4 settings daemon
-run_once("chromium-browser")
+run_once("google-chrome")
 run_once("skype")
 run_once("guake")
 run_once("xfce4-power-manager")

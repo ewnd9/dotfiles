@@ -41,13 +41,39 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+function nginx-log {
+  ssh -t $2 "sudo tail -f /var/log/nginx/$1.log"
+}
+
+function nginx-restart {
+  ssh -t $1 "sudo service nginx restart"
+}
+
+function psql-remote {
+  ssh -t $2 "sudo psql -U admin -h localhost $1"
+}
+
+function psql-clone {
+  ssh $2 "pg_dump -U admin -h localhost $1 > ~/1.sql"
+  scp $2:~/1.sql .
+  
+  dropdb -U admin -h localhost $1
+  createdb -U admin -h localhost $1
+  
+  psql -U admin -h localhost $1 < 1.sql
+}
 
 synclient TapButton3=2
 alias ls="ls --color=auto"
+alias psme="ps -U ewnd9 | grep $1"
+alias serve="python -m SimpleHTTPServer"
+alias sus="sudo pm-suspend"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export ANDROID_HOME="$HOME/soft/android-sdk"
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 
