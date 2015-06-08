@@ -459,7 +459,9 @@ awful.rules.rules = {
     { rule = { class = "Geary" },
       properties = { tag = tags[1][9] } },
     { rule = { class = "Guake" },
-      properties = {opacity = 0.7} }
+      properties = {opacity = 0.7} },
+	{ rule = { class = "Terminator" },
+	  properties = { size_hints_honor = false } }
 }
 -- }}}
 
