@@ -50,7 +50,7 @@ function nginx-restart {
 }
 
 function psql-remote {
-  ssh -t $2 "sudo psql -U admin -h localhost $1"
+  ssh -t $2 "psql -U admin -h localhost $1"
 }
 
 function psql-clone {
@@ -68,6 +68,8 @@ alias ls="ls --color=auto"
 alias psme="ps -U ewnd9 | grep $1"
 alias serve="python -m SimpleHTTPServer"
 alias sus="sudo pm-suspend"
+alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
+alias term="terminator --command=\"tmux\""
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -76,6 +78,7 @@ export ANDROID_HOME="$HOME/soft/android-sdk"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
-
+export PATH="$PATH:$HOME/.npm-packages/bin"
+export EDITOR=vim
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
