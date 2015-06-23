@@ -64,8 +64,18 @@ function psql-clone {
 }
 
 synclient TapButton3=2
+
 alias ls="ls --color=auto"
+
 alias psme="ps -U ewnd9 | grep $1"
+
+function psme9 {
+  pid=$(psme $1)
+  echo $pid
+}
+alias psme91="kill -9 psme $1 | awk '{print $1}'"
+alias findme="find . -type f -name $1"
+alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
 alias serve="python -m SimpleHTTPServer"
 alias sus="sudo pm-suspend"
 alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
