@@ -80,6 +80,7 @@ alias serve="python -m SimpleHTTPServer"
 alias sus="sudo pm-suspend"
 alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
 alias term="terminator --command=\"tmux\""
+alias wds="webpack-dev-server"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

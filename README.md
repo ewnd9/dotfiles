@@ -1,6 +1,8 @@
 # dotfiles
 
-my dotfiles, you know
+my dotfiles, you know.
+
+ubuntu, awesome wm, vim, tmux
 
 ## linking
 

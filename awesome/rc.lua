@@ -329,7 +329,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "`", function () teardrop.toggle("guake", 1, 0.3) end),
     awful.key({ modkey,           }, "e", function () run_once("nemo") end),
-    awful.key({ modkey,           }, "t", function () run_once("terminator") end),
+    awful.key({ modkey,           }, "t", function () run_once("gnome-terminal-tmux.sh") end),
 
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
     awful.key({ modkey,           }, "Tab",
@@ -387,7 +387,8 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
+	awful.key({ modkey }, "q", function () awful.util.spawn("dummy.sh -k") end),
+	awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 2+ unmute") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 2-") end),
     awful.key({ }, "Print", function () awful.util.spawn("gnome-screenshot") end)
@@ -456,11 +457,17 @@ awful.rules.rules = {
       properties = { tag = tags[1][2] } },
     { rule = { class = "Skype" },
       properties = { tag = tags[1][5] } },
+	{ rule = { class = "Telegram" },
+	  properties = { tag = tags[1][5] } },
     { rule = { class = "Geary" },
       properties = { tag = tags[1][9] } },
     { rule = { class = "Guake" },
       properties = {opacity = 0.7} },
 	{ rule = { class = "Terminator" },
+	  properties = { size_hints_honor = false } },
+	{ rule = { class = "Gnome-Terminal" },
+	  properties = { size_hints_honor = false } },
+	{ rule = { class = "Gnome-terminal" },
 	  properties = { size_hints_honor = false } }
 }
 -- }}}
@@ -501,6 +508,7 @@ run_once("unity-settings-daemon")
 run_once("xfsettingsd") -- xfce4 settings daemon
 run_once("google-chrome")
 run_once("skype")
+run_once("telegram")
 run_once("guake")
 run_once("xfce4-power-manager")
 run_once("nm-applet") -- networkingos.execute("/usr/bin/run_once indicator-cpufreq")
@@ -519,8 +527,3 @@ naughty.notify{
   text="Check, if everything works.",
   opacity=0.5
 }
-
--- dependencies
--- sudo apt-get install xcompmgr
--- sudo apt-get install wmname
--- git clone git://github.com/nikolavp/awesome-pomodoro.git pomodoro
