@@ -13,6 +13,9 @@ function link {
 link config/awesome .config/awesome
 link config/vim .vim
 
+link config/base16-gnome-terminal .config/base16-gnome-terminal
+source ~/.config/base16-gnome-terminal/base16-default.dark.sh
+
 link zshrc .zshrc
 link vimrc .vimrc
 link tmux.conf .tmux.conf

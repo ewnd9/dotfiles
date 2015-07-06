@@ -4,16 +4,23 @@ my dotfiles, you know.
 
 ubuntu, awesome wm, vim, tmux
 
-## overview
+## install 
 
 - packages.sh (apt-get install packages)
 - linking.sh (link all dotfiles and config folders)
 
-## memo
+## terminal
 
-@TODO: save atom 
+used to use `terminator`, now back to `gnome-terminal` with [base 16 theme](https://github.com/chriskempson/base16-gnome-terminal)
 
-Atom font: Liberation Mono, size: 14
+## vim
+
+plugin manager [pathogen](https://github.com/tpope/vim-pathogen)
+
+## notes
+
+- [ ] save atom config
+- [ ] atom font: Liberation Mono, size: 14
 
 ## window manager
 
