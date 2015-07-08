@@ -109,7 +109,10 @@ cpugraph:set_gradient_angle(0):set_gradient_colors({
 vicious.register(cpugraph, vicious.widgets.cpu, "$1")
 
 cpuwidget = widget({ type = "textbox" })
-vicious.register(cpuwidget, vicious.widgets.cpu, " $1%", 3)
+-- vicious.register(cpuwidget, vicious.widgets.cpu, " $1%", 3)
+vicious.register(cpuwidget, vicious.widgets.cpu, function(widget, args)
+	return ("%03d%%"):format(args[1])
+end)
 
 date_format = "%a %m/%d/%Y %l:%M%p" -- refer to http://en.wikipedia.org/wiki/Date_(Unix) specifiers
 networks = {'eth0'}
@@ -442,35 +445,7 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
--- {{{ Rules
-awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons } },
-    { rule = { class = "Chromium" },
-      properties = { tag = tags[1][1] } },
-    { rule = { class = "Intellij Idea" },
-      properties = { tag = tags[1][2] } },
-    { rule = { class = "Skype" },
-      properties = { tag = tags[1][5] } },
-	{ rule = { class = "Telegram" },
-	  properties = { tag = tags[1][5] } },
-    { rule = { class = "Geary" },
-      properties = { tag = tags[1][9] } },
-    { rule = { class = "Guake" },
-      properties = {opacity = 0.7} },
-	{ rule = { class = "Terminator" },
-	  properties = { size_hints_honor = false } },
-	{ rule = { class = "Gnome-Terminal" },
-	  properties = { size_hints_honor = false } },
-	{ rule = { class = "Gnome-terminal" },
-	  properties = { size_hints_honor = false } }
-}
--- }}}
+dofile("/home/ewnd9/.config/awesome/_rules.lua")
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
@@ -503,24 +478,7 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-run_once("wmname", "LG3D") -- java fix
-run_once("unity-settings-daemon")
-run_once("xfsettingsd") -- xfce4 settings daemon
-run_once("google-chrome")
-run_once("skype")
-run_once("telegram")
-run_once("guake")
-run_once("xfce4-power-manager")
-run_once("nm-applet") -- networkingos.execute("/usr/bin/run_once indicator-cpufreq")
-run_once("indicator-cpufreq")
-run_once("geary")
---run_once("awsetbg", "/home/ewnd9/Pictures/Wallpapers/bluedeath.jpg")
---run_once("xchat")
-run_once("setxkbmap", "-layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:none'")
-run_once("dropbox start")
-run_once("lastfmsubmitd")
-run_once("xmodmap", "~/.Xmodmap") -- caps lock to delete
-run_once("synclient", "TapButton3=2") -- middle mouse button on triple touch pad
+dofile("/home/ewnd9/.config/awesome/_startup.lua")
 
 naughty.notify{
   title="NaughtyNotifcation",

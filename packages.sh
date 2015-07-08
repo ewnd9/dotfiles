@@ -19,6 +19,8 @@ sudo apt-get install -y atom
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y pepflashplugin-installer
 
+# ruby 
+
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 exec $SHELL
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -26,3 +28,15 @@ exec $SHELL
 rbenv install 2.1.5
 rbenv global 2.1.5
 ruby -v
+
+# node
+
+sudo apt-get install -y nodejs npm
+
+npm config set prefix '~/.npm-packages'
+
+npm install -g fkill-cli
+npm install -g brightness-cli
+
+npm install -g yo
+npm link /home/ewnd9/dotfiles/yo-generators/generator-ewnd9

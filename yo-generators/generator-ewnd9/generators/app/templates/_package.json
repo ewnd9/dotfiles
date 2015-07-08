@@ -1,0 +1,21 @@
+{
+  "name": "<%= package_name %>",
+  "version": "0.0.0",
+  "description": "INSERT_DESCRIPTION",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "false",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewnd9/<%= package_name %>.git"
+  },
+  "keywords": [
+    "INSERT_KEYWORDS"
+  ],
+  "author": "ewnd9 <ewndnine@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

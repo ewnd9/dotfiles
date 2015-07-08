@@ -1,8 +1,40 @@
 # Set up the prompt
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+source /home/ewnd9/dotfiles/config/zsh/zsh-git-prompt/zshrc.sh
+
+git_super_status() {
+	precmd_update_git_vars
+  
+	if [ -n "$__CURRENT_GIT_STATUS" ]; then
+	  STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
+	  #if [ "$GIT_BEHIND" -ne "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_BEHIND$GIT_BEHIND%{${reset_color}%}"
+	  #fi
+	  #if [ "$GIT_AHEAD" -ne "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD$GIT_AHEAD%{${reset_color}%}"
+	  #fi
+	  #STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_SEPARATOR"
+	  #if [ "$GIT_STAGED" -ne "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%}"
+	  #fi
+	  #if [ "$GIT_CONFLICTS" -ne "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CONFLICTS$GIT_CONFLICTS%{${reset_color}%}"
+	  #fi
+	  #if [ "$GIT_CHANGED" -ne "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CHANGED$GIT_CHANGED%{${reset_color}%}"
+	  #fi
+	  #if [ "$GIT_UNTRACKED" -ne "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED%{${reset_color}%}"
+	  #fi
+	  #if [ "$GIT_CHANGED" -eq "0" ] && [ "$GIT_CONFLICTS" -eq "0" ] && [ "$GIT_STAGED" -eq "0" ] && [ "$GIT_UNTRACKED" -eq "0" ]; then
+		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
+	  #fi
+	  STATUS=" $STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+	  echo "$STATUS"
+	fi
+}
+
+PROMPT='%F{yellow}%B%n@%m %~%b$(git_super_status)%f %# '
 
 setopt histignorealldups sharehistory
 
@@ -86,6 +118,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export ANDROID_HOME="$HOME/soft/android-sdk"
+export NODE_PATH=$NODE_PATH:/home/ewnd9/.npm-packages/lib/node_modules
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
