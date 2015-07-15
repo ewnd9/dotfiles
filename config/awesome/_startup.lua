@@ -4,7 +4,7 @@ run_once("xfsettingsd") -- xfce4 settings daemon
 run_once("google-chrome")
 run_once("skype")
 run_once("telegram")
-run_once("guake")
+run_once("guake", "--exec='/home/ewnd9/dotfiles/scripts/twitter.tmux'")
 run_once("xfce4-power-manager")
 run_once("nm-applet") -- networkingos.execute("/usr/bin/run_once indicator-cpufreq")
 run_once("indicator-cpufreq")
@@ -17,5 +17,5 @@ run_once("lastfmsubmitd")
 run_once("xmodmap", "~/.Xmodmap") -- caps lock to delete
 run_once("synclient", "TapButton3=2") -- middle mouse button on triple touch pad
 run_once("xavier")
-
+run_once("/home/ewnd9/soft/copy/x86_64/CopyAgent")
 

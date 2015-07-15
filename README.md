@@ -6,6 +6,10 @@ ubuntu, awesome wm, vim, tmux
 
 ## install 
 
+- hand-installing: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
+- hand-installing: [copy](https://www.copy.com/)
+- hand-installing: [dropbox](https://www.dropbox.com)
+
 - packages.sh (apt-get install packages)
 - linking.sh (link all dotfiles and config folders)
 
