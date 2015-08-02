@@ -4,6 +4,8 @@ my dotfiles, you know.
 
 ubuntu, awesome wm, vim, tmux
 
+![screen](/screen.png?raw=true)
+
 ## install 
 
 - hand-installing: [google-chrome](https://www.google.ru/chrome/browser/desktop/)

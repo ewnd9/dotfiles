@@ -101,11 +101,6 @@ alias ls="ls --color=auto"
 
 alias psme="ps -U ewnd9 | grep $1"
 
-function psme9 {
-  pid=$(psme $1)
-  echo $pid
-}
-alias psme91="kill -9 psme $1 | awk '{print $1}'"
 alias findme="find . -type f -name $1"
 alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
 alias serve="python -m SimpleHTTPServer"
@@ -114,6 +109,7 @@ alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
 alias term="terminator --command=\"tmux\""
 alias wds="webpack-dev-server"
 alias br="sudo brightness"
+alias bn="babel-node"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
