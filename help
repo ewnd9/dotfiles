@@ -1,5 +1,0 @@
-Recursive Grep
-$ grep -nr "test" . 
-
-Human-Readable Sizes
-$ du -sh ~

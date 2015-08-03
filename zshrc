@@ -68,7 +68,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# ewnd9
+##### ewnd9
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -95,6 +95,14 @@ function psql-clone {
   psql -U admin -h localhost $1 < 1.sql
 }
 
+function mkcd {
+	mkdir -p "$@" && cd "$@"
+}
+
+function human-space {
+	du -sh $1
+}
+
 synclient TapButton3=2
 
 alias ls="ls --color=auto"
@@ -106,14 +114,18 @@ alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
 alias serve="python -m SimpleHTTPServer"
 alias sus="sudo pm-suspend"
 alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
-alias term="terminator --command=\"tmux\""
+alias term="terminator --command="tmux""
 alias wds="webpack-dev-server"
 alias br="sudo brightness"
 alias bn="babel-node"
+alias human-space="du -sh $1"
+alias grep-text="grep -nr "$1" $2"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
 export ANDROID_HOME="$HOME/soft/android-sdk"
 export NODE_PATH=$NODE_PATH:/home/ewnd9/.npm-packages/lib/node_modules
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
@@ -121,5 +133,6 @@ export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export EDITOR=vim
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
