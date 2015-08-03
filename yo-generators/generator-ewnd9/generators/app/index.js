@@ -2,6 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var path = require('path');
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
@@ -15,7 +16,8 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'package_name',
-      message: 'Insert package name'
+      message: 'Insert package name',
+      default: path.basename(process.cwd())
     }];
 
     this.prompt(prompts, function (props) {
