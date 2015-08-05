@@ -120,6 +120,7 @@ alias br="sudo brightness"
 alias bn="babel-node"
 alias human-space="du -sh $1"
 alias grep-text="grep -nr "$1" $2"
+alias port-app="lsof -i\:3001"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
