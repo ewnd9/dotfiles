@@ -21,7 +21,7 @@ sudo apt-get install -y brackets
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y pepflashplugin-installer
 
-# ruby 
+# ruby
 
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 exec $SHELL
@@ -39,6 +39,9 @@ npm config set prefix '~/.npm-packages'
 
 npm install -g fkill-cli
 npm install -g brightness-cli
+
+# my stuff
+npm install -g dictionary-cli workout-cli watchtower-cli
 
 npm install -g yo
 npm link /home/ewnd9/dotfiles/yo-generators/generator-ewnd9

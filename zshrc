@@ -7,28 +7,6 @@ git_super_status() {
   
 	if [ -n "$__CURRENT_GIT_STATUS" ]; then
 	  STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
-	  #if [ "$GIT_BEHIND" -ne "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_BEHIND$GIT_BEHIND%{${reset_color}%}"
-	  #fi
-	  #if [ "$GIT_AHEAD" -ne "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD$GIT_AHEAD%{${reset_color}%}"
-	  #fi
-	  #STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_SEPARATOR"
-	  #if [ "$GIT_STAGED" -ne "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_STAGED$GIT_STAGED%{${reset_color}%}"
-	  #fi
-	  #if [ "$GIT_CONFLICTS" -ne "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CONFLICTS$GIT_CONFLICTS%{${reset_color}%}"
-	  #fi
-	  #if [ "$GIT_CHANGED" -ne "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CHANGED$GIT_CHANGED%{${reset_color}%}"
-	  #fi
-	  #if [ "$GIT_UNTRACKED" -ne "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED%{${reset_color}%}"
-	  #fi
-	  #if [ "$GIT_CHANGED" -eq "0" ] && [ "$GIT_CONFLICTS" -eq "0" ] && [ "$GIT_STAGED" -eq "0" ] && [ "$GIT_UNTRACKED" -eq "0" ]; then
-		#  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
-	  #fi
 	  STATUS=" $STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 	  echo "$STATUS"
 	fi
@@ -74,7 +52,7 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 function nginx-log {
-  ssh -t $2 "sudo tail -f /var/log/nginx/$1.log"
+  ssh -t $1 "sudo tail -f /var/log/nginx/$2.log"
 }
 
 function nginx-restart {
@@ -82,17 +60,17 @@ function nginx-restart {
 }
 
 function psql-remote {
-  ssh -t $2 "psql -U admin -h localhost $1"
+  ssh -t $1 "psql -U admin -h localhost $2"
 }
 
 function psql-clone {
-  ssh $2 "pg_dump -U admin -h localhost $1 > ~/1.sql"
-  scp $2:~/1.sql .
+  ssh $1 "pg_dump -U admin -h localhost $2 > ~/1.sql"
+  scp $1:~/1.sql .
   
-  dropdb -U admin -h localhost $1
-  createdb -U admin -h localhost $1
+  dropdb -U admin -h localhost $2
+  createdb -U admin -h localhost $2
   
-  psql -U admin -h localhost $1 < 1.sql
+  psql -U admin -h localhost $2 < 1.sql
 }
 
 function mkcd {
@@ -101,6 +79,10 @@ function mkcd {
 
 function human-space {
 	du -sh $1
+}
+
+function app-port {
+	lsof -n -i4TCP:$1
 }
 
 synclient TapButton3=2
@@ -115,12 +97,22 @@ alias serve="python -m SimpleHTTPServer"
 alias sus="sudo pm-suspend"
 alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
 alias term="terminator --command="tmux""
+
 alias wds="webpack-dev-server"
 alias br="sudo brightness"
 alias bn="babel-node"
+alias w="watchtower"
+alias yt="yandex-translate"
+alias d="dictionary"
+alias a="atom ."
+alias gif="ttystudio output.gif --log && eog output.gif"
+
 alias human-space="du -sh $1"
 alias grep-text="grep -nr "$1" $2"
-alias port-app="lsof -i\:3001"
+alias curl-headers="curl -i"
+alias curl-only-headers="curl -v -s 1> /dev/null"
+
+alias npm-publish="npm version $1 && git push origin master && git push origin --tags && npm publish"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

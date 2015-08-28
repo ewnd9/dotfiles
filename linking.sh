@@ -19,4 +19,4 @@ source ~/.config/base16-gnome-terminal/base16-default.dark.sh
 link zshrc .zshrc
 link vimrc .vimrc
 link tmux.conf .tmux.conf
-
+link atom.config.cson .atom/config.cson

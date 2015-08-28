@@ -1,0 +1,38 @@
+"*":
+  "exception-reporting":
+    userId: "789aa4ab-f36b-1674-f1d3-2c35b6824195"
+  welcome:
+    showOnStartup: false
+  core:
+    excludeVcsIgnoredPaths: false
+    disabledPackages: [
+      "language-babel"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+    ignoredNames: [
+      ".git"
+      "node_modules"
+    ]
+  editor:
+    fontFamily: "Liberation Mono"
+    invisibles: {}
+  "tree-view":
+    hideVcsIgnoredFiles: false
+  react: {}
+  "nuclide-click-to-symbol":
+    useCmdKey: false
+  wakatime:
+    ignore: [
+      "^/var/"
+      "^/tmp/"
+      "^/private/"
+      "COMMIT_EDITMSG$"
+      "PULLREQ_EDITMSG$"
+      "MERGE_MSG$"
+    ]
+    apikey: "b39c3763-4a72-4f5c-ba14-d5e8723df1da"
+  "markdown-preview": {}
+  "expand-region": {}
