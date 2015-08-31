@@ -1,15 +1,15 @@
-# <%= package_name %>
+# <%= packageName %>
 
 ## Install
 
 ```
-$ npm install <%= package_name %>
+$ npm install <%= packageName %>
 ```
 
 ## Usage
 
 ```
-INSERT_USAGE
+<%= packageUsage %>
 ```
 
 ## License
