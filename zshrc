@@ -77,6 +77,13 @@ function mkcd {
 	mkdir -p "$@" && cd "$@"
 }
 
+function clone {
+  git clone $1
+  repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p')
+  echo "cd $repo_name"
+  cd "$repo_name"
+}
+
 function human-space {
 	du -sh $1
 }
@@ -111,6 +118,11 @@ alias human-space="du -sh $1"
 alias grep-text="grep -nr "$1" $2"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
+
+function open-chrome-extension {
+echo $@
+cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
+}
 
 alias npm-publish="npm version $1 && git push origin master && git push origin --tags && npm publish"
 

@@ -19,4 +19,4 @@ run_once("synclient", "TapButton3=2") -- middle mouse button on triple touch pad
 run_once("xavier")
 run_once("/home/ewnd9/soft/copy/x86_64/CopyAgent")
 run_once("somebar")
-
+run_once("/home/ewnd9/.npm-packages/bin/workout --test")
