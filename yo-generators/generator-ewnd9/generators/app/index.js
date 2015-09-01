@@ -9,7 +9,6 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the top-notch ' + chalk.red('Ewnd9') + ' generator!'
     ));
@@ -24,7 +23,7 @@ module.exports = yeoman.generators.Base.extend({
       name: 'type',
       message: 'Select Type',
       choices: [
-        'default', 'webpack-dev-server'
+        'default', 'webpack-dev-server', 'express'
       ]
     }];
 
@@ -42,6 +41,10 @@ module.exports = yeoman.generators.Base.extend({
       var pkgPath = this.destinationPath('package.json');
       var pkgDeps = {};
       var pkgDevDeps = {};
+      var pkgScripts = {};
+
+      this.packageInstall = '$ npm install ' + this.packageName;
+      this.packageUsage = 'INSERT_USAGE';
 
       if (this.projectType === 'webpack-dev-server') {
         pkgDevDeps = {
@@ -59,12 +62,32 @@ module.exports = yeoman.generators.Base.extend({
           "webpack": "^1.12.0",
           "webpack-dev-server": "^1.10.1"
         };
+
+        this.packageInstall = '$ npm install';
+        this.packageUsage = '$ webpack-dev-server';
+      } else if (this.projectType === 'express') {
+        pkgDeps = {
+          "babel": "^5.8.21",
+          "express": "^4.13.3",
+          "express-cors": "0.0.3",
+          "lodash": "^3.10.1",
+          "moment": "^2.10.6",
+          "morgan": "^1.6.1"
+        };
+        pkgDevDeps = {
+          "nodemon": "^1.4.1"
+        };
+        pkgScripts = {
+          "start": "nodemon app.js"
+        };
+
+        this.packageInstall = '$ npm install';
+        this.packageUsage = '$ npm start';
       }
 
-      var pkgData = require('./gen-package')(this.packageName, pkgDeps, pkgDevDeps);
+      var pkgData = require('./gen-package')(this.packageName, pkgDeps, pkgDevDeps, pkgScripts);
       require('fs').writeFileSync(pkgPath, JSON.stringify(pkgData, null, 2), 'utf-8');
 
-      this.packageUsage = 'INSERT_USAGE';
       this.template('_readme.md', 'README.md');
     },
     projectfiles: function () {
@@ -81,6 +104,11 @@ module.exports = yeoman.generators.Base.extend({
         cp('webpack-dev-server/app.js', 'src/js/app.js');
         cp('webpack-dev-server/style.scss', 'src/scss/style.scss');
         cp('webpack-dev-server/index.html', 'src/index.html');
+      } else if (this.projectType === 'express') {
+        cp('express/app.js', 'app.js');
+        cp('express/index.html', 'public/index.html');
+        cp('express/robots.txt', 'public/robots.txt');
+        cp('express/server.js', 'src/server.js');
       }
     }
   },

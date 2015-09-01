@@ -1,11 +1,11 @@
-module.exports = function(packageName, deps, devDeps) {
+module.exports = function(packageName, deps, devDeps, scripts) {
   var result = {};
 
   result.name = packageName;
   result.version = '0.0.0';
   result.description = 'INSERT_DESCRIPTION';
   result.main = 'index.js';
-  result.scripts = {
+  result.scripts = scripts || {
     test: 'echo \"Error: no test specified\" && exit 1'
   };
   result.preferGlobal = 'false',
@@ -18,7 +18,7 @@ module.exports = function(packageName, deps, devDeps) {
   ];
   result.author = 'ewnd9 <ewndnine@gmail.com>';
   result.license = 'MIT';
-  
+
   result.dependencies = deps || {};
   result.devDependencies = devDeps || {};
 

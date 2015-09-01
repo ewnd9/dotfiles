@@ -3,7 +3,7 @@
 ## Install
 
 ```
-$ npm install <%= packageName %>
+<%= packageInstall %>
 ```
 
 ## Usage
