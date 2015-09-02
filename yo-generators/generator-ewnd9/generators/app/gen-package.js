@@ -1,14 +1,15 @@
-module.exports = function(packageName, deps, devDeps, scripts) {
+module.exports = function(packageName, deps, devDeps, scripts, misc) {
   var result = {};
 
   result.name = packageName;
   result.version = '0.0.0';
   result.description = 'INSERT_DESCRIPTION';
-  result.main = 'index.js';
+  result.main = misc.main || 'index.js';
+  result.bin = misc.bin || void 0;
   result.scripts = scripts || {
     test: 'echo \"Error: no test specified\" && exit 1'
   };
-  result.preferGlobal = 'false',
+  result.preferGlobal = misc.preferGlobal || 'false',
   result.repository = {
     type: 'git',
     url: 'git+https://github.com/ewnd9/' + packageName + '.git'

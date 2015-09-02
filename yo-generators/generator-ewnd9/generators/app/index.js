@@ -5,6 +5,10 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 var path = require('path');
 
+var TYPE_WEBPACK = 'webpack-dev-server';
+var TYPE_EXPRESS = 'express';
+var TYPE_CLI = 'cli';
+
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
     var done = this.async();
@@ -23,7 +27,7 @@ module.exports = yeoman.generators.Base.extend({
       name: 'type',
       message: 'Select Type',
       choices: [
-        'default', 'webpack-dev-server', 'express'
+        'default', TYPE_WEBPACK, TYPE_EXPRESS, TYPE_CLI
       ]
     }];
 
@@ -42,50 +46,20 @@ module.exports = yeoman.generators.Base.extend({
       var pkgDeps = {};
       var pkgDevDeps = {};
       var pkgScripts = {};
+      var misc = {};
 
       this.packageInstall = '$ npm install ' + this.packageName;
       this.packageUsage = 'INSERT_USAGE';
 
-      if (this.projectType === 'webpack-dev-server') {
-        pkgDevDeps = {
-          "babel": "^5.8.23",
-          "babel-core": "^5.8.23",
-          "babel-loader": "^5.3.2",
-          "css-loader": "^0.16.0",
-          "file-loader": "^0.8.4",
-          "image-webpack-loader": "^1.6.1",
-          "imagemin": "^3.2.0",
-          "imports-loader": "^0.6.4",
-          "node-sass": "^3.3.2",
-          "sass-loader": "^2.0.1",
-          "style-loader": "^0.12.3",
-          "webpack": "^1.12.0",
-          "webpack-dev-server": "^1.10.1"
-        };
-
-        this.packageInstall = '$ npm install';
-        this.packageUsage = '$ webpack-dev-server';
-      } else if (this.projectType === 'express') {
-        pkgDeps = {
-          "babel": "^5.8.21",
-          "express": "^4.13.3",
-          "express-cors": "0.0.3",
-          "lodash": "^3.10.1",
-          "moment": "^2.10.6",
-          "morgan": "^1.6.1"
-        };
-        pkgDevDeps = {
-          "nodemon": "^1.4.1"
-        };
-        pkgScripts = {
-          "start": "nodemon app.js"
-        };
-
-        this.packageInstall = '$ npm install';
-        this.packageUsage = '$ npm start';
+      if (this.projectType === TYPE_WEBPACK) {
+        require('./gen-webpack-dev-server').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts);
+      } else if (this.projectType === TYPE_EXPRESS) {
+        require('./gen-express').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts);
+      } else if (this.projectType === TYPE_CLI) {
+        require('./gen-cli').genPackage(this, pkgDeps, pkgDevDeps, pkgScripts, misc);
       }
 
-      var pkgData = require('./gen-package')(this.packageName, pkgDeps, pkgDevDeps, pkgScripts);
+      var pkgData = require('./gen-package')(this.packageName, pkgDeps, pkgDevDeps, pkgScripts, misc);
       require('fs').writeFileSync(pkgPath, JSON.stringify(pkgData, null, 2), 'utf-8');
 
       this.template('_readme.md', 'README.md');
@@ -99,16 +73,20 @@ module.exports = yeoman.generators.Base.extend({
       cp('gitignore', '.gitignore');
       cp('travis.yml', '.travis.yml');
 
-      if (this.projectType === 'webpack-dev-server') {
+      if (this.projectType === TYPE_WEBPACK) {
         cp('webpack-dev-server/webpack.config.js', 'webpack.config.js');
         cp('webpack-dev-server/app.js', 'src/js/app.js');
         cp('webpack-dev-server/style.scss', 'src/scss/style.scss');
         cp('webpack-dev-server/index.html', 'src/index.html');
-      } else if (this.projectType === 'express') {
+      } else if (this.projectType === TYPE_EXPRESS) {
         cp('express/app.js', 'app.js');
         cp('express/index.html', 'public/index.html');
         cp('express/robots.txt', 'public/robots.txt');
         cp('express/server.js', 'src/server.js');
+      } else if (this.projectType === TYPE_CLI) {
+        cp('cli/cli.js', 'cli.js');
+        cp('cli/index.js', 'src/index.js');
+        cp('cli/simple-spec.js', 'test/simple-spec.js');
       }
     }
   },
