@@ -3,7 +3,7 @@
 sn=xyz
 
 tmux kill-session -t "$sn"
-cd /etc
+cd /home/ewnd9
 tmux new-session -s "$sn" -n etc -d
 
 # Set the default cwd for new windows (optional, otherwise defaults to session cwd)
@@ -12,8 +12,7 @@ tmux new-session -s "$sn" -n etc -d
 # Select window #1 and attach to the session
 tmux select-window -t "$sn"
 tmux split-window -h
-tmux send-keys 't stream timeline' 'C-m'
-tmux select-pane -L 
+tmux send-keys 'htop' 'C-m'
+tmux select-pane -L
 
 tmux -2 attach-session -t "$sn"
-

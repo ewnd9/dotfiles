@@ -6,11 +6,11 @@ ubuntu, awesome wm, vim, tmux
 
 ![screen](/screen.png?raw=true)
 
-## install 
+## install
 
-- hand-installing: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
-- hand-installing: [copy](https://www.copy.com/)
-- hand-installing: [dropbox](https://www.dropbox.com)
+- manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
+- manual-install: [copy](https://www.copy.com/)
+- manual-install: [dropbox](https://www.dropbox.com)
 
 - packages.sh (apt-get install packages)
 - linking.sh (link all dotfiles and config folders)
@@ -22,11 +22,6 @@ used to use `terminator`, now back to `gnome-terminal` with [base 16 theme](http
 ## vim
 
 plugin manager [pathogen](https://github.com/tpope/vim-pathogen)
-
-## notes
-
-- [ ] save atom config
-- [ ] atom font: Liberation Mono, size: 14
 
 ## window manager
 

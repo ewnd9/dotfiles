@@ -4,7 +4,7 @@ source /home/ewnd9/dotfiles/config/zsh/zsh-git-prompt/zshrc.sh
 
 git_super_status() {
 	precmd_update_git_vars
-  
+
 	if [ -n "$__CURRENT_GIT_STATUS" ]; then
 	  STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
 	  STATUS=" $STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
@@ -16,10 +16,8 @@ PROMPT='%F{yellow}%B%n@%m %~%b$(git_super_status)%f %# '
 
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
@@ -66,10 +64,10 @@ function psql-remote {
 function psql-clone {
   ssh $1 "pg_dump -U admin -h localhost $2 > ~/1.sql"
   scp $1:~/1.sql .
-  
+
   dropdb -U admin -h localhost $2
   createdb -U admin -h localhost $2
-  
+
   psql -U admin -h localhost $2 < 1.sql
 }
 
@@ -124,8 +122,6 @@ echo $@
 cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
 }
 
-alias npm-publish="npm version $1 && git push origin master && git push origin --tags && npm publish"
-
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -141,3 +137,6 @@ export EDITOR=vim
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/home/ewnd9/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
