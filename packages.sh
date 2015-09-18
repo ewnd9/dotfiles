@@ -44,4 +44,6 @@ npm install -g brightness-cli
 npm install -g dictionary-cli workout-cli watchtower-cli
 
 npm install -g yo
-npm link /home/ewnd9/dotfiles/yo-generators/generator-ewnd9
+
+git clone git@github.com:ewnd9/generator-ewnd9-npm.git ~/generator-ewnd9-npm
+npm link ~/generator-ewnd9-npm
