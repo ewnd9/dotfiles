@@ -17,7 +17,7 @@ ubuntu, awesome wm, vim, tmux
 
 ## terminal
 
-used to use `terminator`, now back to `gnome-terminal` with [base 16 theme](https://github.com/chriskempson/base16-gnome-terminal)
+used to use `terminator`, now back to `gnome-terminal` with [Atom's One Dark theme](https://github.com/denysdovhan/one-gnome-terminal)
 
 ## vim
 
