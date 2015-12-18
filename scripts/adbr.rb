@@ -21,6 +21,15 @@ def db_pull
   `adb -s "#{@device_id}" pull "/data/data/#{@package}/databases/#{@file}"`
 end
 
+def pref_pull
+  `adb -s "#{@device_id}" shell "run-as #{@package} cp /data/data/#{@package}/shared_prefs > /sdcard/#{@package}.pref"`
+  `adb -s "#{@device_id}" pull "/sdcard/#{@package}.pref"`
+end
+
+def ls
+  `adb -s "#{@device_id}" shell "run-as #{@package} ls /data/data/#{@package}"`
+end
+
 def db_open
   `sqlitebrowser #{@file}`
 end
@@ -33,5 +42,9 @@ elsif ARGV.length == 1
     db_open
   elsif ARGV[0] == 'db-pull'
     db_pull
+  elsif ARGV[0] == 'ls'
+    ls
+  elsif ARGV[0] == 'pref-pull'
+    pref_pull
   end
 end

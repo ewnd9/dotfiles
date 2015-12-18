@@ -7,6 +7,7 @@
     excludeVcsIgnoredPaths: false
     disabledPackages: [
       "language-babel"
+      "spell-check"
     ]
     themes: [
       "atom-dark-ui"
@@ -16,9 +17,12 @@
       ".git"
       "node_modules"
     ]
+    autoHideMenuBar: true
   editor:
-    fontFamily: "Liberation Mono"
     invisibles: {}
+    softTabs: false
+    zoomFontWhenCtrlScrolling: false
+    fontFamily: "Liberation Mono"
   "tree-view":
     hideVcsIgnoredFiles: false
   react: {}
@@ -36,3 +40,32 @@
     apikey: "b39c3763-4a72-4f5c-ba14-d5e8723df1da"
   "markdown-preview": {}
   "expand-region": {}
+  linter:
+    lintOnFly: false
+    showErrorTabProject: false
+    displayLinterInfo: false
+    showErrorInline: false
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+    useGlobalEslint: true
+  term2: {}
+  "":
+    source:
+      js:
+        "expand-region":
+          commands: [
+            {
+              command: "editor:select-word"
+              recursive: false
+            }
+            {
+              command: "editor:select-line"
+              recursive: false
+            }
+            {
+              command: "core:select-all"
+              recursive: false
+            }
+          ]
+  "vim-mode": {}
+  "symbols-tree-view": {}

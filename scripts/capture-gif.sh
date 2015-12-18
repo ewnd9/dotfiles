@@ -3,6 +3,8 @@
 XWININFO=$(xwininfo )
 MARGIN=5
 
+echo $XWININFO
+
 read X < <(awk -F: '/Absolute upper-left X/{print $2}' <<< "$XWININFO")
 read Y < <(awk -F: '/Absolute upper-left Y/{print $2}' <<< "$XWININFO")
 read WIDTH < <(awk -F: '/Width/{print $2}' <<< "$XWININFO")
@@ -24,3 +26,4 @@ notify-send "start-recording"
 FILE="out.gif"
 rm $FILE
 byzanz-record -e "nohup dummy.sh >/dev/null 2>&1" --x=$X --y=$Y --width=$WIDTH --height=$HEIGHT $FILE
+# byzanz-record -e "nohup dummy.sh >/dev/null 2>&1" $FILE

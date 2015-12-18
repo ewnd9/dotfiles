@@ -103,18 +103,24 @@ alias sus="sudo pm-suspend"
 alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
 alias term="terminator --command="tmux""
 
+alias nt="~/node-4.0.0/tools/v8-prof/linux-tick-processor"
 alias wds="webpack-dev-server"
 alias br="sudo brightness"
 alias bn="babel-node"
-alias mocha-b="NODE_ENV=test mocha --require babel/register $1"
+alias mb="NODE_ENV=test mocha --require babel/register $1"
 alias w="watchtower"
+alias wo="workout"
+alias wos="workout --session"
+alias woe="workout --excuse"
 alias yt="yandex-translate"
 alias d="dictionary"
 alias a="atom ."
 alias gif="ttystudio output.gif --log && eog output.gif"
-
+alias rm="trash"
+alias ll="ls -lh"
 alias human-space="du -sh $1"
 alias grep-text="grep -nr "$1" $2"
+# find ~ -name deploy.sh
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 
@@ -140,4 +146,7 @@ export EDITOR=vim
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export NVM_DIR="/home/ewnd9/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # load nvm
+
+TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+
