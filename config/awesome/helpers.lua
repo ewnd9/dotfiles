@@ -1,6 +1,6 @@
 -- {{{ Helper functions
 
-function run_once(prg,arg_string,pname,screen)
+function run_once(prg, pname, arg_string, screen)
 	if not prg then
 		do return nil end
 	end
@@ -9,10 +9,10 @@ function run_once(prg,arg_string,pname,screen)
 		pname = prg
 	end
 
-	if not arg_string then 
-		awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. ")",screen)
+	if not arg_string then
+		awful.util.spawn_with_shell("pgrep -u $USER -x '" .. pname .. "' || (" .. prg .. ")", screen)
 	else
-		awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")",screen)
+		awful.util.spawn_with_shell("pgrep -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")", screen)
 	end
 end
 
