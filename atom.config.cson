@@ -8,6 +8,7 @@
     disabledPackages: [
       "language-babel"
       "spell-check"
+      "markdown-preview"
     ]
     themes: [
       "atom-dark-ui"
