@@ -16,6 +16,8 @@ ubuntu, awesome-wm, atom, gnome-terminal, vim, tmux, zsh
 
 - linking.sh (link all dotfiles and config folders)
 
+- setup `albert` to `ctrl+shift+x`
+
 ## Terminal
 
 used to use `terminator`, now back to `gnome-terminal` with [Atom's One Dark theme](https://github.com/denysdovhan/one-gnome-terminal)

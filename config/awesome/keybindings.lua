@@ -96,10 +96,13 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-	awful.key({ modkey }, "q", function () awful.util.spawn("dummy.sh -k") end),
-	awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
+	  awful.key({ modkey }, "q", function () awful.util.spawn("dummy.sh -k") end),
+	  awful.key({ modkey }, "s", function () awful.util.spawn("/usr/bin/google-chrome --app=http://devdocs.io/") end),
+
+	  awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 2+ unmute") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 2-") end),
+
     awful.key({ }, "Print", function () awful.util.spawn("gnome-screenshot") end)
 )
 

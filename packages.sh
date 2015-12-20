@@ -1,6 +1,5 @@
 #!/bin/sh
 
-sudo apt-get install -y chromium-browser
 sudo apt-get install -y terminator
 sudo apt-get install -y awesome awesome-extra xcompmgr wmname
 sudo apt-get install -y zsh
@@ -12,6 +11,7 @@ sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:webupd8team/brackets
 sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:skunk/pepper-flash
+sudo add-apt-repository ppa:nilarimogard/webupd8
 
 sudo apt-get update
 
@@ -20,6 +20,7 @@ sudo apt-get install -y atom
 sudo apt-get install -y brackets
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y pepflashplugin-installer
+sudo apt-get install -y albert
 
 # ruby
 
@@ -31,17 +32,20 @@ rbenv install 2.1.5
 rbenv global 2.1.5
 ruby -v
 
-# node
+# node 5.x
 
-sudo apt-get install -y nodejs npm
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 npm config set prefix '~/.npm-packages'
+
+# node packages
 
 npm install -g fkill-cli
 npm install -g brightness-cli
 
 # my stuff
-npm install -g dictionary-cli workout-cli watchtower-cli
+npm install -g dictionary-cli workout-cli
 
 npm install -g yo
 
