@@ -123,6 +123,8 @@ alias grep-text="grep -nr "$1" $2"
 # find ~ -name deploy.sh
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
+alias plan="atom ~/Dropbox/plan"
+alias show-available-updates="sudo apt-get --just-print upgrade"
 
 function open-chrome-extension {
 echo $@
