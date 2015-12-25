@@ -4,6 +4,8 @@ sudo apt-get install -y awesome awesome-extra xcompmgr wmname
 sudo apt-get install -y zsh
 sudo apt-get install -y guake
 sudo apt-get install -y vlc
+sudo apt-get install -y tmux
+sudo apt-get install -y vim
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom

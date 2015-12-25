@@ -12,13 +12,15 @@ ubuntu, awesome-wm, atom, gnome-terminal, vim, tmux, zsh
 
 - manual-install: [dropbox](https://www.dropbox.com)
 
+- manual-install: [telegram](https://desktop.telegram.org/)
+
 - packages.sh (apt-get install packages)
 
 - linking.sh (link all dotfiles and config folders)
 
 - `chsh -s /bin/zsh`
 
-- `./one-dark.sh` - gnome-terminal theme
+- `./one-dark.sh` - gnome-terminal theme, `Edit -> Profiles -> Select as default`
 
 - setup `albert` to `ctrl+shift+x`
 
