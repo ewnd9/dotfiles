@@ -16,6 +16,10 @@ ubuntu, awesome-wm, atom, gnome-terminal, vim, tmux, zsh
 
 - linking.sh (link all dotfiles and config folders)
 
+- `chsh -s /bin/zsh`
+
+- `./one-dark.sh` - gnome-terminal theme
+
 - setup `albert` to `ctrl+shift+x`
 
 ## Terminal

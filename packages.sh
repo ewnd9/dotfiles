@@ -1,6 +1,5 @@
 #!/bin/sh
 
-sudo apt-get install -y terminator
 sudo apt-get install -y awesome awesome-extra xcompmgr wmname
 sudo apt-get install -y zsh
 sudo apt-get install -y guake
@@ -8,7 +7,6 @@ sudo apt-get install -y vlc
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
-sudo add-apt-repository ppa:webupd8team/brackets
 sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:skunk/pepper-flash
 sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -17,7 +15,6 @@ sudo apt-get update
 
 sudo apt-get install -y nemo nemo-fileroller
 sudo apt-get install -y atom
-sudo apt-get install -y brackets
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y pepflashplugin-installer
 sudo apt-get install -y albert
