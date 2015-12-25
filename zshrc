@@ -1,6 +1,6 @@
 # Set up the prompt
 
-source /home/ewnd9/dotfiles/config/zsh/zsh-git-prompt/zshrc.sh
+source /home/ewnd9/dotfiles/config/zsh/git-prompt/zshrc.sh
 
 git_super_status() {
 	precmd_update_git_vars
