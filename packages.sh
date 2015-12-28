@@ -9,7 +9,6 @@ sudo apt-get install -y vim
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
-sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:skunk/pepper-flash
 sudo add-apt-repository ppa:nilarimogard/webupd8
 
@@ -17,7 +16,6 @@ sudo apt-get update
 
 sudo apt-get install -y nemo nemo-fileroller
 sudo apt-get install -y atom
-sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y pepflashplugin-installer
 sudo apt-get install -y albert
 
