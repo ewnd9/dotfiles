@@ -12,6 +12,7 @@ function link {
 
 link config/awesome .config/awesome
 link config/vim .vim
+link config/gtk.css .config/gtk-3.0/gtk.css
 
 link zshrc .zshrc
 link vimrc .vimrc
