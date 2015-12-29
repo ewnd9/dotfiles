@@ -1,0 +1,13 @@
+[submodule "config/vim/bundle/nerdtree"]
+  path = config/vim/bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
+  ignore = dirty
+[submodule "config/vim/bundle/vim-colors-solarized"]
+  path = config/vim/bundle/vim-colors-solarized
+  url = https://github.com/altercation/vim-colors-solarized.git
+  ignore = dirty
+[submodule "config/vim/bundle/vim-bundler"]
+  path = config/vim/bundle/vim-bundler
+  url = https://github.com/tpope/vim-bundler.git
+  ignore = dirty
+
