@@ -1,16 +1,20 @@
 #!/bin/sh
 
+sudo apt-get update && sudo apt-get upgrade
+
 sudo apt-get install -y awesome awesome-extra xcompmgr wmname
 sudo apt-get install -y zsh
 sudo apt-get install -y guake
 sudo apt-get install -y vlc
 sudo apt-get install -y tmux
 sudo apt-get install -y vim
+sudo apt-get install -y trash-cli
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:skunk/pepper-flash
 sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo add-apt-repository ppa:tualatrix/ppa
 
 sudo apt-get update
 
@@ -18,6 +22,7 @@ sudo apt-get install -y nemo nemo-fileroller
 sudo apt-get install -y atom
 sudo apt-get install -y pepflashplugin-installer
 sudo apt-get install -y albert
+sudo apt-get install -y ubuntu-tweak
 
 # ruby
 

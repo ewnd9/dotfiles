@@ -125,6 +125,8 @@ alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias plan="atom ~/Dropbox/plan"
 alias show-available-updates="sudo apt-get --just-print upgrade"
+alias i="sudo apt-get install"
+alias upd="sudo apt-get update"
 
 function open-chrome-extension {
 echo $@
