@@ -9,6 +9,8 @@ sudo apt-get install -y vlc
 sudo apt-get install -y tmux
 sudo apt-get install -y vim
 sudo apt-get install -y trash-cli
+sudo apt-get install -y indicator-cpufreq
+sudo apt-get install -y g++
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
