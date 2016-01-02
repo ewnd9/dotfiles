@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/ewnd9/pocket'
 let g:netrw_dirhist_2='/home/ewnd9/pocket/db'
 let g:netrw_dirhist_3='/home/ewnd9/pocket/app/views/home'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/home/ewnd9/pocket/app/views'
 let g:netrw_dirhist_5='/home/ewnd9/pocket/app'
 let g:netrw_dirhist_6='/home/ewnd9/pocket/app/assets'
 let g:netrw_dirhist_7='/home/ewnd9/pocket/app/assets/javascripts'
+let g:netrw_dirhist_8='/home/ewnd9/dotfiles'

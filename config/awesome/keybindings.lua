@@ -142,7 +142,8 @@ for i = 1, keynumber do
                       if client.focus and tags[client.focus.screen][i] then
                           awful.client.toggletag(tags[client.focus.screen][i])
                       end
-                  end))
+                  end)),
+				awful.key({ "Mod1" }, "Shift_R", function() os.execute('setxkbmap ru') end)
 end
 
 clientbuttons = awful.util.table.join(

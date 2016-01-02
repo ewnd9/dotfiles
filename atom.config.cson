@@ -24,6 +24,7 @@
     softTabs: false
     zoomFontWhenCtrlScrolling: false
     fontFamily: "Liberation Mono"
+    fontSize: 15
   "tree-view":
     hideVcsIgnoredFiles: false
   react: {}

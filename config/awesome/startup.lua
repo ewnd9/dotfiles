@@ -4,8 +4,9 @@ run_once("google-chrome", "chrome")
 
 run_once("telegram")
 run_once("guake", "--exec='/home/ewnd9/dotfiles/scripts/twitter.tmux'")
-run_once("nm-applet") -- networkingos.execute("/usr/bin/run_once indicator-cpufreq")
+run_once("nm-applet")
 run_once("indicator-cpufreq", "indicator-cpufr")
+run_once("prime-indicator", "prime-indicator")
 
 run_once("setxkbmap", "setxkbmap", "-layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:none'")
 run_once("dropbox", "dropbox", "start")
