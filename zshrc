@@ -127,6 +127,7 @@ alias plan="atom ~/Dropbox/plan"
 alias show-available-updates="sudo apt-get --just-print upgrade"
 alias i="sudo apt-get install"
 alias upd="sudo apt-get update"
+alias npmo="npm --cache-min 9999999"
 
 function open-chrome-extension {
 echo $@
