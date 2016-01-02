@@ -11,3 +11,6 @@
   url = https://github.com/tpope/vim-bundler.git
   ignore = dirty
 
+[submodule "config/vim/bundle/vim-gitgutter"]
+	path = config/vim/bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
