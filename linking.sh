@@ -24,3 +24,4 @@ link atom.config.cson .atom/config.cson
 sudo ln -s /home/ewnd9/dotfiles/scripts/gnome-terminal-tmux.sh /usr/bin/gnome-terminal-tmux.sh
 sudo ln -s /home/ewnd9/dotfiles/scripts/lnbin.sh /usr/bin/lnbin
 sudo ln -s /home/ewnd9/dotfiles/scripts/kbd /usr/bin/kbd
+sudo ln -s /home/ewnd9/dotfiles/scripts/np /usr/bin/np
