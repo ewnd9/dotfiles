@@ -102,7 +102,8 @@ clientkeys = awful.util.table.join(
 	  awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 2+ unmute") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 2-") end),
-
+    awful.key({ }, "XF86Launch1", function () awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "XF86WebCam", function () awful.util.spawn("xbacklight -inc 10") end),
     awful.key({ }, "Print", function () awful.util.spawn("gnome-screenshot") end)
 )
 
