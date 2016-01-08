@@ -90,6 +90,11 @@ function app-port {
 	lsof -n -i4TCP:$1
 }
 
+function web-screen {
+	pageres 320x534 800x1280 1360x768 1920x1080 $@ --verbose
+	nemo .
+}
+
 synclient TapButton3=2
 
 alias ls="ls --color=auto"
@@ -154,4 +159,3 @@ export NVM_DIR="/home/ewnd9/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # load nvm
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
-
