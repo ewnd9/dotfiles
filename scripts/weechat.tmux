@@ -12,6 +12,7 @@ tmux new-session -s "$sn" -n etc -d
 # Select window #1 and attach to the session
 tmux select-window -t "$sn"
 tmux send-keys 'weechat' 'C-m'
+tmux send-keys 'move-to-tag 4' 'C-m'
 tmux split-window -h
 tmux select-pane -L
 

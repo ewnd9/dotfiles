@@ -110,15 +110,7 @@ alias term="terminator --command="tmux""
 
 alias nt="~/node-4.0.0/tools/v8-prof/linux-tick-processor"
 alias wds="webpack-dev-server"
-alias br="sudo brightness"
-alias bn="babel-node"
-alias mb="NODE_ENV=test mocha --require babel/register $1"
-alias w="watchtower"
-alias wo="workout"
-alias wos="workout --session"
-alias woe="workout --excuse"
-alias yt="yandex-translate"
-alias d="dictionary"
+
 alias a="atom ."
 alias gif="ttystudio output.gif --log && eog output.gif"
 alias rm="trash"
@@ -129,15 +121,35 @@ alias grep-text="grep -nr "$1" $2"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias plan="atom ~/Dropbox/plan"
-alias show-available-updates="sudo apt-get --just-print upgrade"
-alias i="sudo apt-get install"
+
+alias i="sudo apt-get install" # apt
 alias upd="sudo apt-get update"
-alias npmo="npm --cache-min 9999999"
+alias show-available-updates="sudo apt-get --just-print upgrade"
+
+alias npm="/home/ewnd9/dotfiles/scripts/npm-alias" # npm
+alias npo="npm --cache-min 9999999"
+alias npr="npm repo"
+
+alias d="dictionary en ru" # npm/dictionary-cli
+alias x="dictionary ru en"
+
+alias avad="nodemon --exec ava -- --verbose --serial" # npm/ava which will always use local copy
+
+alias wo="workout" # npm/workout-cli
+alias wos="workout --session"
+alias woe="workout --excuse"
+
+alias w="watchtower" #npm/watchtower-cli
+
+alias bn="babel-node" # npm/babel-cli
+
+alias mb="NODE_ENV=test mocha --require babel/register $1" # npm/mocha
 
 function open-chrome-extension {
-echo $@
-cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
+	echo $@
+	cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
 }
+
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
