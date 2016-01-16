@@ -21,5 +21,5 @@ run_once("somebar")
 run_once("/home/ewnd9/.npm-packages/bin/workout --test", "workout")
 
 run_once("rescuetime")
-run_once("gnome-terminal", "gnome-terminal", "-e '/home/ewnd9/dotfiles/scripts/weechat.tmux'")
+run_once("gnome-terminal", "gnome-terminal", "-e '/home/ewnd9/dotfiles/scripts/tmux/weechat.tmux'")
 run_once("albert")

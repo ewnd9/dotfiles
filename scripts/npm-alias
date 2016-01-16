@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+if ([ "$1" == "install" ] || [ "$1" == "i" ]) && [ "$#" -ne 1 ]; then
+	for var in "$@"
+	do
+		if [ "$var" == "--save" ] || [ "$var" == "--save-dev" ] || [ "$var" == "-S" ] || [ "$var" == "-D" ] || [ "$var" == "-g" ]; then
+			has_modifier=true
+		fi	
+	done
+
+	if [ "$has_modifier" != true ]; then
+		echo "npm install without --save or --save-dev"
+		exit 1
+	fi
+fi
+
+npm "$@"
