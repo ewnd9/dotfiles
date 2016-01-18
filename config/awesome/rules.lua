@@ -22,5 +22,9 @@ awful.rules.rules = {
   { rule = { class = "Terminator" },
     properties = { size_hints_honor = false } },
   { rule = { class = "Gnome-terminal" },
-    properties = { size_hints_honor = false } }
+    properties = { size_hints_honor = false } },
+  { rule = { class = "feh" },
+    properties = { floating = true } },
+  { rule = { class = "Electron" },
+    properties = { floating = true } }
 }

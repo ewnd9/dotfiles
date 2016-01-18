@@ -11,6 +11,8 @@ tmux select-window -t "$sn"
 tmux split-window -h
 
 tmux send-keys 'move-to-tag 4' 'C-m'
+
+sleep 5
 tmux send-keys 'ssh -t pi@rp "screen -x"' 'C-m'
 
 tmux select-pane -L

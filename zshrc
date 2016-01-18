@@ -142,6 +142,7 @@ alias woe="workout --excuse"
 alias w="watchtower" #npm/watchtower-cli
 
 alias bn="babel-node" # npm/babel-cli
+alias b="node_modules/.bin/babel-node"
 
 alias mb="NODE_ENV=test mocha --require babel/register $1" # npm/mocha
 
