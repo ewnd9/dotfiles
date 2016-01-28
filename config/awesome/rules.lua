@@ -23,7 +23,9 @@ awful.rules.rules = {
     properties = { size_hints_honor = false } },
   { rule = { class = "Gnome-terminal" },
     properties = { size_hints_honor = false } },
-  { rule = { class = "feh" },
+  { rule = { class = "feh" }, -- image viewer
+    properties = { floating = true } },
+  { rule = { class = "Eog" }, -- image viewer
     properties = { floating = true } },
   { rule = { class = "Electron" },
     properties = { floating = true } }
