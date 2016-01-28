@@ -7,6 +7,9 @@ require("vicious")
 require("helpers")
 require("teardrop")
 
+naughty.config.padding = 30
+naughty.config.presets.normal.font = "monospace 20"
+
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",

@@ -28,5 +28,9 @@ awful.rules.rules = {
   { rule = { class = "Eog" }, -- image viewer
     properties = { floating = true } },
   { rule = { class = "Electron" },
+    properties = { floating = true } },
+  { rule = { class = "Journal" },
+    properties = { floating = true } },
+  { rule = { class = "Xavier" },
     properties = { floating = true } }
 }

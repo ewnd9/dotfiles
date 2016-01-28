@@ -17,14 +17,17 @@
     ignoredNames: [
       ".git"
       "node_modules"
+      "*.map"
+      "*.bundle.js"
     ]
     autoHideMenuBar: true
   editor:
     invisibles: {}
-    softTabs: false
     zoomFontWhenCtrlScrolling: false
     fontFamily: "Liberation Mono"
     fontSize: 15
+    showInvisibles: true
+    autoIndentOnPaste: false
   "tree-view":
     hideVcsIgnoredFiles: false
   react: {}
@@ -51,23 +54,45 @@
     disableWhenNoEslintrcFileInPath: true
     useGlobalEslint: true
   term2: {}
-  "":
-    source:
-      js:
-        "expand-region":
-          commands: [
-            {
-              command: "editor:select-word"
-              recursive: false
-            }
-            {
-              command: "editor:select-line"
-              recursive: false
-            }
-            {
-              command: "core:select-all"
-              recursive: false
-            }
-          ]
   "vim-mode": {}
   "symbols-tree-view": {}
+".js.source":
+  "expand-region":
+    commands: [
+      {
+        command: "editor:select-word"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-word-include-dash"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-word-include-dash-and-dot"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-paragraph"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-single-quotes"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-double-quotes"
+        recursive: false
+      }
+      {
+        command: "expand-region:select-inside-parentheses"
+        recursive: true
+      }
+      {
+        command: "expand-region:select-around-parentheses"
+        recursive: true
+      }
+      {
+        command: "editor:select-line"
+        recursive: false
+      }
+    ]

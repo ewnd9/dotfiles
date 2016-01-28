@@ -1,0 +1,16 @@
+'.source.js':
+  'Log':
+    'prefix': 'log'
+    'body': 'console.log($1)'
+  'Then':
+    'prefix': 'then'
+    'body': 'then(data => $1)'
+  'Catch':
+    'prefix': 'catch'
+    'body': 'catch(err => console.log(err))'
+  'Promise':
+    'prefix': 'thencatch'
+    'body': """
+      then(data => console.log(data))
+      .catch(err => console.log(err));$1
+    """

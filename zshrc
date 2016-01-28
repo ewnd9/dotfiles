@@ -46,6 +46,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ##### ewnd9
 
+synclient TapButton3=2
+
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
@@ -71,86 +73,110 @@ function psql-clone {
   psql -U admin -h localhost $2 < 1.sql
 }
 
-function mkcd {
-	mkdir -p "$@" && cd "$@"
-}
+## navigation
+mkcd () { mkdir -p "$@" && cd "$@" }
 
-function clone {
+## git
+clone () {
   git clone $1
   repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p')
   echo "cd $repo_name"
   cd "$repo_name"
 }
 
-function human-space {
-	du -sh $1
-}
+## fs
+alias human-space="du -sh"
 
-function app-port {
-	lsof -n -i4TCP:$1
-}
-
-function web-screen {
-	pageres 320x534 800x1280 1360x768 1920x1080 $@ --verbose
-	nemo .
-}
-
-synclient TapButton3=2
-
-alias ls="ls --color=auto"
-
-alias psme="ps -U ewnd9 | grep $1"
-
-alias findme="find . -type f -name $1"
-alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
+## network
+app-port () { lsof -n -i4TCP:$1 }
 alias serve="python -m SimpleHTTPServer"
-alias sus="sudo pm-suspend"
-alias tx="/home/ewnd9/.rbenv/versions/2.1.5/bin/tmuxinator"
-alias term="terminator --command="tmux""
-
-alias nt="~/node-4.0.0/tools/v8-prof/linux-tick-processor"
-alias wds="webpack-dev-server"
-
-alias a="atom ."
-alias gif="ttystudio output.gif --log && eog output.gif"
-alias rm="trash"
-alias ll="ls -lh"
-alias human-space="du -sh $1"
-alias grep-text="grep -nr "$1" $2"
-# find ~ -name deploy.sh
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
-alias plan="atom ~/Dropbox/plan"
 
-alias i="sudo apt-get install" # apt
+## web
+web-screen () {
+	dir="/tmp/$(date "+%m-%d-%Y-%H-%M")"
+	mkcd $dir
+	pageres 320x534 800x1280 1360x768 1920x1080 $@ --verbose
+	nemo .
+	cd -
+}
+
+## processes
+alias psme="ps -U ewnd9 | grep"
+
+## text processing
+alias grep-text="grep -nr"
+alias findme="find . -type f -name"
+alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
+
+## system
+alias sus="sudo pm-suspend"
+
+## atom
+alias a="atom ."
+acd () { cd "$@" && atom . }
+
+## system
+alias ls="ls --color=auto"
+alias rm="trash"
+alias ll="ls -lh"
+c () { cat "$@" | less }
+t () { tail -f "$@" }
+
+## apt
+alias i="sudo apt-get install"
 alias upd="sudo apt-get update"
 alias show-available-updates="sudo apt-get --just-print upgrade"
 
-alias npm="/home/ewnd9/dotfiles/scripts/npm-alias" # npm
+## npm
+alias npm="/home/ewnd9/dotfiles/scripts/npm-alias"
 alias npo="npm --cache-min 9999999"
 alias npr="npm repo"
+npmjs () { xdg-open http://npmjs.com/package/$1 }
+x () { node_modules/.bin/"$@" }
 
-alias d="dictionary en ru" # npm/dictionary-cli
-alias x="dictionary ru en"
+## npm/dictionary-cli
+alias d="dictionary --ru=en"
 
-alias avad="nodemon --exec ava -- --verbose --serial" # npm/ava which will always use local copy
+## npm/ava which will always use local copy
+alias avad="nodemon --exec ava -- --verbose --serial"
 
-alias wo="workout" # npm/workout-cli
+## npm/workout-cli
+alias wo="workout"
 alias wos="workout --session"
 alias woe="workout --excuse"
 
-alias w="watchtower" #npm/watchtower-cli
-
-alias bn="babel-node" # npm/babel-cli
+## npm/babel-cli
+alias bn="babel-node"
 alias b="node_modules/.bin/babel-node"
 
-alias mb="NODE_ENV=test mocha --require babel/register $1" # npm/mocha
+## npm/mocha
+alias mb="NODE_ENV=test mocha --require babel/register"
 
-function open-chrome-extension {
+## npm/yo
+alias glint="yo ewnd9-eslint"
+alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
+
+## pip/thefuck
+eval "$(thefuck --alias f)"
+
+## github
+g () {
+	input=$@
+	xdg-open "https://github.com/search?q=extension%3Ajs+$input&ref=searchresults&type=Code&utf8=%E2%9C%93"
+}
+
+gg () {
+	repo=$(npm view $1 homepage | sed 's/#readme//')
+	input=${@:2}
+	xdg-open "$repo/search?utf8=%E2%9C%93&q=$input"
+}
+
+open-chrome-extension () {
 	echo $@
 	cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
 }
-
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
