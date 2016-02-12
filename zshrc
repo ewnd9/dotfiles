@@ -12,7 +12,7 @@ git_super_status() {
 	fi
 }
 
-PROMPT='%F{yellow}%B%n@%m %~%b$(git_super_status)%f %# '
+PROMPT='%F{yellow}%Bλ %~%b$(git_super_status)%f %# '
 
 setopt histignorealldups sharehistory
 
