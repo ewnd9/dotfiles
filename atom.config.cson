@@ -27,7 +27,6 @@
     fontFamily: "Liberation Mono"
     fontSize: 15
     showInvisibles: true
-    autoIndentOnPaste: false
   "tree-view":
     hideVcsIgnoredFiles: false
   react: {}
@@ -57,6 +56,8 @@
   "vim-mode": {}
   "symbols-tree-view": {}
 ".js.source":
+  "tabs-to-spaces":
+    onSave: "untabify"
   "expand-region":
     commands: [
       {

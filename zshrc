@@ -92,6 +92,7 @@ app-port () { lsof -n -i4TCP:$1 }
 alias serve="python -m SimpleHTTPServer"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
+alias myip="ifconfig | grep "inet addr""
 
 ## web
 web-screen () {
@@ -107,17 +108,15 @@ alias psme="ps -U ewnd9 | grep"
 
 ## text processing
 alias grep-text="grep -nr"
-alias findme="find . -type f -name"
+alias find-me="find . -type f -name"
 alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
-
-## system
-alias sus="sudo pm-suspend"
 
 ## atom
 alias a="atom ."
 acd () { cd "$@" && atom . }
 
 ## system
+alias sus="sudo pm-suspend"
 alias ls="ls --color=auto"
 alias rm="trash"
 alias ll="ls -lh"
@@ -135,6 +134,10 @@ alias npo="npm --cache-min 9999999"
 alias npr="npm repo"
 npmjs () { xdg-open http://npmjs.com/package/$1 }
 x () { node_modules/.bin/"$@" }
+v () { cat $1 | grep version }
+nvim () {
+	vim node_modules/$1/"$(cat node_modules/$1/package.json | grep "\"main\"" | awk ' {print $2} ' | sed 's/[\",]//g')"
+}
 
 ## npm/dictionary-cli
 alias d="dictionary --ru=en"
@@ -157,6 +160,9 @@ alias mb="NODE_ENV=test mocha --require babel/register"
 ## npm/yo
 alias glint="yo ewnd9-eslint"
 alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
+
+## npm/pw3 npm/trakt-cli
+shows () { pw3 "$(trakt --available --json)" }
 
 ## pip/thefuck
 eval "$(thefuck --alias f)"

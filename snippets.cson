@@ -14,3 +14,13 @@
       then(data => console.log(data))
       .catch(err => console.log(err));$1
     """
+  'Angular':
+    'prefix': 'angular'
+    'body': """
+      export default {
+        scope: {},
+        controller: ($scope) => {
+          $1
+        }
+      };
+    """
