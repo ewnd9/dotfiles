@@ -24,3 +24,18 @@
         }
       };
     """
+  'React':
+    'prefix': 'react'
+    'body': """
+      import React from 'react';
+
+      export default React.createClass({
+        render() {
+          return (
+            <div>
+              $1
+            </div>
+          );
+        }
+      });
+    """
