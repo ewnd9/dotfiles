@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tmux new-session -n yo -d
+tmux new-session -n linux -d
 
 tmux split-window -h
 tmux select-pane -L
