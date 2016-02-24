@@ -30,3 +30,4 @@ sudo ln -s /home/ewnd9/dotfiles/scripts/np /usr/bin/np
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/move-to-tag.sh /usr/bin/move-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/open-tag.sh /usr/bin/open-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/switch-to-tag.sh /usr/bin/switch-to-tag
+sudo ln -s /home/ewnd9/dotfiles/scripts/pomodoro.sh /usr/bin/po

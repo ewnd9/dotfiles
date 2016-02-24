@@ -1,38 +1,50 @@
 "*":
-  "exception-reporting":
-    userId: "789aa4ab-f36b-1674-f1d3-2c35b6824195"
-  welcome:
-    showOnStartup: false
   core:
-    excludeVcsIgnoredPaths: false
+    autoHideMenuBar: true
     disabledPackages: [
       "language-babel"
       "spell-check"
       "markdown-preview"
     ]
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
+    excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
       "node_modules"
       "*.map"
       "*.bundle.js"
     ]
-    autoHideMenuBar: true
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
   editor:
-    invisibles: {}
-    zoomFontWhenCtrlScrolling: false
     fontFamily: "Liberation Mono"
     fontSize: 15
+    invisibles: {}
     showInvisibles: true
-  "tree-view":
-    hideVcsIgnoredFiles: false
-  react: {}
+    zoomFontWhenCtrlScrolling: false
+  "exception-reporting":
+    userId: "789aa4ab-f36b-1674-f1d3-2c35b6824195"
+  "expand-region": {}
+  linter:
+    displayLinterInfo: false
+    lintOnFly: false
+    showErrorInline: false
+    showErrorTabProject: false
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+    useGlobalEslint: true
+  "markdown-preview": {}
   "nuclide-click-to-symbol":
     useCmdKey: false
+  react: {}
+  "symbols-tree-view": {}
+  term2: {}
+  "tree-view":
+    hideVcsIgnoredFiles: false
+  "vim-mode": {}
   wakatime:
+    apikey: "b39c3763-4a72-4f5c-ba14-d5e8723df1da"
     ignore: [
       "^/var/"
       "^/tmp/"
@@ -41,23 +53,9 @@
       "PULLREQ_EDITMSG$"
       "MERGE_MSG$"
     ]
-    apikey: "b39c3763-4a72-4f5c-ba14-d5e8723df1da"
-  "markdown-preview": {}
-  "expand-region": {}
-  linter:
-    lintOnFly: false
-    showErrorTabProject: false
-    displayLinterInfo: false
-    showErrorInline: false
-  "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
-    useGlobalEslint: true
-  term2: {}
-  "vim-mode": {}
-  "symbols-tree-view": {}
+  welcome:
+    showOnStartup: false
 ".js.source":
-  "tabs-to-spaces":
-    onSave: "untabify"
   "expand-region":
     commands: [
       {
@@ -97,3 +95,5 @@
         recursive: false
       }
     ]
+  "tabs-to-spaces":
+    onSave: "untabify"
