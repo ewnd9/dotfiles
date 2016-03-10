@@ -19,9 +19,12 @@ link vimrc .vimrc
 link tmux.conf .tmux.conf
 link xmodmap .xmodmap
 
-mkdir ~/.atom
+mkdir -p ~/.atom
 link atom.config.cson .atom/config.cson
 link snippets.cson .atom/snippets.cson
+
+mkdir -p ~/soft
+link soft.md soft/README.md
 
 sudo ln -s /home/ewnd9/dotfiles/scripts/gnome-terminal-tmux.sh /usr/bin/gnome-terminal-tmux.sh
 sudo ln -s /home/ewnd9/dotfiles/scripts/lnbin.sh /usr/bin/lnbin

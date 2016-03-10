@@ -136,6 +136,7 @@ alias show-available-updates="sudo apt-get --just-print upgrade"
 alias npm="/home/ewnd9/dotfiles/scripts/npm-alias"
 alias npo="npm --cache-min 9999999"
 alias npr="npm repo"
+alias nbw="npm run build:watch"
 npmjs () { xdg-open http://npmjs.com/package/$1 }
 x () { node_modules/.bin/"$@" }
 v () { cat $1 | grep version }

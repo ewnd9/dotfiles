@@ -1,0 +1,2 @@
+- wrk2 https://github.com/giltene/wrk2/wiki/Installing-Wrk2-on-Linux 
+- gmusicapi-scripts https://github.com/thebigmunch/gmusicapi-scripts
