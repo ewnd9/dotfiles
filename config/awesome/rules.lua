@@ -17,6 +17,6 @@ awful.rules.rules = {
     properties = {opacity = 0.7} },
   { rule = { class = "Gnome-terminal" },
     properties = { size_hints_honor = false } },
-  { rule_any = { class = { "feh", "Eog", "Electron", "Journal", "journal", "Xavier" } }, -- image viewer
+  { rule_any = { class = { "feh", "Eog", "Electron", "record-desktop", "Xavier" } }, -- image viewer
     properties = { floating = true } }
 }

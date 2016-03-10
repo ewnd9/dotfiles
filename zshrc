@@ -93,6 +93,9 @@ alias serve="python -m SimpleHTTPServer"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias myip="ifconfig | grep "inet addr""
+## network/httpie
+alias get="http GET"
+alias headers="http --print=Hh"
 
 ## web
 web-screen () {
@@ -168,6 +171,9 @@ shows () { pw3 "$(trakt --available --json)" }
 ## pip/thefuck
 eval "$(thefuck --alias f)"
 
+## apt/wordnet
+syns () { wordnet "$1" -syns{n,v,a,r} | less }
+
 ## github
 g () {
 	input=$@
@@ -197,6 +203,8 @@ export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export EDITOR=vim
+
+export LC_TIME=en_US.UTF-8
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

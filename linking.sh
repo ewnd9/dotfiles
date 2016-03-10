@@ -17,6 +17,7 @@ link config/gtk.css .config/gtk-3.0/gtk.css
 link zshrc .zshrc
 link vimrc .vimrc
 link tmux.conf .tmux.conf
+link xmodmap .xmodmap
 
 mkdir ~/.atom
 link atom.config.cson .atom/config.cson
