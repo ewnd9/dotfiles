@@ -76,13 +76,15 @@ function psql-clone {
 ## navigation
 mkcd () { mkdir -p "$@" && cd "$@" }
 
-## git
+## apt/git
 clone () {
   git clone $1
   repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p')
   echo "cd $repo_name"
   cd "$repo_name"
 }
+alias commit="git commit -a -m"
+alias push="git push origin master"
 
 ## fs
 alias human-space="du -sh"
