@@ -20,8 +20,8 @@ link tmux.conf .tmux.conf
 link xmodmap .xmodmap
 
 mkdir -p ~/.atom
-link atom.config.cson .atom/config.cson
-link snippets.cson .atom/snippets.cson
+link config/atom/config.cson .atom/config.cson
+link config/atom/snippets.cson .atom/snippets.cson
 
 mkdir -p ~/soft
 link soft.md soft/README.md
