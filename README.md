@@ -1,6 +1,6 @@
 # dotfiles
 
-ubuntu, awesome-wm, atom, gnome-terminal, vim, tmux, zsh
+awesome-wm, atom, gnome-terminal, vim, tmux, zsh
 
 ![screen](/screen.png?raw=true)
 
