@@ -26,8 +26,8 @@ link config/atom/snippets.cson .atom/snippets.cson
 mkdir -p ~/.config/manuelschneid3r
 link config/albert/albert.conf .config/manuelschneid3r/albert.conf
 
-mkdir -p ~/soft
-link soft.md soft/README.md
+mkdir -p ~/misc
+link misc.md misc/README.md
 
 sudo ln -s /home/ewnd9/dotfiles/scripts/gnome-terminal-tmux.sh /usr/bin/gnome-terminal-tmux.sh
 sudo ln -s /home/ewnd9/dotfiles/scripts/lnbin.sh /usr/bin/lnbin

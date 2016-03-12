@@ -50,6 +50,9 @@ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 npm config set prefix '~/.npm-packages'
+npm set init-author-name ewnd9
+npm set init-author-email ewndnine@gmail.com
+npm set init-license MIT
 
 # node packages
 
