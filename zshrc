@@ -86,6 +86,10 @@ clone () {
 alias commit="git commit -a -m"
 alias push="git push origin master"
 
+## apt/xclip
+alias xcopy='xclip -selection clipboard'
+alias xpaste='xclip -selection clipboard -o'
+
 ## fs
 alias human-space="du -sh"
 

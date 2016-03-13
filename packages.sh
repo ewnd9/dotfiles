@@ -57,12 +57,9 @@ npm set init-license MIT
 # node packages
 
 npm install -g fkill-cli
-npm install -g brightness-cli
-
-# my stuff
-npm install -g dictionary-cli workout-cli
-
 npm install -g yo
 
-git clone git@github.com:ewnd9/generator-ewnd9-npm.git ~/generator-ewnd9-npm
-npm link ~/generator-ewnd9-npm
+# my stuff
+npm install -g dictionary-cli
+npm install -g yo
+

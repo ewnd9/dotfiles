@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/usr/bin/xdg-open-old "$@"
+open-tag 1 
