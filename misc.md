@@ -2,3 +2,4 @@
 - gmusicapi-scripts https://github.com/thebigmunch/gmusicapi-scripts
 - generator-ewnd9-npm https://github.com/ewnd9/generator-ewnd9-npm
 - generator-ewnd9-eslint https://github.com/ewnd9/generator-ewnd9-eslint
+- error-board2 git@github.com:ewnd9/ErrorBoard2.git

@@ -175,6 +175,9 @@ alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
 ## npm/pw3 npm/trakt-cli
 shows () { pw3 "$(trakt --available --json)" }
 
+## github/ErrorBoard2
+error-board () { cd ~/misc/ErrorBoard2 && npm start }
+
 ## pip/thefuck
 eval "$(thefuck --alias f)"
 
