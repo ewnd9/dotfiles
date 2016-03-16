@@ -39,3 +39,6 @@ sudo ln -s /home/ewnd9/dotfiles/scripts/wm/move-to-tag.sh /usr/bin/move-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/open-tag.sh /usr/bin/open-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/switch-to-tag.sh /usr/bin/switch-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/pomodoro.sh /usr/bin/po
+
+sudo mv /usr/bin/xdg-open /usr/bin/xdg-open-old
+sudo ln -s /home/ewnd9/dotfiles/scripts/xdg-open /usr/bin/xdg-open
