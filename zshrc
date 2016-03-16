@@ -201,6 +201,8 @@ open-chrome-extension () {
 	cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
 }
 
+weather () { curl wttr.in/$1 }
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
