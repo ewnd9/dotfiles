@@ -33,6 +33,7 @@ sudo ln -s /home/ewnd9/dotfiles/scripts/gnome-terminal-tmux.sh /usr/bin/gnome-te
 sudo ln -s /home/ewnd9/dotfiles/scripts/lnbin.sh /usr/bin/lnbin
 sudo ln -s /home/ewnd9/dotfiles/scripts/kbd /usr/bin/kbd
 sudo ln -s /home/ewnd9/dotfiles/scripts/np /usr/bin/np
+sudo ln -s /home/ewnd9/dotfiles/scripts/put-md-to-folder.js /usr/bin/put-md-to-folder
 
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/move-to-tag.sh /usr/bin/move-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/open-tag.sh /usr/bin/open-tag
