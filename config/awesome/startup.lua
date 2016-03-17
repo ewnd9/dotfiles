@@ -1,5 +1,5 @@
 awful.util.spawn_with_shell("killall ibus-daemon")
-awful.util.spawn_with_shell("setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape'")
+awful.util.spawn_with_shell("sleep 10 && setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape'")
 
 run_once("wmname", "wmname", "LG3D") -- java fix
 run_once("unity-settings-daemon")

@@ -62,6 +62,9 @@
   'Debugga':
     'prefix': 'debugga'
     'body': '(()=>{debugger})() || $1'
+  'Log Chain':
+    'prefix': 'logchain'
+    'body': 'then(_ => { console.log(_); return _ })'
   'Use Strict':
     'prefix': 'us'
     'body': '\'use strict\';'

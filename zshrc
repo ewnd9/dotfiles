@@ -145,7 +145,7 @@ alias npr="cached-npm-repo"
 alias nbw="npm run build:watch"
 npmjs () { xdg-open http://npmjs.com/package/$1 }
 x () { node_modules/.bin/"$@" }
-v () { cat $1 | grep version }
+v () { cat $(node -e "console.log(require('pkg-up').sync(require.resolve('$1')))") | grep version }
 nvim () {
 	vim node_modules/$1/"$(cat node_modules/$1/package.json | grep "\"main\"" | awk ' {print $2} ' | sed 's/[\",]//g')"
 }
