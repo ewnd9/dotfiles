@@ -141,7 +141,7 @@ alias show-available-updates="sudo apt-get --just-print upgrade"
 ## npm
 alias npm="/home/ewnd9/dotfiles/scripts/npm-alias"
 alias npo="npm --cache-min 9999999"
-alias npr="npm repo"
+alias npr="cached-npm-repo"
 alias nbw="npm run build:watch"
 npmjs () { xdg-open http://npmjs.com/package/$1 }
 x () { node_modules/.bin/"$@" }
@@ -189,6 +189,9 @@ g () {
 	input=$@
 	xdg-open "https://github.com/search?q=extension%3Ajs+$input&ref=searchresults&type=Code&utf8=%E2%9C%93"
 }
+
+## zsh
+alias zshrc="cat ~/.zshrc | grep"
 
 gg () {
 	repo=$(npm view $1 homepage | sed 's/#readme//')

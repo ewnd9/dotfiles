@@ -62,4 +62,4 @@ npm install -g yo
 # my stuff
 npm install -g dictionary-cli
 npm install -g yo
-
+npm install -g cached-npm-repo
