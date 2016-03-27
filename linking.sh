@@ -8,8 +8,6 @@ function link {
 	echo "ln -s $SRC -> $DEST"
 }
 
-#link terminator .config/terminator
-
 link config/awesome .config/awesome
 link config/vim .vim
 link config/gtk.css .config/gtk-3.0/gtk.css
@@ -39,6 +37,9 @@ sudo ln -s /home/ewnd9/dotfiles/scripts/wm/move-to-tag.sh /usr/bin/move-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/open-tag.sh /usr/bin/open-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/switch-to-tag.sh /usr/bin/switch-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/pomodoro.sh /usr/bin/po
+sudo ln -s /home/ewnd9/dotfiles/scripts/canonical-path.sh /usr/bin/canonical-path
+sudo mv /usr/bin/link /usr/bin/link-old
+sudo ln -s /home/ewnd9/dotfiles/scripts/link.sh /usr/bin/link
 
 sudo mv /usr/bin/xdg-open /usr/bin/xdg-open-old
 sudo ln -s /home/ewnd9/dotfiles/scripts/xdg-open /usr/bin/xdg-open
