@@ -17,6 +17,8 @@ sudo apt-get install -y httpie
 sudo apt-get install -y cloc
 sudo apt-get install -y wordnet
 sudo apt-get install -y jq 
+sudo apt-get install -y figlet 
+sudo apt-get install -y anki 
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
@@ -58,8 +60,10 @@ npm set init-license MIT
 
 npm install -g fkill-cli
 npm install -g yo
+npm install -g jsonfui
 
 # my stuff
 npm install -g dictionary-cli
 npm install -g yo
 npm install -g cached-npm-repo
+npm install -g knowledge-extractor-cli

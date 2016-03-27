@@ -68,3 +68,6 @@
   'Use Strict':
     'prefix': 'us'
     'body': '\'use strict\';'
+  'CommonJS modern require':
+    'prefix': 'req'
+    'body': 'const ${1:module} = require(\'${1:module}\');'

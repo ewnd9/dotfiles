@@ -40,6 +40,8 @@
   react: {}
   "symbols-tree-view": {}
   term2: {}
+  tidal:
+    ghciPath: "/usr/bin/ghci"
   "tree-view":
     hideVcsIgnoredFiles: false
   "vim-mode": {}

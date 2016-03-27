@@ -1,6 +1,7 @@
 # Set up the prompt
 
 source /home/ewnd9/dotfiles/config/zsh/git-prompt/zshrc.sh
+source /home/ewnd9/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 git_super_status() {
 	precmd_update_git_vars
@@ -22,16 +23,21 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+fpath=(~/.zsh/completion $fpath)
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+# zstyle ':completion:*' menu select=2
+# zstyle ":completion:*:descriptions" format "%B%d%b"
+# zstyle ":completion:*:commands" rehash 1
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -43,6 +49,8 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+eval "$(dircolors -b)"
 
 ##### ewnd9
 
@@ -95,7 +103,7 @@ alias human-space="du -sh"
 
 ## network
 app-port () { lsof -n -i4TCP:$1 }
-alias serve="python -m SimpleHTTPServer"
+alias serve="python -m http.server"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias myip="ifconfig | grep "inet addr""
@@ -127,7 +135,7 @@ acd () { cd "$@" && atom . }
 ## system
 alias sus="sudo pm-suspend"
 alias ls="ls --color=auto"
-alias rm="trash"
+#alias rm="trash"
 alias ll="ls -lh"
 alias restore="echo \"process.stdout.write('\u001b[?25h');\" | node"
 c () { cat "$@" | less }
@@ -175,14 +183,17 @@ alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
 ## npm/pw3 npm/trakt-cli
 shows () { pw3 "$(trakt --available --json)" }
 
+## npm/jsonfui
+alias json="jsonfui"
+
 ## github/ErrorBoard2
 error-board () { cd ~/misc/ErrorBoard2 && npm start }
 
-## pip/thefuck
-eval "$(thefuck --alias f)"
-
 ## apt/wordnet
 syns () { wordnet "$1" -syns{n,v,a,r} | less }
+
+## apt/figlet
+alias note="figlet"
 
 ## github
 g () {

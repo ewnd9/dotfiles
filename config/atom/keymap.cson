@@ -1,0 +1,4 @@
+'atom-text-editor':
+  'ctrl-w': 'expand-region:expand'
+  'ctrl-A': 'editor:move-to-first-character-of-line'
+  'ctrl-E': 'editor:move-to-end-of-screen-line'
