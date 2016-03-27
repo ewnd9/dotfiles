@@ -1,1 +1,1 @@
-{"github.com":{"_enabled":true,"_rules":{".toolbar-commenting":{"display":"none "}}}}
+{"github.com":{"_enabled":true,"_rules":{"#readme":{"margin":"0 auto","width":"800px"},".toolbar-commenting":{"display":"none "}}}}

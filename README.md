@@ -28,7 +28,7 @@ $ ./linking.sh
 # change default shell to zsh
 $ chsh -s /bin/zsh
 # install gnome-terminal theme, needed to applied after install (`Edit -> Profiles -> Select as default`)
-$ ./one-dark.sh
+$ ./scripts/gnome-terminal-themes/one-dark.sh
 ```
 
 - manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
