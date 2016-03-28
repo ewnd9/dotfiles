@@ -187,6 +187,9 @@ shows () { pw3 "$(trakt --available --json)" }
 ## npm/jsonfui
 alias json="jsonfui"
 
+## npm/cached-npm-install
+alias cni="cached-npm-install"
+
 ## github/ErrorBoard2
 error-board () { cd ~/misc/ErrorBoard2 && npm start }
 

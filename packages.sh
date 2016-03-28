@@ -67,4 +67,5 @@ npm install -g jsonfui
 npm install -g dictionary-cli
 npm install -g yo
 npm install -g cached-npm-repo
+npm install -g cached-npm-install
 npm install -g knowledge-extractor-cli
