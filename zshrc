@@ -83,6 +83,7 @@ function psql-clone {
 
 ## navigation
 mkcd () { mkdir -p "$@" && cd "$@" }
+mkcdn () { mkdir -p "$@" && cd "$@" && echo "'use strict';\n\n" > index.js && echo "{\"private\": true}" > package.json }
 
 ## apt/git
 clone () {
