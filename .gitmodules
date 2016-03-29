@@ -16,3 +16,6 @@
 [submodule "config/vim/bundle/vim-bracketed-paste"]
 	path = config/vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste
+[submodule "config/tmux/tmux-yank"]
+	path = config/tmux/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank
