@@ -1,6 +1,6 @@
 # Set up the prompt
 
-source /home/ewnd9/dotfiles/config/zsh/git-prompt/zshrc.sh
+source /home/ewnd9/.zsh/git-prompt/zshrc.sh
 source /home/ewnd9/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 git_super_status() {

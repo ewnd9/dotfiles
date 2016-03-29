@@ -19,3 +19,6 @@
 [submodule "config/tmux/tmux-yank"]
 	path = config/tmux/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
+[submodule "config/zsh/zsh-autosuggestions"]
+	path = config/zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
