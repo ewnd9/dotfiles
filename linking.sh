@@ -39,6 +39,9 @@ sudo ln -s /home/ewnd9/dotfiles/scripts/wm/open-tag.sh /usr/bin/open-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/wm/switch-to-tag.sh /usr/bin/switch-to-tag
 sudo ln -s /home/ewnd9/dotfiles/scripts/pomodoro.sh /usr/bin/po
 sudo ln -s /home/ewnd9/dotfiles/scripts/canonical-path.sh /usr/bin/canonical-path
+
+sudo ln -s /home/ewnd9/dotfiles/scripts/atom-open-in-terminal.sh /usr/local/bin/terminal-tab.sh
+
 sudo mv /usr/bin/link /usr/bin/link-old
 sudo ln -s /home/ewnd9/dotfiles/scripts/link.sh /usr/bin/link
 

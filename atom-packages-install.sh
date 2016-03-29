@@ -7,3 +7,4 @@ apm install language-lua
 apm install pigments
 apm install react
 apm install markdown-preview-plus
+apm install open-terminal-here
