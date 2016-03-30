@@ -37,6 +37,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "`", function () teardrop.toggle("guake", 1, 0.3) end),
     awful.key({ modkey,           }, "e", function () run_once("nemo") end),
     awful.key({ modkey,           }, "t", function () run_once("gnome-terminal-tmux.sh") end),
+    awful.key({ modkey,           }, "b", function () run_once("/home/ewnd9/dotfiles/scripts/open-selection.sh") end),
 
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
 
