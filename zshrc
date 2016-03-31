@@ -104,7 +104,7 @@ alias human-space="du -sh"
 
 ## network
 app-port () { lsof -n -i4TCP:$1 }
-alias serve="python -m http.server"
+alias serve="python -m SimpleHTTPServer"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias myip="ifconfig | grep "inet addr""
@@ -179,7 +179,16 @@ alias mb="NODE_ENV=test mocha --require babel/register"
 
 ## npm/yo
 alias glint="yo ewnd9-eslint"
-alias glib="yo ewnd9-npm && yo ewnd9-eslint && cached-npm-install && atom ."
+
+glib () {
+	yo ewnd9-npm
+	yo ewnd9-eslint
+	cached-npm-install
+	git init 
+	git add .
+	git commit -a -m "boilerplate"
+	atom .
+}
 
 ## npm/pw3 npm/trakt-cli
 shows () { pw3 "$(trakt --available --json)" }

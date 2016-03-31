@@ -62,6 +62,7 @@ npm set init-license MIT
 npm install -g fkill-cli
 npm install -g yo
 npm install -g jsonfui
+npm install -g travis-encrypt 
 
 # my stuff
 
