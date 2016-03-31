@@ -64,8 +64,9 @@ npm install -g yo
 npm install -g jsonfui
 
 # my stuff
+
 npm install -g dictionary-cli
-npm install -g yo
 npm install -g cached-npm-repo
 npm install -g cached-npm-install
 npm install -g knowledge-extractor-cli
+npm install -g anki-apkg-export-cli
