@@ -73,17 +73,12 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                         })
 mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
-mytextclock = awful.widget.textclock({ align = "right" })
 mysystray = widget({ type = "systray" })
-
-separator = widget({ type = "imagebox" })
-separator.image = image(beautiful.widget_sep)
 
 spacer = widget({ type = "textbox" })
 spacer.width = 3
 
 dofile("/home/ewnd9/.config/awesome/widgets/battery.lua")
-dofile("/home/ewnd9/.config/awesome/widgets/cpu.lua")
 dofile("/home/ewnd9/.config/awesome/widgets/memory.lua")
 dofile("/home/ewnd9/.config/awesome/widgets/temperature.lua")
 
@@ -160,11 +155,10 @@ for s = 1, screen.count() do
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
-        mylayoutbox[s], datewidget,
+        mylayoutbox[s],
         spacer, batwidget,
-        spacer, tzswidget,
+        spacer, tempwidget,
         spacer, memtext,
-        spacer, cpuwidget,
         spacer, mysystray,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -178,6 +172,6 @@ dofile("/home/ewnd9/.config/awesome/signals.lua")
 
 naughty.notify{
   title="NaughtyNotifcation",
-  text="Check, if everything works.",
+  text="System has been started",
   opacity=0.5
 }

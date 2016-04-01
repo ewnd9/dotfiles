@@ -1,5 +1,5 @@
-tzswidget = widget({ type = "textbox" })
-vicious.register(tzswidget, vicious.widgets.thermal,
+tempwidget = widget({ type = "textbox" })
+vicious.register(tempwidget, vicious.widgets.thermal,
   function (widget, args)
     if args[1] > 0 then
       tzfound = true
