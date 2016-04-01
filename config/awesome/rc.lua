@@ -176,8 +176,6 @@ dofile("/home/ewnd9/.config/awesome/keybindings.lua")
 dofile("/home/ewnd9/.config/awesome/rules.lua")
 dofile("/home/ewnd9/.config/awesome/signals.lua")
 
-dofile("/home/ewnd9/.config/awesome/startup.lua")
-
 naughty.notify{
   title="NaughtyNotifcation",
   text="Check, if everything works.",

@@ -8,6 +8,9 @@ function link {
 	echo "ln -s $SRC -> $DEST"
 }
 
+link xinitrc .xinitrc
+link xinitrc .xsession
+
 link config/awesome .config/awesome
 link config/vim .vim
 link config/zsh .zsh
@@ -49,3 +52,4 @@ sudo ln -s /home/ewnd9/dotfiles/scripts/link.sh /usr/bin/link
 
 sudo mv /usr/bin/xdg-open /usr/bin/xdg-open-old
 sudo ln -s /home/ewnd9/dotfiles/scripts/xdg-open /usr/bin/xdg-open
+sudo ln -s $HOME/dotfiles/env.desktop /usr/share/xsessions/env.desktop
