@@ -22,3 +22,15 @@
 [submodule "config/zsh/zsh-autosuggestions"]
 	path = config/zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "config/vim/bundle/tlib_vim"]
+	path = config/vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "config/vim/bundle/vim-addon-mw-utils"]
+	path = config/vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "config/vim/bundle/vim-snipmate"]
+	path = config/vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "config/vim/bundle/vim-snippets"]
+	path = config/vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
