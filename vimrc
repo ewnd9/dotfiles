@@ -9,7 +9,7 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=4
 set softtabstop=2
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-map <Leader>m <plug>NERDTreeFocusToggle<CR>
+
+:nnoremap <C-x> :NERDTreeToggle<CR>
 
 set relativenumber
