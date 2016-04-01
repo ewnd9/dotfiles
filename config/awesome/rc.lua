@@ -32,6 +32,7 @@ end
 
 awful.util.spawn_with_shell("xcompmgr &")
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/ewnd9/dotfiles/config/awesome/theme.lua")
 
 terminal = "terminator"
 browser = "google-chrome"
