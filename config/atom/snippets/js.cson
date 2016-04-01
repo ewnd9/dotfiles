@@ -1,0 +1,53 @@
+'.source.js':
+  'Log':
+    'prefix': 'log'
+    'body': 'console.log($1)'
+  'Then':
+    'prefix': 'then'
+    'body': 'then(data => $1)'
+  'Catch':
+    'prefix': 'catch'
+    'body': 'catch(err => console.log(err))'
+  'Promise':
+    'prefix': 'thencatch'
+    'body': """
+      then(data => console.log(data))
+      .catch(err => console.log(err));$1
+    """
+  'Angular':
+    'prefix': 'angular'
+    'body': """
+      export default {
+        scope: {},
+        controller: ($scope) => {
+          $1
+        }
+      };
+    """
+  'React':
+    'prefix': 'react'
+    'body': """
+      import React from 'react';
+
+      export default React.createClass({
+        render() {
+          return (
+            <div>
+              $1
+            </div>
+          );
+        }
+      });
+    """
+  'Debugga':
+    'prefix': 'debugga'
+    'body': '(()=>{debugger})() || $1'
+  'Log Chain':
+    'prefix': 'logchain'
+    'body': 'then(_ => { console.log(_); return _ })'
+  'Use Strict':
+    'prefix': 'us'
+    'body': '\'use strict\';'
+  'CommonJS modern require':
+    'prefix': 'req'
+    'body': 'const ${1:module} = require(\'${1:module}\');'

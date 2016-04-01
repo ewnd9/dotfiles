@@ -20,7 +20,8 @@ link xmodmap .xmodmap
 
 mkdir -p ~/.atom
 link config/atom/config.cson .atom/config.cson
-link config/atom/snippets.cson .atom/snippets.cson
+mkdir -p ~/.atom/packages/modular-snippets
+link config/atom/snippets .atom/packages/modular-snippets/snippets
 
 mkdir -p ~/.config/manuelschneid3r
 link config/albert/albert.conf .config/manuelschneid3r/albert.conf

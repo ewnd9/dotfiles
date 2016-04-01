@@ -8,3 +8,7 @@ apm install pigments
 apm install react
 apm install markdown-preview-plus
 apm install open-terminal-here
+
+apm install modular-snippets
+rm -rf ~/.atom/packages/modular-snippets/snippets
+ln -s $HOME/dotfiles/config/atom/snippets $HOME/.atom/packages/modular-snippets/snippets
