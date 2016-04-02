@@ -39,18 +39,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "t", function () run_once("gnome-terminal-tmux.sh") end),
     awful.key({ modkey,           }, "b", function () run_once("/home/ewnd9/dotfiles/scripts/open-selection.sh") end),
 
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-
-    --awful.key({ modkey,           }, "Tab",
-    --    function ()
-    --        awful.client.focus.history.previous()
-    --        if client.focus then
-    --            client.focus:raise()
-    --        end
-    --    end),
-
-    -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
@@ -66,7 +54,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end)
 )
 
--- clientkeys are used in `./rules.lua`
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
@@ -74,7 +61,7 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
-   -- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
+    awful.key({ modkey,           }, "u",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -86,9 +73,6 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-	  awful.key({ modkey }, "q", function () awful.util.spawn("dummy.sh -k") end),
-	  -- awful.key({ modkey }, "s", function () awful.util.spawn("/usr/bin/google-chrome --app=http://devdocs.io/") end),
-
 	  awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 2+ unmute") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 2-") end),
@@ -107,40 +91,33 @@ end
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, keynumber do
-    globalkeys = awful.util.table.join(globalkeys,
+    globalkeys = awful.util.table.join(
+        globalkeys,
         awful.key({ modkey }, "#" .. i + 9,
-                  function ()
-                        local screen = mouse.screen
-                        if tags[screen][i] then
-                            awful.tag.viewonly(tags[screen][i])
-                        end
-                  end),
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
-                  function ()
-                      local screen = mouse.screen
-                      if tags[screen][i] then
-                          awful.tag.viewtoggle(tags[screen][i])
-                      end
-                  end),
+            function ()
+                local screen = mouse.screen
+                if tags[screen][i] then
+                    awful.tag.viewonly(tags[screen][i])
+                end
+            end
+        ),
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
-                  function ()
-                      if client.focus and tags[client.focus.screen][i] then
-                          awful.client.movetotag(tags[client.focus.screen][i])
-                      end
-                  end),
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-                  function ()
-                      if client.focus and tags[client.focus.screen][i] then
-                          awful.client.toggletag(tags[client.focus.screen][i])
-                      end
-                  end)),
-				awful.key({ "Mod1" }, "Shift_R", function() os.execute('setxkbmap ru') end)
+            function ()
+                local screen = mouse.screen
+                if client.focus and tags[client.focus.screen][i] then
+                    awful.client.movetotag(tags[client.focus.screen][i])
+                    awful.tag.viewonly(tags[screen][i])
+                end
+            end
+        )
+    )
 end
 
 clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ modkey }, 3, awful.mouse.client.resize))
+    awful.button({ modkey }, 3, awful.mouse.client.resize)
+)
 
 -- Set keys
 root.keys(globalkeys)
