@@ -184,9 +184,10 @@ glib () {
 	yo ewnd9-npm
 	yo ewnd9-eslint
 	cached-npm-install
-	git init 
+	git init
 	git add .
 	git commit -a -m "boilerplate"
+	node ./node_modules/husky/bin/install.js
 	atom .
 }
 
