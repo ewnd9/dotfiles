@@ -29,6 +29,7 @@
   "exception-reporting":
     userId: "789aa4ab-f36b-1674-f1d3-2c35b6824195"
   "expand-region": {}
+  "js-hyperclick": {}
   linter:
     displayLinterInfo: false
     lintOnFly: false
