@@ -51,3 +51,12 @@
   'CommonJS modern require':
     'prefix': 'req'
     'body': 'const ${1:module} = require(\'${1:module}\');'
+  'require fs':
+    'prefix': 'reqfs'
+    'body': 'const fs = require(\'fs\');'
+  'import fs':
+    'prefix': 'impfs'
+    'body': 'import fs from \'fs\';'
+  'read file':
+    'prefix': 'readfile'
+    'body': 'const data = fs.readFileSync($1, \'utf-8\');$2'

@@ -18,7 +18,7 @@ dropbox start &
 record-desktop &
 
 gnome-terminal -e '/home/ewnd9/dotfiles/scripts/tmux/weechat.tmux' &
-albert &
+hain &
 
 (sleep 5 && setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape') &
 
