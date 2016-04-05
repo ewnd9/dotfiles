@@ -7,7 +7,7 @@
     'body': 'then(data => $1)'
   'Catch':
     'prefix': 'catch'
-    'body': 'catch(err => console.log(err))'
+    'body': 'catch(err => console.log(err.stack))'
   'Promise':
     'prefix': 'thencatch'
     'body': """
