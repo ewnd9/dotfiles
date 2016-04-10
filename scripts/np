@@ -8,4 +8,4 @@
 # npm test &&
 npm version ${1:-patch} &&
 npm publish &&
-git push origin --follow-tags
+git push origin master --follow-tags

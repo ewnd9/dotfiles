@@ -30,6 +30,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
     -- Layout manipulation
+    awful.key({ modkey, "Shift"   }, "a", function () run_once("/usr/bin/xavier \"vk.com/prev\"") end),
+    awful.key({ modkey, "Shift"   }, "s", function () run_once("/usr/bin/xavier \"vk.com/play-or-pause\"") end),
+    awful.key({ modkey, "Shift"   }, "d", function () run_once("/usr/bin/xavier \"vk.com/next\"") end),
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
