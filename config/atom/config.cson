@@ -47,6 +47,8 @@
   term2: {}
   tidal:
     ghciPath: "/usr/bin/ghci"
+  "toggle-quotes":
+    quoteCharacters: "\"'`"
   "tree-view":
     hideVcsIgnoredFiles: false
   "vim-mode": {}

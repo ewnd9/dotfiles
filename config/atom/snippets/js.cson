@@ -7,12 +7,12 @@
     'body': 'then(data => $1)'
   'Catch':
     'prefix': 'catch'
-    'body': 'catch(err => console.log(err.stack))'
+    'body': 'catch(err => console.log(err.stack || err))'
   'Promise':
     'prefix': 'thencatch'
     'body': """
       then(data => console.log(data))
-      .catch(err => console.log(err));$1
+      .catch(err => console.log(err.stack || err));$1
     """
   'Angular':
     'prefix': 'angular'

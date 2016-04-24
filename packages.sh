@@ -16,9 +16,9 @@ sudo apt-get install -y xbacklight
 sudo apt-get install -y httpie
 sudo apt-get install -y cloc
 sudo apt-get install -y wordnet
-sudo apt-get install -y jq 
-sudo apt-get install -y figlet 
-sudo apt-get install -y anki 
+sudo apt-get install -y jq
+sudo apt-get install -y figlet
+sudo apt-get install -y anki
 sudo apt-get install -y silversearcher-ag
 
 sudo add-apt-repository ppa:webupd8team/nemo
@@ -34,7 +34,6 @@ sudo apt-get purge -y nautilus
 
 sudo apt-get install -y atom
 sudo apt-get install -y pepflashplugin-installer
-sudo apt-get install -y albert
 sudo apt-get install -y ubuntu-tweak
 
 # ruby
@@ -62,7 +61,9 @@ npm set init-license MIT
 npm install -g fkill-cli
 npm install -g yo
 npm install -g jsonfui
-npm install -g travis-encrypt 
+npm install -g travis-encrypt
+npm install -g ava-codemods
+npm install -g n
 
 # my stuff
 

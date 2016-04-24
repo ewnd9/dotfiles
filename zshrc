@@ -1,7 +1,7 @@
 # Set up the prompt
 
-source /home/ewnd9/.zsh/git-prompt/zshrc.sh
-source /home/ewnd9/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/git-prompt/zshrc.sh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 git_super_status() {
 	precmd_update_git_vars
@@ -56,7 +56,7 @@ eval "$(dircolors -b)"
 
 synclient TapButton3=2
 
-bindkey "^[[1;5C" forward-word
+bindkey "^x" forward-word
 bindkey "^[[1;5D" backward-word
 
 function nginx-log {
@@ -127,7 +127,7 @@ alias psme="ps -U ewnd9 | grep"
 ## text processing
 alias grep-text="grep -nr"
 alias find-me="find . -type f -name"
-alias cap-logs="ruby /home/ewnd9/dotfiles/scripts/capistrano-remote-logs.rb"
+alias cap-logs="ruby $HOME/dotfiles/scripts/capistrano-remote-logs.rb"
 
 ## atom
 alias a="atom ."
@@ -148,7 +148,7 @@ alias upd="sudo apt-get update"
 alias show-available-updates="sudo apt-get --just-print upgrade"
 
 ## npm
-alias npm="/home/ewnd9/dotfiles/scripts/npm-alias"
+alias npm="$HOME/dotfiles/scripts/npm-alias"
 alias npo="npm --cache-min 9999999"
 alias npr="cached-npm-repo"
 alias nbw="npm run build:watch"
@@ -161,26 +161,16 @@ nvim () {
 
 ## npm/dictionary-cli
 alias d="dictionary --ru=en"
-
-## npm/ava which will always use local copy
-alias avad="nodemon --exec ava -- --verbose --serial"
-
-## npm/workout-cli
-alias wo="workout"
-alias wos="workout --session"
-alias woe="workout --excuse"
-
-## npm/babel-cli
-alias bn="babel-node"
-alias b="node_modules/.bin/babel-node"
+alias в="dictionary --ru=en"
 
 ## npm/mocha
 alias mb="NODE_ENV=test mocha --require babel/register"
 
 ## npm/yo
 alias glint="yo ewnd9-eslint"
-
 glib () {
+	set -e
+
 	yo ewnd9-npm
 	yo ewnd9-eslint
 	cached-npm-install
@@ -200,6 +190,13 @@ alias json="jsonfui"
 ## npm/cached-npm-install
 alias cni="cached-npm-install"
 
+## npm/n
+npm-n-path-prefix () { echo "$HOME/n/versions/node/$1" }
+npm-n-path-node () { echo "$(npm-n-path-prefix $1)/bin/node" }
+npm-n-path-npm () { echo "$(npm-n-path-prefix $1)/lib/node_modules/npm/cli.js" }
+node-10 () { $(npm-n-path-node 0.10.36) $@ }
+npm-10 () { $(npm-n-path-npm 0.10.36) $@ }
+
 ## github/ErrorBoard2
 error-board () { cd ~/misc/ErrorBoard2 && npm start }
 
@@ -208,6 +205,9 @@ syns () { wordnet "$1" -syns{n,v,a,r} | less }
 
 ## apt/figlet
 alias note="figlet"
+
+## git/gmusic-scripts
+alias gmupload="python3 $HOME/misc/gmusicapi-scripts/gmusicapi_scripts/gmupload.py"
 
 ## github
 g () {
@@ -226,30 +226,27 @@ gg () {
 
 open-chrome-extension () {
 	echo $@
-	cd "/home/ewnd9/.config/google-chrome/Default/Extensions/$1"
+	cd "$HOME/.config/google-chrome/Default/Extensions/$1"
 }
 
 weather () { curl wttr.in/$1 }
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export EDITOR=vim
 
 export ANDROID_HOME="$HOME/soft/android-sdk"
-export NODE_PATH=$NODE_PATH:/home/ewnd9/.npm-packages/lib/node_modules
+export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-export PATH="$HOME/soft/android-sdk/tools:$PATH"
-export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
-export PATH="$PATH:$HOME/.npm-packages/bin"
-export EDITOR=vim
 
 export LC_TIME=en_US.UTF-8
 
-### Added by the Heroku Toolbelt
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/soft/android-sdk/tools:$PATH"
+export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
+export PATH="$PATH:$HOME/.npm-packages/bin"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export NVM_DIR="/home/ewnd9/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # load nvm
+export N_PREFIX=$HOME
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'

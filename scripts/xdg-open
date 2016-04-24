@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 /usr/bin/xdg-open-old "$@"
-open-tag 1 
+
+if [[ "$@" =~ ^http.* ]]; then
+  open-tag 1
+fi

@@ -1,4 +1,5 @@
 scripts/*.gif
 *.log
 fl.sh
+test.sh
 config/vim/.netrwhist
