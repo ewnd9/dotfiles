@@ -67,20 +67,6 @@ function nginx-restart {
   ssh -t $1 "sudo service nginx restart"
 }
 
-function psql-remote {
-  ssh -t $1 "psql -U admin -h localhost $2"
-}
-
-function psql-clone {
-  ssh $1 "pg_dump -U admin -h localhost $2 > ~/1.sql"
-  scp $1:~/1.sql .
-
-  dropdb -U admin -h localhost $2
-  createdb -U admin -h localhost $2
-
-  psql -U admin -h localhost $2 < 1.sql
-}
-
 ## navigation
 mkcd () { mkdir -p "$@" && cd "$@" }
 mkcdn () { mkdir -p "$@" && cd "$@" && echo "'use strict';\n\n" > index.js && echo "{\"private\": true}" > package.json }
@@ -88,13 +74,13 @@ mkcdn () { mkdir -p "$@" && cd "$@" && echo "'use strict';\n\n" > index.js && ec
 ## apt/git
 clone () {
   git clone $1 && \
-    repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p') && \
-    echo "cd $repo_name" && \
-    cd "$repo_name"
+  repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p') && \
+  echo "cd $repo_name" && \
+  cd "$repo_name"
 }
 clonea () {
   clone $1 && \
-    atom .
+  atom .
 }
 alias commit="git commit -a -m"
 alias push="git push origin master"
@@ -103,18 +89,12 @@ alias push="git push origin master"
 alias xcopy='xclip -selection clipboard'
 alias xpaste='xclip -selection clipboard -o'
 
-## fs
-alias human-space="du -sh"
-
 ## network
 app-port () { lsof -n -i4TCP:$1 }
 alias serve="python -m SimpleHTTPServer"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
-alias myip="ifconfig | grep "inet addr""
-## network/httpie
-alias get="http GET"
-alias headers="http --print=Hh"
+alias myip="ifconfig | grep \"inet addr\""
 
 ## web
 web-screen () {
@@ -159,9 +139,6 @@ alias nbw="npm run build:watch"
 npmjs () { xdg-open http://npmjs.com/package/$1 }
 x () { node_modules/.bin/"$@" }
 v () { cat $(node -e "console.log(require('pkg-up').sync(require.resolve('$1')))") | grep version }
-nvim () {
-  vim node_modules/$1/"$(cat node_modules/$1/package.json | grep "\"main\"" | awk ' {print $2} ' | sed 's/[\",]//g')"
-}
 
 ## npm/dictionary-cli
 alias d="dictionary --ru=en"
@@ -173,15 +150,13 @@ alias mb="NODE_ENV=test mocha --require babel/register"
 ## npm/yo
 alias glint="yo ewnd9-eslint"
 glib () {
-  set -e
-
-  yo ewnd9-npm
-  yo ewnd9-eslint
-  cached-npm-install
-  git init
-  git add .
-  git commit -a -m "boilerplate"
-  node ./node_modules/husky/bin/install.js
+  yo ewnd9-npm && \
+  yo ewnd9-eslint && \
+  cached-npm-install && \
+  git init && \
+  git add . && \
+  git commit -a -m "boilerplate" && \
+  node ./node_modules/husky/bin/install.js && \
   atom .
 }
 
@@ -213,25 +188,19 @@ alias note="figlet"
 ## git/gmusic-scripts
 alias gmupload="python3 $HOME/misc/gmusicapi-scripts/gmusicapi_scripts/gmupload.py"
 
-## github
+## github search
 g () {
   input=$@
   xdg-open "https://github.com/search?q=extension%3Ajs+$input&ref=searchresults&type=Code&utf8=%E2%9C%93"
 }
-
-## zsh
-alias zshrc="cat ~/.zshrc | grep"
-
 gg () {
   repo=$(npm view $1 homepage | sed 's/#readme//')
   input=${@:2}
   xdg-open "$repo/search?utf8=%E2%9C%93&q=$input"
 }
 
-open-chrome-extension () {
-  echo $@
-  cd "$HOME/.config/google-chrome/Default/Extensions/$1"
-}
+## zsh
+alias zshrc="cat ~/.zshrc | grep"
 
 weather () { curl wttr.in/$1 }
 

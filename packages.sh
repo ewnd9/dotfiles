@@ -13,7 +13,6 @@ sudo apt-get install -y indicator-cpufreq
 sudo apt-get install -y g++
 sudo apt-get install -y ncdu
 sudo apt-get install -y xbacklight
-sudo apt-get install -y httpie
 sudo apt-get install -y cloc
 sudo apt-get install -y wordnet
 sudo apt-get install -y jq
