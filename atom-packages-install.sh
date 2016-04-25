@@ -13,6 +13,7 @@ apm install js-hyperclick
 apm install hyperclick-markdown
 apm install ava
 apm install toggle-quotes
+apm install autocomplete-modules
 
 apm install modular-snippets
 rm -rf ~/.atom/packages/modular-snippets/snippets

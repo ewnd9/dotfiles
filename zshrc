@@ -4,13 +4,13 @@ source $HOME/.zsh/git-prompt/zshrc.sh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 git_super_status() {
-	precmd_update_git_vars
+  precmd_update_git_vars
 
-	if [ -n "$__CURRENT_GIT_STATUS" ]; then
-	  STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
-	  STATUS=" $STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-	  echo "$STATUS"
-	fi
+  if [ -n "$__CURRENT_GIT_STATUS" ]; then
+    STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
+    STATUS=" $STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo "$STATUS"
+  fi
 }
 
 PROMPT='%F{yellow}%Bλ %~%b$(git_super_status)%f %# '
@@ -87,10 +87,14 @@ mkcdn () { mkdir -p "$@" && cd "$@" && echo "'use strict';\n\n" > index.js && ec
 
 ## apt/git
 clone () {
-  git clone $1
-  repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p')
-  echo "cd $repo_name"
-  cd "$repo_name"
+  git clone $1 && \
+    repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p') && \
+    echo "cd $repo_name" && \
+    cd "$repo_name"
+}
+clonea () {
+  clone $1 && \
+    atom .
 }
 alias commit="git commit -a -m"
 alias push="git push origin master"
@@ -114,11 +118,11 @@ alias headers="http --print=Hh"
 
 ## web
 web-screen () {
-	dir="/tmp/$(date "+%m-%d-%Y-%H-%M")"
-	mkcd $dir
-	pageres 320x534 800x1280 1360x768 1920x1080 $@ --verbose
-	nemo .
-	cd -
+  dir="/tmp/$(date "+%m-%d-%Y-%H-%M")"
+  mkcd $dir
+  pageres 320x534 800x1280 1360x768 1920x1080 $@ --verbose
+  nemo .
+  cd -
 }
 
 ## processes
@@ -156,7 +160,7 @@ npmjs () { xdg-open http://npmjs.com/package/$1 }
 x () { node_modules/.bin/"$@" }
 v () { cat $(node -e "console.log(require('pkg-up').sync(require.resolve('$1')))") | grep version }
 nvim () {
-	vim node_modules/$1/"$(cat node_modules/$1/package.json | grep "\"main\"" | awk ' {print $2} ' | sed 's/[\",]//g')"
+  vim node_modules/$1/"$(cat node_modules/$1/package.json | grep "\"main\"" | awk ' {print $2} ' | sed 's/[\",]//g')"
 }
 
 ## npm/dictionary-cli
@@ -169,16 +173,16 @@ alias mb="NODE_ENV=test mocha --require babel/register"
 ## npm/yo
 alias glint="yo ewnd9-eslint"
 glib () {
-	set -e
+  set -e
 
-	yo ewnd9-npm
-	yo ewnd9-eslint
-	cached-npm-install
-	git init
-	git add .
-	git commit -a -m "boilerplate"
-	node ./node_modules/husky/bin/install.js
-	atom .
+  yo ewnd9-npm
+  yo ewnd9-eslint
+  cached-npm-install
+  git init
+  git add .
+  git commit -a -m "boilerplate"
+  node ./node_modules/husky/bin/install.js
+  atom .
 }
 
 ## npm/pw3 npm/trakt-cli
@@ -191,7 +195,7 @@ alias json="jsonfui"
 alias cni="cached-npm-install"
 
 ## npm/n
-npm-n-path-prefix () { echo "$HOME/n/versions/node/$1" }
+npm-n-path-prefix () { echo "$HOME/n/n/versions/node/$1" }
 npm-n-path-node () { echo "$(npm-n-path-prefix $1)/bin/node" }
 npm-n-path-npm () { echo "$(npm-n-path-prefix $1)/lib/node_modules/npm/cli.js" }
 node-10 () { $(npm-n-path-node 0.10.36) $@ }
@@ -211,22 +215,22 @@ alias gmupload="python3 $HOME/misc/gmusicapi-scripts/gmusicapi_scripts/gmupload.
 
 ## github
 g () {
-	input=$@
-	xdg-open "https://github.com/search?q=extension%3Ajs+$input&ref=searchresults&type=Code&utf8=%E2%9C%93"
+  input=$@
+  xdg-open "https://github.com/search?q=extension%3Ajs+$input&ref=searchresults&type=Code&utf8=%E2%9C%93"
 }
 
 ## zsh
 alias zshrc="cat ~/.zshrc | grep"
 
 gg () {
-	repo=$(npm view $1 homepage | sed 's/#readme//')
-	input=${@:2}
-	xdg-open "$repo/search?utf8=%E2%9C%93&q=$input"
+  repo=$(npm view $1 homepage | sed 's/#readme//')
+  input=${@:2}
+  xdg-open "$repo/search?utf8=%E2%9C%93&q=$input"
 }
 
 open-chrome-extension () {
-	echo $@
-	cd "$HOME/.config/google-chrome/Default/Extensions/$1"
+  echo $@
+  cd "$HOME/.config/google-chrome/Default/Extensions/$1"
 }
 
 weather () { curl wttr.in/$1 }
@@ -247,6 +251,6 @@ export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export N_PREFIX=$HOME
+export N_PREFIX=$HOME/n
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'

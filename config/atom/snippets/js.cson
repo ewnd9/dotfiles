@@ -60,3 +60,6 @@
   'read file':
     'prefix': 'readfile'
     'body': 'const data = fs.readFileSync($1, \'utf-8\');$2'
+  'stringify':
+    'prefix': 'str'
+    'body': 'JSON.stringify($1, null, 2);$2'
