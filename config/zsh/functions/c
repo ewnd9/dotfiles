@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+cwd=$(pwd)
+alias gg="cd $cwd"
+cd "$HOME/$1"

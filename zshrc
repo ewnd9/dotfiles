@@ -25,6 +25,9 @@ HISTFILE=~/.zsh_history
 
 fpath=(~/.zsh/completion $fpath)
 
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
@@ -59,150 +62,7 @@ synclient TapButton3=2
 bindkey "^x" forward-word
 bindkey "^[[1;5D" backward-word
 
-function nginx-log {
-  ssh -t $1 "sudo tail -f /var/log/nginx/$2.log"
-}
-
-function nginx-restart {
-  ssh -t $1 "sudo service nginx restart"
-}
-
-## navigation
-mkcd () { mkdir -p "$@" && cd "$@" }
-mkcdn () { mkdir -p "$@" && cd "$@" && echo "'use strict';\n\n" > index.js && echo "{\"private\": true}" > package.json }
-
-## apt/git
-clone () {
-  git clone $1 && \
-  repo_name=$(echo $_ | sed -n -e 's/^.*\/\([^.]*\)\(.git\)*/\1/p') && \
-  echo "cd $repo_name" && \
-  cd "$repo_name"
-}
-clonea () {
-  clone $1 && \
-  atom .
-}
-alias commit="git commit -a -m"
-alias push="git push origin master"
-
-## apt/xclip
-alias xcopy='xclip -selection clipboard'
-alias xpaste='xclip -selection clipboard -o'
-
-## network
-app-port () { lsof -n -i4TCP:$1 }
-alias serve="python -m SimpleHTTPServer"
-alias curl-headers="curl -i"
-alias curl-only-headers="curl -v -s 1> /dev/null"
-alias myip="ifconfig | grep \"inet addr\""
-
-## web
-web-screen () {
-  dir="/tmp/$(date "+%m-%d-%Y-%H-%M")"
-  mkcd $dir
-  pageres 320x534 800x1280 1360x768 1920x1080 $@ --verbose
-  nemo .
-  cd -
-}
-
-## processes
-alias psme="ps -U ewnd9 | grep"
-
-## text processing
-alias grep-text="grep -nr"
-alias find-me="find . -type f -name"
-alias cap-logs="ruby $HOME/dotfiles/scripts/capistrano-remote-logs.rb"
-
-## atom
-alias a="atom ."
-acd () { cd "$@" && atom . }
-
-## system
-alias sus="sudo pm-suspend"
-alias ls="ls --color=auto"
-alias rm="trash"
-alias ll="ls -lh"
-alias restore="echo \"process.stdout.write('\u001b[?25h');\" | node"
-c () { cat "$@" | less }
-t () { tail -f "$@" }
-
-## apt
-alias i="sudo apt-get install"
-alias upd="sudo apt-get update"
-alias show-available-updates="sudo apt-get --just-print upgrade"
-
-## npm
-alias npm="$HOME/dotfiles/scripts/npm-alias"
-alias npo="npm --cache-min 9999999"
-alias npr="cached-npm-repo"
-alias nbw="npm run build:watch"
-npmjs () { xdg-open http://npmjs.com/package/$1 }
-x () { node_modules/.bin/"$@" }
-v () { cat $(node -e "console.log(require('pkg-up').sync(require.resolve('$1')))") | grep version }
-
-## npm/dictionary-cli
-alias d="dictionary --ru=en"
-alias в="dictionary --ru=en"
-
-## npm/mocha
-alias mb="NODE_ENV=test mocha --require babel/register"
-
-## npm/yo
-alias glint="yo ewnd9-eslint"
-glib () {
-  yo ewnd9-npm && \
-  yo ewnd9-eslint && \
-  cached-npm-install && \
-  git init && \
-  git add . && \
-  git commit -a -m "boilerplate" && \
-  node ./node_modules/husky/bin/install.js && \
-  atom .
-}
-
-## npm/pw3 npm/trakt-cli
-shows () { pw3 "$(trakt --available --json)" }
-
-## npm/jsonfui
-alias json="jsonfui"
-
-## npm/cached-npm-install
-alias cni="cached-npm-install"
-
-## npm/n
-npm-n-path-prefix () { echo "$HOME/n/n/versions/node/$1" }
-npm-n-path-node () { echo "$(npm-n-path-prefix $1)/bin/node" }
-npm-n-path-npm () { echo "$(npm-n-path-prefix $1)/lib/node_modules/npm/cli.js" }
-node-10 () { $(npm-n-path-node 0.10.36) $@ }
-npm-10 () { $(npm-n-path-npm 0.10.36) $@ }
-
-## github/ErrorBoard2
-error-board () { cd ~/misc/ErrorBoard2 && npm start }
-
-## apt/wordnet
-syns () { wordnet "$1" -syns{n,v,a,r} | less }
-
-## apt/figlet
-alias note="figlet"
-
-## git/gmusic-scripts
-alias gmupload="python3 $HOME/misc/gmusicapi-scripts/gmusicapi_scripts/gmupload.py"
-
-## github search
-g () {
-  input=$@
-  xdg-open "https://github.com/search?q=extension%3Ajs+$input&ref=searchresults&type=Code&utf8=%E2%9C%93"
-}
-gg () {
-  repo=$(npm view $1 homepage | sed 's/#readme//')
-  input=${@:2}
-  xdg-open "$repo/search?utf8=%E2%9C%93&q=$input"
-}
-
-## zsh
-alias zshrc="cat ~/.zshrc | grep"
-
-weather () { curl wttr.in/$1 }
+source ~/.zsh/aliases.zsh
 
 export EDITOR=vim
 

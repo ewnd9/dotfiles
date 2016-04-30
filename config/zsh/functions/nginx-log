@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+ssh -t $1 "sudo tail -f /var/log/nginx/$2.log"

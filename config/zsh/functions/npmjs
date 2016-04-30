@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+xdg-open http://npmjs.com/package/$1

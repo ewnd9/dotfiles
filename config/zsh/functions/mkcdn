@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+mkcd "$@" && \
+echo "'use strict';\n\n" > index.js && \
+echo "{\"private\": true}" > package.json

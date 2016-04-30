@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+lsof -n -i4TCP:$1

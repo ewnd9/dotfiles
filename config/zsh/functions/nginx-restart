@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+ssh -t $1 "sudo service nginx restart"

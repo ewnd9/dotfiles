@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+curl wttr.in/$1
