@@ -11,5 +11,6 @@ set shiftwidth=4
 set softtabstop=2
 
 :nnoremap <C-x> :NERDTreeToggle<CR>
+:nmap ; :
 
 set relativenumber

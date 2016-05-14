@@ -14,6 +14,8 @@ apm install hyperclick-markdown
 apm install ava
 apm install toggle-quotes
 apm install autocomplete-modules
+apm install synced-sidebar
+apm install sort-lines
 
 apm install modular-snippets
 rm -rf ~/.atom/packages/modular-snippets/snippets
