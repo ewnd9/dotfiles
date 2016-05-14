@@ -62,6 +62,7 @@ npm install -g yo
 npm install -g jsonfui
 npm install -g travis-encrypt
 npm install -g ava-codemods
+npm install -g jscodeshift
 mkdir $HOME/n
 npm install -g n
 

@@ -43,6 +43,7 @@ sudo ln -s $HOME/dotfiles/scripts/wm/open-tag.sh /usr/bin/open-tag
 sudo ln -s $HOME/dotfiles/scripts/wm/switch-to-tag.sh /usr/bin/switch-to-tag
 sudo ln -s $HOME/dotfiles/scripts/pomodoro.sh /usr/bin/po
 sudo ln -s $HOME/dotfiles/scripts/canonical-path.sh /usr/bin/canonical-path
+sudo ln -s $HOME/dotfiles/scripts/jshift.sh /usr/bin/jshift
 
 sudo ln -s $HOME/dotfiles/scripts/atom-open-in-terminal.sh /usr/local/bin/terminal-tab.sh
 
