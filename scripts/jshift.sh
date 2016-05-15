@@ -12,7 +12,11 @@ set -e
 
 FILE="$1"
 
-transforms=(no-vars.js template-literals.js)
+transforms=(
+  no-vars.js
+  template-literals.js
+  unchain-variables.js
+)
 
 if [ -a $FILE ]; then
   for t in "${transforms[@]}"

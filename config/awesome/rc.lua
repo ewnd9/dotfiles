@@ -166,6 +166,8 @@ for s = 1, screen.count() do
 end
 -- }}}
 
+awful.tag.setmwfact(0.75, tags[1][1])
+
 dofile("/home/ewnd9/.config/awesome/keybindings.lua")
 dofile("/home/ewnd9/.config/awesome/rules.lua")
 dofile("/home/ewnd9/.config/awesome/signals.lua")
