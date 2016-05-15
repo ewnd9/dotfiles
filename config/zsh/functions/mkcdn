@@ -2,5 +2,5 @@
 
 mkcd "$@" && \
 echo "'use strict';\n\n" > index.js && \
-echo "node_modules" > gitignore && \
+echo "node_modules" > .gitignore && \
 echo "{\"private\": true}" > package.json
