@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-clone $1 && \
-atom .

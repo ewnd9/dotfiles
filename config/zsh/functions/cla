@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+cl $1 && atom .

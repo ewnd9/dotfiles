@@ -59,6 +59,10 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     tags[s] = awful.tag({"一", "二", "三", "四", "五", "六", "七", "八", "九"}, s, layouts[2])
+
+    for i = 1, 9 do
+      awful.tag.setmwfact(0.75, tags[s][i])
+    end
 end
 
 -- {{{ Menu
@@ -165,8 +169,6 @@ for s = 1, screen.count() do
     }
 end
 -- }}}
-
-awful.tag.setmwfact(0.75, tags[1][1])
 
 dofile("/home/ewnd9/.config/awesome/keybindings.lua")
 dofile("/home/ewnd9/.config/awesome/rules.lua")

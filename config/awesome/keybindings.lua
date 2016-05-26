@@ -27,18 +27,17 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
-
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "a", function () run_once("/usr/bin/xavier \"vk.com/prev\"") end),
     awful.key({ modkey, "Shift"   }, "s", function () run_once("/usr/bin/xavier \"vk.com/play-or-pause\"") end),
     awful.key({ modkey, "Shift"   }, "d", function () run_once("/usr/bin/xavier \"vk.com/next\"") end),
+    awful.key({ modkey,           }, "w", function () run_once("/usr/bin/xavier \"chrome/move-left\"") end),
+    awful.key({ modkey,           }, "e", function () run_once("/usr/bin/xavier \"chrome/move-right\"") end),
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "`", function () teardrop.toggle("guake", 1, 0.3) end),
-    awful.key({ modkey,           }, "e", function () run_once("nemo") end),
     awful.key({ modkey,           }, "t", function () run_once("gnome-terminal-tmux.sh") end),
     awful.key({ modkey,           }, "b", function () run_once("/home/ewnd9/dotfiles/scripts/open-selection.sh") end),
 

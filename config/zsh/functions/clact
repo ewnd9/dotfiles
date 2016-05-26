@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+cla "$(xavier chrome/active-tab --path result.url).git"
