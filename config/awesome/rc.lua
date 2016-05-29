@@ -58,10 +58,10 @@ layouts =
 
 tags = {}
 for s = 1, screen.count() do
-    tags[s] = awful.tag({"一", "二", "三", "四", "五", "六", "七", "八", "九"}, s, layouts[2])
+    tags[s] = awful.tag({"一", "二", "三", "四", "五", "六", "七", "八", "九"}, s, layouts[3])
 
     for i = 1, 9 do
-      awful.tag.setmwfact(0.75, tags[s][i])
+      awful.tag.setmwfact(0.25, tags[s][i])
     end
 end
 
