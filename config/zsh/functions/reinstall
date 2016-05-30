@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# http://iamdustan.com/2016/05/11/reinstall-daggumnpm/
+
+echo "Reinstalling node dependencies. Please stand by."
+rm -rf node_modules
+
+if npm install; then
+  notify-send --expire-time=999999999 "\"$PWD\" reinstall: ok"
+else
+  notify-send --expire-time=999999999 --urgency=critical "\"$PWD\" reinstall: fail"
+fi

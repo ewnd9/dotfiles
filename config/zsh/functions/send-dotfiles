@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# https://github.com/nskazki/dot-files/blob/4a7417f694cd19572a8fd8bbfb7b7c29da240b7f/.bash-tools/bash-aliases
+# "env-send"
+
+dirs=(
+  ".zshrc"
+  ".zsh"
+  ".vim"
+)
+
+if [[ ("$1" == '--help') || ("$1" == '-h') || -z $1 ]]; then
+  echo -e "usage: send-dotfiles user@host"
+  return
+fi
+
+for dir in "${dirs[@]}"
+do
+  scp -r "$HOME/$dir" "$1":~/"$dir"
+done
+
+echo "\n"
+echo "don't forget to '$ sudo apt-get install vim zsh'"
+echo "don't forget to '$ chsh -s /usr/bin/zsh"
