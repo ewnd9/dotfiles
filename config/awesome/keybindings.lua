@@ -1,3 +1,22 @@
+local awful = require("awful")
+local teardrop = require("teardrop")
+
+function run_once(prg, pname, arg_string, screen)
+  if not prg then
+    do return nil end
+  end
+
+  if not pname then
+    pname = prg
+  end
+
+  if not arg_string then
+    awful.util.spawn_with_shell("pgrep -u $USER -x '" .. pname .. "' || (" .. prg .. ")", screen)
+  else
+    awful.util.spawn_with_shell("pgrep -u $USER -x '" .. pname .. "' || (" .. prg .. " " .. arg_string .. ")", screen)
+  end
+end
+
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
@@ -75,9 +94,13 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-	  awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -c 0 set Master toggle") end),
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -c 0 set Master 2+ unmute") end),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -c 0 set Master 2-") end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse set Master toggle") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master 10%+ unmute") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master 10%-") end),
+
+    awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("/home/ewnd9/dotfiles/scripts/asus/asus-kbd.sh up") end),
+    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("/home/ewnd9/dotfiles/scripts/asus/asus-kbd.sh down") end),
+
     awful.key({ }, "XF86Launch1", function () awful.util.spawn("xbacklight -dec 10") end),
     awful.key({ }, "XF86WebCam", function () awful.util.spawn("xbacklight -inc 10") end),
     awful.key({ }, "Print", function () awful.util.spawn("gnome-screenshot") end)

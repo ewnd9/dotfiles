@@ -21,12 +21,29 @@ awesome wm 3.4.x with `xcompmgr` composition
 ## Install
 
 ```sh
-# apt-get
-$ ./packages.sh
-# link configs
-$ ./linking.sh
+$ cd ~
+$ rm -rf Desktop Music Public Videos Documents examples.desktop Templates
+
+$ sudo apt-get update && sudo apt-get upgrade
+$ sudo apt-get install -y git vim-gtk
+
+$ git clone https://github.com/ewnd9/dotfiles.git
+$ cd dotfiles
+$ git submodule init && git submodule update
+
+$ ./install/packages.sh
+$ ./install/packages-node.sh
+$ ./install/packages-awesome.sh
+$ ./install/packages-ruby.sh
+$ ./install/packages-atom.sh
+
+$ ./linking-user.sh
+$ ./linking-scripts.sh
+$ ./linking-sudo.sh
+
 # change default shell to zsh
 $ chsh -s /bin/zsh
+
 # install gnome-terminal theme, needed to applied after install (`Edit -> Profiles -> Select as default`)
 $ ./scripts/gnome-terminal-themes/one-dark.sh
 ```

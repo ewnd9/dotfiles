@@ -1,11 +1,14 @@
-batwidget = widget({ type = "textbox" })
-baticon = widget({ type = "imagebox" })
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+local vicious = require("vicious")
+
+batwidget = wibox.widget.textbox()
+baticon = wibox.widget.imagebox(beautiful.widget_bat)
 
 vicious.register(batwidget, vicious.widgets.bat,
   function (widget, args)
     if args[2] == 0 then return ""
     else
-      baticon.image = image(beautiful.widget_bat)
       if args[2] < 20 then
         return "<span color='red'>".. args[2] .. "%</span>"
       else

@@ -1,3 +1,6 @@
+local awful = require("awful")
+local beautiful = require("beautiful")
+
 awful.rules.rules = {
   { rule = { },
     properties = { border_width = beautiful.border_width,

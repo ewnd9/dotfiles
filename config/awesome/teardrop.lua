@@ -68,7 +68,7 @@ function toggle(prog, edge, height, screen)
         dropdown[prog] = {}
 
         -- Add unmanage signal for dropdown programs
-        capi.client.add_signal("unmanage", function (c)
+        capi.client.connect_signal("unmanage", function (c)
             for scr, cl in pairs(dropdown[prog]) do
                 if cl == c then
                     dropdown[prog][scr] = nil
@@ -123,11 +123,11 @@ function toggle(prog, edge, height, screen)
             capi.client.focus = c
 
             -- Remove signal
-            capi.client.remove_signal("manage", spawnw)
+            capi.client.disconnect_signal("manage", spawnw)
         end
 
         -- Add signal
-        capi.client.add_signal("manage", spawnw)
+        capi.client.connect_signal("manage", spawnw)
 
         -- Spawn program
         awful.util.spawn(prog, false)

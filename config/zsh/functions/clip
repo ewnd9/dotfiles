@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+tr -d '\n' | xclip -selection clipboard

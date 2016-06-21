@@ -1,4 +1,7 @@
-tempwidget = widget({ type = "textbox" })
+local wibox = require("wibox")
+local vicious = require("vicious")
+
+tempwidget = wibox.widget.textbox()
 vicious.register(tempwidget, vicious.widgets.thermal,
   function (widget, args)
     if args[1] > 0 then
