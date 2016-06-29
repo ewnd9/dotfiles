@@ -40,6 +40,7 @@ alias npm="$HOME/dotfiles/scripts/npm-alias"
 alias npo="npm --cache-min 9999999"
 alias npr="cached-npm-repo"
 alias nbw="npm run build:watch"
+alias lint="npm run lint -- --fix"
 
 ## npm/dictionary-cli
 alias d="dictionary --ru=en"

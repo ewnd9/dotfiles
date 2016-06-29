@@ -27,3 +27,31 @@
       $1
       ```
     """
+  'yml':
+    'prefix': 'yml'
+    'body': """
+      ```yml
+      $1
+      ```
+    """
+  'java':
+    'prefix': 'java'
+    'body': """
+      ```java
+      $1
+      ```
+    """
+  'xml':
+    'prefix': 'xml'
+    'body': """
+      ```xml
+      $1
+      ```
+    """
+  'json':
+    'prefix': 'json'
+    'body': """
+      ```json
+      $1
+      ```
+    """

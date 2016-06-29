@@ -1,1 +1,1 @@
-{"github.com":{"_enabled":true,"_rules":{"#readme":{"margin":"0 auto","width":"800px"},".toolbar-commenting":{"display":"none "},".alert.create.simple":{"display":"none"},".alert.watch_started.simple":{"display":"none"}}}}
+{"github.com":{"_enabled":true,"_rules":{"#readme":{"margin":"0 auto","width":"800px"},".alert":{"display":"none"},".toolbar-commenting":{"display":"none "}}}}
