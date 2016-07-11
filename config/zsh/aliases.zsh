@@ -68,9 +68,6 @@ npm-10 () { $(npm-n-path-npm 0.10.36) $@ }
 node-6 () { $(npm-n-path-node 6.0.0) $@ }
 npm-6 () { $(npm-n-path-npm 6.0.0) $@ }
 
-## github/ErrorBoard2
-error-board () { cd ~/misc/ErrorBoard2 && npm start }
-
 ## apt/wordnet
 syns () { wordnet "$1" -syns{n,v,a,r} | less }
 

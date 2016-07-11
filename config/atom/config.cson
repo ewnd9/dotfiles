@@ -22,7 +22,6 @@
     ]
   editor:
     fontFamily: "Liberation Mono"
-    fontSize: 15
     invisibles: {}
     showInvisibles: true
     zoomFontWhenCtrlScrolling: false

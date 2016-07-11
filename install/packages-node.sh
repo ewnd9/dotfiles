@@ -4,7 +4,7 @@ git clone https://github.com/tj/n.git /tmp/n
 cd /tmp/n
 sudo make install
 
-sudo n 5.11.1
+sudo n 6.3.0
 
 npm config set prefix '~/.npm-packages'
 npm set init-author-name ewnd9
