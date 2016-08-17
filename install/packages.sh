@@ -17,7 +17,8 @@ sudo apt-get install -y \
   cmake \
   xbacklight \
   xdotool \
-  wmctrl
+  wmctrl \
+  unity-tweak-tool
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom

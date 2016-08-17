@@ -51,3 +51,5 @@ $ ./scripts/gnome-terminal-themes/one-dark.sh
 - manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
 
 - manual-install: [dropbox](https://www.dropbox.com)
+
+- manual-install: [arc-theme](http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/all/)

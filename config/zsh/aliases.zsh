@@ -28,7 +28,7 @@ alias sus="sudo pm-suspend"
 alias ls="ls --color=auto"
 alias rm="trash"
 alias ll="ls -lh"
-alias restore="echo \"process.stdout.write('\u001b[?25h');\" | node"
+alias restore="echo '\u001b[?25h'"
 
 ## apt
 alias i="sudo apt-get install"

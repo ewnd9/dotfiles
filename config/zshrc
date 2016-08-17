@@ -74,6 +74,8 @@ export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules
 
+export GOPATH="$HOME/gocode"
+
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
 export PATH="$HOME/soft/android-sdk/tools:$PATH"

@@ -2,3 +2,7 @@
 
 DEST="/tmp/$(date | md5sum | head -c6)"
 mkcdn $DEST
+
+if [ "$#" != "0" ]; then
+  npm i "$@" --save
+fi
