@@ -18,7 +18,9 @@ sudo apt-get install -y \
   xbacklight \
   xdotool \
   wmctrl \
-  unity-tweak-tool
+  unity-tweak-tool \
+  git \
+	git-extras
 
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
