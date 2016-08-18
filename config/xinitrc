@@ -21,7 +21,7 @@ xavier-server &
 gnome-terminal -e '/home/ewnd9/dotfiles/scripts/tmux/weechat.tmux' &
 hain &
 
-(sleep 5 && setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape') &
+(sleep 5 && setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape' -option 'lv3:ralt_switch' -option 'misc:typo') &
 
 # invoke global X session script
 awesome
