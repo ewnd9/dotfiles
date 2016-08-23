@@ -53,7 +53,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "w", function () run_once("/usr/bin/xavier \"chrome/move-left\"") end),
     awful.key({ modkey,           }, "e", function () run_once("/usr/bin/xavier \"chrome/move-right\"") end),
     awful.key({ modkey,           }, "p", function () run_once("/usr/bin/xavier \"android/now-playing\" --notify") end),
-    awful.key({ modkey,           }, "[", function () run_once("/usr/bin/xavier \"android/previous-track\" --notify") end),
+    awful.key({ modkey,           }, "[", function () run_once("/usr/bin/xavier \"android/prev-track\" --notify") end),
     awful.key({ modkey,           }, "]", function () run_once("/usr/bin/xavier \"android/next-track\" --notify") end),
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),

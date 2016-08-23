@@ -16,7 +16,7 @@ prime-indicator &
 dropbox start &
 
 record-desktop &
-xavier-server &
+$HOME/.npm-packages/bin/forever $HOME/.npm-packages/bin/xavier-server &
 
 gnome-terminal -e '/home/ewnd9/dotfiles/scripts/tmux/weechat.tmux' &
 hain &
