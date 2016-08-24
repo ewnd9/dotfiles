@@ -32,3 +32,6 @@
 [submodule "scripts/js-codemod"]
 	path = scripts/js-codemod
 	url = https://github.com/cpojer/js-codemod.git
+[submodule "config/zsh/zsh-notify"]
+	path = config/zsh/zsh-notify
+	url = https://github.com/marzocchi/zsh-notify.git

@@ -3,6 +3,9 @@
 source $HOME/.zsh/git-prompt/zshrc.sh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source $HOME/.zsh/zsh-notify/notify.plugin.zsh
+zstyle ':notify:*' command-complete-timeout 10
+
 git_super_status() {
   precmd_update_git_vars
 
