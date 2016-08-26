@@ -17,6 +17,7 @@ apm install sort-lines
 apm install nice-index
 apm install merge-conflicts
 apm install pretty-json
+apm install split-diff
 
 apm install https://github.com/thibmaek/modular-snippets
 rm -rf ~/.atom/packages/modular-snippets/snippets
