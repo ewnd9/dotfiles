@@ -106,8 +106,8 @@ clientkeys = awful.util.table.join(
     awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("/home/ewnd9/dotfiles/scripts/asus/asus-kbd.sh down") end),
 
     awful.key({ }, "XF86Launch1", function () awful.util.spawn("xbacklight -dec 10") end),
-    awful.key({ }, "XF86WebCam", function () awful.util.spawn("xbacklight -inc 10") end),
-    awful.key({ }, "Print", function () awful.util.spawn("gnome-screenshot") end)
+    awful.key({ }, "XF86WebCam", function () awful.util.spawn("xbacklight -inc 10") end)
+    -- awful.key({ }, "Print", function () awful.util.spawn("gnome-screenshot") end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
