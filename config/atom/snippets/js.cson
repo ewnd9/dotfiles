@@ -63,3 +63,34 @@
   'stringify':
     'prefix': 'str'
     'body': 'JSON.stringify($1, null, 2);$2'
+  'export':
+    'prefix': 'ex'
+    'body': 'export const $1;'
+  'connect':
+    'prefix': 'connect'
+    'body': 'connect(mapStateToProps, mapDispatchToProps)($1)'
+  'mapState':
+    'prefix': 'mapState'
+    'body': """
+      const mapStateToProps = $1;
+      const mapDispatchToProps = { $2 };
+    """
+  'redux':
+    'prefix': 'redux'
+    'body': """
+      export const $1_REQUEST = '$1_REQUEST';
+      export const $1_SUCCESS = '$1_SUCCESS';
+      export const $1_FAILURE = '$1_FAILURE';
+    """
+  'dispatch':
+    'prefix': 'dispatch'
+    'body': """
+      dispatch({ type: $1_REQUEST });
+
+      return
+        .then(data => {
+          dispatch({ type: $1_SUCCESS });
+        }, err => {
+          dispatch({ type: $1_FAILURE, err });
+        });
+    """

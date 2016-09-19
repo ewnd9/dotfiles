@@ -4,3 +4,4 @@
   'ctrl-E': 'editor:move-to-end-of-screen-line'
   'ctrl-q': 'tabs:close-other-tabs'
   'ctrl-alt-l': 'editor:auto-indent'
+  'ctrl-:': 'insert-previous-directory:toggle'
