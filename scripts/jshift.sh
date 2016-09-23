@@ -13,15 +13,15 @@ set -e
 FILE="$1"
 
 transforms=(
-  no-vars.js
-  template-literals.js
-  unchain-variables.js
+  js-codemod-cpojer/transforms/no-vars.js
+  js-codemod-cpojer/transforms/template-literals.js
+  js-codemod-cpojer/transforms/unchain-variables.js
 )
 
 if [ -a $FILE ]; then
   for t in "${transforms[@]}"
   do
-    jscodeshift -t "$HOME/dotfiles/scripts/js-codemod/transforms/$t" $@
+    jscodeshift -t "$HOME/dotfiles/scripts/codemod/$t" $@
   done
 else
   "$FILE doesn't exist"
