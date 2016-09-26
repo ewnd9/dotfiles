@@ -11,6 +11,7 @@ alias serve="python -m SimpleHTTPServer"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias myip="ifconfig | grep \"inet addr\""
+port () { netstat -tulpn | grep :$1 }
 
 ## processes
 alias psme="ps -U ewnd9 | grep"
@@ -18,7 +19,6 @@ alias psme="ps -U ewnd9 | grep"
 ## text processing
 alias grep-text="grep -nr"
 alias find-me="find . -type f -name"
-alias cap-logs="ruby $HOME/dotfiles/scripts/capistrano-remote-logs.rb"
 
 ## atom
 alias a="atom ."
@@ -39,6 +39,7 @@ alias show-available-updates="sudo apt-get --just-print upgrade"
 alias npm="$HOME/dotfiles/scripts/npm-alias"
 alias npo="npm --cache-min 9999999"
 alias npr="cached-npm-repo"
+alias nps="cat package.json | jq '.scripts'"
 alias nbw="npm run build:watch"
 alias lint="npm run lint -- --fix"
 
