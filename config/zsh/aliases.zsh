@@ -43,10 +43,6 @@ alias nps="cat package.json | jq '.scripts'"
 alias nbw="npm run build:watch"
 alias lint="npm run lint -- --fix"
 
-## npm/dictionary-cli
-alias d="dictionary --ru=en"
-alias в="dictionary --ru=en"
-
 ## npm/mocha
 alias mb="NODE_ENV=test mocha --require babel/register"
 

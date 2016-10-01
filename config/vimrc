@@ -16,6 +16,7 @@ set softtabstop=2
 set relativenumber
 set laststatus=2
 set clipboard=unnamedplus
+set statusline+=%F
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
