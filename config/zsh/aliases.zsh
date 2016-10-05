@@ -68,9 +68,6 @@ npm-6 () { $(npm-n-path-npm 6.0.0) $@ }
 ## apt/wordnet
 syns () { wordnet "$1" -syns{n,v,a,r} | less }
 
-## apt/figlet
-alias note="figlet"
-
 ## git/gmusic-scripts
 alias gmupload="python3 $HOME/misc/gmusicapi-scripts/gmusicapi_scripts/gmupload.py"
 
