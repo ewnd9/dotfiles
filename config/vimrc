@@ -20,6 +20,14 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" White Space
+scriptencoding utf-8
+set encoding=utf-8
+set listchars=eol:¬,tab:>-,trail:.
+highlight NonText ctermfg=8 guifg=#c5c8c0
+highlight SpecialKey ctermfg=8 guifg=#c5c8c0
+set list
+
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 autocmd vimenter * silent! lcd %:p:h
 
