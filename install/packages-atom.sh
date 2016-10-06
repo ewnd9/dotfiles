@@ -21,6 +21,10 @@ apm install split-diff
 apm install ewnd9/language-babel
 apm install ewnd9/autocomplete-flow
 
+apm install linter
+apm install ewnd9/linter-eslint
+
+
 apm install https://github.com/thibmaek/modular-snippets
 rm -rf ~/.atom/packages/modular-snippets/snippets
 ln -s $HOME/dotfiles/config/atom/snippets $HOME/.atom/packages/modular-snippets/snippets
