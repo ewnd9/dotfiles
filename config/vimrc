@@ -32,6 +32,8 @@ setlocal conceallevel=2 concealcursor=inc
 autocmd Syntax * syn match LeadingWS /\%(^\s*\)\@<= / containedin=ALLBUT,TrailingWS conceal cchar=.
 autocmd Syntax * highlight Conceal ctermbg=NONE ctermfg=238 guifg=#c5c8c0
 
+highlight MatchParen cterm=none ctermbg=NONE ctermfg=red
+
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 autocmd vimenter * silent! lcd %:p:h
 
