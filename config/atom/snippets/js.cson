@@ -29,15 +29,40 @@
     'body': """
       import React from 'react';
 
-      export default React.createClass({
+      const $1 = React.createClass({
         render() {
           return (
             <div>
-              $1
+              
             </div>
           );
         }
       });
+
+      export default $1;
+    """
+  'React-Tcomb':
+    'prefix': 'rt'
+    'body': """
+      import React from 'react';
+
+      import t from 'tcomb';
+      import { propTypes } from 'tcomb-react';
+
+      const $1 = React.createClass({
+        propTypes: propTypes({
+
+        }),
+        render() {
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      });
+
+      export default $1;
     """
   'Debugga':
     'prefix': 'debugga'

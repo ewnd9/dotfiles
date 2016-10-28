@@ -33,8 +33,9 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey,           }, "j",
         function ()
-            awful.client.focus.byidx( 1)
-            if client.focus then client.focus:raise() end
+            run_once("/usr/bin/xavier \"chrome/scroll-down\" --class \"google-chrome\" --fallback=\"meta-j\"")
+            -- awful.client.focus.byidx( 1)
+            -- if client.focus then client.focus:raise() end
         end),
     awful.key({ modkey,           }, "Tab",
         function ()
@@ -43,15 +44,18 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ modkey,           }, "k",
         function ()
-            awful.client.focus.byidx(-1)
-            if client.focus then client.focus:raise() end
+          run_once("/usr/bin/xavier \"chrome/scroll-up\" --class \"google-chrome\" --fallback=\"meta-k\"")
+            -- awful.client.focus.byidx(-1)
+            -- if client.focus then client.focus:raise() end
         end),
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "a", function () run_once("/usr/bin/xavier \"vk.com/prev\"") end),
     awful.key({ modkey, "Shift"   }, "s", function () run_once("/usr/bin/xavier \"vk.com/play-or-pause\"") end),
     awful.key({ modkey, "Shift"   }, "d", function () run_once("/usr/bin/xavier \"vk.com/next\"") end),
     awful.key({ modkey,           }, "w", function () run_once("/usr/bin/xavier \"chrome/move-left\"") end),
+    awful.key({ modkey, "Shift"   }, "w", function () run_once("/usr/bin/xavier \"chrome/close-left\"") end),
     awful.key({ modkey,           }, "e", function () run_once("/usr/bin/xavier \"chrome/move-right\"") end),
+    awful.key({ modkey, "Shift"   }, "e", function () run_once("/usr/bin/xavier \"chrome/close-right\"") end),
     awful.key({ modkey,           }, "p", function () run_once("/usr/bin/xavier \"android/now-playing\" --notify") end),
     awful.key({ modkey,           }, "[", function () run_once("/usr/bin/xavier \"android/prev-track\" --notify") end),
     awful.key({ modkey,           }, "]", function () run_once("/usr/bin/xavier \"android/next-track\" --notify") end),

@@ -4,6 +4,7 @@
     disabledPackages: [
       "spell-check"
       "markdown-preview"
+      "linter-eslint"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [

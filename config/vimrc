@@ -13,7 +13,7 @@ set expandtab
 set relativenumber
 set laststatus=2
 set clipboard=unnamedplus
-set statusline+=%F
+set statusline=%F\ %l:%c\ %L
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -55,3 +55,5 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
 nnoremap <silent> <c-p> :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist|build)|(\.(swp|ico|git))$'
+
+map q <Nop>

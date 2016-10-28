@@ -13,6 +13,7 @@ npm set init-license MIT
 
 # node packages
 
+npm install -g yarn
 npm install -g fkill-cli
 npm install -g yo
 npm install -g travis-encrypt

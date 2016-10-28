@@ -1,3 +1,8 @@
+## basic
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+
 ## git
 alias commit="git commit -a -m"
 alias push="git push origin master"
