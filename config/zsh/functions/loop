@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+INTERVAL=5
+REGEX='^[0-9]+$'
+
+if [[ $1 =~ $REGEX ]] ; then
+  INTERVAL=$1
+  shift
+fi
+
+echo -ne "\nLoop \"$@\" Every $INTERVAL Seconds\n\n"
+while true; do eval $@ && echo -ne "\nSleep $INTERVAL Seconds\n\n" && sleep $INTERVAL; done

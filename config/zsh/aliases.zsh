@@ -2,6 +2,7 @@
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias cc="cd && clear"
 
 ## git
 alias commit="git commit -a -m"

@@ -18,6 +18,7 @@ apm install nice-index
 apm install merge-conflicts
 apm install pretty-json
 apm install split-diff
+apm install markdown-toc
 apm install ewnd9/language-babel
 apm install ewnd9/autocomplete-flow
 

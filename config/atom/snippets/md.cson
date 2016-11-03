@@ -27,8 +27,22 @@
       $1
       ```
     """
+  'md':
+    'prefix': 'md'
+    'body': """
+      ```md
+      $1
+      ```
+    """
   'yml':
     'prefix': 'yml'
+    'body': """
+      ```yml
+      $1
+      ```
+    """
+  'yaml':
+    'prefix': 'yaml'
     'body': """
       ```yml
       $1
@@ -59,6 +73,13 @@
     'prefix': 'sql'
     'body': """
       ```sql
+      $1
+      ```
+    """
+  'txt':
+    'prefix': 'txt'
+    'body': """
+      ```txt
       $1
       ```
     """
