@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+xdg-open "https://runkit.com/npm/$1"

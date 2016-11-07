@@ -11,6 +11,7 @@ set expandtab
 :nmap ; :
 
 set relativenumber
+set number
 set laststatus=2
 set clipboard=unnamedplus
 set statusline=%F\ %l:%c\ %L

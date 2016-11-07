@@ -4,15 +4,24 @@
     'body': 'console.log($1)'
   'Then':
     'prefix': 'then'
-    'body': 'then(data => $1)'
+    'body': """
+      then($1 => {
+        $2
+      })$3
+    """
   'Catch':
     'prefix': 'catch'
     'body': 'catch(err => console.log(err.stack || err))'
   'Promise':
     'prefix': 'thencatch'
     'body': """
-      then(data => console.log(data))
-      .catch(err => console.log(err.stack || err));$1
+      then(data => {
+        console.log(data);
+      })
+      .catch(err => {
+        console.log(err.stack || err)
+      });
+      $1
     """
   'Angular':
     'prefix': 'angular'
@@ -33,7 +42,7 @@
         render() {
           return (
             <div>
-              
+
             </div>
           );
         }
@@ -64,6 +73,51 @@
 
       export default $1;
     """
+  'React-Redux-Tcomb':
+    'prefix': 'rrt'
+    'body': """
+      import React from 'react';
+
+      import { connect } from 'react-redux';
+
+      import t from 'tcomb';
+      import { propTypes } from 'tcomb-react';
+
+      // import { schema } from '../../reducers/-reducer';
+      import { reactRouterPropTypes } from '../../schema/react-router';
+
+      // import { } from '../actions/-action';
+
+      const mapStateToProps = ({ }) => ({ });
+      const mapDispatchToProps = { };
+
+      const $1 = React.createClass({
+        propTypes: propTypes({
+          ...reactRouterPropTypes
+        }),
+        componentDidMount() {
+          // const { } = this.props;
+        },
+        componentWillReceiveProps(nextProps) {
+          // const { } = this.props;
+
+          // if ( !== nextProps) {
+          //
+          // }
+        },
+        render() {
+          // const { } = this.props;
+
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      });
+
+      export default $1;
+    """
   'Debugga':
     'prefix': 'debugga'
     'body': '(()=>{debugger})() || $1'
@@ -74,14 +128,26 @@
     'prefix': 'us'
     'body': '\'use strict\';'
   'CommonJS modern require':
-    'prefix': 'req'
-    'body': 'const ${1:module} = require(\'${1:module}\');'
+    'prefix': 're'
+    'body': 'const ${1} = require(\'${1}\');'
+  'CommonJS modern require asymmetrical':
+    'prefix': 'rea'
+    'body': 'const ${1} = require(\'${2}\');'
   'require fs':
-    'prefix': 'reqfs'
+    'prefix': 'refs'
     'body': 'const fs = require(\'fs\');'
+  'import':
+    'prefix': 'im'
+    'body': 'import $1 from \'$1\';'
+  'import asymmetrical':
+    'prefix': 'ima'
+    'body': 'import $1 from \'$2\';'
   'import fs':
-    'prefix': 'impfs'
+    'prefix': 'imfs'
     'body': 'import fs from \'fs\';'
+  'import style.css':
+    'prefix': 'imst'
+    'body': 'import styles from \'./style.css\';'
   'read file':
     'prefix': 'readfile'
     'body': 'const data = fs.readFileSync($1, \'utf-8\');$2'
@@ -97,6 +163,8 @@
   'mapState':
     'prefix': 'mapState'
     'body': """
+      import { connect } from 'react-redux';
+
       const mapStateToProps = $1;
       const mapDispatchToProps = { $2 };
     """
@@ -107,15 +175,9 @@
       export const $1_SUCCESS = '$1_SUCCESS';
       export const $1_FAILURE = '$1_FAILURE';
     """
-  'dispatch':
-    'prefix': 'dispatch'
-    'body': """
-      dispatch({ type: $1_REQUEST });
-
-      return
-        .then(data => {
-          dispatch({ type: $1_SUCCESS });
-        }, err => {
-          dispatch({ type: $1_FAILURE, err });
-        });
-    """
+  'react className':
+    'prefix': 'cn'
+    'body': 'className='
+  'react div':
+    'prefix': '<div'
+    'body': '<div className='

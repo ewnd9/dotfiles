@@ -26,6 +26,10 @@ mkdir -p ~/.atom
 link config/atom/config.cson .atom/config.cson
 link config/atom/keymaps.cson .atom/keymaps.cson
 
+mkdir -p ~/.config/Code/User
+link config/code/settings.json .config/Code/User/settings.json
+link config/code/snippets .config/Code/User/snippets
+
 mkdir -p ~/misc
 link misc.md misc/README.md
 

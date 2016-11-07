@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+if [[ "$#" == 1 ]]; then
+  cat ~/.zsh/functions/$1
+else
+  ls ~/.zsh/functions
+fi

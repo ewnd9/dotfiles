@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+REGEX='^[0-9]+$'
+
+if ! [[ $1 =~ $REGEX ]] ; then
+  echo "Usage: rebase <number-of-commits>"
+  exit 1
+fi
+
+git rebase -i HEAD~$1

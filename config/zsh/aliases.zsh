@@ -4,9 +4,17 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias cc="cd && clear"
 
+## tmux
+alias tt="tmux resize-pane -y 50"
+
 ## git
+alias st="git status"
+alias com="git commit"
 alias commit="git commit -a -m"
 alias push="git push origin master"
+alias wip="git commit -a -m wip --no-verify"
+alias amend="git commit -a --amend --no-verify"
+alias rebac="git rebase --continue"
 
 ## apt/xclip
 alias xcopy='xclip -selection clipboard'
@@ -48,6 +56,8 @@ alias npr="cached-npm-repo"
 alias nps="cat package.json | jq '.scripts'"
 alias nbw="npm run build:watch"
 alias lint="npm run lint -- --fix"
+alias tw="npm run test:watch"
+alias bw="npm run build:watch"
 
 ## npm/mocha
 alias mb="NODE_ENV=test mocha --require babel/register"
@@ -62,14 +72,9 @@ alias json="python -m json.tool"
 ## npm/cached-npm-install
 alias cni="cached-npm-install"
 
-## npm/n
-npm-n-path-prefix () { echo "$HOME/n/n/versions/node/$1" }
-npm-n-path-node () { echo "$(npm-n-path-prefix $1)/bin/node" }
-npm-n-path-npm () { echo "$(npm-n-path-prefix $1)/lib/node_modules/npm/cli.js" }
-node-10 () { $(npm-n-path-node 0.10.36) $@ }
-npm-10 () { $(npm-n-path-npm 0.10.36) $@ }
-node-6 () { $(npm-n-path-node 6.0.0) $@ }
-npm-6 () { $(npm-n-path-npm 6.0.0) $@ }
+## node
+alias na="node --harmony-async-await" 
+alias nan="nodemon -x 'node --harmony-async-await'"
 
 ## apt/wordnet
 syns () { wordnet "$1" -syns{n,v,a,r} | less }
