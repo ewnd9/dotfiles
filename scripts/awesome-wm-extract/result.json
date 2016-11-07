@@ -1,0 +1,272 @@
+[
+  [
+    "modkey",
+    "\"Left\"",
+    "awful.tag.viewprev"
+  ],
+  [
+    "modkey",
+    "\"Right\"",
+    "awful.tag.viewnext"
+  ],
+  [
+    "modkey",
+    "\"Escape\"",
+    "awful.tag.history.restore"
+  ],
+  [
+    "modkey",
+    "\"j\"",
+    "function () run_once(\"/usr/bin/xavier \\\"chrome/scroll-down\\\" --class \\\"google-chrome\\\" --fallback=\\\"meta-j\\\"\") end"
+  ],
+  [
+    "modkey",
+    "\"Tab\"",
+    "function () awful.client.focus.byidx(1)\nif client.focus then client.focus.raise() end end"
+  ],
+  [
+    "modkey",
+    "\"k\"",
+    "function () run_once(\"/usr/bin/xavier \\\"chrome/scroll-up\\\" --class \\\"google-chrome\\\" --fallback=\\\"meta-k\\\"\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"a\"",
+    "function () run_once(\"/usr/bin/xavier \\\"vk.com/prev\\\"\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"s\"",
+    "function () run_once(\"/usr/bin/xavier \\\"vk.com/play-or-pause\\\"\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"d\"",
+    "function () run_once(\"/usr/bin/xavier \\\"vk.com/next\\\"\") end"
+  ],
+  [
+    "modkey",
+    "\"w\"",
+    "function () run_once(\"/usr/bin/xavier \\\"chrome/move-left\\\"\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"w\"",
+    "function () run_once(\"/usr/bin/xavier \\\"chrome/close-left\\\"\") end"
+  ],
+  [
+    "modkey",
+    "\"e\"",
+    "function () run_once(\"/usr/bin/xavier \\\"chrome/move-right\\\"\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"e\"",
+    "function () run_once(\"/usr/bin/xavier \\\"chrome/close-right\\\"\") end"
+  ],
+  [
+    "modkey",
+    "\"p\"",
+    "function () run_once(\"/usr/bin/xavier \\\"android/now-playing\\\" --notify\") end"
+  ],
+  [
+    "modkey",
+    "\"[\"",
+    "function () run_once(\"/usr/bin/xavier \\\"android/prev-track\\\" --notify\") end"
+  ],
+  [
+    "modkey",
+    "\"]\"",
+    "function () run_once(\"/usr/bin/xavier \\\"android/next-track\\\" --notify\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"j\"",
+    "function () awful.client.swap.byidx(1) end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"k\"",
+    "function () awful.client.swap.byidx(-) end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"j\"",
+    "function () awful.screen.focus_relative(1) end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"k\"",
+    "function () awful.screen.focus_relative(-) end"
+  ],
+  [
+    "modkey",
+    "\"`\"",
+    "function () teardrop.toggle(\"guake\", 1, 0.3) end"
+  ],
+  [
+    "modkey",
+    "\"t\"",
+    "function () run_once(\"gnome-terminal-tmux.sh\") end"
+  ],
+  [
+    "modkey",
+    "\"b\"",
+    "function () run_once(\"/home/ewnd9/dotfiles/scripts/open-selection.sh\") end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"r\"",
+    "awesome.restart"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"q\"",
+    "awesome.quit"
+  ],
+  [
+    "modkey",
+    "\"l\"",
+    "function () awful.tag.incmwfact(0.05) end"
+  ],
+  [
+    "modkey",
+    "\"h\"",
+    "function () awful.tag.incmwfact(-) end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"h\"",
+    "function () awful.tag.incnmaster(1) end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"l\"",
+    "function () awful.tag.incnmaster(-) end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"h\"",
+    "function () awful.tag.incncol(1) end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"l\"",
+    "function () awful.tag.incncol(-) end"
+  ],
+  [
+    "modkey",
+    "\"space\"",
+    "function () awful.layout.inc(layouts, 1) end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"space\"",
+    "function () awful.layout.inc(layouts, -) end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"n\"",
+    "awful.client.restore"
+  ],
+  [
+    "modkey",
+    "\"r\"",
+    "function () mypromptbox[mouse.screen].run() end"
+  ],
+  [
+    "modkey",
+    "\"f\"",
+    "function () run_once(\"/usr/bin/xavier-menu\") end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"f\"",
+    "function () c.fullscreen = not end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"c\"",
+    "function () c.kill() end"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"space\"",
+    "awful.client.floating.toggle"
+  ],
+  [
+    "modkey + \"Control\"",
+    "\"Return\"",
+    "function () c.swap(awful.client.getmaster()) end"
+  ],
+  [
+    "modkey",
+    "\"o\"",
+    "awful.client.movetoscreen"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"r\"",
+    "function () c.redraw() end"
+  ],
+  [
+    "modkey",
+    "\"u\"",
+    "function () c.ontop = not end"
+  ],
+  [
+    "modkey",
+    "\"n\"",
+    "function () c.minimized = true end"
+  ],
+  [
+    "modkey",
+    "\"m\"",
+    "function () c.maximized_horizontal = not\nc.maximized_vertical = not end"
+  ],
+  [
+    "",
+    "\"XF86AudioMute\"",
+    "function () awful.util.spawn(\"amixer -D pulse set Master toggle\") end"
+  ],
+  [
+    "",
+    "\"XF86AudioRaiseVolume\"",
+    "function () awful.util.spawn(\"amixer -D pulse sset Master 10%+ unmute\") end"
+  ],
+  [
+    "",
+    "\"XF86AudioLowerVolume\"",
+    "function () awful.util.spawn(\"amixer -D pulse sset Master 10%-\") end"
+  ],
+  [
+    "",
+    "\"XF86KbdBrightnessUp\"",
+    "function () awful.util.spawn(\"/home/ewnd9/dotfiles/scripts/asus/asus-kbd.sh up\") end"
+  ],
+  [
+    "",
+    "\"XF86KbdBrightnessDown\"",
+    "function () awful.util.spawn(\"/home/ewnd9/dotfiles/scripts/asus/asus-kbd.sh down\") end"
+  ],
+  [
+    "",
+    "\"XF86Launch1\"",
+    "function () awful.util.spawn(\"xbacklight -dec 10\") end"
+  ],
+  [
+    "",
+    "\"XF86WebCam\"",
+    "function () awful.util.spawn(\"xbacklight -inc 10\") end"
+  ],
+  [
+    "modkey",
+    "\"#\" .. i + 9",
+    "function () local screen = mouse.screen\nif tags[screen][i] then awful.tag.viewonly(tags[screen][i]) end end"
+  ],
+  [
+    "modkey + \"Shift\"",
+    "\"#\" .. i + 9",
+    "function () local screen = mouse.screen\nif client.focus and tags[client.focus.screen][i] then awful.client.movetotag(tags[client.focus.screen][i])\nawful.tag.viewonly(tags[screen][i]) end end"
+  ]
+]
