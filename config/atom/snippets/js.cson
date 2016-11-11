@@ -181,3 +181,6 @@
   'react div':
     'prefix': '<div'
     'body': '<div className='
+  'type-codegen tcomb':
+    'prefix': 'cgtcomb'
+    'body': 'require(\'type-codegen/packages/tcomb-codegen\').generateCode($1)'

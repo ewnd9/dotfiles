@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PS3='Please enter your choice: '
+options=$(cat package.json | jq -r '.scripts | keys | join(", ")')
+
+select opt in "${options[@]}"
+do
+  npm run $opt
+  break
+done
+
