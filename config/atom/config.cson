@@ -10,6 +10,9 @@
     ignoredNames: [
       ".git"
       "node_modules"
+      "dist"
+      "coverage"
+      ".nyc_output"
       "*.map"
       "*.bundle.js"
     ]

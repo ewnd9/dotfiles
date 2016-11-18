@@ -17,8 +17,13 @@ alias amend="git commit -a --amend --no-verify"
 alias rebac="git rebase --continue"
 
 ## apt/xclip
-alias xcopy='xclip -selection clipboard'
-alias xpaste='xclip -selection clipboard -o'
+alias xc='xclip -selection clipboard'
+alias xp='xclip -selection clipboard -o'
+xx () {
+  LAST_COMMAND=$(fc -l -1 | head -n 1 | awk '{ print substr($0, index($0,$2)) }')
+  echo $LAST_COMMAND
+  echo $LAST_COMMAND | xclip -selection clipboard
+}
 
 ## network
 alias serve="python -m SimpleHTTPServer"
@@ -26,6 +31,7 @@ alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
 alias myip="ifconfig | grep \"inet addr\""
 port () { netstat -tulpn | grep :$1 }
+killport () { fuser -k $1/tcp }
 
 ## processes
 alias psme="ps -U ewnd9 | grep"
@@ -55,7 +61,7 @@ alias npo="npm --cache-min 9999999"
 alias npr="cached-npm-repo"
 alias nps="cat package.json | jq '.scripts'"
 alias nbw="npm run build:watch"
-alias lint="npm run lint -- --fix"
+alias lint="npm --yarn run lint -- --fix"
 alias tw="npm run test:watch"
 alias bw="npm run build:watch"
 
@@ -95,3 +101,4 @@ g () {
 
 ## zsh
 alias zshrc="cat ~/.zshrc | grep"
+alias zsha="vim ~/.zsh/aliases.zsh && source ~/.zshrc"

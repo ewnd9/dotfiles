@@ -2,6 +2,17 @@
 
 set -e
 
+if [ -a "yarn.lock" ]; then
+  echo '"yarn.lock" detected'
+
+  if [ "$1" == "--yarn" ]; then
+    echo "forced npm install\n"
+  else
+    echo 'use "yarn", or "$ npm --yarn"'
+    exit 1
+  fi
+fi
+
 if ([ "$1" == "install" ] || [ "$1" == "i" ]) && [ "$#" -ne 1 ]; then
 	for var in "$@"
 	do

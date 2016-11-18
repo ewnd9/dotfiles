@@ -93,7 +93,8 @@
 
       const $1 = React.createClass({
         propTypes: propTypes({
-          ...reactRouterPropTypes
+          ...reactRouterPropTypes,
+          children: t.Nil
         }),
         componentDidMount() {
           // const { } = this.props;
