@@ -2,5 +2,6 @@
 
 mkcd "$@" && \
 echo "'use strict';\n\n" > index.js && \
+echo "import test from 'ava';\nimport lib from './';\n\ntest('test', async t => {\n  console.log(lib);\n});" > test.js && \
 echo "node_modules" > .gitignore && \
 echo "{\"private\": true}" > package.json
