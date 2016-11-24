@@ -103,6 +103,10 @@ alias cni="cached-npm-install"
 ## node
 alias na="node --harmony-async-await" 
 alias nan="nodemon -x 'node --harmony-async-await'"
+deps () {
+  # Usage: $ npm install $(deps index.js)
+  node -e "console.log(require('detect-import-require')(require('fs').readFileSync('$1', 'utf8')).filter(x => x[0] !== '.').join(' '))"
+}
 
 ## apt/wordnet
 syns () { wordnet "$1" -syns{n,v,a,r} | less }

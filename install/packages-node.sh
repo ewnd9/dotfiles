@@ -20,6 +20,7 @@ npm install -g travis-encrypt
 npm install -g jscodeshift
 npm install -g changelog
 npm install -g npm-check
+npm install -g detect-import-require
 
 # my stuff
 
