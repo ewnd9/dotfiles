@@ -36,6 +36,7 @@ $ ./install/packages-node.sh
 $ ./install/packages-awesome.sh
 $ ./install/packages-ruby.sh
 $ ./install/packages-atom.sh
+$ ./install/packages-vim.sh
 
 $ ./linking-user.sh
 $ ./linking-scripts.sh

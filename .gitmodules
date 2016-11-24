@@ -50,3 +50,6 @@
 [submodule "config/vim/bundle/vim-move"]
 	path = config/vim/bundle/vim-move
 	url = git@github.com:ewnd9/vim-move.git
+[submodule "config/vim/bundle/YouCompleteMe"]
+	path = config/vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

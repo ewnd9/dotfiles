@@ -6,6 +6,14 @@ alias cc="cd && clear"
 
 ## tmux
 alias tt="tmux resize-pane -y 50"
+tmux-cd () {
+  DIR=$(tmux display-message -p -F "#{pane_current_path}" -t {$1-of})
+  cd $DIR
+}
+alias tml="tmux-cd left"
+alias tmr="tmux-cd right"
+alias tmu="tmux-cd up"
+alias tmd="tmux-cd down"
 
 ## git
 alias st="git status"
@@ -20,7 +28,9 @@ alias rebac="git rebase --continue"
 alias xc='xclip -selection clipboard'
 alias xp='xclip -selection clipboard -o'
 xx () {
-  LAST_COMMAND=$(fc -l -1 | head -n 1 | awk '{ print substr($0, index($0,$2)) }')
+  N="${1:-1}"
+  # LAST_COMMAND=$(fc -l -1 | head -n 1 | awk '{ print substr($0, index($0,$2)) }')
+  LAST_COMMAND=$(fc -l -$N | awk '{ print substr($0, index($0,$2)) }')
   echo $LAST_COMMAND
   echo $LAST_COMMAND | xclip -selection clipboard
 }
@@ -38,7 +48,8 @@ alias psme="ps -U ewnd9 | grep"
 
 ## text processing
 alias grep-text="grep -nr"
-alias find-me="find . -type f -name"
+alias find-file="find . -type f -name" # $ find-file '.*'
+alias find-dir="find . -type d -name" # $ find-dir '*babel*' 
 
 ## atom
 alias a="atom ."

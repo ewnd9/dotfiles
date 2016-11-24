@@ -25,6 +25,7 @@ sudo apt-get install -y \
 sudo add-apt-repository ppa:webupd8team/nemo
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-add-repository ppa:git-core/ppa
 
 sudo apt-get update
 
@@ -33,6 +34,7 @@ sudo apt-get install -y \
   nemo-fileroller \
   atom \
   prime-indicator \
-  nvidia-settings
+  nvidia-settings \
+  git
 
 sudo apt-get purge -y nautilus
