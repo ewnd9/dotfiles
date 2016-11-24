@@ -52,7 +52,18 @@ alias find-file="find . -type f -name" # $ find-file '.*'
 alias find-dir="find . -type d -name" # $ find-dir '*babel*' 
 
 ## atom
-alias a="atom ."
+a () {
+  DEST_TAG="1"
+  COUNT=$(wmctrl -l | awk '{print $2}' | grep 1 | wc -l)
+
+  if [ $COUNT -gt 0 ]; then
+    DEST_TAG="3"  
+  fi
+
+  echo $DEST_TAG
+  wmctrl -s $DEST_TAG
+  atom .
+}
 
 ## system
 alias sus="sudo pm-suspend"
