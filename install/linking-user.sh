@@ -21,6 +21,7 @@ link config/gtk.css .config/gtk-3.0/gtk.css
 link config/zshrc .zshrc
 link config/vimrc .vimrc
 link config/tmux.conf .tmux.conf
+link config/fusuma.yml .config/fusuma/config.yml
 
 mkdir -p ~/.atom
 link config/atom/config.cson .atom/config.cson

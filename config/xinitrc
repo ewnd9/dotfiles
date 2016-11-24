@@ -17,6 +17,7 @@ dropbox start &
 
 record-desktop &
 $HOME/.npm-packages/bin/forever $HOME/.npm-packages/bin/xavier-server &
+ruby $HOME/xtra/fusuma/exe/fusuma &
 
 gnome-terminal -e '/home/ewnd9/dotfiles/scripts/tmux/default.tmux' &
 

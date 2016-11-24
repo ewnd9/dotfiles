@@ -1,0 +1,25 @@
+swipe:
+  3:
+    left:
+      shortcut: 'super+w'
+    right:
+      shortcut: 'super+e'
+    up:
+      shortcut: 'super+m'
+    down:
+      shortcut: 'super+m'
+  4:
+    left:
+      shortcut: 'super+Right'
+    right:
+      shortcut: 'super+Left'
+    up:
+      shortcut: 'super+a'
+    down:
+      shortcut: 'super+s'
+pinch:
+  in:
+    shortcut: 'ctrl+1'
+  out:
+     shortcut: 'ctrl+1'
+
