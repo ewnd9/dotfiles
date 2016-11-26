@@ -10,16 +10,16 @@ swipe:
       shortcut: 'super+m'
   4:
     left:
-      shortcut: 'super+Right'
-    right:
       shortcut: 'super+Left'
+    right:
+      shortcut: 'super+Right'
     up:
-      shortcut: 'super+a'
+      shortcut: 'super+j'
     down:
-      shortcut: 'super+s'
+      shortcut: 'super+k'
 pinch:
   in:
-    shortcut: 'ctrl+1'
+    shortcut: 'super+j'
   out:
-     shortcut: 'ctrl+1'
+     shortcut: 'super+k'
 

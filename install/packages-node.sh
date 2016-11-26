@@ -21,6 +21,7 @@ npm install -g jscodeshift
 npm install -g changelog
 npm install -g npm-check
 npm install -g detect-import-require
+npm install -g tldr
 
 # my stuff
 

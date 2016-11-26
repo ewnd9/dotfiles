@@ -100,6 +100,9 @@ alias json="python -m json.tool"
 ## npm/cached-npm-install
 alias cni="cached-npm-install"
 
+## npm/tldr
+alias tldr="tldr --theme ocean"
+
 ## node
 alias na="node --harmony-async-await" 
 alias nan="nodemon -x 'node --harmony-async-await'"
