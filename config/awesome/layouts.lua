@@ -21,7 +21,7 @@ for s = 1, screen.count() do
     tags[s] = awful.tag({"一", "二", "三", "四", "五", "六", "七", "八", "九"}, s, layouts[3])
 
     for i = 1, 9 do
-      if i == 2 or i == 4 or i == 6 then
+      if i == 2 or i == 6 then
         awful.tag.setmwfact(0.25, tags[s][i])
       end
     end
