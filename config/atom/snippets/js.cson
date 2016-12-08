@@ -185,3 +185,14 @@
   'type-codegen tcomb':
     'prefix': 'cgtcomb'
     'body': 'console.log(require(\'type-codegen/packages/tcomb-codegen\').generateCode($1))'
+  'listen port':
+    'prefix': 'listen'
+    'body': """
+      listen($1, err => {
+        if (err) {
+          throw err;
+        }
+
+        console.log('listening localhost:$1');
+      });
+    """
