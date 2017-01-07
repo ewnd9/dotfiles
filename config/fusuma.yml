@@ -14,12 +14,12 @@ swipe:
     right:
       shortcut: 'super+Right'
     up:
-      shortcut: 'super+j'
+      shortcut: 'super+m'
     down:
-      shortcut: 'super+k'
+      shortcut: 'super+m'
 pinch:
   in:
-    shortcut: 'super+j'
+    shortcut: 'super+m'
   out:
-     shortcut: 'super+k'
+     shortcut: 'super+m'
 

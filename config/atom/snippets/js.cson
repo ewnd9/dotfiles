@@ -86,7 +86,7 @@
       // import { schema } from '../../reducers/-reducer';
       import { reactRouterPropTypes } from '../../schema/react-router';
 
-      // import { } from '../actions/-action';
+      // import { } from '../../actions/-actions';
 
       const mapStateToProps = ({ }) => ({ });
       const mapDispatchToProps = { };
@@ -117,7 +117,7 @@
         }
       });
 
-      export default $1;
+      export default connect(mapStateToProps, mapDispatchToProps)($1);
     """
   'Debugga':
     'prefix': 'debugga'
