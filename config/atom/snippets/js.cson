@@ -36,7 +36,7 @@
   'React':
     'prefix': 'react'
     'body': """
-      import React from 'react';
+      import React, { PropTypes } from 'react';
 
       const $1 = React.createClass({
         render() {
@@ -48,7 +48,61 @@
         }
       });
 
+      $1.propTypes = {
+
+      };
+
       export default $1;
+    """
+  'React-Function':
+    'prefix': 'reactf'
+    'body': """
+      import React, { PropTypes } from 'react';
+
+      function $1({ }) {
+        return (
+          <div>
+
+          </div>
+        );
+      });
+
+      $1.propTypes = {
+
+      };
+
+      export default $1;
+    """
+  'React-Class':
+    'prefix': 'reactc'
+    'body': """
+      import React, { Component, PropTypes } from 'react';
+
+      class $1 extends Component {
+        render() {
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      };
+
+      $1.propTypes = {
+
+      };
+
+      export default $1;
+    """
+  'React-Intl-Import':
+    'prefix': 'reactintl'
+    'body': """
+      import { FormattedMessage } from 'react-intl';
+    """
+  'React-Intl-Message':
+    'prefix': 'reactmessage'
+    'body': """
+      <FormattedMessage id="$1" defaultMessage="$2" />
     """
   'React-Tcomb':
     'prefix': 'rt'
