@@ -1,4 +1,7 @@
 '.source.js':
+  'Constructor':
+    'prefix': 'constructor'
+    'body': 'constructor'
   'Log':
     'prefix': 'log'
     'body': 'console.log($1)'
@@ -65,7 +68,7 @@
 
           </div>
         );
-      });
+      }
 
       $1.propTypes = {
 
@@ -86,7 +89,7 @@
             </div>
           );
         }
-      };
+      }
 
       $1.propTypes = {
 
@@ -100,7 +103,7 @@
       import { FormattedMessage } from 'react-intl';
     """
   'React-Intl-Message':
-    'prefix': 'reactmessage'
+    'prefix': 'FormattedMessage'
     'body': """
       <FormattedMessage id="$1" defaultMessage="$2" />
     """
@@ -200,6 +203,9 @@
   'import fs':
     'prefix': 'imfs'
     'body': 'import fs from \'fs\';'
+  'import react':
+    'prefix': 'imreact'
+    'body': 'import React from \'react\';'
   'import style.css':
     'prefix': 'imst'
     'body': 'import styles from \'./style.css\';'
@@ -250,3 +256,24 @@
         console.log('listening localhost:$1');
       });
     """
+  'json-schema-object':
+    'prefix': 'jobject'
+    'body': """
+    type: 'object',
+    required: [],
+    properties: {
+      $1
+    }
+    """
+  'json-schema-array':
+    'prefix': 'jarray'
+    'body': """
+    type: 'array',
+    items: $1
+    """
+  'json-schema-number':
+    'prefix': 'jnumber'
+    'body': 'type: \'number\''
+  'json-schema-string':
+    'prefix': 'jstring'
+    'body': 'type: \'string\''

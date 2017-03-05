@@ -17,16 +17,30 @@ alias tmd="tmux-cd down"
 
 ## git
 alias st="git status"
-alias com="git commit"
+alias gs="git status"
+alias gl="git log"
 alias commit="git commit -a -m"
 alias push="git push origin master"
 alias wip="git commit -a -m wip --no-verify"
 alias amend="git commit -a --amend --no-verify"
-alias rebac="git rebase --continue"
+alias gfo="git fetch origin"
+alias gri="git rebase -i"
+alias grc="git rebase --continue"
+alias gsu="git submodule update --init"
+alias gpo="git pull origin"
+alias gcm="git checkout master"
+alias gcb="git checkout -b"
+alias gd="git diff"
+alias gdc="git diff --cached"
+gt () {
+  git tag -a "$@" -m "$@"
+}
 
 ## apt/xclip
 alias xc='xclip -selection clipboard'
 alias xp='xclip -selection clipboard -o'
+
+## print last n entries from history
 xx () {
   N="${1:-1}"
   # LAST_COMMAND=$(fc -l -1 | head -n 1 | awk '{ print substr($0, index($0,$2)) }')
