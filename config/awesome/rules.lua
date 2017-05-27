@@ -5,21 +5,27 @@ awful.rules.rules = {
   { rule = { },
     properties = { border_width = beautiful.border_width,
                    border_color = beautiful.border_normal,
-                   focus = true,
+                   focus = awful.client.focus.filter,
+                   raise = true,
                    keys = clientkeys,
-                   buttons = clientbuttons } },
-  { rule = { class = "Chromium" },
-    properties = { tag = tags[1][1] } },
+                   buttons = clientbuttons,
+                   screen = awful.screen.preferred,
+                   placement = awful.placement.no_overlap+awful.placement.no_offscreen } },
+  -- Add titlebars to normal clients and dialogs
+  { rule_any = { type = { "normal", "dialog" } },
+    properties = { titlebars_enabled = false } },
   { rule = { class = "google-chrome" },
-    properties = { tag = tags[1][1] } },
+    properties = { screen = 1, tag = 1 } },
+  -- All chrome modals
   { rule = { class = "google-chrome" }, except = { instance = "google-chrome" },
     properties = { floating = true } },
   { rule_any = { class = { "Skype", "telegram" } },
-      properties = { tag = tags[1][5] } },
+    properties = { screen = 1, tag = 5 } },
   { rule = { class = "Guake" },
-    properties = {opacity = 0.7} },
-  { rule = { class = "Gnome-terminal" },
-    properties = { size_hints_honor = false } },
+    properties = { opacity = 0.7 } },
   { rule_any = { class = { "feh", "Eog", "Electron", "record-desktop", "Xavier", "hain", "Hain", "electron" } },
-    properties = { floating = true } }
+    properties = { floating = true } },
+  -- Remove gaps
+  { rule = { class = "Gnome-terminal" },
+    properties = { size_hints_honor = false } }
 }

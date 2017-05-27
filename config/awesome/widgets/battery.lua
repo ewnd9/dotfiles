@@ -1,19 +1,24 @@
+-- forked from https://raw.githubusercontent.com/streetturtle/AwesomeWM/master/battery-widget/battery.lua
+
+local awful = require("awful")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
-local vicious = require("vicious")
+local naughty = require("naughty")
+local watch = require("awful.widget.watch")
 
-batwidget = wibox.widget.textbox()
-baticon = wibox.widget.imagebox(beautiful.widget_bat)
+battery_widget = wibox.widget.textbox()
 
-vicious.register(batwidget, vicious.widgets.bat,
-  function (widget, args)
-    if args[2] == 0 then return ""
+watch(
+  "acpi",
+  10,
+  function(widget, stdout, stderr, exitreason, exitcode)
+    local batteryType
+    local _, status, charge_str = string.match(stdout, '(.+): (%a+), (%d+)%.*')
+
+    if (tonumber(charge_str) < 20) then
+      widget:set_markup_silently("<span color='red'>" .. charge_str .. "%</span>")
     else
-      if args[2] < 20 then
-        return "<span color='red'>".. args[2] .. "%</span>"
-      else
-        return "<span color='white'>".. args[2] .. "%</span>"
-      end
+      widget:set_markup_silently("<span color='white'>" .. charge_str .. "%</span>")
     end
-  end, 61, "BAT0"
+  end,
+  battery_widget
 )
