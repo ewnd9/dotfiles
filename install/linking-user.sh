@@ -13,7 +13,7 @@ function link {
 link config/xinitrc .xinitrc
 link config/xinitrc .xsession
 
-link config/awesome .config/awesome
+link config/awesome-4.0 .config/awesome
 link config/vim .vim
 link config/zsh .zsh
 link config/gtk.css .config/gtk-3.0/gtk.css
