@@ -1,0 +1,72 @@
+{
+  "js": {
+    "prefix": "js",
+    "body": "```js\n$1\n```",
+    "description": "js"
+  },
+  "sh": {
+    "prefix": "sh",
+    "body": "```sh\n$1\n```",
+    "description": "sh"
+  },
+  "css": {
+    "prefix": "css",
+    "body": "```css\n$1\n```",
+    "description": "css"
+  },
+  "html": {
+    "prefix": "html",
+    "body": "```html\n$1\n```",
+    "description": "html"
+  },
+  "md": {
+    "prefix": "md",
+    "body": "```md\n$1\n```",
+    "description": "md"
+  },
+  "yml": {
+    "prefix": "yml",
+    "body": "```yml\n$1\n```",
+    "description": "yml"
+  },
+  "yaml": {
+    "prefix": "yaml",
+    "body": "```yml\n$1\n```",
+    "description": "yaml"
+  },
+  "java": {
+    "prefix": "java",
+    "body": "```java\n$1\n```",
+    "description": "java"
+  },
+  "xml": {
+    "prefix": "xml",
+    "body": "```xml\n$1\n```",
+    "description": "xml"
+  },
+  "json": {
+    "prefix": "json",
+    "body": "```json\n$1\n```",
+    "description": "json"
+  },
+  "sql": {
+    "prefix": "sql",
+    "body": "```sql\n$1\n```",
+    "description": "sql"
+  },
+  "txt": {
+    "prefix": "txt",
+    "body": "```txt\n$1\n```",
+    "description": "txt"
+  },
+  "py": {
+    "prefix": "py",
+    "body": "```py\n$1\n```",
+    "description": "py"
+  },
+  "rb": {
+    "prefix": "rb",
+    "body": "```rb\n$1\n```",
+    "description": "rb"
+  }
+}

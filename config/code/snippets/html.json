@@ -1,0 +1,7 @@
+{
+  "Html": {
+    "prefix": "html",
+    "body": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n  <title>Some Title</title>\n</head>\n<body>\n  $1\n</body>\n</html>",
+    "description": "Html"
+  }
+}

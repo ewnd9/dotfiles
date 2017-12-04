@@ -1,4 +1,67 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "editor.renderWhitespace": "boundary"
+  "editor.renderWhitespace": "boundary",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.parameterHints": false,
+  "editor.formatOnPaste": true,
+  "window.menuBarVisibility": "toggle",
+  "explorer.openEditors.visible": 0,
+  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "vs-minimal",
+  "workbench.panel.location": "bottom",
+  "workbench.colorCustomizations": {
+    // https://github.com/Microsoft/vscode/issues/178#issuecomment-343095492
+    "gitDecoration.ignoredResourceForeground": "#555555",
+    "gitDecoration.modifiedResourceForeground": "#ff982d",
+    "gitDecoration.untrackedResourceForeground": "#2bda77",
+    "sideBar.background": "#303030",
+    "sideBar.foreground": "#aaaaaa"
+  },
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressUpdateNotice": false,
+    "suppressWelcomeNotice": true
+  },
+  "gitlens.blame.line.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "atomKeymap.promptV3Features": true,
+  "vim.startInInsertMode": false,
+  "vim.useSystemClipboard": true,
+  "vim.otherModesKeyBindings": [
+    {
+      "before": [
+        "S-Tab"
+      ],
+      "after": [
+        "<",
+        "g",
+        "v"
+      ]
+    },
+    {
+      "before": [
+        "Tab"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ]
+    }
+  ],
+  "git.decorations.enabled": true,
+  "keyboard.dispatch": "keyCode",
+  "extensions.ignoreRecommendations": true
 }

@@ -1,0 +1,7 @@
+{
+  "Check arguments count": {
+    "prefix": "args",
+    "body": "if [ \"$#\" -ne 1 ]; then\n  echo \"Usage: $1 <$2>\"\n  exit 1\nfi",
+    "description": "Check arguments count"
+  }
+}
