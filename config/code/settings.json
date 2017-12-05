@@ -8,6 +8,7 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.parameterHints": false,
   "editor.formatOnPaste": true,
+  "editor.snippetSuggestions": "top",
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
   "workbench.activityBar.visible": false,
@@ -63,5 +64,6 @@
   ],
   "git.decorations.enabled": true,
   "keyboard.dispatch": "keyCode",
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "files.insertFinalNewline": true
 }
