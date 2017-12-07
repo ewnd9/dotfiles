@@ -23,6 +23,12 @@ link config/vimrc .vimrc
 link config/tmux.conf .tmux.conf
 link config/fusuma.yml .config/fusuma/config.yml
 
+mkdir -p $HOME/.config/nvim
+link config/vimrc .config/nvim/init.vim
+link config/vim/autoload .config/nvim/autoload
+link config/vim/bundle .config/nvim/bundle
+link config/vim/snippets .config/nvim/snippets
+
 mkdir -p ~/.atom
 link config/atom/config.cson .atom/config.cson
 link config/atom/keymaps.cson .atom/keymaps.cson
