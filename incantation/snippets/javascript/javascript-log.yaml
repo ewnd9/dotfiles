@@ -1,0 +1,23 @@
+lang: javascript
+snippets:
+  - name: Log
+    prefix: log
+    body: console.log($1)
+  - name: DevConsole
+    prefix: dev
+    body: const devConsole = console;
+  - name: Log Inspect
+    prefix: logman
+    body: console.log($1) ||
+  - name: Trace
+    prefix: trace
+    body: _ => console.log(_) || _
+  - name: TracePretty
+    prefix: tracep
+    body: '_ => console.log(JSON.stringify(_, null, 2)) || _'
+  - name: Inspect
+    prefix: inspect
+    body: 'console.log(require(''util'').inspect($1, { showHidden: false, depth: null }))'
+  - name: Debugga
+    prefix: debugga
+    body: '(()=>{debugger})() || $1'

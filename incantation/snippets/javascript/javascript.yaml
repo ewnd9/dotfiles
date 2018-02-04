@@ -3,52 +3,15 @@ snippets:
   - name: Constructor
     prefix: constructor
     body: constructor
-  - name: Log
-    prefix: log
-    body: console.log($1)
-  - name: DevConsole
-    prefix: dev
-    body: const devConsole = console;
   - name: AssertEqual
     prefix: assert
     body: 'assert.strictEqual($1, $2, $3);'
   - name: AssertNotUndefined
     prefix: defined
     body: 'assert.notStrictEqual(typeof $1, ''undefined'', ''$1 should be defined'');'
-  - name: Log Inspect
-    prefix: logman
-    body: console.log($1) ||
-  - name: Trace
-    prefix: trace
-    body: _ => console.log(_) || _
-  - name: TracePretty
-    prefix: tracep
-    body: '_ => console.log(JSON.stringify(_, null, 2)) || _'
-  - name: Inspect
-    prefix: inspect
-    body: 'console.log(require(''util'').inspect($1, { showHidden: false, depth: null }))'
-  - name: Then
-    prefix: then
-    body: |-
-      then($1 => {
-        $2
-      })$3
-  - name: Catch
-    prefix: catch
-    body: catch(err => console.log(err.stack || err))
   - name: Iterate map
     prefix: imap
     body: imap(_ => _.$1)
-  - name: Promise
-    prefix: thencatch
-    body: |-
-      then(data => {
-        console.log(data);
-      })
-      .catch(err => {
-        console.log(err.stack || err)
-      });
-      $1
   - name: Angular
     prefix: angular
     body: |-
@@ -58,207 +21,15 @@ snippets:
           $1
         }
       };
-  - name: React
-    prefix: react
-    body: |-
-      import React, { PropTypes } from 'react';
-
-      const $1 = React.createClass({
-        render() {
-          return (
-            <div>
-
-            </div>
-          );
-        }
-      });
-
-      $1.propTypes = {
-
-      };
-
-      export default $1;
-  - name: React-Function
-    prefix: reactf
-    body: |-
-      import React, { PropTypes } from 'react';
-
-      function $1({ }) {
-        return (
-          <div>
-
-          </div>
-        );
-      }
-
-      $1.propTypes = {
-
-      };
-
-      export default $1;
-  - name: React-Class
-    prefix: reactc
-    body: |-
-      import React, { Component, PropTypes } from 'react';
-
-      class $1 extends Component {
-        render() {
-          return (
-            <div>
-
-            </div>
-          );
-        }
-      }
-
-      $1.propTypes = {
-
-      };
-
-      export default $1;
-  - name: React-Intl-Import
-    prefix: reactintl
-    body: 'import { FormattedMessage } from ''react-intl'';'
-  - name: React-Intl-Message
-    prefix: FormattedMessage
-    body: <FormattedMessage id="$1" defaultMessage="$2" />
-  - name: React-Tcomb
-    prefix: rt
-    body: |-
-      import React from 'react';
-
-      import t from 'tcomb';
-      import { propTypes } from 'tcomb-react';
-
-      const $1 = React.createClass({
-        propTypes: propTypes({
-
-        }),
-        render() {
-          return (
-            <div>
-
-            </div>
-          );
-        }
-      });
-
-      export default $1;
-  - name: React-Redux-Tcomb
-    prefix: rrt
-    body: |-
-      import React from 'react';
-
-      import { connect } from 'react-redux';
-
-      import t from 'tcomb';
-      import { propTypes } from 'tcomb-react';
-
-      // import { schema } from '../../reducers/-reducer';
-      import { reactRouterPropTypes } from '../../schema/react-router';
-
-      // import { } from '../../actions/-actions';
-
-      const mapStateToProps = ({ }) => ({ });
-      const mapDispatchToProps = { };
-
-      const $1 = React.createClass({
-        propTypes: propTypes({
-          ...reactRouterPropTypes,
-          children: t.Nil
-        }),
-        componentDidMount() {
-          // const { } = this.props;
-        },
-        componentWillReceiveProps(nextProps) {
-          // const { } = this.props;
-
-          // if ( !== nextProps) {
-          //
-          // }
-        },
-        render() {
-          // const { } = this.props;
-
-          return (
-            <div>
-
-            </div>
-          );
-        }
-      });
-
-      export default connect(mapStateToProps, mapDispatchToProps)($1);
-  - name: Debugga
-    prefix: debugga
-    body: '(()=>{debugger})() || $1'
-  - name: Log Chain
-    prefix: logchain
-    body: 'then(_ => { console.log(_); return _ })'
   - name: Use Strict
     prefix: us
     body: '''use strict'';'
-  - name: CommonJS modern require
-    prefix: re
-    body: 'const ${1} = require(''${1}'');'
-  - name: CommonJS modern require lodash
-    prefix: relo
-    body: 'const ${1} = require(''lodash/${1}'');'
-  - name: CommonJS modern require lodash fp
-    prefix: relof
-    body: 'const ${1} = require(''lodash/fp/${1}'');'
-  - name: CommonJS modern require asymmetrical
-    prefix: rea
-    body: 'const ${1} = require(''${2}'');'
-  - name: require fs
-    prefix: refs
-    body: const fs = require('fs');
-  - name: import
-    prefix: im
-    body: import $1 from '$1';
-  - name: import asymmetrical
-    prefix: ima
-    body: import $1 from '$2';
-  - name: import fs
-    prefix: imfs
-    body: import fs from 'fs';
-  - name: import react
-    prefix: imreact
-    body: import React from 'react';
-  - name: import style.css
-    prefix: imst
-    body: import styles from './style.css';
   - name: read file
     prefix: readfile
     body: 'const data = fs.readFileSync($1, ''utf-8'');$2'
   - name: stringify
     prefix: str
     body: 'JSON.stringify($1, null, 2)$2'
-  - name: export
-    prefix: ex
-    body: export const $1;
-  - name: connect
-    prefix: connect
-    body: 'connect(mapStateToProps, mapDispatchToProps)($1)'
-  - name: mapState
-    prefix: mapState
-    body: |-
-      import { connect } from 'react-redux';
-
-      const mapStateToProps = $1;
-      const mapDispatchToProps = { $2 };
-  - name: redux
-    prefix: redux
-    body: |-
-      export const $1_REQUEST = '$1_REQUEST';
-      export const $1_SUCCESS = '$1_SUCCESS';
-      export const $1_FAILURE = '$1_FAILURE';
-  - name: react className
-    prefix: cn
-    body: className=
-  - name: react div
-    prefix: <div
-    body: <div className=
   - name: type-codegen tcomb
     prefix: cgtcomb
     body: console.log(require('type-codegen/packages/tcomb-codegen').generateCode($1))
@@ -272,25 +43,6 @@ snippets:
 
         console.log('listening localhost:$1');
       });
-  - name: json-schema-object
-    prefix: jobject
-    body: |-
-      type: 'object',
-      properties: {
-        $1
-      },
-      required: []
-  - name: json-schema-array
-    prefix: jarray
-    body: |-
-      type: 'array',
-      items: $1
-  - name: json-schema-number
-    prefix: jnumber
-    body: 'type: ''number'''
-  - name: json-schema-string
-    prefix: jstring
-    body: 'type: ''string'''
   - name: exec-file
     prefix: execfile
     body: |-
@@ -307,15 +59,3 @@ snippets:
   - name: argv
     prefix: argv
     body: 'const argv = require(''minimist'')(process.argv.slice(2), { string: ''_'' });'
-  - name: async-main
-    prefix: amain
-    body: |-
-      main()
-        .catch(err => {
-          devConsole.error(err);
-          process.exit(1);
-        });
-
-      async function main() {
-
-      }

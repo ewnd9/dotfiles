@@ -1,0 +1,161 @@
+lang: javascript
+snippets:
+  - name: React
+    prefix: react
+    body: |-
+      import React, { PropTypes } from 'react';
+
+      const $1 = React.createClass({
+        render() {
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      });
+
+      $1.propTypes = {
+
+      };
+
+      export default $1;
+  - name: React-Function
+    prefix: reactf
+    body: |-
+      import React, { PropTypes } from 'react';
+
+      function $1({ }) {
+        return (
+          <div>
+
+          </div>
+        );
+      }
+
+      $1.propTypes = {
+
+      };
+
+      export default $1;
+  - name: React-Class
+    prefix: reactc
+    body: |-
+      import React, { Component, PropTypes } from 'react';
+
+      class $1 extends Component {
+        render() {
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      }
+
+      $1.propTypes = {
+
+      };
+
+      export default $1;
+  - name: React-Intl-Import
+    prefix: reactintl
+    body: 'import { FormattedMessage } from ''react-intl'';'
+  - name: React-Intl-Message
+    prefix: FormattedMessage
+    body: <FormattedMessage id="$1" defaultMessage="$2" />
+  - name: React-Tcomb
+    prefix: rt
+    body: |-
+      import React from 'react';
+
+      import t from 'tcomb';
+      import { propTypes } from 'tcomb-react';
+
+      const $1 = React.createClass({
+        propTypes: propTypes({
+
+        }),
+        render() {
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      });
+
+      export default $1;
+  - name: React-Redux-Tcomb
+    prefix: rrt
+    body: |-
+      import React from 'react';
+
+      import { connect } from 'react-redux';
+
+      import t from 'tcomb';
+      import { propTypes } from 'tcomb-react';
+
+      // import { schema } from '../../reducers/-reducer';
+      import { reactRouterPropTypes } from '../../schema/react-router';
+
+      // import { } from '../../actions/-actions';
+
+      const mapStateToProps = ({ }) => ({ });
+      const mapDispatchToProps = { };
+
+      const $1 = React.createClass({
+        propTypes: propTypes({
+          ...reactRouterPropTypes,
+          children: t.Nil
+        }),
+        componentDidMount() {
+          // const { } = this.props;
+        },
+        componentWillReceiveProps(nextProps) {
+          // const { } = this.props;
+
+          // if ( !== nextProps) {
+          //
+          // }
+        },
+        render() {
+          // const { } = this.props;
+
+          return (
+            <div>
+
+            </div>
+          );
+        }
+      });
+
+      export default connect(mapStateToProps, mapDispatchToProps)($1);
+  - name: import react
+    prefix: imreact
+    body: import React from 'react';
+  - name: import style.css
+    prefix: imst
+    body: import styles from './style.css';
+  - name: connect
+    prefix: connect
+    body: 'connect(mapStateToProps, mapDispatchToProps)($1)'
+  - name: mapState
+    prefix: mapState
+    body: |-
+      import { connect } from 'react-redux';
+
+      const mapStateToProps = $1;
+      const mapDispatchToProps = { $2 };
+  - name: redux
+    prefix: redux
+    body: |-
+      export const $1_REQUEST = '$1_REQUEST';
+      export const $1_SUCCESS = '$1_SUCCESS';
+      export const $1_FAILURE = '$1_FAILURE';
+  - name: react className
+    prefix: cn
+    body: className=
+  - name: react div
+    prefix: <div
+    body: <div className=

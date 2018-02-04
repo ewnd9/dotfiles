@@ -1,0 +1,36 @@
+lang: javascript
+snippets:
+  - name: Then
+    prefix: then
+    body: |-
+      then($1 => {
+        $2
+      })$3
+  - name: Catch
+    prefix: catch
+    body: catch(err => console.log(err.stack || err))
+  - name: Promise
+    prefix: thencatch
+    body: |-
+      then(data => {
+        console.log(data);
+      })
+      .catch(err => {
+        console.log(err.stack || err)
+      });
+      $1
+  - name: Log Chain
+    prefix: logchain
+    body: 'then(_ => { console.log(_); return _ })'
+  - name: async-main
+    prefix: amain
+    body: |-
+      main()
+        .catch(err => {
+          devConsole.error(err);
+          process.exit(1);
+        });
+
+      async function main() {
+
+      }

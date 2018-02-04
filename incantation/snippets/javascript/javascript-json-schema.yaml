@@ -1,0 +1,21 @@
+lang: javascript
+snippets:
+  - name: json-schema-object
+    prefix: jobject
+    body: |-
+      type: 'object',
+      properties: {
+        $1
+      },
+      required: []
+  - name: json-schema-array
+    prefix: jarray
+    body: |-
+      type: 'array',
+      items: $1
+  - name: json-schema-number
+    prefix: jnumber
+    body: 'type: ''number'''
+  - name: json-schema-string
+    prefix: jstring
+    body: 'type: ''string'''
