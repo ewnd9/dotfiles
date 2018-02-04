@@ -1,7 +1,7 @@
-'.text.html':
-  'Html':
-    'prefix': 'html'
-    'body': """
+".text.html":
+  Html:
+    prefix: "html"
+    body: '''
       <!DOCTYPE html>
       <html>
       <head>
@@ -14,4 +14,4 @@
         $1
       </body>
       </html>
-    """
+    '''

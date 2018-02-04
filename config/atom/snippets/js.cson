@@ -1,23 +1,17 @@
-'.source.js':
-  'Constructor':
-    'prefix': 'constructor'
-    'body': 'constructor'
-  'Log':
-    'prefix': 'log'
-    'body': 'console.log($1)'
-  'Then':
-    'prefix': 'then'
-    'body': """
+".source.js":
+  Then:
+    prefix: "then"
+    body: '''
       then($1 => {
         $2
       })$3
-    """
-  'Catch':
-    'prefix': 'catch'
-    'body': 'catch(err => console.log(err.stack || err))'
-  'Promise':
-    'prefix': 'thencatch'
-    'body': """
+    '''
+  Catch:
+    prefix: "catch"
+    body: "catch(err => console.log(err.stack || err))"
+  Promise:
+    prefix: "thencatch"
+    body: '''
       then(data => {
         console.log(data);
       })
@@ -25,20 +19,68 @@
         console.log(err.stack || err)
       });
       $1
-    """
-  'Angular':
-    'prefix': 'angular'
-    'body': """
-      export default {
-        scope: {},
-        controller: ($scope) => {
-          $1
-        }
-      };
-    """
-  'React':
-    'prefix': 'react'
-    'body': """
+    '''
+  "Log Chain":
+    prefix: "logchain"
+    body: "then(_ => { console.log(_); return _ })"
+  "async-main":
+    prefix: "amain"
+    body: '''
+      main()
+        .catch(err => {
+          devConsole.error(err);
+          process.exit(1);
+        });
+
+      async function main() {
+
+      }
+    '''
+  "json-schema-object":
+    prefix: "jobject"
+    body: '''
+      type: 'object',
+      properties: {
+        $1
+      },
+      required: []
+    '''
+  "json-schema-array":
+    prefix: "jarray"
+    body: '''
+      type: 'array',
+      items: $1
+    '''
+  "json-schema-number":
+    prefix: "jnumber"
+    body: "type: 'number'"
+  "json-schema-string":
+    prefix: "jstring"
+    body: "type: 'string'"
+  Log:
+    prefix: "log"
+    body: "console.log($1)"
+  DevConsole:
+    prefix: "dev"
+    body: "const devConsole = console;"
+  "Log Inspect":
+    prefix: "logman"
+    body: "console.log($1) ||"
+  Trace:
+    prefix: "trace"
+    body: "_ => console.log(_) || _"
+  TracePretty:
+    prefix: "tracep"
+    body: "_ => console.log(JSON.stringify(_, null, 2)) || _"
+  Inspect:
+    prefix: "inspect"
+    body: "console.log(require('util').inspect($1, { showHidden: false, depth: null }))"
+  Debugga:
+    prefix: "debugga"
+    body: "(()=>{debugger})() || $1"
+  React:
+    prefix: "react"
+    body: '''
       import React, { PropTypes } from 'react';
 
       const $1 = React.createClass({
@@ -56,10 +98,10 @@
       };
 
       export default $1;
-    """
-  'React-Function':
-    'prefix': 'reactf'
-    'body': """
+    '''
+  "React-Function":
+    prefix: "reactf"
+    body: '''
       import React, { PropTypes } from 'react';
 
       function $1({ }) {
@@ -75,10 +117,10 @@
       };
 
       export default $1;
-    """
-  'React-Class':
-    'prefix': 'reactc'
-    'body': """
+    '''
+  "React-Class":
+    prefix: "reactc"
+    body: '''
       import React, { Component, PropTypes } from 'react';
 
       class $1 extends Component {
@@ -96,20 +138,16 @@
       };
 
       export default $1;
-    """
-  'React-Intl-Import':
-    'prefix': 'reactintl'
-    'body': """
-      import { FormattedMessage } from 'react-intl';
-    """
-  'React-Intl-Message':
-    'prefix': 'FormattedMessage'
-    'body': """
-      <FormattedMessage id="$1" defaultMessage="$2" />
-    """
-  'React-Tcomb':
-    'prefix': 'rt'
-    'body': """
+    '''
+  "React-Intl-Import":
+    prefix: "reactintl"
+    body: "import { FormattedMessage } from 'react-intl';"
+  "React-Intl-Message":
+    prefix: "FormattedMessage"
+    body: "<FormattedMessage id=\"$1\" defaultMessage=\"$2\" />"
+  "React-Tcomb":
+    prefix: "rt"
+    body: '''
       import React from 'react';
 
       import t from 'tcomb';
@@ -129,10 +167,10 @@
       });
 
       export default $1;
-    """
-  'React-Redux-Tcomb':
-    'prefix': 'rrt'
-    'body': """
+    '''
+  "React-Redux-Tcomb":
+    prefix: "rrt"
+    body: '''
       import React from 'react';
 
       import { connect } from 'react-redux';
@@ -175,79 +213,101 @@
       });
 
       export default connect(mapStateToProps, mapDispatchToProps)($1);
-    """
-  'Debugga':
-    'prefix': 'debugga'
-    'body': '(()=>{debugger})() || $1'
-  'Log Chain':
-    'prefix': 'logchain'
-    'body': 'then(_ => { console.log(_); return _ })'
-  'Use Strict':
-    'prefix': 'us'
-    'body': '\'use strict\';'
-  'CommonJS modern require':
-    'prefix': 're'
-    'body': 'const ${1} = require(\'${1}\');'
-  'CommonJS modern require asymmetrical':
-    'prefix': 'rea'
-    'body': 'const ${1} = require(\'${2}\');'
-  'require fs':
-    'prefix': 'refs'
-    'body': 'const fs = require(\'fs\');'
-  'import':
-    'prefix': 'im'
-    'body': 'import $1 from \'$1\';'
-  'import asymmetrical':
-    'prefix': 'ima'
-    'body': 'import $1 from \'$2\';'
-  'import fs':
-    'prefix': 'imfs'
-    'body': 'import fs from \'fs\';'
-  'import react':
-    'prefix': 'imreact'
-    'body': 'import React from \'react\';'
-  'import style.css':
-    'prefix': 'imst'
-    'body': 'import styles from \'./style.css\';'
-  'read file':
-    'prefix': 'readfile'
-    'body': 'const data = fs.readFileSync($1, \'utf-8\');$2'
-  'stringify':
-    'prefix': 'str'
-    'body': 'JSON.stringify($1, null, 2)$2'
-  'export':
-    'prefix': 'ex'
-    'body': 'export const $1;'
-  'connect':
-    'prefix': 'connect'
-    'body': 'connect(mapStateToProps, mapDispatchToProps)($1)'
-  'mapState':
-    'prefix': 'mapState'
-    'body': """
+    '''
+  "import react":
+    prefix: "imreact"
+    body: "import React from 'react';"
+  "import style.css":
+    prefix: "imst"
+    body: "import styles from './style.css';"
+  connect:
+    prefix: "connect"
+    body: "connect(mapStateToProps, mapDispatchToProps)($1)"
+  mapState:
+    prefix: "mapState"
+    body: '''
       import { connect } from 'react-redux';
 
       const mapStateToProps = $1;
       const mapDispatchToProps = { $2 };
-    """
-  'redux':
-    'prefix': 'redux'
-    'body': """
+    '''
+  redux:
+    prefix: "redux"
+    body: '''
       export const $1_REQUEST = '$1_REQUEST';
       export const $1_SUCCESS = '$1_SUCCESS';
       export const $1_FAILURE = '$1_FAILURE';
-    """
-  'react className':
-    'prefix': 'cn'
-    'body': 'className='
-  'react div':
-    'prefix': '<div'
-    'body': '<div className='
-  'type-codegen tcomb':
-    'prefix': 'cgtcomb'
-    'body': 'console.log(require(\'type-codegen/packages/tcomb-codegen\').generateCode($1))'
-  'listen port':
-    'prefix': 'listen'
-    'body': """
+    '''
+  "react className":
+    prefix: "cn"
+    body: "className="
+  "react div":
+    prefix: "<div"
+    body: "<div className="
+  "CommonJS modern require":
+    prefix: "re"
+    body: "const ${1} = require('${1}');"
+  "CommonJS modern require lodash":
+    prefix: "relo"
+    body: "const ${1} = require('lodash/${1}');"
+  "CommonJS modern require lodash fp":
+    prefix: "relof"
+    body: "const ${1} = require('lodash/fp/${1}');"
+  "CommonJS modern require asymmetrical":
+    prefix: "rea"
+    body: "const ${1} = require('${2}');"
+  "require fs":
+    prefix: "refs"
+    body: "const fs = require('fs');"
+  import:
+    prefix: "im"
+    body: "import $1 from '$1';"
+  "import asymmetrical":
+    prefix: "ima"
+    body: "import $1 from '$2';"
+  "import fs":
+    prefix: "imfs"
+    body: "import fs from 'fs';"
+  export:
+    prefix: "ex"
+    body: "export const $1;"
+  Constructor:
+    prefix: "constructor"
+    body: "constructor"
+  AssertEqual:
+    prefix: "assert"
+    body: "assert.strictEqual($1, $2, $3);"
+  AssertNotUndefined:
+    prefix: "defined"
+    body: "assert.notStrictEqual(typeof $1, 'undefined', '$1 should be defined');"
+  "Iterate map":
+    prefix: "imap"
+    body: "imap(_ => _.$1)"
+  Angular:
+    prefix: "angular"
+    body: '''
+      export default {
+        scope: {},
+        controller: ($scope) => {
+          $1
+        }
+      };
+    '''
+  "Use Strict":
+    prefix: "us"
+    body: "'use strict';"
+  "read file":
+    prefix: "readfile"
+    body: "const data = fs.readFileSync($1, 'utf-8');$2"
+  stringify:
+    prefix: "str"
+    body: "JSON.stringify($1, null, 2)$2"
+  "type-codegen tcomb":
+    prefix: "cgtcomb"
+    body: "console.log(require('type-codegen/packages/tcomb-codegen').generateCode($1))"
+  "listen port":
+    prefix: "listen"
+    body: '''
       listen($1, err => {
         if (err) {
           throw err;
@@ -255,25 +315,21 @@
 
         console.log('listening localhost:$1');
       });
-    """
-  'json-schema-object':
-    'prefix': 'jobject'
-    'body': """
-    type: 'object',
-    required: [],
-    properties: {
-      $1
-    }
-    """
-  'json-schema-array':
-    'prefix': 'jarray'
-    'body': """
-    type: 'array',
-    items: $1
-    """
-  'json-schema-number':
-    'prefix': 'jnumber'
-    'body': 'type: \'number\''
-  'json-schema-string':
-    'prefix': 'jstring'
-    'body': 'type: \'string\''
+    '''
+  "exec-file":
+    prefix: "execfile"
+    body: '''
+      const path = require('path');
+      const { execFileSync } = require('child_process');
+
+      const rootPath = path.resolve(`${__dirname}`);
+      const devConsole = console;
+
+      function run(cmd, args, opts = {}) {
+        devConsole.log(`$ ${cmd} ${args.join(' ')}`);
+        execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, opts));
+      }
+    '''
+  argv:
+    prefix: "argv"
+    body: "const argv = require('minimist')(process.argv.slice(2), { string: '_' });"

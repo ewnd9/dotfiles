@@ -1,9 +1,9 @@
-'.source.shell':
-  'Check arguments count':
-    'prefix': 'args'
-    'body': """
+".source.shell":
+  "Check arguments count":
+    prefix: "args"
+    body: '''
       if [ "$#" -ne 1 ]; then
         echo "Usage: $1 <$2>"
         exit 1
       fi
-    """
+    '''

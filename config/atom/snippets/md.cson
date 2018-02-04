@@ -1,85 +1,99 @@
-'.source.gfm':
-  'js':
-    'prefix': 'js'
-    'body': """
+".source.gfm":
+  js:
+    prefix: "js"
+    body: '''
       ```js
       $1
       ```
-    """
-  'sh':
-    'prefix': 'sh'
-    'body': """
+    '''
+  sh:
+    prefix: "sh"
+    body: '''
       ```sh
       $1
       ```
-    """
-  'css':
-    'prefix': 'css'
-    'body': """
+    '''
+  css:
+    prefix: "css"
+    body: '''
       ```css
       $1
       ```
-    """
-  'html':
-    'prefix': 'html'
-    'body': """
+    '''
+  html:
+    prefix: "html"
+    body: '''
       ```html
       $1
       ```
-    """
-  'md':
-    'prefix': 'md'
-    'body': """
+    '''
+  md:
+    prefix: "md"
+    body: '''
       ```md
       $1
       ```
-    """
-  'yml':
-    'prefix': 'yml'
-    'body': """
+    '''
+  yml:
+    prefix: "yml"
+    body: '''
       ```yml
       $1
       ```
-    """
-  'yaml':
-    'prefix': 'yaml'
-    'body': """
+    '''
+  yaml:
+    prefix: "yaml"
+    body: '''
       ```yml
       $1
       ```
-    """
-  'java':
-    'prefix': 'java'
-    'body': """
+    '''
+  java:
+    prefix: "java"
+    body: '''
       ```java
       $1
       ```
-    """
-  'xml':
-    'prefix': 'xml'
-    'body': """
+    '''
+  xml:
+    prefix: "xml"
+    body: '''
       ```xml
       $1
       ```
-    """
-  'json':
-    'prefix': 'json'
-    'body': """
+    '''
+  json:
+    prefix: "json"
+    body: '''
       ```json
       $1
       ```
-    """
-  'sql':
-    'prefix': 'sql'
-    'body': """
+    '''
+  sql:
+    prefix: "sql"
+    body: '''
       ```sql
       $1
       ```
-    """
-  'txt':
-    'prefix': 'txt'
-    'body': """
+    '''
+  txt:
+    prefix: "txt"
+    body: '''
       ```txt
       $1
       ```
-    """
+    '''
+  py:
+    prefix: "py"
+    body: '''
+      ```py
+      $1
+      ```
+    '''
+  rb:
+    prefix: "rb"
+    body: '''
+      ```rb
+      $1
+      ```
+    '''
