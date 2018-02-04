@@ -1,0 +1,86 @@
+lang: markdown
+snippets:
+  - name: js
+    prefix: js
+    body: |-
+      ```js
+      $1
+      ```
+  - name: sh
+    prefix: sh
+    body: |-
+      ```sh
+      $1
+      ```
+  - name: css
+    prefix: css
+    body: |-
+      ```css
+      $1
+      ```
+  - name: html
+    prefix: html
+    body: |-
+      ```html
+      $1
+      ```
+  - name: md
+    prefix: md
+    body: |-
+      ```md
+      $1
+      ```
+  - name: yml
+    prefix: yml
+    body: |-
+      ```yml
+      $1
+      ```
+  - name: yaml
+    prefix: yaml
+    body: |-
+      ```yml
+      $1
+      ```
+  - name: java
+    prefix: java
+    body: |-
+      ```java
+      $1
+      ```
+  - name: xml
+    prefix: xml
+    body: |-
+      ```xml
+      $1
+      ```
+  - name: json
+    prefix: json
+    body: |-
+      ```json
+      $1
+      ```
+  - name: sql
+    prefix: sql
+    body: |-
+      ```sql
+      $1
+      ```
+  - name: txt
+    prefix: txt
+    body: |-
+      ```txt
+      $1
+      ```
+  - name: py
+    prefix: py
+    body: |-
+      ```py
+      $1
+      ```
+  - name: rb
+    prefix: rb
+    body: |-
+      ```rb
+      $1
+      ```
