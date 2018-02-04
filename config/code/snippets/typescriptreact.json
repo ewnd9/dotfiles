@@ -194,6 +194,11 @@
     "body": "export const $1;",
     "description": "export"
   },
+  "pify": {
+    "prefix": "pify",
+    "body": "const { promisify: pify } = require('util');",
+    "description": "pify"
+  },
   "Constructor": {
     "prefix": "constructor",
     "body": "constructor",

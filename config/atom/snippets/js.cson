@@ -271,6 +271,9 @@
   export:
     prefix: "ex"
     body: "export const $1;"
+  pify:
+    prefix: "pify"
+    body: "const { promisify: pify } = require('util');"
   Constructor:
     prefix: "constructor"
     body: "constructor"
