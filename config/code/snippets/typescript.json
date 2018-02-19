@@ -251,7 +251,7 @@
   },
   "exec-file": {
     "prefix": "execfile",
-    "body": "const path = require('path');\nconst { execFileSync } = require('child_process');\n\nconst rootPath = path.resolve(`${__dirname}`);\nconst devConsole = console;\n\nfunction run(cmd, args, opts = {}) {\n  devConsole.log(`$ ${cmd} ${args.join(' ')}`);\n  execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, opts));\n}",
+    "body": "const path = require('path');\nconst { execFileSync } = require('child_process');\n\nconst rootPath = path.resolve(`${__dirname\\}`);\nconst devConsole = console;\n\nfunction run(cmd, args, opts = {}) {\n  devConsole.log(`$ ${cmd\\} ${args.join(' ')}`);\n  execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, opts));\n}",
     "description": "exec-file"
   },
   "argv": {

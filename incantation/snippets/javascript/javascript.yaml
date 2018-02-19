@@ -49,11 +49,11 @@ snippets:
       const path = require('path');
       const { execFileSync } = require('child_process');
 
-      const rootPath = path.resolve(`${__dirname}`);
+      const rootPath = path.resolve(`${__dirname\}`);
       const devConsole = console;
 
       function run(cmd, args, opts = {}) {
-        devConsole.log(`$ ${cmd} ${args.join(' ')}`);
+        devConsole.log(`$ ${cmd\} ${args.join(' ')}`);
         execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, opts));
       }
   - name: argv
