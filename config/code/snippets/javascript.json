@@ -81,18 +81,18 @@
   },
   "React": {
     "prefix": "react",
-    "body": "import React, { PropTypes } from 'react';\n\nconst $1 = React.createClass({\n  render() {\n    return (\n      <div>\n\n      </div>\n    );\n  }\n});\n\n$1.propTypes = {\n\n};\n\nexport default $1;",
+    "body": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nexport const $1 = () => (\n  <div>\n  </div>\n);\n\n$1.propTypes = {\n\n};",
     "description": "React"
   },
-  "React-Function": {
-    "prefix": "reactf",
-    "body": "import React, { PropTypes } from 'react';\n\nfunction $1({ }) {\n  return (\n    <div>\n\n    </div>\n  );\n}\n\n$1.propTypes = {\n\n};\n\nexport default $1;",
-    "description": "React-Function"
-  },
   "React-Class": {
-    "prefix": "reactc",
-    "body": "import React, { Component, PropTypes } from 'react';\n\nclass $1 extends Component {\n  render() {\n    return (\n      <div>\n\n      </div>\n    );\n  }\n}\n\n$1.propTypes = {\n\n};\n\nexport default $1;",
+    "prefix": "reactclass",
+    "body": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nexport class $1 extends React.Component {\n  render() {\n    return (\n      <div>\n\n      </div>\n    );\n  }\n}\n\n$1.propTypes = {\n\n};",
     "description": "React-Class"
+  },
+  "React-Compose": {
+    "prefix": "reactcompose",
+    "body": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nimport { compose } from 'recompose';\n\nexport const enhance = compose();\n\nexport const $1Base = () => (\n  <div>\n  </div>\n);\n\n$1.propTypes = {\n\n};\n\nexport const $1 = enhance($1Base);",
+    "description": "React-Compose"
   },
   "React-Intl-Import": {
     "prefix": "reactintl",
@@ -103,16 +103,6 @@
     "prefix": "FormattedMessage",
     "body": "<FormattedMessage id=\"$1\" defaultMessage=\"$2\" />",
     "description": "React-Intl-Message"
-  },
-  "React-Tcomb": {
-    "prefix": "rt",
-    "body": "import React from 'react';\n\nimport t from 'tcomb';\nimport { propTypes } from 'tcomb-react';\n\nconst $1 = React.createClass({\n  propTypes: propTypes({\n\n  }),\n  render() {\n    return (\n      <div>\n\n      </div>\n    );\n  }\n});\n\nexport default $1;",
-    "description": "React-Tcomb"
-  },
-  "React-Redux-Tcomb": {
-    "prefix": "rrt",
-    "body": "import React from 'react';\n\nimport { connect } from 'react-redux';\n\nimport t from 'tcomb';\nimport { propTypes } from 'tcomb-react';\n\n// import { schema } from '../../reducers/-reducer';\nimport { reactRouterPropTypes } from '../../schema/react-router';\n\n// import { } from '../../actions/-actions';\n\nconst mapStateToProps = ({ }) => ({ });\nconst mapDispatchToProps = { };\n\nconst $1 = React.createClass({\n  propTypes: propTypes({\n    ...reactRouterPropTypes,\n    children: t.Nil\n  }),\n  componentDidMount() {\n    // const { } = this.props;\n  },\n  componentWillReceiveProps(nextProps) {\n    // const { } = this.props;\n\n    // if ( !== nextProps) {\n    //\n    // }\n  },\n  render() {\n    // const { } = this.props;\n\n    return (\n      <div>\n\n      </div>\n    );\n  }\n});\n\nexport default connect(mapStateToProps, mapDispatchToProps)($1);",
-    "description": "React-Redux-Tcomb"
   },
   "import react": {
     "prefix": "imreact",
