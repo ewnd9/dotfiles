@@ -29,15 +29,6 @@
 [submodule "config/zsh/zsh-notify"]
 	path = config/zsh/zsh-notify
 	url = https://github.com/marzocchi/zsh-notify.git
-[submodule "scripts/codemod/js-codemod-ewnd9"]
-	path = scripts/codemod/js-codemod-ewnd9
-	url = git@github.com:ewnd9/js-codemod.git
-[submodule "scripts/codemod/js-codemod-cpojer"]
-	path = scripts/codemod/js-codemod-cpojer
-	url = https://github.com/cpojer/js-codemod.git
-[submodule "scripts/codemod/5to6-codemod"]
-	path = scripts/codemod/5to6-codemod
-	url = https://github.com/5to6/5to6-codemod.git
 [submodule "config/vim/bundle/file-line"]
 	path = config/vim/bundle/file-line
 	url = https://github.com/bogado/file-line.git
@@ -50,3 +41,12 @@
 [submodule "config/vim/bundle/vim-move"]
 	path = config/vim/bundle/vim-move
 	url = git@github.com:ewnd9/vim-move.git
+[submodule "scripts/graphics-switcher"]
+	path = scripts/graphics-switcher
+	url = https://github.com/bauca/graphics-switcher.git
+[submodule "config/vim/bundle/vim-javascript"]
+	path = config/vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "config/vim/bundle/vim-commentary"]
+	path = config/vim/bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
