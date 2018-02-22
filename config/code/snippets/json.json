@@ -1,0 +1,7 @@
+{
+  "private-package": {
+    "prefix": "privpackage",
+    "body": "{\n  \"name\": \"$1\",\n  \"version\": \"0.0.0\",\n  \"private\": true\n}",
+    "description": "private-package"
+  }
+}

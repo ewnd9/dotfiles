@@ -1,0 +1,10 @@
+lang: json
+snippets:
+  - name: private-package
+    prefix: privpackage
+    body: |-
+      {
+        "name": "$1",
+        "version": "0.0.0",
+        "private": true
+      }
