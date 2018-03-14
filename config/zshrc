@@ -1,6 +1,11 @@
 # Set up the prompt
 
-source $HOME/.zsh/git-prompt/zshrc.sh
+source $HOME/.zsh/prompt/async.zsh
+source $HOME/.zsh/prompt/pure.zsh
+
+PURE_GIT_PULL=0
+PURE_PROMPT_SYMBOL=λ
+# source $HOME/.zsh/git-prompt/zshrc.sh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOME/.zsh/zsh-notify/notify.plugin.zsh
