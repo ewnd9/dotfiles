@@ -61,6 +61,23 @@ killport () { fuser -k $1/tcp }
 alias psme="ps -U ewnd9 | grep"
 
 ## text processing
+todo () {
+  DIR=${@:-.}
+  rg --line-number --word-regexp 'FIXME|TODO' --context 1 --pretty "$DIR" "$@" | less -R
+}
+todoo () {
+  DIR=${@:-.}
+  rg --line-number --word-regexp 'FIXME|TODO' --context 1 --pretty "$DIR" "$@"
+}
+todoc () {
+  DIR=${@:-.}
+  rg --line-number --word-regexp 'FIXME|TODO' --context 1 --pretty --count "$DIR" | wc -l
+}
+todocc () {
+  DIR=${@:-.}
+  rg --line-number --word-regexp 'FIXME|TODO' --context 1 --pretty --count "$DIR" "$@"
+}
+
 alias grep-text="grep -nr"
 alias find-file="find . -type f -name" # $ find-file '.*'
 alias find-dir="find . -type d -name" # $ find-dir '*babel*' 
