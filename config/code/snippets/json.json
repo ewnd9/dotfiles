@@ -3,5 +3,10 @@
     "prefix": "privpackage",
     "body": "{\n  \"name\": \"$1\",\n  \"version\": \"0.0.0\",\n  \"private\": true\n}",
     "description": "private-package"
+  },
+  "my-package": {
+    "prefix": "mypackage",
+    "body": "{\n  \"name\": \"$1\",\n  \"version\": \"0.0.0\",\n  \"description\": \"<description>\",\n  \"main\": \"index.js\",\n  \"author\": \"ewnd9 <ewndnine@gmail.com>\",\n  \"license\": \"MIT\",\n  \"repository\": \"https://github.com/ewnd9/$1\"\n}",
+    "description": "my-package"
   }
 }

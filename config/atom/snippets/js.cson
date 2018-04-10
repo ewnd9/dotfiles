@@ -28,7 +28,7 @@
     body: '''
       main()
         .catch(err => {
-          devConsole.error(err);
+          console.error(err);
           process.exit(1);
         });
 
@@ -200,6 +200,21 @@
   pify:
     prefix: "pify"
     body: "const { promisify: pify } = require('util');"
+  "require superagent":
+    prefix: "resu"
+    body: "const request = require('superagent');"
+  "import superagent":
+    prefix: "imsu"
+    body: "import request from 'superagent';"
+  "require Ramda":
+    prefix: "reramda"
+    body: "const R = require('ramda');"
+  "import ramda":
+    prefix: "imramda"
+    body: "import R from 'ramda';"
+  "minimal delay":
+    prefix: "delay"
+    body: "const delay = ms => new Promise(resolve => setTimeout(resolve, ms));"
   Constructor:
     prefix: "constructor"
     body: "constructor"

@@ -4,6 +4,11 @@
     "body": "```js\n$1\n```",
     "description": "js"
   },
+  "ts": {
+    "prefix": "ts",
+    "body": "```ts\n$1\n```",
+    "description": "ts"
+  },
   "sh": {
     "prefix": "sh",
     "body": "```sh\n$1\n```",
@@ -68,5 +73,10 @@
     "prefix": "rb",
     "body": "```rb\n$1\n```",
     "description": "rb"
+  },
+  "apt": {
+    "prefix": "apt",
+    "body": "sudo apt-get install $1",
+    "description": "apt"
   }
 }

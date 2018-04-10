@@ -7,3 +7,6 @@ snippets:
         echo "Usage: $1 <$2>"
         exit 1
       fi
+  - name: apt
+    prefix: apt
+    body: 'sudo apt-get install $1'

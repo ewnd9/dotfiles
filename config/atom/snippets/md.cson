@@ -6,6 +6,13 @@
       $1
       ```
     '''
+  ts:
+    prefix: "ts"
+    body: '''
+      ```ts
+      $1
+      ```
+    '''
   sh:
     prefix: "sh"
     body: '''
@@ -97,3 +104,6 @@
       $1
       ```
     '''
+  apt:
+    prefix: "apt"
+    body: "sudo apt-get install $1"

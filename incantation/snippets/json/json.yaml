@@ -8,3 +8,15 @@ snippets:
         "version": "0.0.0",
         "private": true
       }
+  - name: my-package
+    prefix: mypackage
+    body: |-
+      {
+        "name": "$1",
+        "version": "0.0.0",
+        "description": "<description>",
+        "main": "index.js",
+        "author": "ewnd9 <ewndnine@gmail.com>",
+        "license": "MIT",
+        "repository": "https://github.com/ewnd9/$1"
+      }

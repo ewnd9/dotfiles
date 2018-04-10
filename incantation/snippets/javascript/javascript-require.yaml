@@ -30,3 +30,18 @@ snippets:
   - name: pify
     prefix: pify
     body: 'const { promisify: pify } = require(''util'');'
+  - name: require superagent
+    prefix: resu
+    body: const request = require('superagent');
+  - name: import superagent
+    prefix: imsu
+    body: import request from 'superagent';
+  - name: require Ramda
+    prefix: reramda
+    body: const R = require('ramda');
+  - name: import ramda
+    prefix: imramda
+    body: import R from 'ramda';
+  - name: minimal delay
+    prefix: delay
+    body: const delay = ms => new Promise(resolve => setTimeout(resolve, ms));

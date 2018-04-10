@@ -6,6 +6,12 @@ snippets:
       ```js
       $1
       ```
+  - name: ts
+    prefix: ts
+    body: |-
+      ```ts
+      $1
+      ```
   - name: sh
     prefix: sh
     body: |-
@@ -84,3 +90,6 @@ snippets:
       ```rb
       $1
       ```
+  - name: apt
+    prefix: apt
+    body: 'sudo apt-get install $1'

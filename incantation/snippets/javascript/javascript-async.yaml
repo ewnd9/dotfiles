@@ -27,7 +27,7 @@ snippets:
     body: |-
       main()
         .catch(err => {
-          devConsole.error(err);
+          console.error(err);
           process.exit(1);
         });
 

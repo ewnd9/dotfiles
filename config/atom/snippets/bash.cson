@@ -7,3 +7,6 @@
         exit 1
       fi
     '''
+  apt:
+    prefix: "apt"
+    body: "sudo apt-get install $1"
