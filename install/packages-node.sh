@@ -4,7 +4,7 @@ git clone https://github.com/tj/n.git /tmp/n
 cd /tmp/n
 sudo make install
 
-sudo n 6.3.0
+sudo n 8.9.1
 
 npm config set prefix '~/.npm-packages'
 npm set init-author-name ewnd9
@@ -22,6 +22,7 @@ npm install -g changelog
 npm install -g npm-check
 npm install -g detect-import-require
 npm install -g tldr
+npm install -g strip-json-comments-cli
 
 # my stuff
 

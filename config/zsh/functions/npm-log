@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+DEP="$1"
+VERSION=$(cat package.json | jq ".dependencies[\"$DEP\"]" --raw-output | tr -d '^')
+
+echo "current $VERSION"
+changelog $DEP ">$VERSION" | less

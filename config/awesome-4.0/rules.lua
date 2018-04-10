@@ -19,12 +19,33 @@ awful.rules.rules = {
   -- All chrome modals
   { rule = { class = "google-chrome" }, except = { instance = "google-chrome" },
     properties = { floating = true } },
-  { rule_any = { class = { "Skype", "telegram" } },
-    properties = { screen = 1, tag = 5 } },
-  { rule = { class = "Guake" },
-    properties = { opacity = 0.7 } },
-  { rule_any = { class = { "feh", "Eog", "Electron", "record-desktop", "Xavier", "hain", "Hain", "electron" } },
+  { rule_any = { class = { "Skype", "telegram", "Anki" } },
+    properties = { screen = 1, tag = "五" } },
+  { rule_any = { class = { "Main.py", "Pqiv" } }, -- .py is guake
     properties = { floating = true } },
+    -- properties = { floating = true, opacity = 0.7 } },
+  { rule_any = {
+      class = {
+        "feh",
+        "Eog",
+        "Electron",
+        "record-desktop",
+        "Xavier",
+        "hain",
+        "Hain",
+        "electron",
+        "cerebro",
+        "Cerebro",
+        "Zazu",
+        "Ulauncher",
+        "Nodemenu-gtk.py"
+      }
+    },
+    properties = { floating = true, placement = awful.placement.centered },
+    -- callback = function(c)
+    --   awful.spawn('nautilus')
+    -- end
+  },
   -- Remove gaps
   { rule = { class = "Gnome-terminal" },
     properties = { size_hints_honor = false } }

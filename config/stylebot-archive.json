@@ -21,6 +21,9 @@
             ".toolbar-commenting": {
                 "display": "none "
             },
+            ".watch_started .border": {
+                "display": "none"
+            },
             "body": {
                 "font-size": "13px ",
                 "line-height": "1.4 "
@@ -56,4 +59,3 @@
         }
     }
 }
-

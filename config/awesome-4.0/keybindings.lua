@@ -1,6 +1,7 @@
 local awful = require("awful")
 local home = os.getenv("HOME")
 
+local naughty = require("naughty")
 globalkeys = awful.util.table.join(
   awful.key({ modkey }, "Left",   awful.tag.viewprev),
   awful.key({ modkey }, "Right",  awful.tag.viewnext),
@@ -43,14 +44,27 @@ globalkeys = awful.util.table.join(
   awful.key({ }, "XF86KbdBrightnessDown", function () awful.spawn(home .. "/dotfiles/scripts/asus/asus-kbd.sh down") end),
 
   awful.key({ }, "XF86Launch1", function () awful.spawn("xbacklight -dec 10") end),
-  awful.key({ }, "XF86WebCam", function () awful.spawn("xbacklight -inc 10") end)
+  awful.key({ }, "XF86WebCam", function () awful.spawn("xbacklight -inc 10") end),
+
+  awful.key({ modkey }, "f", function (c)
+    local screen = awful.screen.focused()
+    local tag = screen.tags[6]
+
+    if tag then
+      if awful.screen.focused().selected_tag.name == '六' then
+        awful.tag.history.restore()
+      else
+        tag:view_only()
+      end
+    end
+  end)
 )
 
 clientkeys = awful.util.table.join(
-  awful.key({ modkey }, "f", function (c)
-    c.fullscreen = not c.fullscreen
-    c:raise()
-  end),
+  -- awful.key({ modkey }, "f", function (c)
+  --   c.fullscreen = not c.fullscreen
+  --   c:raise()
+  -- end),
   awful.key({ modkey, "Shift" }, "c", function (c) c:kill() end),
   awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle),
   awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
@@ -69,15 +83,21 @@ clientkeys = awful.util.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+-- for i = 1, 9 do
+for i = 1, 6 do
+  if i ~= 6 then
+    globalkeys = awful.util.table.join(globalkeys,
+      awful.key({ modkey }, "#" .. i + 9, function ()
+        local screen = awful.screen.focused()
+        local tag = screen.tags[i]
+        if tag then
+          tag:view_only()
+        end
+      end)
+    )
+  end
+
   globalkeys = awful.util.table.join(globalkeys,
-    awful.key({ modkey }, "#" .. i + 9, function ()
-      local screen = awful.screen.focused()
-      local tag = screen.tags[i]
-      if tag then
-         tag:view_only()
-      end
-    end),
     awful.key({ modkey, "Shift" }, "#" .. i + 9, function ()
       if client.focus then
         local tag = client.focus.screen.tags[i]

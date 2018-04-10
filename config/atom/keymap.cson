@@ -5,3 +5,6 @@
   'ctrl-q': 'tabs:close-other-tabs'
   'ctrl-alt-l': 'editor:auto-indent'
   'ctrl-:': 'insert-previous-directory:toggle'
+  'ctrl-alt-z': 'editor:checkout-head-revision'
+  'ctrl-alt-left': 'window:focus-pane-on-left'
+  'ctrl-alt-right': 'window:focus-pane-on-right'

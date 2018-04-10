@@ -7,15 +7,25 @@
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.parameterHints": false,
-  "editor.formatOnPaste": true,
+  "[markdown]": {
+    "editor.parameterHints": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "editor.tabCompletion": true,
+  "editor.formatOnPaste": false,
   "editor.snippetSuggestions": "top",
+  "editor.lineNumbers": "relative",
+  "search.location": "panel",
   "window.menuBarVisibility": "toggle",
   "explorer.openEditors.visible": 0,
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.iconTheme": "vs-minimal",
-  "workbench.panel.location": "bottom",
   "workbench.colorCustomizations": {
     // https://github.com/Microsoft/vscode/issues/178#issuecomment-343095492
     "gitDecoration.ignoredResourceForeground": "#555555",
@@ -31,15 +41,20 @@
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": true,
+    "suppressShowKeyBindingsNotice": true,
     "suppressUpdateNotice": false,
     "suppressWelcomeNotice": true
   },
-  "gitlens.blame.line.enabled": false,
+  "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "atomKeymap.promptV3Features": true,
   "vim.startInInsertMode": false,
   "vim.useSystemClipboard": true,
+  // https://github.com/VSCodeVim/Vim/issues/2144
+  "vim.handleKeys": {
+    "<C-d>": true
+  },
   "vim.otherModesKeyBindings": [
     {
       "before": [
@@ -65,5 +80,29 @@
   "git.decorations.enabled": true,
   "keyboard.dispatch": "keyCode",
   "extensions.ignoreRecommendations": true,
-  "files.insertFinalNewline": true
+  // "extensions.autoUpdate": false, // https://github.com/VSCodeVim/Vim/issues/2322#issuecomment-359737038
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "search.exclude": {
+    "**/.git": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "**/coverage": true,
+    "**/.nyc_output/**": true
+  },
+  "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "terminal.integrated.copyOnSelection": true,
+  "problems.decorations.enabled": false,
+  "workbench.statusBar.feedback.visible": false,
+  // // https://github.com/Microsoft/TypeScript/issues/6209#issuecomment-310578734
+  // // disable opening *.d.ts instead of node_modules/<package>
+  // "typescript.disableAutomaticTypeAcquisition": true,
+  "flow.useNPMPackagedFlow": true,
+  "gitlens.keymap": "none",
+  "markdown-toc.depthFrom": 2
 }

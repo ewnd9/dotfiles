@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+INTERVAL=5
+REGEX='^[0-9]+$'
+
+if [[ $1 =~ $REGEX ]] ; then
+  INTERVAL=$1
+  shift
+fi
+
+SUCCESSFUL_COUNT=0
+
+echo -ne "\nLoop \"$@\" Every $INTERVAL Seconds\n\n"
+while true; do
+  eval $@
+  EXIT_CODE=$?
+
+  if [[ $EXIT_CODE != 0 ]]; then
+    echo -ne "\nCode $EXIT_CODE after $SUCCESSFUL_COUNT attempts"
+    break
+  else
+    SUCCESSFUL_COUNT=$((SUCCESSFUL_COUNT+1))
+    echo -ne "\nSleep $INTERVAL Seconds, ${SUCCESSFUL_COUNT}nd attempt\n\n" && sleep $INTERVAL;
+  fi
+done
+

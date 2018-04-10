@@ -4,7 +4,7 @@ sn=main
 
 tmux kill-session -t "$sn"
 cd /home/ewnd9
-tmux new-session -s "$sn" -n etc -d
+tmux new-session -s "$sn" -n 'start' -d
 
 tmux select-window -t "$sn"
 
@@ -15,6 +15,6 @@ tmux select-pane -L
 
 tmux split-window -v
 tmux select-pane -U
-tmux send-keys 'note' 'C-m'
+# tmux send-keys 'note' 'C-m'
 
 tmux -2 attach-session -t "$sn"

@@ -1,10 +1,16 @@
 "*":
   core:
-    autoHideMenuBar: true
     disabledPackages: [
       "spell-check"
-      "markdown-preview"
+      "preview-inline"
+      "markdown-image-paste"
+      "vim-mode-plus"
       "linter-eslint"
+      "linter"
+      "atom-typescript"
+      "atom-ide-ui"
+      "ide-typescript"
+      "symbols-view"
     ]
     excludeVcsIgnoredPaths: false
     ignoredNames: [
@@ -16,47 +22,41 @@
       "*.map"
       "*.bundle.js"
     ]
-    packagesWithKeymapsDisabled: [
-      "open-terminal-here"
-    ]
     telemetryConsent: "no"
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
   editor:
-    fontFamily: "Liberation Mono"
+    fontFamily: "Fira Code"
+    fontSize: 15
     invisibles: {}
     showInvisibles: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "789aa4ab-f36b-1674-f1d3-2c35b6824195"
   "expand-region": {}
+  "git-blame":
+    columnWidth: 405
+  hyperclick:
+    linuxTriggerKeys: "altKey"
   "js-hyperclick": {}
-  linter:
-    displayLinterInfo: false
-    lintOnFly: false
-    showErrorInline: false
-    showErrorTabProject: false
+  linter: {}
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
     useGlobalEslint: true
+  "linter-ui-default": {}
   "markdown-preview": {}
   "nuclide-click-to-symbol":
     useCmdKey: false
-  "open-terminal-here": {}
-  react: {}
   "symbols-tree-view": {}
-  term2: {}
-  tidal:
-    ghciPath: "/usr/bin/ghci"
   "toggle-quotes":
     quoteCharacters: "\"'`"
   "tree-view":
+    autoReveal: true
     hideVcsIgnoredFiles: false
+    squashDirectoryNames: true
   "vim-mode": {}
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
   wakatime:
-    apikey: "b39c3763-4a72-4f5c-ba14-d5e8723df1da"
+    apikey: "Saved in your ~/.wakatime.cfg file"
     ignore: [
       "^/var/"
       "^/tmp/"

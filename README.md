@@ -47,10 +47,11 @@ $ chsh -s /bin/zsh
 
 # install gnome-terminal theme, needed to applied after install (`Edit -> Profiles -> Select as default`)
 $ ./scripts/gnome-terminal-themes/one-dark.sh
+$ gsettings set org.gnome.settings-daemon.plugins.keyboard active false # https://askubuntu.com/questions/451945/permanently-set-keyboard-layout-options-with-setxkbmap-in-gnome-unity
 ```
 
 - manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
 
 - manual-install: [dropbox](https://www.dropbox.com)
 
-- manual-install: [arc-theme](http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/all/)
+- manual-install: [arc-theme](http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/all/) Open `unity-tweak-tool` -> Themes -> `Arc dark`

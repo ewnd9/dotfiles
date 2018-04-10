@@ -21,9 +21,18 @@ git_super_status() {
   fi
 }
 
-PROMPT='%F{yellow}%Bλ %~%b$(git_super_status)%f %# '
+# PROMPT='%F{yellow}%Bλ %~%b$(git_super_status)%f %# '
 
 setopt histignorealldups sharehistory
+# https://unix.stackexchange.com/questions/310540/how-to-get-rid-of-no-match-found-when-running-rm
+setopt +o nomatch
+
+# disable ctrl+s https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
+stty -ixon
+
+# 10ms for key sequences
+KEYTIMEOUT=1
+# REPORTTIME=10
 
 bindkey -e
 
@@ -69,21 +78,30 @@ synclient TapButton3=2
 
 bindkey "^x" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "^Y" accept-and-hold
+bindkey "^N" insert-last-word
 
 source ~/.zsh/aliases.zsh
 
 export EDITOR=vim
+export BROWSER=google-chrome
 export LC_TIME=en_US.UTF-8
+
+# https://unix.stackexchange.com/questions/230238/starting-x-applications-from-the-terminal-and-the-warnings-that-follow
+export NO_AT_BRIDGE=1 #
 
 export ANDROID_HOME="$HOME/.android-sdk"
 export PATH="$HOME/.android-sdk/platform-tools:$PATH"
-export PATH="$HOME/.android-sdk/tools:$PATH"
+export PATH="$HOME/.android-sdk/tools/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules
 
 export GOPATH="$HOME/gocode"
 export PATH="$PATH:$HOME/gocode/bin"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH" # pip
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -92,6 +110,10 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 export PATH="$PATH:$HOME/.npm-packages/bin"
+export PATH="$HOME/xtra/anaconda3/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
+[ -f $HOME/Dropbox/dotfiles/aliases.zsh ] && source $HOME/Dropbox/dotfiles/aliases.zsh
+
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+eval $( perl -Mlocal::lib )

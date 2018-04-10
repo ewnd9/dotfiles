@@ -76,6 +76,7 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+dofile(home .. "/.config/awesome/widgets/offline.lua")
 dofile(home .. "/.config/awesome/widgets/battery.lua")
 dofile(home .. "/.config/awesome/widgets/memory.lua")
 dofile(home .. "/.config/awesome/widgets/spacer.lua")
@@ -110,6 +111,8 @@ awful.screen.connect_for_each_screen(function(s)
       wibox.widget.systray(),
       spacer,
       memory_widget,
+      spacer,
+      offline_widget,
       spacer,
       temp_widget,
       spacer,

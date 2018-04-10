@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-DEST="/tmp/$(date | md5sum | head -c6)"
-mkcdn $DEST
+DEST="/tmp/xx-$(date | md5sum | head -c6)"
+mkcdn "$DEST"
 
 if [ "$#" != "0" ]; then
-  npm i "$@" --save
+  yarn add "$@" --save
 fi

@@ -7,7 +7,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-:nnoremap <C-x> :NERDTreeToggle<CR>
+:nnoremap <C-n> :NERDTreeToggle<CR>
 :nmap ; :
 
 set relativenumber
@@ -15,11 +15,18 @@ set number
 set laststatus=2
 set clipboard=unnamedplus
 set statusline=%F\ %l:%c\ %L
+set mouse=a
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Scroll
+set scrolloff=5
+
+" Tiemout
+set timeoutlen=1000 ttimeoutlen=0
 
 " White Space             
 scriptencoding utf-8
@@ -57,4 +64,4 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-p> :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist|build)|(\.(swp|ico|git))$'
 
-map q <Nop>
+" map q <Nop>
