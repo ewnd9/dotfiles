@@ -139,30 +139,45 @@
     "body": "<div className=",
     "description": "react div"
   },
-  "CommonJS modern require": {
+  "require": {
     "prefix": "re",
     "body": "const ${1} = require('${1}');",
-    "description": "CommonJS modern require"
+    "description": "require"
   },
-  "CommonJS modern require lodash": {
+  "require lodash": {
     "prefix": "relo",
     "body": "const ${1} = require('lodash/${1}');",
-    "description": "CommonJS modern require lodash"
+    "description": "require lodash"
   },
-  "CommonJS modern require lodash fp": {
+  "import lodash": {
+    "prefix": "imlo",
+    "body": "import ${1} from 'lodash/${1}';",
+    "description": "import lodash"
+  },
+  "require lodash fp": {
     "prefix": "relof",
     "body": "const ${1} = require('lodash/fp/${1}');",
-    "description": "CommonJS modern require lodash fp"
+    "description": "require lodash fp"
   },
-  "CommonJS modern require asymmetrical": {
+  "import lodash fp": {
+    "prefix": "relof",
+    "body": "import ${1} from 'lodash/fp/${1}';",
+    "description": "import lodash fp"
+  },
+  "require asymmetrical": {
     "prefix": "rea",
     "body": "const ${1} = require('${2}');",
-    "description": "CommonJS modern require asymmetrical"
+    "description": "require asymmetrical"
   },
   "require fs": {
     "prefix": "refs",
     "body": "const fs = require('fs');",
     "description": "require fs"
+  },
+  "import fs": {
+    "prefix": "imfs",
+    "body": "import fs from 'fs';",
+    "description": "import fs"
   },
   "import": {
     "prefix": "im",
@@ -173,11 +188,6 @@
     "prefix": "ima",
     "body": "import $1 from '$2';",
     "description": "import asymmetrical"
-  },
-  "import fs": {
-    "prefix": "imfs",
-    "body": "import fs from 'fs';",
-    "description": "import fs"
   },
   "export": {
     "prefix": "ex",
@@ -213,6 +223,16 @@
     "prefix": "delay",
     "body": "const delay = ms => new Promise(resolve => setTimeout(resolve, ms));",
     "description": "minimal delay"
+  },
+  "require belt-tools": {
+    "prefix": "rebe",
+    "body": "const ${1} = require('belt-tools/modules/${1}');",
+    "description": "require belt-tools"
+  },
+  "import belt-tools": {
+    "prefix": "imbe",
+    "body": "import ${1} from 'belt-tools/modules/${1}';",
+    "description": "import belt-tools"
   },
   "Constructor": {
     "prefix": "constructor",

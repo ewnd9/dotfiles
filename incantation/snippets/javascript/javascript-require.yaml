@@ -1,29 +1,35 @@
 lang: javascript
 snippets:
-  - name: CommonJS modern require
+  - name: require
     prefix: re
     body: 'const ${1} = require(''${1}'');'
-  - name: CommonJS modern require lodash
+  - name: require lodash
     prefix: relo
     body: 'const ${1} = require(''lodash/${1}'');'
-  - name: CommonJS modern require lodash fp
+  - name: import lodash
+    prefix: imlo
+    body: 'import ${1} from ''lodash/${1}'';'
+  - name: require lodash fp
     prefix: relof
     body: 'const ${1} = require(''lodash/fp/${1}'');'
-  - name: CommonJS modern require asymmetrical
+  - name: import lodash fp
+    prefix: relof
+    body: 'import ${1} from ''lodash/fp/${1}'';'
+  - name: require asymmetrical
     prefix: rea
     body: 'const ${1} = require(''${2}'');'
   - name: require fs
     prefix: refs
     body: const fs = require('fs');
+  - name: import fs
+    prefix: imfs
+    body: import fs from 'fs';
   - name: import
     prefix: im
     body: import $1 from '$1';
   - name: import asymmetrical
     prefix: ima
     body: import $1 from '$2';
-  - name: import fs
-    prefix: imfs
-    body: import fs from 'fs';
   - name: export
     prefix: ex
     body: export const $1;
@@ -45,3 +51,9 @@ snippets:
   - name: minimal delay
     prefix: delay
     body: const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  - name: require belt-tools
+    prefix: rebe
+    body: 'const ${1} = require(''belt-tools/modules/${1}'');'
+  - name: import belt-tools
+    prefix: imbe
+    body: 'import ${1} from ''belt-tools/modules/${1}'';'

@@ -170,30 +170,36 @@
   "react div":
     prefix: "<div"
     body: "<div className="
-  "CommonJS modern require":
+  require:
     prefix: "re"
     body: "const ${1} = require('${1}');"
-  "CommonJS modern require lodash":
+  "require lodash":
     prefix: "relo"
     body: "const ${1} = require('lodash/${1}');"
-  "CommonJS modern require lodash fp":
+  "import lodash":
+    prefix: "imlo"
+    body: "import ${1} from 'lodash/${1}';"
+  "require lodash fp":
     prefix: "relof"
     body: "const ${1} = require('lodash/fp/${1}');"
-  "CommonJS modern require asymmetrical":
+  "import lodash fp":
+    prefix: "relof"
+    body: "import ${1} from 'lodash/fp/${1}';"
+  "require asymmetrical":
     prefix: "rea"
     body: "const ${1} = require('${2}');"
   "require fs":
     prefix: "refs"
     body: "const fs = require('fs');"
+  "import fs":
+    prefix: "imfs"
+    body: "import fs from 'fs';"
   import:
     prefix: "im"
     body: "import $1 from '$1';"
   "import asymmetrical":
     prefix: "ima"
     body: "import $1 from '$2';"
-  "import fs":
-    prefix: "imfs"
-    body: "import fs from 'fs';"
   export:
     prefix: "ex"
     body: "export const $1;"
@@ -215,6 +221,12 @@
   "minimal delay":
     prefix: "delay"
     body: "const delay = ms => new Promise(resolve => setTimeout(resolve, ms));"
+  "require belt-tools":
+    prefix: "rebe"
+    body: "const ${1} = require('belt-tools/modules/${1}');"
+  "import belt-tools":
+    prefix: "imbe"
+    body: "import ${1} from 'belt-tools/modules/${1}';"
   Constructor:
     prefix: "constructor"
     body: "constructor"
