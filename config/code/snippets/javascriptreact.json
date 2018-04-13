@@ -160,7 +160,7 @@
     "description": "require lodash fp"
   },
   "import lodash fp": {
-    "prefix": "relof",
+    "prefix": "imlof",
     "body": "import ${1} from 'lodash/fp/${1}';",
     "description": "import lodash fp"
   },

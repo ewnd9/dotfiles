@@ -13,7 +13,7 @@ snippets:
     prefix: relof
     body: 'const ${1} = require(''lodash/fp/${1}'');'
   - name: import lodash fp
-    prefix: relof
+    prefix: imlof
     body: 'import ${1} from ''lodash/fp/${1}'';'
   - name: require asymmetrical
     prefix: rea
