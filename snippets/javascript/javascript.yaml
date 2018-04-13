@@ -49,7 +49,7 @@ snippets:
       const path = require('path');
       const { execFileSync } = require('child_process');
 
-      const rootPath = path.resolve(`${__dirname\}`);
+      const rootPath = path.resolve(`${__dirname}`);
       const devConsole = console;
 
       function run(cmd, args, opts = {}) {

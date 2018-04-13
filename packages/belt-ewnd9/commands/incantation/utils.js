@@ -75,7 +75,7 @@ function generateCode(lang, snippets, paths) {
       // vs-code needs to encode ${string} to $\\{string\\}
       // see https://github.com/Microsoft/vscode/issues/1670
       // body: body.replace(/\\([\{\}])/gm, '$1'),
-      body: body.replace(/\$\{([\w]+)\}/gm, '\${$1\\}'),
+      body: body.replace(/\$\{([_a-zA-Z]+)\}/gm, '\${$1\\}'),
       description: name
     };
 

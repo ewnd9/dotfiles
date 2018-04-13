@@ -6,7 +6,7 @@ const globby = require('globby');
 
 const { rootPath, generateAtom, generateCode } = require('./utils');
 
-const snippetsPath = `${__dirname}/snippets`;
+const snippetsPath = `${rootPath}/snippets`;
 const files = globby.sync(['**/*.yaml'], { cwd: snippetsPath, absolute: true  });
 
 module.exports = {
