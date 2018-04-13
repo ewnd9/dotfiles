@@ -9,6 +9,8 @@ async function run({ argv }) {
 
   if (cmd === 'c') {
     require('./templates/c-make').run({ argv });
+  } else if (cmd === 'py') {
+    require('./templates/python-make').run({ argv });
   } else {
     throw new Error(`unknown project type "${cmd}"`);
   }
