@@ -53,7 +53,7 @@ snippets:
       const devConsole = console;
 
       function run(cmd, args, opts = {}) {
-        devConsole.log(`$ ${cmd\} ${args.join(' ')}`);
+        devConsole.log(`$ ${cmd} ${args.join(' ')}`);
         execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, opts));
       }
   - name: argv
