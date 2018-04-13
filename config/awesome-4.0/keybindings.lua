@@ -46,6 +46,7 @@ globalkeys = awful.util.table.join(
   awful.key({ }, "XF86Launch1", function () awful.spawn("xbacklight -dec 10") end),
   awful.key({ }, "XF86WebCam", function () awful.spawn("xbacklight -inc 10") end),
 
+  awful.key({ modkey, "Shift" }, "f", function () awful.spawn("gnome-system-monitor") end),
   awful.key({ modkey }, "f", function (c)
     local screen = awful.screen.focused()
     local tag = screen.tags[6]
