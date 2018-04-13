@@ -23,6 +23,10 @@
       "incantation": {
         "script": "commands/incantation",
         "description": "regenerate snippets"
+      },
+      "file-case": {
+        "script": "commands/file-case",
+        "description": "rename file to certain case (kebab ('-'), snake ('_'), camel ('cC'))"
       }
     }
   },
