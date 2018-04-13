@@ -8,7 +8,7 @@ module.exports = {
   run
 };
 
-async function run({ argv }) {
+async function run() {
   const data = fs.readFileSync('.gitmodules', 'utf-8').split('\n');
 
   for (const line of data) {

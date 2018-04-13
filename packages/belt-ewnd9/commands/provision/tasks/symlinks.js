@@ -1,8 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
-const mkdirp = require('mkdirp');
 const chalk = require('chalk');
 const execa = require('belt-tools/modules/execa');
 const { evalTemplate, ensureParentDir } = require('../utils');
@@ -15,7 +13,7 @@ async function setup(symLinks) {
   for (const { src, dest, disable } of symLinks.targets) {
     if (disable) {
       console.log(`${chalk.grey('✔️')} ${dest} (skip)`);
-      return;
+      continue;
     }
 
     const srcPath = evalTemplate(src);

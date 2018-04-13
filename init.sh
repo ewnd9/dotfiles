@@ -22,7 +22,7 @@ yarn global add belt-cli
 belt install packages/belt-ewnd9
 
 belt provision --setup apt
-belt provision --setup sym-links
+belt provision --setup symlinks
 belt provision --setup submodules
 belt provision --setup npm
 belt provision --setup code

@@ -2,6 +2,7 @@
 
 // https://code.visualstudio.com/docs/editor/extension-gallery
 
+const execa = require('belt-tools/modules/execa');
 const { readNodeModules } = require('../utils');
 
 module.exports = {
@@ -18,7 +19,7 @@ async function setup({ extensions }) {
 function extract() {
   const codeExtensionsPath = `${process.env.HOME}/.vscode/extensions`;
 
-  const packages = readNodeModules(codeExtensionsPath).map(pkg => {
+  const extensions = readNodeModules(codeExtensionsPath).map(pkg => {
     return { name: pkg.name, publisher: pkg.publisher, version: pkg.version };
   });
 

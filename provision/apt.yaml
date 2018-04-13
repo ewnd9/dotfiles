@@ -52,7 +52,7 @@ apt:
       version: 1.10-5ubuntu1
     - name: redshift-gtk
       version: 1.10-5ubuntu1
-sym-links:
+symlinks:
   targets:
     - src: $DOTFILES/config/vim/autoload
       dest: $HOME/.vim/autoload
@@ -65,8 +65,6 @@ sym-links:
       disable: true
     - src: $DOTFILES/config/awesome-4.0
       dest: $HOME/.config/awesome
-    - src: $DOTFILES/config/vim
-      dest: $HOME/.vim
     - src: $DOTFILES/config/vimrc
       dest: $HOME/.vimrc
     - src: $DOTFILES/config/vimrc
@@ -74,8 +72,6 @@ sym-links:
       disable: true
     - src: $DOTFILES/config/vim/autoload
       dest: $HOME/.config/nvim/autoload
-    - src: $DOTFILES/config/vim/bundle
-      dest: $HOME/.config/nvim/bundle
     - src: $DOTFILES/config/vim/snippets
       dest: $HOME/.config/nvim/snippets
     - src: $DOTFILES/config/zsh

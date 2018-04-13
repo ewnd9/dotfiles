@@ -1,10 +1,8 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
 const chalk = require('chalk');
 // const parse = require('parse-github-repo-url');
-const mkdirp = require('mkdirp');
 const execa = require('belt-tools/modules/execa');
 const { evalTemplate, ensureParentDir } = require('../utils');
 

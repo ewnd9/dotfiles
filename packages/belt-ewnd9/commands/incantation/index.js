@@ -1,8 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
-const CSON = require('season');
 const yaml = require('js-yaml');
 const globby = require('globby');
 

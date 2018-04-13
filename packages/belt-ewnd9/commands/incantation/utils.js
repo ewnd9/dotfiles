@@ -31,7 +31,7 @@ function transformAtom(lang, srcPath, destPath) {
   mkdirp.sync(path.dirname(destPath));
 
   const content = CSON.readFileSync(srcPath);
-  const snippets = Object.entries(content).reduce((total, [grammar, snippets]) => {
+  const snippets = Object.entries(content).reduce((total, [, snippets]) => {
     Object.entries(snippets).forEach(([name, snippet]) => {
       total.push({ name, prefix: snippet.prefix, body: snippet.body });
     });
@@ -85,8 +85,4 @@ function generateCode(lang, snippets, paths) {
   paths.forEach(path => {
     fs.writeFileSync(path, JSON.stringify(result, null, 2));
   });
-}
-
-function snippet({ name, prefix, body }) {
-  return { name, prefix, body };
 }
