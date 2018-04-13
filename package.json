@@ -2,5 +2,12 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1"
+  },
+  "scripts": {
+    "lint": "eslint 'packages/**/*.js'"
+  }
 }
