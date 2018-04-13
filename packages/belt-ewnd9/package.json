@@ -15,6 +15,10 @@
       "remove-submodules": {
         "script": "commands/remove-submodules",
         "description": "remove-submodules"
+      },
+      "open-editor": {
+        "script": "commands/open-editor",
+        "description": "open editor in 2nd or 4th tag"
       }
     }
   },

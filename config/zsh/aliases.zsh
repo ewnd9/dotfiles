@@ -116,33 +116,15 @@ todocc () {
 
 alias grep-text="grep -nr"
 alias find-file="find . -type f -name" # $ find-file '.*'
-alias find-dir="find . -type d -name" # $ find-dir '*babel*' 
+alias find-dir="find . -type d -name" # $ find-dir '*babel*'
 
 ## atom
 a () {
-  DEST_TAG="1"
-  COUNT=$(wmctrl -l | awk '{print $2}' | grep 1 | wc -l)
-
-  if [ $COUNT -gt 0 ]; then
-    DEST_TAG="3"  
-  fi
-
-  echo $DEST_TAG
-  wmctrl -s $DEST_TAG
-  atom .
+  belt open-editor atom
 }
 ## code
 aa () {
-  DEST_TAG="1"
-  COUNT=$(wmctrl -l | awk '{print $2}' | grep 1 | wc -l)
-
-  if [ $COUNT -gt 0 ]; then
-    DEST_TAG="3"
-  fi
-
-  echo $DEST_TAG
-  wmctrl -s $DEST_TAG
-  code .
+  belt open-editor code
 }
 
 ## system
@@ -190,7 +172,7 @@ alias cni="cached-npm-install"
 alias tldr="tldr --theme ocean"
 
 ## node
-alias na="node --harmony-async-await" 
+alias na="node --harmony-async-await"
 alias nan="nodemon -x 'node --harmony-async-await'"
 deps () {
   # Usage: $ npm install $(deps index.js)
