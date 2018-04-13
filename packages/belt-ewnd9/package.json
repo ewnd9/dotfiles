@@ -1,0 +1,30 @@
+{
+  "name": "belt-ewnd9",
+  "version": "0.0.1",
+  "private": true,
+  "belt": {
+    "commands": {
+      "init": {
+        "script": "commands/init",
+        "description": "init project"
+      },
+      "provision": {
+        "script": "commands/provision",
+        "description": "provision/sync dotfiles"
+      },
+      "remove-submodules": {
+        "script": "commands/remove-submodules",
+        "description": "remove-submodules"
+      }
+    }
+  },
+  "dependencies": {
+    "belt-tools": "^0.0.2",
+    "chalk": "^2.3.0",
+    "dedent": "^0.7.0",
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.5",
+    "mkdirp": "^0.5.1",
+    "parse-github-repo-url": "^1.4.1"
+  }
+}
