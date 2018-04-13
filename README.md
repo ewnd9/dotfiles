@@ -8,7 +8,7 @@ awesome-wm, atom, gnome-terminal, vim, tmux, zsh
 
 ### Terminal
 
-used to use `terminator`, now back to `gnome-terminal` with [Atom's One Dark theme](https://github.com/denysdovhan/one-gnome-terminal)
+`gnome-terminal` with [Atom's One Dark theme](https://github.com/denysdovhan/one-gnome-terminal)
 
 ### Vim
 
@@ -16,39 +16,15 @@ plugin manager [pathogen](https://github.com/tpope/vim-pathogen)
 
 ### Window Manager
 
-awesome wm 3.4.x with `xcompmgr` composition
+awesome wm 4.x.x with `xcompmgr` composition
 
 ## Install
 
 ```sh
-$ cd ~
-$ rm -rf Desktop Music Public Videos Documents examples.desktop Templates
-
-$ sudo apt-get update && sudo apt-get upgrade
-$ sudo apt-get install -y git vim-gtk
-
-$ git clone https://github.com/ewnd9/dotfiles.git
-$ cd dotfiles
-$ git submodule init && git submodule update
-
-$ ./install/packages.sh
-$ ./install/packages-node.sh
-$ ./install/packages-awesome.sh
-$ ./install/packages-ruby.sh
-$ ./install/packages-atom.sh
-$ ./install/packages-vim.sh
-
-$ ./linking-user.sh
-$ ./linking-scripts.sh
-$ ./linking-sudo.sh
-
-# change default shell to zsh
-$ chsh -s /bin/zsh
-
-# install gnome-terminal theme, needed to applied after install (`Edit -> Profiles -> Select as default`)
-$ ./scripts/gnome-terminal-themes/one-dark.sh
-$ gsettings set org.gnome.settings-daemon.plugins.keyboard active false # https://askubuntu.com/questions/451945/permanently-set-keyboard-layout-options-with-setxkbmap-in-gnome-unity
+$ ./init.sh
 ```
+
+- manual-install: `gnome-terminal` theme (`Edit -> Profiles -> Select as default`)
 
 - manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
 
