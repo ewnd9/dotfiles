@@ -25,10 +25,10 @@ noremap <Right> <NOP>
 " Scroll
 set scrolloff=5
 
-" Tiemout
+" Timeout
 set timeoutlen=1000 ttimeoutlen=0
 
-" White Space             
+" White Space
 scriptencoding utf-8
 set encoding=utf-8
 set listchars=eol:¬,tab:»\ ,trail:.,nbsp:·,extends:→,precedes:←
@@ -48,7 +48,7 @@ autocmd vimenter * silent! lcd %:p:h
 " Nice cursor in the insert mode
 autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
 autocmd InsertEnter,InsertChange *
-  \ if v:insertmode == 'i' | 
+  \ if v:insertmode == 'i' |
   \   silent execute '!echo -ne "\e[5 q"' | redraw! |
   \ elseif v:insertmode == 'r' |
   \   silent execute '!echo -ne "\e[3 q"' | redraw! |
@@ -65,3 +65,11 @@ nnoremap <silent> <c-p> :CtrlP<cr>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist|build)|(\.(swp|ico|git))$'
 
 " map q <Nop>
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+" paste
+map <leader>v "ap
+" replace
+" https://stackoverflow.com/questions/676600/vim-search-and-replace-selected-text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>

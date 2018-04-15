@@ -49,6 +49,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
+  "vim.leader": "<space>",
   "vim.startInInsertMode": false,
   "vim.useSystemClipboard": true,
   // https://github.com/VSCodeVim/Vim/issues/2144
