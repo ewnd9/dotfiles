@@ -284,10 +284,20 @@
     "body": "listen($1, err => {\n  if (err) {\n    throw err;\n  }\n\n  console.log('listening localhost:$1');\n});",
     "description": "listen port"
   },
-  "exec-file": {
-    "prefix": "execfile",
-    "body": "const path = require('path');\nconst { execFileSync } = require('child_process');\n\nconst rootPath = path.resolve(`${__dirname\\}`);\nconst devConsole = console;\n\nfunction run(cmd, args, opts = {}) {\n  devConsole.log(`$ ${cmd\\} ${args.join(' ')}`);\n  execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, opts));\n}",
-    "description": "exec-file"
+  "execa": {
+    "prefix": "execa",
+    "body": "await execa('$1', [], { stdio: 'inherit' });",
+    "description": "execa"
+  },
+  "execa-silent": {
+    "prefix": "execasilent",
+    "body": "await execa('$1', []);",
+    "description": "execa-silent"
+  },
+  "execa-stdout": {
+    "prefix": "execaout",
+    "body": "await execa.stdout('$1', []);",
+    "description": "execa-stdout"
   },
   "argv": {
     "prefix": "argv",
