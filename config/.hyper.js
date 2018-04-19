@@ -15,9 +15,10 @@
 module.exports = {
   config: {
     updateChannel: 'stable',
-    fontSize: 14,
+    fontSize: 15, // 13 is in `gnome-terminal`
+    fontFamily: '"Ubuntu Mono Regular", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     // Ligatures are not supported yet https://github.com/xtermjs/xterm.js/issues/958
-    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    // fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     fontWeight: 'normal',
     fontWeightBold: 'bold',
     cursorColor: 'rgba(248,28,229,0.8)',
