@@ -95,6 +95,8 @@ symlinks:
       dest: $HOME/.config/Code/User/keybindings.json
     - src: $DOTFILES/config/code/snippets
       dest: $HOME/.config/Code/User/snippets
+    - src: $DOTFILES/config/.hyper.js
+      dest: $HOME/.hyper.js
 atom:
   packages:
     - name: atom-file-tags
