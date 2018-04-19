@@ -1,4 +1,4 @@
 #!/bin/sh
 
-move-to-tag $1
-open-tag $1
+move-to-tag "$1"
+open-tag "$1"

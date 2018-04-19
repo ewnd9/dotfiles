@@ -6,5 +6,5 @@ rm -rf gzipped
 mkdir gzipped
 
 for file in $(find . -type f | egrep "\.(css|js|eot|svg|ttf)$") ; do
-  gzip -c --best $file > gzipped/$file
+  gzip -c --best "$file" > "gzipped/$file"
 done

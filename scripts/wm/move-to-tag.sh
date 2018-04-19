@@ -1,7 +1,7 @@
 #!/bin/sh
 
-dec=$(xdotool getactivewindow)
-hex=$(printf 0x%x $dec)
-tag=$(($1 - 1))
+DEC=$(xdotool getactivewindow)
+# HEX=$(printf 0x%x $dec)
+TAG=$(($1 - 1))
 
-wmctrl -i -r $dec -t $tag
+wmctrl -i -r "$DEC" -t "$TAG"
