@@ -27,6 +27,10 @@
       "file-case": {
         "script": "commands/file-case",
         "description": "rename file to certain case (kebab ('-'), snake ('_'), camel ('cC'))"
+      },
+      "lint-shell": {
+        "script": "commands/lint-shell",
+        "description": "lint dotfiles shell scripts"
       }
     }
   },
