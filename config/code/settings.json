@@ -15,6 +15,7 @@
       "strings": true
     }
   },
+  "javascript.suggestionActions.enabled": false,
   "editor.tabCompletion": true,
   "editor.formatOnPaste": false,
   "editor.snippetSuggestions": "top",
