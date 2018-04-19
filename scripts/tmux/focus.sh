@@ -12,8 +12,7 @@ PANE_ID="$CURRENT_WINDOW.$CURRENT_PANE"
 WINDOW_HEIGHT=$(tmux display -p '#{window_height}')
 PANE_HEIGHT=$(tmux display -p '#{pane_height}')
 
-EIGHTY_PERCENT_=$(echo "scale=0; $WINDOW_HEIGHT * 0.8" | bc)
-EIGHTY_PERCENT=$(printf "%.0f\n" $EIGHTY_PERCENT_)
+EIGHTY_PERCENT=$(echo "scale=0; ($WINDOW_HEIGHT * 0.8) / 1" | bc)
 
 BACKUP_FILE="/tmp/tmux-focus"
 
