@@ -31,6 +31,10 @@
       "lint-shell": {
         "script": "commands/lint-shell",
         "description": "lint dotfiles shell scripts"
+      },
+      "licensify": {
+        "script": "commands/licensify",
+        "description": "add license to README and package.json"
       }
     }
   },
