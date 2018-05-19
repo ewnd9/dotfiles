@@ -8,21 +8,9 @@ module.exports = {
 };
 
 async function run() {
-  const stdout = await execa.stdout('sudo', ['fdisk', '-l'], { stdio: [0, 'pipe', 'pipe'] });
-  const lines = stdout.split('\n');
-  const devices = lines
-    .filter(_ => _.startsWith('/dev/sd'))
-    .map(line => {
-      const parts = line.split(/\s+/);
-
-      const name = parts[0];
-      const size = parts[4];
-
-      return { name, size };
-    });
-
-  const mounts = await getMounts();
   const dir = '/media/flashdrive';
+  const devices = await getDevices();
+  const mounts = await getMounts();
 
   const { value } = await prompts({
     type: 'select',
@@ -51,7 +39,23 @@ async function run() {
 
   await execa('sudo', ['mkdir', '-p', dir], { stdio: 'inherit' });
   await execa('sudo', ['mount', device.name, dir], { stdio: 'inherit' });
-  await execa('ls', ['-al'], { stdio: 'inherit' });
+  await execa('ls', ['-al'], { stdio: 'inherit', cwd: dir });
+}
+
+async function getDevices() {
+  const stdout = await execa.stdout('sudo', ['fdisk', '-l'], { stdio: [0, 'pipe', 'pipe'] });
+  const lines = stdout.split('\n');
+
+  return lines
+    .filter(_ => _.startsWith('/dev/sd'))
+    .map(line => {
+      const parts = line.split(/\s+/);
+
+      const name = parts[0];
+      const size = parts[4];
+
+      return { name, size };
+    });
 }
 
 async function getMounts() {
