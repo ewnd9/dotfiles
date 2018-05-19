@@ -28,6 +28,10 @@
         "script": "commands/file-case",
         "description": "rename file to certain case (kebab ('-'), snake ('_'), camel ('cC'))"
       },
+      "flash-drive": {
+        "script": "commands/flash-drive",
+        "description": "mount usb"
+      },
       "lint-shell": {
         "script": "commands/lint-shell",
         "description": "lint dotfiles shell scripts"
@@ -47,6 +51,7 @@
     "lodash": "^4.17.5",
     "mkdirp": "^0.5.1",
     "parse-github-repo-url": "^1.4.1",
+    "prompts": "^0.1.8",
     "season": "^6.0.2"
   }
 }
