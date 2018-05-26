@@ -150,6 +150,7 @@ alias tw="npm run test:watch"
 alias bw="npm run build:watch"
 ## yarn
 alias s="yarn start"
+alias sd="yarn start:dev"
 alias yt="yarn test"
 alias yts="yarn test:watch --"
 alias yuii="yarn upgrade-interactive"
