@@ -106,5 +106,6 @@
   // "typescript.disableAutomaticTypeAcquisition": true,
   "flow.useNPMPackagedFlow": true,
   "gitlens.keymap": "none",
-  "markdown-toc.depthFrom": 2
+  "markdown-toc.depthFrom": 2,
+  "gitlens.historyExplorer.enabled": true
 }
