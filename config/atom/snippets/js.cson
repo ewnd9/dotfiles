@@ -2,16 +2,9 @@
   Then:
     prefix: "then"
     body: '''
-      'use strict';
-
-      const execa = require('belt-tools/modules/execa');
-
-      module.exports = {
-        run
-      };
-
-      async function run({ argv }) {
-      }
+      then($1 => {
+        $2
+      })$3
     '''
   Catch:
     prefix: "catch"
@@ -41,6 +34,20 @@
 
       async function main() {
 
+      }
+    '''
+  belt:
+    prefix: "belt"
+    body: '''
+      'use strict';
+
+      const execa = require('belt-tools/modules/execa');
+
+      module.exports = {
+        run
+      };
+
+      async function run({ argv }) {
       }
     '''
   "json-schema-object":

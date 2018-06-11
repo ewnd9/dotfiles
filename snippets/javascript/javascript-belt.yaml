@@ -1,7 +1,7 @@
 lang: javascript
 snippets:
-  - name: Then
-    prefix: then
+  - name: belt
+    prefix: belt
     body: |-
       'use strict';
 

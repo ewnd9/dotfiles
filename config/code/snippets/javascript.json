@@ -1,7 +1,7 @@
 {
   "Then": {
     "prefix": "then",
-    "body": "'use strict';\n\nconst execa = require('belt-tools/modules/execa');\n\nmodule.exports = {\n  run\n};\n\nasync function run({ argv }) {\n}",
+    "body": "then($1 => {\n  $2\n})$3",
     "description": "Then"
   },
   "Catch": {
@@ -23,6 +23,11 @@
     "prefix": "amain",
     "body": "main()\n  .catch(err => {\n    console.error(err);\n    process.exit(1);\n  });\n\nasync function main() {\n\n}",
     "description": "async-main"
+  },
+  "belt": {
+    "prefix": "belt",
+    "body": "'use strict';\n\nconst execa = require('belt-tools/modules/execa');\n\nmodule.exports = {\n  run\n};\n\nasync function run({ argv }) {\n}",
+    "description": "belt"
   },
   "json-schema-object": {
     "prefix": "jobject",
