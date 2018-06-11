@@ -1,7 +1,7 @@
 {
   "Then": {
     "prefix": "then",
-    "body": "then($1 => {\n  $2\n})$3",
+    "body": "'use strict';\n\nconst execa = require('belt-tools/modules/execa');\n\nmodule.exports = {\n  run\n};\n\nasync function run({ argv }) {\n}",
     "description": "Then"
   },
   "Catch": {

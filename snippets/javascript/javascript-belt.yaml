@@ -1,0 +1,16 @@
+lang: javascript
+snippets:
+  - name: Then
+    prefix: then
+    body: |-
+      'use strict';
+
+      const execa = require('belt-tools/modules/execa');
+
+      module.exports = {
+        run
+      };
+
+      async function run({ argv }) {
+      }
+

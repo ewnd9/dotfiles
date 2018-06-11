@@ -2,9 +2,16 @@
   Then:
     prefix: "then"
     body: '''
-      then($1 => {
-        $2
-      })$3
+      'use strict';
+
+      const execa = require('belt-tools/modules/execa');
+
+      module.exports = {
+        run
+      };
+
+      async function run({ argv }) {
+      }
     '''
   Catch:
     prefix: "catch"
