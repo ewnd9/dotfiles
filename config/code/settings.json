@@ -57,7 +57,7 @@
   "vim.handleKeys": {
     "<C-d>": true
   },
-  "vim.otherModesKeyBindings": [
+  "vim.visualModeKeyBindings": [
     {
       "before": [
         "S-Tab"
