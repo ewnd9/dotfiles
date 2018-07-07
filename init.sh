@@ -19,14 +19,14 @@ sudo apt-get install -y -qq yarn
 
 yarn install
 yarn global add belt-cli
-belt install packages/belt-ewnd9
+belt link packages/belt-ewnd9
 
-belt provision --setup apt
-belt provision --setup symlinks
-belt provision --setup submodules
-belt provision --setup npm
-belt provision --setup code
-belt provision --setup atom
+belt ewnd9:provision --setup apt
+belt ewnd9:provision --setup symlinks
+belt ewnd9:provision --setup submodules
+belt ewnd9:provision --setup npm
+belt ewnd9:provision --setup code
+belt ewnd9:provision --setup atom
 
 # change default shell to zsh
 chsh -s /bin/zsh

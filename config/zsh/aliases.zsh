@@ -120,11 +120,11 @@ alias find-dir="find . -type d -name" # $ find-dir '*babel*'
 
 ## atom
 a () {
-  belt open-editor atom "$@"
+  belt ewnd9:open-editor atom "$@"
 }
 ## code
 aa () {
-  belt open-editor code "$@"
+  belt ewnd9:open-editor code "$@"
 }
 
 ## system

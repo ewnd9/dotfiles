@@ -4,39 +4,39 @@
   "private": true,
   "belt": {
     "commands": {
-      "init": {
+      "ewnd9:init": {
         "script": "commands/init",
         "description": "init project"
       },
-      "provision": {
+      "ewnd9:provision": {
         "script": "commands/provision",
         "description": "provision/sync dotfiles"
       },
-      "remove-submodules": {
+      "ewnd9:remove-submodules": {
         "script": "commands/remove-submodules",
         "description": "remove-submodules"
       },
-      "open-editor": {
+      "ewnd9:open-editor": {
         "script": "commands/open-editor",
         "description": "open editor in 2nd or 4th tag"
       },
-      "incantation": {
+      "ewnd9:incantation": {
         "script": "commands/incantation",
         "description": "regenerate snippets"
       },
-      "file-case": {
+      "ewnd9:file-case": {
         "script": "commands/file-case",
         "description": "rename file to certain case (kebab ('-'), snake ('_'), camel ('cC'))"
       },
-      "flash-drive": {
+      "ewnd9:flash-drive": {
         "script": "commands/flash-drive",
         "description": "mount usb"
       },
-      "lint-shell": {
+      "ewnd9:lint-shell": {
         "script": "commands/lint-shell",
         "description": "lint dotfiles shell scripts"
       },
-      "licensify": {
+      "ewnd9:licensify": {
         "script": "commands/licensify",
         "description": "add license to README and package.json"
       }

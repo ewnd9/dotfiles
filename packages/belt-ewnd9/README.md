@@ -5,15 +5,15 @@ My scripts, mostly prototypes that might be exported as standalone projects late
 ## install
 
 ```sh
-$ belt install .
+$ belt link .
 ```
 
 ## Usage
 
 ```sh
-$ belt init c # init a c project with Makefile
-$ belt provision --extract apt # sync existing packages and version to the config file
-$ belt provision --setup apt # install packages from the config file
+$ belt ewnd9:init c # init a c project with Makefile
+$ belt ewnd9:provision --extract apt # sync existing packages and version to the config file
+$ belt ewnd9:provision --setup apt # install packages from the config file
 ```
 
 ## Related

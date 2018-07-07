@@ -11,6 +11,6 @@
   "scripts": {
     "precommit": "yarn lint && yarn lint:shell",
     "lint": "eslint 'packages/**/*.js'",
-    "lint:shell": "belt lint-shell"
+    "lint:shell": "belt ewnd9:lint-shell"
   }
 }
