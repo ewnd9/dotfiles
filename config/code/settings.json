@@ -6,9 +6,9 @@
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.parameterHints": false,
+  "editor.parameterHints.enabled": false,
   "[markdown]": {
-    "editor.parameterHints": true,
+    "editor.parameterHints.enabled": true,
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
