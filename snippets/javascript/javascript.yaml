@@ -55,3 +55,9 @@ snippets:
   - name: argv
     prefix: argv
     body: 'const argv = require(''minimist'')(process.argv.slice(2), { string: ''_'' });'
+  - name: qsparse
+    prefix: qsparse
+    body: 'const search = qs.parse(location.search, { ignoreQueryPrefix: true });'
+  - name: qsstringify
+    prefix: qsstringify
+    body: 'qs.stringify({ $1 }, { addQueryPrefix: true })'

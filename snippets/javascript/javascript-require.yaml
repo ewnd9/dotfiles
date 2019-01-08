@@ -57,3 +57,18 @@ snippets:
   - name: import belt-tools
     prefix: imbe
     body: 'import ${1} from ''belt-tools/modules/${1}'';'
+  - name: import material
+    prefix: imma
+    body: 'import ${1} from ''@material-ui/core/${1}'';'
+  - name: import material styles
+    prefix: immawithstyle
+    body: 'import { withStyles } from ''@material-ui/core/styles'';'
+  - name: import material icon
+    prefix: immaicon
+    body: 'import ${1}Icon from ''@material-ui/icons/${1}'';'
+  - name: immastyle
+    prefix: immastyle
+    body: |-
+      const styles = () => ({
+        $1: $2
+      })

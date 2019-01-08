@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+DEST="/tmp/xx-$(date | md5sum | head -c6)"
+mkcd $DEST

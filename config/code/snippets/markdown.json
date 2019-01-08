@@ -59,6 +59,11 @@
     "body": "```sql\n$1\n```",
     "description": "sql"
   },
+  "graphql": {
+    "prefix": "graphql",
+    "body": "```graphql\n$1\n```",
+    "description": "graphql"
+  },
   "txt": {
     "prefix": "txt",
     "body": "```txt\n$1\n```",

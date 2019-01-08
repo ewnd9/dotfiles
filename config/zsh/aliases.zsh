@@ -55,6 +55,10 @@ alias amend="git commit -a --amend --no-verify"
 alias gfo="git fetch origin"
 alias gri="git rebase -i"
 alias gfr="git fetch origin && git rebase -i origin/master"
+alias gfd="git fetch origin && git rebase -i origin/develop"
+gfrc () {
+  git fetch origin && git rebase -i origin/$(git rev-parse --abbrev-ref HEAD) "$@"
+}
 alias gfur="git fetch upstream && git rebase -i upstream/master"
 alias gfrr="git rebase -i origin/master"
 alias gfurr="git rebase -i upstream/master"
@@ -67,6 +71,7 @@ alias gpom="git pull origin master"
 alias gcm="git checkout master"
 alias gcb="git checkout -b"
 alias gcl="git checkout -"
+alias gcd="git checkout develop"
 
 gt () {
   git tag -a "$@" -m "$@"
@@ -155,6 +160,7 @@ alias yt="yarn test"
 alias yts="yarn test:watch --"
 alias yuii="yarn upgrade-interactive"
 alias yui="yuii --latest"
+alias yaw="yarn workspace"
 
 ## npm/mocha
 alias mb="NODE_ENV=test mocha --require babel/register"
@@ -222,6 +228,9 @@ alias won="$HOME/won"
 
 ## ranger
 alias ra="ranger"
+
+## vim
+alias vim="nvim"
 
 ## menu
 alias e="$HOME/github/nodemenu/bin/nodemenu"

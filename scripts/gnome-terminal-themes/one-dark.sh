@@ -80,7 +80,7 @@ if which "$DCONF" > /dev/null 2>&1; then
 fi
 
 # Fallback for Gnome 2 and early Gnome 3
-[[ -z "$GCONFTOOL" ]] && GCONFTOOL=gconftool
+[[ -z "$GCONFTOOL" ]] && GCONFTOOL=gconftool-2
 [[ -z "$BASE_KEY" ]] && BASE_KEY=/apps/gnome-terminal/profiles
 
 PROFILE_KEY="$BASE_KEY/$PROFILE_SLUG"

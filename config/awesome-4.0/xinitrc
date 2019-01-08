@@ -8,7 +8,7 @@ wmname LG3D &
 unity-settings-daemon &
 google-chrome &
 
-guake --exec='/home/ewnd9/dotfiles/scripts/twitter.tmux' &
+guake --exec="$HOME/dotfiles/scripts/twitter.tmux" &
 nm-applet &
 indicator-cpufreq &
 prime-indicator &
@@ -19,8 +19,7 @@ record-desktop &
 $HOME/.npm-packages/bin/forever $HOME/.npm-packages/bin/xavier-server &
 ruby $HOME/xtra/fusuma/exe/fusuma &
 
-gnome-terminal -e '/home/ewnd9/dotfiles/scripts/tmux/default.tmux' &
-
+gnome-terminal -e "$HOME/dotfiles/scripts/tmux/default.tmux" &
 # 135 - menu, 193 - fn+space
 (sleep 5 && setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape' -option 'lv3:ralt_switch' -option 'misc:typo' && xmodmap -e "keycode 135 = Return" && xmodmap -e "keycode 193 = BackSpace") &
 

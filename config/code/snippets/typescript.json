@@ -84,14 +84,19 @@
     "body": "(()=>{debugger})() || $1",
     "description": "Debugga"
   },
+  "Mapper": {
+    "prefix": "mapper",
+    "body": "const fn = mapper[argv._[0]];\n\nif (!fn) {\n  console.error(`unknown option ${argv._[0]}, should be <${Object.keys(mapper).join('|')}>`);\n  process.exit(1);\n}",
+    "description": "Mapper"
+  },
   "React": {
     "prefix": "react",
-    "body": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nexport const $1 = () => (\n  <div>\n  </div>\n);\n\n$1.propTypes = {\n\n};",
+    "body": "import React from 'react';\n\nexport const $1 = () => (\n  <div>\n  </div>\n);",
     "description": "React"
   },
   "React-Class": {
     "prefix": "reactclass",
-    "body": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nexport class $1 extends React.Component {\n  render() {\n    return (\n      <div>\n\n      </div>\n    );\n  }\n}\n\n$1.propTypes = {\n\n};",
+    "body": "import React from 'react';\n\nexport class $1 extends React.Component {\n  render() {\n    return (\n      <div>\n\n      </div>\n    );\n  }\n}",
     "description": "React-Class"
   },
   "React-Compose": {
@@ -143,6 +148,16 @@
     "prefix": "<div",
     "body": "<div className=",
     "description": "react div"
+  },
+  "reactmaf": {
+    "prefix": "reactmaf",
+    "body": "import React from 'react';\n\nimport { withStyles } from '@material-ui/core/styles';\n\nconst styles = () => ({\n  content: { padding: '20px' }\n});\n\nexport const $1Base = ({ classes, children }) => (\n  <div className={classes.content}>\n    {children}\n  </div>\n);\n\nexport const $1 = withStyles(styles)($1Base);",
+    "description": "reactmaf"
+  },
+  "reactmac": {
+    "prefix": "reactmac",
+    "body": "import React from 'react';\n\nimport { withStyles } from '@material-ui/core/styles';\n\nconst styles = () => ({\n  content: { padding: '20px' }\n});\n\nexport class $1Base extends React.Component {\n  render() {\n    const { classes, children } = this.props;\n\n    return (\n      <div className={classes.content}>\n        {children}\n      </div>\n    );\n  }\n}\n\nexport const $1 = withStyles(styles)($1Base);",
+    "description": "reactmac"
   },
   "require": {
     "prefix": "re",
@@ -239,6 +254,26 @@
     "body": "import ${1} from 'belt-tools/modules/${1}';",
     "description": "import belt-tools"
   },
+  "import material": {
+    "prefix": "imma",
+    "body": "import ${1} from '@material-ui/core/${1}';",
+    "description": "import material"
+  },
+  "import material styles": {
+    "prefix": "immawithstyle",
+    "body": "import { withStyles } from '@material-ui/core/styles';",
+    "description": "import material styles"
+  },
+  "import material icon": {
+    "prefix": "immaicon",
+    "body": "import ${1}Icon from '@material-ui/icons/${1}';",
+    "description": "import material icon"
+  },
+  "immastyle": {
+    "prefix": "immastyle",
+    "body": "const styles = () => ({\n  $1: $2\n})",
+    "description": "immastyle"
+  },
   "Constructor": {
     "prefix": "constructor",
     "body": "constructor",
@@ -308,5 +343,15 @@
     "prefix": "argv",
     "body": "const argv = require('minimist')(process.argv.slice(2), { string: '_' });",
     "description": "argv"
+  },
+  "qsparse": {
+    "prefix": "qsparse",
+    "body": "const search = qs.parse(location.search, { ignoreQueryPrefix: true });",
+    "description": "qsparse"
+  },
+  "qsstringify": {
+    "prefix": "qsstringify",
+    "body": "qs.stringify({ $1 }, { addQueryPrefix: true })",
+    "description": "qsstringify"
   }
 }

@@ -95,7 +95,9 @@ for i = 1, 5 do
       end
     end)
   )
+end
 
+for i = 1, 6 do
   globalkeys = awful.util.table.join(globalkeys,
     awful.key({ modkey, "Shift" }, "#" .. i + 9, function ()
       if client.focus then

@@ -12,6 +12,8 @@ apt:
       version: 1.1.7-1
     - name: wmname
       disable: true
+    - name: shellcheck
+    - name: xsel
     - name: zsh
       version: 5.1.1-1ubuntu2
     - name: guake
@@ -62,20 +64,28 @@ symlinks:
       dest: $HOME/.xinitrc
     - src: $DOTFILES/config/xinitrc
       dest: $HOME/.xsession
-      disable: true
+    - src: $DOTFILES/config/xinitrc
+      dest: $HOME/.xsessionrc
     - src: $DOTFILES/config/awesome-4.0
       dest: $HOME/.config/awesome
     - src: $DOTFILES/config/vimrc
       dest: $HOME/.vimrc
-    - src: $DOTFILES/config/vimrc
+
+    - src: $DOTFILES/config/nvim/init.vim
       dest: $HOME/.config/nvim/init.vim
-      disable: true
-    - src: $DOTFILES/config/vim/autoload
-      dest: $HOME/.config/nvim/autoload
-    - src: $DOTFILES/config/vim/snippets
-      dest: $HOME/.config/nvim/snippets
-    - src: $DOTFILES/config/zsh
-      dest: $HOME/.zsh
+    # - src: $DOTFILES/config/vim/autoload
+    #   dest: $HOME/.config/nvim/autoload
+    # - src: $DOTFILES/config/vim/snippets
+    #   dest: $HOME/.config/nvim/snippets
+
+    - src: $DOTFILES/config/zsh/functions
+      dest: $HOME/.zsh/functions
+    - src: $DOTFILES/config/zsh/git-prompt
+      dest: $HOME/.zsh/git-prompt
+    - src: $DOTFILES/config/zsh/prompt
+      dest: $HOME/.zsh/prompt
+    - src: $DOTFILES/config/zsh/aliases.zsh
+      dest: $HOME/.zsh/aliases.zsh
     - src: $DOTFILES/config/zshrc
       dest: $HOME/.zshrc
     - src: $DOTFILES/config/tmux.conf
@@ -210,6 +220,9 @@ code:
     - name: an-old-hope-theme-vscode
       publisher: dustinsanders
       version: 3.1.1
+    - name: graphql-for-vscode
+      publisher: kumar-harsh
+      version: 1.11.0
     - name: gitlens
       publisher: eamodio
       version: 7.5.10
@@ -222,12 +235,9 @@ code:
     - name: auto-rename-tag
       publisher: formulahendry
       version: 0.0.15
-    - name: atom-keybindings
-      publisher: ms-vscode
-      version: 3.0.4
-    - name: makefiles-support-for-vscode
-      publisher: naereen
-      version: 0.0.3
+    # - name: makefiles-support-for-vscode
+    #   publisher: naereen
+    #   version: 0.0.3
     - name: vscode-fileutils
       publisher: sleistner
       version: 2.7.1
@@ -237,10 +247,15 @@ code:
     - name: vscode-todo-highlight
       publisher: wayou
       version: 0.5.11
+    - name: postcss-language
+      publisher: mhmadhamster
+      version: 2.1.0
 npm:
   packages:
     - name: 0x
       version: 2.4.2
+    - name: fkill-cli
+      version: 5.0.0
     - name: '@fullstackio/cq'
       version: 5.1.2
     - name: '@jukben/emoji-search'
@@ -426,7 +441,7 @@ submodules:
     - repo: 'https://github.com/pangloss/vim-javascript.git'
       sha: 81166acad2376724318a25f6b471822a8406be92
       dest: $HOME/.vim/bundle/vim-javascript
-    - repo: 'git@github.com:ewnd9/vim-move.git'
+    - repo: 'https://github.com/ewnd9/vim-move.git'
       sha: 2ddec1521199076c685e1b3e511f98d2b4ccb0bf
       dest: $HOME/.vim/bundle/vim-move
     - repo: 'https://github.com/garbas/vim-snipmate.git'

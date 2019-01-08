@@ -83,6 +83,13 @@
       $1
       ```
     '''
+  graphql:
+    prefix: "graphql"
+    body: '''
+      ```graphql
+      $1
+      ```
+    '''
   txt:
     prefix: "txt"
     body: '''

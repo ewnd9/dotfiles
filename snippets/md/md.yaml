@@ -72,6 +72,12 @@ snippets:
       ```sql
       $1
       ```
+  - name: graphql
+    prefix: graphql
+    body: |-
+      ```graphql
+      $1
+      ```
   - name: txt
     prefix: txt
     body: |-

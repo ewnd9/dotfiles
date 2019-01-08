@@ -92,26 +92,30 @@
   Debugga:
     prefix: "debugga"
     body: "(()=>{debugger})() || $1"
+  Mapper:
+    prefix: "mapper"
+    body: '''
+      const fn = mapper[argv._[0]];
+
+      if (!fn) {
+        console.error(`unknown option ${argv._[0]}, should be <${Object.keys(mapper).join('|')}>`);
+        process.exit(1);
+      }
+    '''
   React:
     prefix: "react"
     body: '''
       import React from 'react';
-      import PropTypes from 'prop-types';
 
       export const $1 = () => (
         <div>
         </div>
       );
-
-      $1.propTypes = {
-
-      };
     '''
   "React-Class":
     prefix: "reactclass"
     body: '''
       import React from 'react';
-      import PropTypes from 'prop-types';
 
       export class $1 extends React.Component {
         render() {
@@ -122,10 +126,6 @@
           );
         }
       }
-
-      $1.propTypes = {
-
-      };
     '''
   "React-Compose":
     prefix: "reactcompose"
@@ -184,6 +184,50 @@
   "react div":
     prefix: "<div"
     body: "<div className="
+  reactmaf:
+    prefix: "reactmaf"
+    body: '''
+      import React from 'react';
+
+      import { withStyles } from '@material-ui/core/styles';
+
+      const styles = () => ({
+        content: { padding: '20px' }
+      });
+
+      export const $1Base = ({ classes, children }) => (
+        <div className={classes.content}>
+          {children}
+        </div>
+      );
+
+      export const $1 = withStyles(styles)($1Base);
+    '''
+  reactmac:
+    prefix: "reactmac"
+    body: '''
+      import React from 'react';
+
+      import { withStyles } from '@material-ui/core/styles';
+
+      const styles = () => ({
+        content: { padding: '20px' }
+      });
+
+      export class $1Base extends React.Component {
+        render() {
+          const { classes, children } = this.props;
+
+          return (
+            <div className={classes.content}>
+              {children}
+            </div>
+          );
+        }
+      }
+
+      export const $1 = withStyles(styles)($1Base);
+    '''
   require:
     prefix: "re"
     body: "const ${1} = require('${1}');"
@@ -241,6 +285,22 @@
   "import belt-tools":
     prefix: "imbe"
     body: "import ${1} from 'belt-tools/modules/${1}';"
+  "import material":
+    prefix: "imma"
+    body: "import ${1} from '@material-ui/core/${1}';"
+  "import material styles":
+    prefix: "immawithstyle"
+    body: "import { withStyles } from '@material-ui/core/styles';"
+  "import material icon":
+    prefix: "immaicon"
+    body: "import ${1}Icon from '@material-ui/icons/${1}';"
+  immastyle:
+    prefix: "immastyle"
+    body: '''
+      const styles = () => ({
+        $1: $2
+      })
+    '''
   Constructor:
     prefix: "constructor"
     body: "constructor"
@@ -298,3 +358,9 @@
   argv:
     prefix: "argv"
     body: "const argv = require('minimist')(process.argv.slice(2), { string: '_' });"
+  qsparse:
+    prefix: "qsparse"
+    body: "const search = qs.parse(location.search, { ignoreQueryPrefix: true });"
+  qsstringify:
+    prefix: "qsstringify"
+    body: "qs.stringify({ $1 }, { addQueryPrefix: true })"

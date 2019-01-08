@@ -2,7 +2,7 @@
 {
   "editor.renderWhitespace": "boundary",
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -22,6 +22,7 @@
   "editor.lineNumbers": "relative",
   "search.location": "panel",
   "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 0,
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
@@ -97,7 +98,7 @@
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "prettier.singleQuote": true,
-  "prettier.printWidth": 120,
+  "prettier.printWidth": 80,
   "terminal.integrated.copyOnSelection": true,
   "problems.decorations.enabled": false,
   "workbench.statusBar.feedback.visible": false,
@@ -107,5 +108,13 @@
   "flow.useNPMPackagedFlow": true,
   "gitlens.keymap": "none",
   "markdown-toc.depthFrom": 2,
-  "gitlens.historyExplorer.enabled": true
+  "gitlens.historyExplorer.enabled": true,
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "workbench.statusBar.visible": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "breadcrumbs.enabled": true,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true
 }

@@ -21,3 +21,12 @@ snippets:
   - name: Debugga
     prefix: debugga
     body: '(()=>{debugger})() || $1'
+  - name: Mapper
+    prefix: mapper
+    body: |-
+      const fn = mapper[argv._[0]];
+
+      if (!fn) {
+        console.error(`unknown option ${argv._[0]}, should be <${Object.keys(mapper).join('|')}>`);
+        process.exit(1);
+      }

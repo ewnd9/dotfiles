@@ -7,7 +7,7 @@
 wmname LG3D &
 unity-settings-daemon &
 xcompmgr &
-google-chrome &
+(sleep 5 && google-chrome) &
 
 guake &
 nm-applet &
@@ -21,15 +21,16 @@ anki &
 python3 $HOME/github/gtk-node/record-desktop-pygtk/main.py &
 python3 $HOME/github/nodemenu/bin/nodemenu-gtk.py &
 # record-desktop &
+$HOME/github/record-desktop/app.js &
 
 python $HOME/dotfiles/scripts/hardware/keyboard.py &
 # ruby $HOME/xtra/fusuma/exe/fusuma &
 # $HOME/.npm-packages/bin/forever $HOME/.npm-packages/bin/xavier-server &
 
-gnome-terminal -e '/home/ewnd9/dotfiles/scripts/tmux/default.tmux' &
+(sleep 5 && gnome-terminal -e "$HOME/dotfiles/scripts/tmux/default.tmux") &
 
 # 135 - menu, 193 - fn+space
-setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape' -option 'lv3:ralt_switch' -option 'misc:typo' && xmodmap -e "keycode 135 = Return" && xmodmap -e "keycode 193 = BackSpace" &
+(sleep 5 && setxkbmap -layout 'us,ru' -option '' -option 'grp:alt_shift_toggle' -option 'caps:escape' -option 'lv3:ralt_switch' -option 'misc:typo' && xmodmap -e "keycode 135 = Return" && xmodmap -e "keycode 193 = BackSpace") &
 
 [ -f $HOME/Dropbox/.xinitrc ] && $HOME/Dropbox/.xinitrc
 
