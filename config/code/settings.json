@@ -26,6 +26,7 @@
   "explorer.openEditors.visible": 0,
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.panel.defaultLocation": "right",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.iconTheme": "vs-minimal",
   "workbench.colorCustomizations": {
