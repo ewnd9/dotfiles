@@ -25,8 +25,8 @@
   "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 0,
   "workbench.activityBar.visible": false,
-  "workbench.startupEditor": "newUntitledFile",
   "workbench.panel.defaultLocation": "right",
+  "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.iconTheme": "vs-minimal",
   "workbench.colorCustomizations": {
@@ -109,7 +109,6 @@
   "flow.useNPMPackagedFlow": true,
   "gitlens.keymap": "none",
   "markdown-toc.depthFrom": 2,
-  "gitlens.historyExplorer.enabled": true,
   "files.associations": {
     "*.css": "postcss"
   },
@@ -117,5 +116,6 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "breadcrumbs.enabled": true,
   "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true
+  "gitlens.views.lineHistory.enabled": true,
+  "gitlens.historyExplorer.enabled": true
 }

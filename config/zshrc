@@ -34,7 +34,8 @@ stty -ixon
 KEYTIMEOUT=1
 # REPORTTIME=10
 
-bindkey -e
+# bindkey -e
+bindkey -v
 
 HISTSIZE=1000
 SAVEHIST=1000
@@ -97,8 +98,9 @@ export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules:/usr/local/lib/node_modules
 
+export GOROOT="/usr/local/go"
 export GOPATH="$HOME/gocode"
-export PATH="$PATH:$HOME/gocode/bin"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH" # pip
