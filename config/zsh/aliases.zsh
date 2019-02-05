@@ -74,6 +74,7 @@ alias gsu="git submodule update --init"
 alias gpo="git pull origin"
 alias gpom="git pull origin master"
 
+alias gc="git checkout"
 alias gcm="git checkout master"
 alias gcb="git checkout -b"
 alias gcl="git checkout -"
