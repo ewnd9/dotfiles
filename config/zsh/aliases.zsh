@@ -250,3 +250,6 @@ mem () {
 
 ## belt-cli
 alias b="belt"
+
+## fkill-cli (all common web ports)
+alias kk="fkill :3000 ; fkill :3001 ; fkill :3010"
