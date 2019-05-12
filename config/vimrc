@@ -21,6 +21,7 @@ set laststatus=2
 set clipboard=unnamedplus
 set statusline=%F\ %l:%c\ %L
 set mouse=a
+set foldmethod=indent
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>

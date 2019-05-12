@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "update.mode": "none",
   "editor.renderWhitespace": "boundary",
   "editor.fontFamily": "Fira Code",
   "editor.fontSize": 14,
@@ -117,5 +118,18 @@
   "breadcrumbs.enabled": true,
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  "gitlens.historyExplorer.enabled": true
+  "gitlens.historyExplorer.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

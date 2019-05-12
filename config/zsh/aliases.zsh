@@ -36,6 +36,7 @@ alias c="git commit --message"
 p() {
   git push -u origin $(git rev-parse --abbrev-ref HEAD) "$@"
 }
+alias pp="git remote | xargs -L1 git push --all"
 alias pm="git push origin master"
 
 alias gs="git status"
@@ -52,7 +53,7 @@ alias gstp="git stash pop"
 alias gll="bash ~/dotfiles/scripts/git-pretty-log.sh"
 
 alias wip="git commit -a -m wip --no-verify"
-alias amend="git commit -a --amend --no-verify"
+alias amend="git commit -a --amend"
 
 alias ga="git add ."
 alias gca="git checkout ."
@@ -101,6 +102,7 @@ xx () {
 alias serve="python -m SimpleHTTPServer"
 alias curl-headers="curl -i"
 alias curl-only-headers="curl -v -s 1> /dev/null"
+alias curlj="curl -H 'Content-Type: application/json' -X POST --data"
 alias myip="ifconfig | grep \"inet addr\""
 port () { netstat -tulpn | grep :$1 }
 killport () { fuser -k $1/tcp }
@@ -136,7 +138,7 @@ a () {
 }
 ## code
 aa () {
-  belt ewnd9:open-editor code "$@"
+  belt ewnd9:open-editor code-insiders "$@"
 }
 
 ## system
@@ -253,3 +255,6 @@ alias b="belt"
 
 ## fkill-cli (all common web ports)
 alias kk="fkill :3000 ; fkill :3001 ; fkill :3010"
+
+## shfmt
+alias shf="shfmt -w -i 2 ."

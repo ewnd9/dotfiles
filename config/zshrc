@@ -112,7 +112,9 @@ export PATH="$HOME/soft/android-sdk/tools:$PATH"
 export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
+export PATH="$PATH:$HOME/.deno/bin"
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$PATH:$HOME/.linuxbrew/bin"
 
 [ -f $HOME/Dropbox/dotfiles/aliases.zsh ] && source $HOME/Dropbox/dotfiles/aliases.zsh
 

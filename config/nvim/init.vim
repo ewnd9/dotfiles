@@ -5,6 +5,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set wildmenu
+colorscheme elflord
 
 :nnoremap <C-n> :NERDTreeToggle<CR>
 -
@@ -20,6 +22,8 @@ set laststatus=2
 set clipboard=unnamedplus
 set statusline=%F\ %l:%c\ %L
 set mouse=a
+set foldmethod=indent
+set foldlevel=99
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
