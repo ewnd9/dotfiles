@@ -1,3 +1,5 @@
 #!/bin/zsh
 
-mkcd "$@" && belt ewnd9:init node
+mkcd "$1"
+shift
+belt ewnd9:init "$@"

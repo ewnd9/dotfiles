@@ -54,6 +54,14 @@ apt:
       version: 1.10-5ubuntu1
     - name: redshift-gtk
       version: 1.10-5ubuntu1
+    - name: arc-theme
+      version: 1.10-5ubuntu1
+    - name: gnome-tweak-tool
+      version: 1.10-5ubuntu1
+    - name: pass
+      version: 1.10-5ubuntu1
+    - name: gconf2
+      version: 1.10-5ubuntu1
 symlinks:
   targets:
     - src: $DOTFILES/config/vim/autoload
@@ -105,8 +113,12 @@ symlinks:
       dest: $HOME/.config/Code/User/keybindings.json
     - src: $DOTFILES/config/code/snippets
       dest: $HOME/.config/Code/User/snippets
-    - src: $DOTFILES/config/.hyper.js
-      dest: $HOME/.hyper.js
+    - src: $DOTFILES/config/code/settings.json
+      dest: $HOME/.config/Code - Insiders/User/settings.json
+    - src: $DOTFILES/config/code/keybindings.json
+      dest: $HOME/.config/Code - Insiders/User/keybindings.json
+    - src: $DOTFILES/config/code/snippets
+      dest: $HOME/.config/Code - Insiders/User/snippets
 atom:
   packages:
     - name: atom-file-tags
@@ -409,7 +421,7 @@ submodules:
       sha: 6d268927c20b9810f8ff53db5efaa4ed5d2a7247
       dest: $HOME/.config/tmux/tmux-open
     - repo: 'https://github.com/tmux-plugins/tmux-yank'
-      sha: e306c645b01b7e37c061d2aab25082bee596d921
+      sha: 44fc7cc7b5c4cf00bc9ee9d64436b71f379a6f4e
       dest: $HOME/.config/tmux/tmux-yank
     - repo: 'https://github.com/chriskempson/base16-vim.git'
       sha: e711e9b1412b55fec7e8a5cff4ac5c06f9078729

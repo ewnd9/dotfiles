@@ -96,6 +96,12 @@ snippets:
       ```rb
       $1
       ```
+  - name: plant
+    prefix: plant
+    body: |-
+      ```plantuml
+      $1
+      ```
   - name: apt
     prefix: apt
     body: 'sudo apt-get install $1'

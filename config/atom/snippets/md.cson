@@ -111,6 +111,13 @@
       $1
       ```
     '''
+  plant:
+    prefix: "plant"
+    body: '''
+      ```plantuml
+      $1
+      ```
+    '''
   apt:
     prefix: "apt"
     body: "sudo apt-get install $1"

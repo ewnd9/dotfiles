@@ -94,7 +94,7 @@ export NO_AT_BRIDGE=1 #
 export ANDROID_HOME="$HOME/.android-sdk"
 export PATH="$HOME/.android-sdk/platform-tools:$PATH"
 export PATH="$HOME/.android-sdk/tools/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+export JAVA_HOME="/usr/lib/jvm/java-11-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules:/usr/local/lib/node_modules
 

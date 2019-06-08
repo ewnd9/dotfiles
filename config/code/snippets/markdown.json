@@ -79,6 +79,11 @@
     "body": "```rb\n$1\n```",
     "description": "rb"
   },
+  "plant": {
+    "prefix": "plant",
+    "body": "```plantuml\n$1\n```",
+    "description": "plant"
+  },
   "apt": {
     "prefix": "apt",
     "body": "sudo apt-get install $1",

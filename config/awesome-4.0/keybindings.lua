@@ -43,8 +43,11 @@ globalkeys = awful.util.table.join(
   awful.key({ }, "XF86KbdBrightnessUp", function () awful.spawn(home .. "/dotfiles/scripts/asus/asus-kbd.sh up") end),
   awful.key({ }, "XF86KbdBrightnessDown", function () awful.spawn(home .. "/dotfiles/scripts/asus/asus-kbd.sh down") end),
 
-  awful.key({ }, "XF86Launch1", function () awful.spawn("xbacklight -dec 10") end),
-  awful.key({ }, "XF86WebCam", function () awful.spawn("xbacklight -inc 10") end),
+  -- awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn(home .. "/dotfiles/scripts/thinkpad/thinkpad-controls.sh brightness-up") end),
+  -- awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn(home .. "/dotfiles/scripts/thinkpad/thinkpad-controls.sh brightness-down") end),
+
+  awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
+  awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
 
   awful.key({ modkey, "Shift" }, "f", function () awful.spawn("gnome-system-monitor") end),
   awful.key({ modkey }, "f", function (c)

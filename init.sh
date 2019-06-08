@@ -8,27 +8,43 @@ rm -rf Desktop Music Public Videos Documents examples.desktop Templates
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install -y git vim-gtk
 
+cd /tmp
+rm -rf n
+git clone https://github.com/tj/n.git
+cd n
+sudo make install
+sudo n 10
+npm config set prefix $HOME/.npm-packages
+
 # git clone https://github.com/ewnd9/dotfiles.git
-cd dotfiles
+cd ~/dotfiles
 
-# curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-# sudo apt-get install -y nodejs
+sudo apt-add-repository ppa:neovim-ppa/stable
+sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
+echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update -qq
+sudo apt-get install -y -qq yarn neovim
 
-# sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
-# echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-# sudo apt-get update -qq
-# sudo apt-get install -y -qq yarn
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 yarn install
 yarn global add @belt/cli
-~/.npm-packages/bin/belt link packages/belt-ewnd9
+~/.config/yarn/global/node_modules/.bin/belt link packages/belt-ewnd9
 
-~/.npm-packages/bin/belt provision --setup apt
-~/.npm-packages/bin/belt provision --setup symlinks
-~/.npm-packages/bin/belt provision --setup submodules
-~/.npm-packages/bin/belt provision --setup npm
-~/.npm-packages/bin/belt provision --setup code
-~/.npm-packages/bin/belt provision --setup atom
+~/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup apt
+~/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup symlinks
+~/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup submodules
+~/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup npm
+~/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup code
+
+# firecode
+mkdir -p  ~/.local/share/fonts
+for type in Bold Light Medium Regular Retina; do
+  wget -O ~/.local/share/fonts/FiraCode-${type}.ttf \
+    "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-${type}.ttf?raw=true";
+done
+fc-cache -f
 
 # change default shell to zsh
 chsh -s /bin/zsh

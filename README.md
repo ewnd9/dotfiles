@@ -29,9 +29,10 @@ $ ./init.sh
 
 - manual-install: [dropbox](https://www.dropbox.com)
 
-- manual-install: [arc-theme](http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/all/) Open `unity-tweak-tool` -> Themes -> `Arc dark`
-
-- manual install: [firacode](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
+- manual-install: `arc-theme`
+  - Open `gnome-tweaks`
+    - Themes -> `Arc-Dark`
+    - Icons -> `Ubuntu-mono-dark`
 
 - manual setup: zsh
 
