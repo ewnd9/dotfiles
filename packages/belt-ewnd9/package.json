@@ -61,7 +61,7 @@
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "parse-github-repo-url": "^1.4.1",
-    "prompts": "^0.1.8",
+    "prompts": "^2.1.0",
     "qs": "^6.7.0",
     "season": "^6.0.2"
   }

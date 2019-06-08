@@ -6,6 +6,7 @@ const makeDir = require('make-dir');
 const gitUrlParse = require('git-url-parse');
 const qs = require('qs');
 const ncp = require('ncp');
+const prompts = require('prompts');
 const kebabCase = require('lodash/kebabCase');
 const snakeCase = require('lodash/snakeCase');
 const camelCase = require('lodash/camelCase');
@@ -17,30 +18,40 @@ module.exports = {
 };
 
 async function run({ argv }) {
-  const parts = getParts(argv);
-  const repoDir = `${process.env.HOME}/.cache/belt-ewnd9-init/${[
-    parts.source,
-    parts.full_name
-  ]
-    .join('-')
-    .replace(/\W+/g, '-')}`;
+  const ctx = getContext(argv);
 
-  const name = argv.name || parts.templatePath.split('/').pop();
+  if (argv.i || argv.interactive) {
+    const dirs = fs.readdirSync(ctx.repoDir);
 
-  if (!fs.existsSync(repoDir)) {
-    await makeDir(repoDir);
-    await execa('git', ['clone', parts.repoUrl.split('#')[0], repoDir], {
+    const overrides = await prompts([{
+      type: 'text',
+      name: 'name',
+      message: 'name of a project'
+    }, {
+      type: 'select',
+      name: 'templatePath',
+      message: 'pick a template',
+      choices: dirs.map(dir => ({title: dir, value: dir})),
+      initial: 1
+    }]);
+
+    Object.assign(ctx, overrides);
+  }
+
+  if (!fs.existsSync(ctx.repoDir)) {
+    await makeDir(ctx.repoDir);
+    await execa('git', ['clone', ctx.repoUrl.split('#')[0], ctx.repoDir], {
       stdio: 'inherit'
     });
   } else {
-    await execa('git', ['checkout', parts.branch], { cwd: repoDir });
+    await execa('git', ['checkout', ctx.branch], { cwd: ctx.repoDir });
   }
 
   if (argv.sync) {
-    await execa('git', ['pull', 'origin', parts.branch], { cwd: repoDir });
+    await execa('git', ['pull', 'origin', ctx.branch], { cwd: ctx.repoDir });
   }
 
-  const fullTemplatePath = `${repoDir}/${parts.templatePath}`;
+  const fullTemplatePath = `${ctx.repoDir}/${ctx.templatePath}`;
   const ignore = ['.gitignore', 'yarn.lock'];
 
   if (!fs.existsSync(fullTemplatePath)) {
@@ -64,16 +75,16 @@ async function run({ argv }) {
             }
 
             const result = data
-              .replace(new RegExp('generator-template', 'g'), kebabCase(name))
-              .replace(new RegExp('generator_template', 'g'), snakeCase(name))
-              .replace(new RegExp('generatorTemplate', 'g'), camelCase(name))
+              .replace(new RegExp('generator-template', 'g'), kebabCase(ctx.name))
+              .replace(new RegExp('generator_template', 'g'), snakeCase(ctx.name))
+              .replace(new RegExp('generatorTemplate', 'g'), camelCase(ctx.name))
               .replace(
                 new RegExp('GeneratorTemplate', 'g'),
-                upperFirst(camelCase(name))
+                upperFirst(camelCase(ctx.name))
               )
               .replace(
                 new RegExp('GENERATOR_TEMPLATE', 'g'),
-                upperCase(snakeCase(name))
+                upperCase(snakeCase(ctx.name))
               );
 
             fs.writeFile(write.path, result, 'utf8', err => {
@@ -97,27 +108,31 @@ async function run({ argv }) {
   });
 }
 
-function getParts({from: repoUrl, template: templatePath}) {
+function getContext({name, from: repoUrl, template: templatePath}) {
+  const ctx = {repoUrl};
+
   if (repoUrl) {
-    const parts = gitUrlParse(repoUrl);
-    const [branch, templateOpts] = parts.hash.split('?');
+    Object.assign(ctx, gitUrlParse(repoUrl));
+    const [branch, templateOpts] = ctx.hash.split('?');
     const { path: templatePath } = qs.parse(templateOpts);
 
-    return {
-      ...parts,
-      repoUrl,
-      branch,
-      templatePath,
-    };
+    ctx.branch = branch;
+    ctx.templatePath = templatePath;
   } else {
     const repoUrl = 'https://github.com/ewnd9/templates.git#master?path=node-express';
-    const parts = gitUrlParse(repoUrl);
+    Object.assign(ctx, gitUrlParse(repoUrl));
 
-    return {
-      ...parts,
-      repoUrl,
-      branch: 'master',
-      templatePath: templatePath || 'node',
-    };
+    ctx.branch = 'master';
+    ctx.templatePath = templatePath || 'node';
   }
+
+  ctx.repoDir = `${process.env.HOME}/.cache/belt-ewnd9-init/${[
+    ctx.source,
+    ctx.full_name
+  ]
+    .join('-')
+    .replace(/\W+/g, '-')}`;
+
+  ctx.name = name || ctx.templatePath.split('/').pop();
+  return ctx;
 }
