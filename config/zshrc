@@ -98,8 +98,8 @@ export JAVA_HOME="/usr/lib/jvm/java-11-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules:/usr/local/lib/node_modules
 
-export GOROOT="/usr/local/go"
-export GOPATH="$HOME/gocode"
+export GOROOT="/usr/lib/go"
+export GOPATH="$HOME/golang"
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
