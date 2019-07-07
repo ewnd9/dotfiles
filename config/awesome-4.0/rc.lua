@@ -41,16 +41,6 @@ do
 end
 -- }}}
 
-client.connect_signal("request::activate", function(c, context, hints)
-  if not awesome.startup and c.class == "Code" then
-    awful.ewmh.activate(c, context, hints)
-  end
-end)
-
-awful.ewmh.add_activate_filter(function(c)
-  awful.client.urgent.jumpto()
-end, "ewmh")
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(home .. "/.config/awesome/theme.lua")
