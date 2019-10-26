@@ -1,0 +1,17 @@
+{
+  "tsconfig-nodejs": {
+    "prefix": "tsc-nodejs",
+    "body": "{\n  \"compilerOptions\": {\n    \"module\": \"commonjs\",\n    \"declaration\": true,\n    \"removeComments\": true,\n    \"esModuleInterop\": true,\n    \"emitDecoratorMetadata\": true,\n    \"experimentalDecorators\": true,\n    \"target\": \"esnext\",\n    \"sourceMap\": true,\n    \"baseUrl\": \"./\"\n  },\n  \"exclude\": [\"node_modules\"]\n}",
+    "description": "tsconfig-nodejs"
+  },
+  "tsconfig-browser": {
+    "prefix": "tsc-browser",
+    "body": "{\n  \"compilerOptions\": {\n    \"module\": \"commonjs\",\n    \"declaration\": true,\n    \"removeComments\": true,\n    \"esModuleInterop\": true,\n    \"emitDecoratorMetadata\": true,\n    \"experimentalDecorators\": true,\n    \"target\": \"esnext\",\n    \"sourceMap\": true,\n    \"baseUrl\": \"./\"\n  },\n  \"exclude\": [\"node_modules\"]\n}",
+    "description": "tsconfig-browser"
+  },
+  "tsconfig-extends": {
+    "prefix": "tsc-extends",
+    "body": "{\n  \"extends\": \"../../tsconfig.json\",\n  \"include\": [\"src/**/*.ts\"],\n}",
+    "description": "tsconfig-extends"
+  }
+}

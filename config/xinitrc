@@ -7,6 +7,7 @@
 wmname LG3D &
 # unity-settings-daemon &
 xcompmgr &
+mutter &
 (sleep 5 && google-chrome) &
 
 guake &
@@ -20,8 +21,8 @@ anki &
 
 python3 $HOME/github/gtk-node/record-desktop-pygtk/main.py &
 python3 $HOME/github/nodemenu/bin/nodemenu-gtk.py &
-# record-desktop &
-$HOME/github/record-desktop/app.js &
+record-desktop &
+# $HOME/github/record-desktop/app.js &
 
 python $HOME/dotfiles/scripts/hardware/keyboard.py &
 # ruby $HOME/xtra/fusuma/exe/fusuma &

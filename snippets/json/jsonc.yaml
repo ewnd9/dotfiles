@@ -1,0 +1,43 @@
+lang: jsonc
+snippets:
+  - name: tsconfig-nodejs
+    prefix: "tsc-nodejs"
+    body: |-
+      {
+        "compilerOptions": {
+          "module": "commonjs",
+          "declaration": true,
+          "removeComments": true,
+          "esModuleInterop": true,
+          "emitDecoratorMetadata": true,
+          "experimentalDecorators": true,
+          "target": "esnext",
+          "sourceMap": true,
+          "baseUrl": "./"
+        },
+        "exclude": ["node_modules"]
+      }
+  - name: tsconfig-browser
+    prefix: "tsc-browser"
+    body: |-
+      {
+        "compilerOptions": {
+          "module": "commonjs",
+          "declaration": true,
+          "removeComments": true,
+          "esModuleInterop": true,
+          "emitDecoratorMetadata": true,
+          "experimentalDecorators": true,
+          "target": "esnext",
+          "sourceMap": true,
+          "baseUrl": "./"
+        },
+        "exclude": ["node_modules"]
+      }
+  - name: tsconfig-extends
+    prefix: "tsc-extends"
+    body: |-
+      {
+        "extends": "../../tsconfig.json",
+        "include": ["src/**/*.ts"],
+      }

@@ -84,7 +84,7 @@ bindkey "^N" insert-last-word
 
 source ~/.zsh/aliases.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER=google-chrome
 export LC_TIME=en_US.UTF-8
 
@@ -121,3 +121,6 @@ export PATH="$PATH:$HOME/.linuxbrew/bin"
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin

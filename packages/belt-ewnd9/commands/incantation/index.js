@@ -51,6 +51,10 @@ async function run() {
       atom: `${rootPath}/config/atom/snippets/json.cson`,
       code: `${rootPath}/config/code/snippets/json.json`
     },
+    jsonc: {
+      atom: `${rootPath}/config/atom/snippets/jsonc.cson`,
+      code: `${rootPath}/config/code/snippets/jsonc.json`
+    },
     markdown: {
       atom: `${rootPath}/config/atom/snippets/md.cson`,
       code: [

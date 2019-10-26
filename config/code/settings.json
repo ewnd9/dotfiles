@@ -14,7 +14,8 @@
       "other": true,
       "comments": false,
       "strings": true
-    }
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "javascript.suggestionActions.enabled": false,
   "editor.tabCompletion": true,
@@ -120,6 +121,7 @@
   "gitlens.views.lineHistory.enabled": true,
   "gitlens.historyExplorer.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "relative",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -138,5 +140,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }
