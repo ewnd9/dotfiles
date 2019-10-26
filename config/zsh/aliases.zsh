@@ -71,6 +71,7 @@ alias gfurr="git rebase -i upstream/master"
 alias grc="git rebase --continue"
 alias gpr="git pull --rebase --autostash"
 alias gsu="git submodule update --init"
+alias gst="git stash save --include-untracked"
 
 alias gpo="git pull origin"
 alias gpom="git pull origin master"

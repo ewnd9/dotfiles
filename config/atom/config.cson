@@ -26,7 +26,6 @@
     telemetryConsent: "no"
   editor:
     fontFamily: "Fira Code"
-    fontSize: 13
     invisibles: {}
     showInvisibles: true
     zoomFontWhenCtrlScrolling: false
