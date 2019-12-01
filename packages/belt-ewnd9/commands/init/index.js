@@ -113,13 +113,13 @@ function getContext({name, from: repoUrl, template: templatePath}) {
 
   if (repoUrl) {
     Object.assign(ctx, gitUrlParse(repoUrl));
-    const [branch, templateOpts] = ctx.hash.split('?');
-    const { path: templatePath } = qs.parse(templateOpts);
+    const [, templateOpts] = ctx.hash.split('?');
+    const { branch, path: templatePath } = qs.parse(templateOpts);
 
     ctx.branch = branch;
     ctx.templatePath = templatePath;
   } else {
-    const repoUrl = 'https://github.com/ewnd9/templates.git#master?path=node-express';
+    const repoUrl = 'https://github.com/ewnd9/templates.git?path=node-express&branch=master';
     Object.assign(ctx, gitUrlParse(repoUrl));
 
     ctx.branch = 'master';
