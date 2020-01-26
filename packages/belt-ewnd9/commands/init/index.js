@@ -21,7 +21,7 @@ async function run({ argv }) {
   const ctx = getContext(argv);
 
   if (argv.i || argv.interactive) {
-    const dirs = fs.readdirSync(ctx.repoDir);
+    const dirs = fs.readdirSync(`${ctx.repoDir}/templates`);
 
     const overrides = await prompts([{
       type: 'text',
@@ -31,7 +31,7 @@ async function run({ argv }) {
       type: 'select',
       name: 'templatePath',
       message: 'pick a template',
-      choices: dirs.map(dir => ({title: dir, value: dir})),
+      choices: dirs.map(dir => ({title: dir, value: `templates/${dir}`})),
       initial: 1
     }]);
 
@@ -113,8 +113,7 @@ function getContext({name, from: repoUrl, template: templatePath}) {
 
   if (repoUrl) {
     Object.assign(ctx, gitUrlParse(repoUrl));
-    const [, templateOpts] = ctx.hash.split('?');
-    const { branch, path: templatePath } = qs.parse(templateOpts);
+    const { branch, path: templatePath } = qs.parse(ctx.search);
 
     ctx.branch = branch;
     ctx.templatePath = templatePath;
