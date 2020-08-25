@@ -6,7 +6,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set wildmenu
-colorscheme elflord
+" colorscheme elflord
 
 :nnoremap <C-n> :NERDTreeToggle<CR>
 -
@@ -108,5 +108,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'airblade/vim-rooter'
 
 call plug#end()

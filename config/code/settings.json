@@ -1,9 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "update.mode": "none",
+  "debug.javascript.onlyAutoAttachExplicit": true,
+  "update.mode": "manual",
   "editor.renderWhitespace": "boundary",
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 15,
+  "editor.fontSize": 13,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -96,7 +97,6 @@
     "**/coverage": true,
     "**/.nyc_output/**": true
   },
-  "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,
@@ -124,7 +124,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -140,5 +140,9 @@
   },
   "go.useLanguageServer": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.colorTheme": "Atom One Dark"
+  "workbench.colorTheme": "Atom One Dark",
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.enabled": false,
+  "debug.javascript.autoAttachFilter": "disabled",
+  "window.zoomLevel": 1
 }

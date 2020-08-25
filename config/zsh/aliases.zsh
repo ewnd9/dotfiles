@@ -2,6 +2,7 @@
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias .....="cd ../../../../"
 alias cc="cd && clear"
 $ () {
   $@
@@ -79,6 +80,9 @@ alias gpom="git pull origin master"
 alias gc="git checkout"
 alias gcm="git checkout master"
 alias gcb="git checkout -b"
+gcbr () {
+  gfo && git checkout -b "$1" "origin/$1"
+}
 alias gcl="git checkout -"
 alias gcd="git checkout develop"
 
@@ -143,11 +147,19 @@ aa () {
 }
 
 ## system
-alias ls="ls --color=auto"
-alias rm="trash"
-alias ll="ls -lh"
 alias restore="echo '\u001b[?25h'"
-alias cal="ncal -M -3"
+
+if [[ "$OSTYPE" == *darwin* ]]; then
+  alias ls="ls -G"
+  alias ll="ls -lh -G"
+  alias cal="ncal -A 2"
+else
+  alias ls="ls --color=auto"
+  alias ll="ls -lh"
+  alias rm="trash"
+  alias cal="ncal -M -3"
+fi
+
 alias k="awk '{print \$1}' | xargs kill"
 
 ## apt
@@ -172,6 +184,7 @@ alias yts="yarn test:watch --"
 alias yuii="yarn upgrade-interactive"
 alias yui="yuii --latest"
 alias yaw="yarn workspace"
+alias yarnc="npx yarn@1.19.0"
 
 ## npm/mocha
 alias mb="NODE_ENV=test mocha --require babel/register"
