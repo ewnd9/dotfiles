@@ -18,7 +18,7 @@ BACKUP_FILE="/tmp/tmux-focus"
 
 if [[ "$PANE_HEIGHT" -gt "$EIGHTY_PERCENT" ]]; then
   for var in BACKUP_PANE BACKUP_LAYOUT; do
-    IFS= read -r "$var" || break
+    IFS= read -r "${var?}" || break
   done < $BACKUP_FILE
 
   if [[ "$PANE_ID" == "$BACKUP_PANE" ]]; then

@@ -9,7 +9,8 @@ module.exports = {
   evalTemplate,
   ensureParentDir,
   readNodeModules,
-  readGitModules
+  readGitModules,
+  readZshHistory,
 };
 
 const ctx = {
@@ -66,4 +67,25 @@ async function readGitModules(dirPath) {
   }
 
   return modules;
+}
+
+function readZshHistory() {
+  const zshHistoryPath = `${process.env.HOME}/.zsh_history`;
+  const lines = fs.readFileSync(zshHistoryPath, 'utf-8').split('\n').reduce((acc, line) => {
+    if (line[0] === ':') {
+      line = line.substring(line.indexOf(';') + 1);
+    }
+
+    const prevLine = acc[acc.length - 1] || '';
+
+    if (prevLine.substring(prevLine.length - 2) === '\\\\') {
+      acc[acc.length - 1] = prevLine.substring(0, prevLine.length - 2) + line;
+    } else {
+      acc.push(line);
+    }
+
+    return acc;
+  }, []);
+
+  return lines;
 }

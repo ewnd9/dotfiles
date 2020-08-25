@@ -12,6 +12,10 @@
         "script": "commands/provision",
         "description": "provision/sync dotfiles"
       },
+      "ewnd9:dotfiles-docs": {
+        "script": "commands/dotfiles-docs",
+        "description": "generate docs"
+      },
       "ewnd9:remove-submodules": {
         "script": "commands/remove-submodules",
         "description": "remove-submodules"

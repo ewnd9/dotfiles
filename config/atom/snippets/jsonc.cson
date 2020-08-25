@@ -10,7 +10,7 @@ undefined:
           "esModuleInterop": true,
           "emitDecoratorMetadata": true,
           "experimentalDecorators": true,
-          "target": "esnext",
+          "target": "es2019",
           "sourceMap": true,
           "baseUrl": "./"
         },

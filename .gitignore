@@ -3,4 +3,5 @@ scripts/*.gif
 fl.sh
 test.sh
 config/vim/.netrwhist
+config/karabiner/automatic_backups
 node_modules
