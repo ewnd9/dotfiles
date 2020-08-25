@@ -1,0 +1,76 @@
+'use strict';
+
+const prompts = require('prompts');
+const execa = require('belt-tools/modules/execa');
+const uniq = require('lodash/uniq');
+const { readZshHistory } = require('../utils');
+
+module.exports = {
+  setup,
+  extract,
+};
+
+async function setup({ packages, repositories, cask }) {
+  for (const repo of repositories) {
+    await execa('brew', ['tap', repo.name], { stdio: 'inherit' });
+  }
+  for (const pkg of packages) {
+    await execa('brew', ['install', pkg.name], { stdio: 'inherit' });
+  }
+  for (const pkg of cask) {
+    await execa('brew', ['cask', 'install', pkg.name], { stdio: 'inherit' });
+  }
+}
+
+async function extract(opts) {
+  const lines = readZshHistory();
+
+  await parseMissingCommands(
+    lines,
+    'brew install',
+    pkg => `Add "brew install ${pkg}"?`,
+    opts.packages
+  );
+
+  await parseMissingCommands(
+    lines,
+    'brew cask install',
+    pkg => `Add "brew cask install ${pkg}"?`,
+    opts.cask
+  );
+
+  await parseMissingCommands(
+    lines,
+    'brew tap',
+    pkg => `Add "brew tap ${pkg}"?`,
+    opts.repositories
+  );
+
+  return opts;
+}
+
+async function parseMissingCommands(lines, pattern, buildMessage, source) {
+  const pkgs = uniq(
+    lines
+      .filter(line => line.startsWith(pattern))
+      .map(line => line.substring(pattern.length + 1))
+      .flatMap(line => line.split(/\s+/g))
+  );
+
+  const missingPkgs = pkgs.filter(
+    pkg => !source.some(({ name }) => name === pkg)
+  );
+
+  for (const pkg of missingPkgs) {
+    const { value } = await prompts({
+      type: 'confirm',
+      name: 'value',
+      message: buildMessage(pkg),
+      initial: true,
+    });
+
+    if (value) {
+      source.push({ name: pkg });
+    }
+  }
+}

@@ -1,9 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "debug.javascript.onlyAutoAttachExplicit": true,
   "update.mode": "none",
   "editor.renderWhitespace": "boundary",
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 15,
+  "editor.fontSize": 13,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",

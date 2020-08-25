@@ -79,6 +79,9 @@ alias gpom="git pull origin master"
 alias gc="git checkout"
 alias gcm="git checkout master"
 alias gcb="git checkout -b"
+gcbr () {
+  gfo && git checkout -b "$1" "origin/$1"
+}
 alias gcl="git checkout -"
 alias gcd="git checkout develop"
 
@@ -143,8 +146,8 @@ aa () {
 }
 
 ## system
-alias ls="ls --color=auto"
-alias rm="trash"
+# alias ls="ls --color=auto"
+# alias rm="trash"
 alias ll="ls -lh"
 alias restore="echo '\u001b[?25h'"
 alias cal="ncal -M -3"

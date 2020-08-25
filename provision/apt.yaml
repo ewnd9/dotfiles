@@ -62,65 +62,39 @@ apt:
       version: 1.10-5ubuntu1
     - name: gconf2
       version: 1.10-5ubuntu1
+brew:
+  repositories:
+    - name: homebrew/cask-fonts
+    - name: mongodb/brew
+  packages:
+    - name: coreutils
+    - name: kubectl
+    - name: neovim
+    - name: mongodb-community-shell
+    - name: gawk
+    - name: helm
+    - name: jq
+    - name: ncdu
+    - name: git-extras
+    - name: gperf
+    - name: cmake
+    - name: openssl
+    - name: gnu-sed
+    - name: fswatch
+    - name: wget
+    - name: pass
+    - name: golang
+  cask:
+    - name: docker
+    - name: font-fira-code
 symlinks:
   targets:
-    - src: $DOTFILES/config/vim/autoload
-      dest: $HOME/.vim/autoload
-    - src: $DOTFILES/config/vim/snippets
-      dest: $HOME/.vim/snippets
-    - src: $DOTFILES/config/xinitrc
-      dest: $HOME/.xinitrc
-    - src: $DOTFILES/config/xinitrc
-      dest: $HOME/.xsession
-    - src: $DOTFILES/config/xinitrc
-      dest: $HOME/.xsessionrc
-    - src: $DOTFILES/config/awesome-4.0
-      dest: $HOME/.config/awesome
-    - src: $DOTFILES/config/vimrc
-      dest: $HOME/.vimrc
-
-    - src: $DOTFILES/config/nvim/init.vim
-      dest: $HOME/.config/nvim/init.vim
-    - src: $DOTFILES/config/nvim/plug.vim
-      dest: $HOME/.local/share/nvim/site/autoload/plug.vim
-    # - src: $DOTFILES/config/vim/autoload
-    #   dest: $HOME/.config/nvim/autoload
-    # - src: $DOTFILES/config/vim/snippets
-    #   dest: $HOME/.config/nvim/snippets
-
-    - src: $DOTFILES/config/zsh/functions
-      dest: $HOME/.zsh/functions
-    - src: $DOTFILES/config/zsh/git-prompt
-      dest: $HOME/.zsh/git-prompt
-    - src: $DOTFILES/config/zsh/prompt
-      dest: $HOME/.zsh/prompt
-    - src: $DOTFILES/config/zsh/aliases.zsh
-      dest: $HOME/.zsh/aliases.zsh
-    - src: $DOTFILES/config/zshrc
-      dest: $HOME/.zshrc
-    - src: $DOTFILES/config/tmux.conf
-      dest: $HOME/.tmux.conf
-    - src: $DOTFILES/config/gtk.css
-      dest: $HOME/.config/gtk-3.0/gtk.css
-    - src: $DOTFILES/config/fusuma.yml
-      dest: $HOME/.config/fusuma/config.yml
-      disable: true
-    - src: $DOTFILES/config/atom/config.cson
-      dest: $HOME/.atom/config.cson
-    - src: $DOTFILES/config/atom/keymap.cson
-      dest: $HOME/.atom/keymap.cson
     - src: $DOTFILES/config/code/settings.json
-      dest: $HOME/.config/Code/User/settings.json
+      dest: $HOME/Library/Application Support/Code/User/settings.json
     - src: $DOTFILES/config/code/keybindings.json
-      dest: $HOME/.config/Code/User/keybindings.json
+      dest: $HOME/Library/Application Support/Code/User/keybindings.json
     - src: $DOTFILES/config/code/snippets
-      dest: $HOME/.config/Code/User/snippets
-    - src: $DOTFILES/config/code/settings.json
-      dest: $HOME/.config/Code - Insiders/User/settings.json
-    - src: $DOTFILES/config/code/keybindings.json
-      dest: $HOME/.config/Code - Insiders/User/keybindings.json
-    - src: $DOTFILES/config/code/snippets
-      dest: $HOME/.config/Code - Insiders/User/snippets
+      dest: $HOME/Library/Application Support/Code/User/snippets
 atom:
   packages:
     - name: atom-file-tags
@@ -234,9 +208,6 @@ code:
     - name: auto-rename-tag
       publisher: formulahendry
       version: 0.0.15
-    # - name: makefiles-support-for-vscode
-    #   publisher: naereen
-    #   version: 0.0.3
     - name: vscode-fileutils
       publisher: sleistner
       version: 2.7.1
