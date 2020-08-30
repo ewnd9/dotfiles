@@ -196,6 +196,29 @@ deps () {
   # Usage: $ npm install $(deps index.js)
   node -e "console.log(require('detect-import-require')(require('fs').readFileSync('$1', 'utf8')).filter(x => x[0] !== '.').join(' '))"
 }
+ts () {
+  local target="${1/#\~/$HOME}"
+  local parent_directory=$(dirname ${target})
+
+  for i in {0..10}
+  do
+    ts_node_path=${parent_directory}/node_modules/.bin/ts-node
+
+    if [[ -f $ts_node_path ]]
+    then
+      break
+    fi
+
+    parent_directory=$(realpath "${parent_directory}/..")
+  done
+
+  if [[ -z $ts_node_path ]];
+  then
+    echo "can't find node_modules/.bin/ts-node for ${target}"
+  fi
+
+  ${ts_node_path} --project "${parent_directory}/tsconfig.json" ${target}
+}
 
 ## apt/wordnet
 syns () { wordnet "$1" -syns{n,v,a,r} | less }
