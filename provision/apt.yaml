@@ -211,15 +211,6 @@ atom:
       version: 7.0.3
 code:
   extensions:
-    - name: vscode-jest
-      publisher: Orta
-      version: 2.6.0
-    - name: vscode-wakatime
-      publisher: WakaTime
-      version: 1.1.22
-    - name: quokka-vscode
-      publisher: WallabyJs
-      version: 1.0.94
     - name: vscode-theme-onedark
       publisher: akamud
       version: 2.1.0
@@ -229,12 +220,6 @@ code:
     - name: path-intellisense
       publisher: christian-kohler
       version: 1.4.2
-    - name: an-old-hope-theme-vscode
-      publisher: dustinsanders
-      version: 3.1.1
-    - name: graphql-for-vscode
-      publisher: kumar-harsh
-      version: 1.11.0
     - name: gitlens
       publisher: eamodio
       version: 7.5.10
@@ -253,9 +238,6 @@ code:
     - name: vscode-fileutils
       publisher: sleistner
       version: 2.7.1
-    - name: vim
-      publisher: vscodevim
-      version: 0.10.13
     - name: vscode-todo-highlight
       publisher: wayou
       version: 0.5.11
