@@ -1,32 +1,20 @@
 #!/bin/sh
 
-set -e
+set -ex
 
 cd ~
 rm -rf Desktop Music Public Videos Documents examples.desktop Templates
 
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install -y git vim-gtk
+# sudo apt-get update && sudo apt-get upgrade
+# sudo apt-get install -y git vim-gtk
 
-cd /tmp
-rm -rf n
-git clone https://github.com/tj/n.git
-cd n
-sudo make install
-sudo n 10
+curl https://get.volta.sh | bash
+volta install node@14
+volta install yarn
 npm config set prefix $HOME/.npm-packages
 
 # git clone https://github.com/ewnd9/dotfiles.git
 cd ~/dotfiles
-
-sudo apt-add-repository ppa:neovim-ppa/stable
-sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
-echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update -qq
-sudo apt-get install -y -qq yarn neovim
-
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 yarn install
 yarn global add @belt/cli

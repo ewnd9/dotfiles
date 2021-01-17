@@ -124,3 +124,5 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

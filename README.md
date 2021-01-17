@@ -20,6 +20,14 @@ awesome wm 4.x.x with `xcompmgr` composition
 
 ## Install
 
+### Preparation
+
+```sh
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install git vim neovim make
+```
+
 ```sh
 $ git clone https://github.com/ewnd9/dotfiles.git
 $ ./init.sh

@@ -22,14 +22,12 @@
   "editor.formatOnPaste": false,
   "editor.snippetSuggestions": "top",
   "editor.lineNumbers": "relative",
-  "search.location": "panel",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 0,
   "workbench.activityBar.visible": false,
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Atom One Dark",
   "workbench.iconTheme": "vs-minimal",
   "workbench.colorCustomizations": {
     // https://github.com/Microsoft/vscode/issues/178#issuecomment-343095492
@@ -141,5 +139,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "go.useLanguageServer": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.colorTheme": "Atom One Dark"
 }
