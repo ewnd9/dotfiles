@@ -12,7 +12,7 @@ module.exports = {
 
 async function setup({ extensions }) {
   for (const ext of extensions) {
-    await execa('code-insiders', ['--install-extension', `${ext.publisher}.${ext.name}`], { stdio: 'inherit' });
+    await execa('code', ['--install-extension', `${ext.publisher}.${ext.name}`], { stdio: 'inherit' });
   }
 }
 

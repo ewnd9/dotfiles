@@ -1,6 +1,6 @@
 #!/bin/sh
 
-code-insiders "$HOME/Dropbox/plan" &
+code "$HOME/Dropbox/plan" &
 sleep 2
 
 DEC=$(xdotool getactivewindow)
