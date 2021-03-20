@@ -81,6 +81,8 @@ symlinks:
 
     - src: $DOTFILES/config/nvim/init.vim
       dest: $HOME/.config/nvim/init.vim
+    - src: $DOTFILES/config/nvim/plug.vim
+      dest: $HOME/.local/share/nvim/site/autoload/plug.vim
     # - src: $DOTFILES/config/vim/autoload
     #   dest: $HOME/.config/nvim/autoload
     # - src: $DOTFILES/config/vim/snippets

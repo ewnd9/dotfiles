@@ -20,9 +20,6 @@ sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt-get update -qq
 sudo apt-get install -y -qq neovim
 
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 yarn install
 yarn global add @belt/cli
 ~/.config/yarn/global/node_modules/.bin/belt link packages/belt-ewnd9
