@@ -95,6 +95,8 @@ symlinks:
       dest: $HOME/Library/Application Support/Code/User/keybindings.json
     - src: $DOTFILES/config/code/snippets
       dest: $HOME/Library/Application Support/Code/User/snippets
+    - src: $DOTFILES/config/karabiner
+      dest: $HOME/.config/karabiner
 atom:
   packages:
     - name: atom-file-tags

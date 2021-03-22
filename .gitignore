@@ -3,4 +3,6 @@ scripts/*.gif
 fl.sh
 test.sh
 config/vim/.netrwhist
+config/karabiner/*
+!config/karabiner/karabiner.json
 node_modules
