@@ -114,3 +114,4 @@
   - activate 2nd workspace
   - activate 3rd workspace
   - activate 4th workspace
+  - right_option as enter

@@ -2559,6 +2559,18 @@
                   }
                 ],
                 "type": "basic"
+              },
+              {
+                "description": "right_option as enter",
+                "from": {
+                  "key_code": "right_option"
+                },
+                "to": [
+                  {
+                    "key_code": "return_or_enter"
+                  }
+                ],
+                "type": "basic"
               }
             ]
           }
