@@ -96,7 +96,7 @@
     "**/coverage": true,
     "**/.nyc_output/**": true
   },
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "explorer.confirmDragAndDrop": false,
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,

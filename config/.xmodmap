@@ -1,0 +1,6 @@
+clear mod4
+add mod4 = Super_L Super_R
+add mod3 = Hyper_L
+clear lock
+keycode 66 = Hyper_L
+keycode any = Caps_Lock

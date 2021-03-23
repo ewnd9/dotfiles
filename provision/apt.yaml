@@ -62,6 +62,7 @@ apt:
       version: 1.10-5ubuntu1
     - name: gconf2
       version: 1.10-5ubuntu1
+    - name: xcape
 symlinks:
   targets:
     - src: $DOTFILES/config/vim/autoload
@@ -123,6 +124,8 @@ symlinks:
       dest: $HOME/.config/Code - Insiders/User/snippets
     - src: $DOTFILES/config/alacritty.yml
       dest: $HOME/.config/alacritty/alacritty.yml
+    - src: $DOTFILES/config/.xmodmap
+      dest: $HOME/.xmodmap
 atom:
   packages:
     - name: atom-file-tags
