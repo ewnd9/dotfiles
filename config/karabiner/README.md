@@ -108,3 +108,9 @@
   - down arrow = mouse down
   - left arrow = mouse left
   - right arrow = mouse right
+  - activate chrome
+  - activate telegram
+  - activate 1st workspace
+  - activate 2nd workspace
+  - activate 3rd workspace
+  - activate 4th workspace

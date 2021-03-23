@@ -2435,6 +2435,130 @@
                   }
                 ],
                 "type": "basic"
+              },
+              {
+                "description": "activate chrome",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command",
+                      "right_control",
+                      "right_shift",
+                      "right_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Google Chrome'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "description": "activate telegram",
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command",
+                      "right_control",
+                      "right_shift",
+                      "right_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Telegram'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "description": "activate 1st workspace",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command",
+                      "right_control",
+                      "right_shift",
+                      "right_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "1",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "description": "activate 2nd workspace",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command",
+                      "right_control",
+                      "right_shift",
+                      "right_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "2",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "description": "activate 3rd workspace",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command",
+                      "right_control",
+                      "right_shift",
+                      "right_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "3",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "description": "activate 4th workspace",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": [
+                      "right_command",
+                      "right_control",
+                      "right_shift",
+                      "right_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "4",
+                    "modifiers": ["left_control"]
+                  }
+                ],
+                "type": "basic"
               }
             ]
           }
@@ -2486,13 +2610,13 @@
               }
             },
             {
-                "from": {
-                  "key_code": "volume_increment"
-                },
-                "to": {
-                  "key_code": "delete_or_backspace"
-                }
+              "from": {
+                "key_code": "volume_increment"
+              },
+              "to": {
+                "key_code": "delete_or_backspace"
               }
+            }
           ]
         },
         {
