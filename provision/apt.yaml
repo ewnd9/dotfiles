@@ -121,6 +121,8 @@ symlinks:
       dest: $HOME/.config/Code - Insiders/User/keybindings.json
     - src: $DOTFILES/config/code/snippets
       dest: $HOME/.config/Code - Insiders/User/snippets
+    - src: $DOTFILES/config/alacritty.yml
+      dest: $HOME/.config/alacritty/alacritty.yml
 atom:
   packages:
     - name: atom-file-tags
