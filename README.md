@@ -12,7 +12,7 @@ awesome-wm, atom, gnome-terminal, vim, tmux, zsh
 
 ### Vim
 
-plugin manager [pathogen](https://github.com/tpope/vim-pathogen)
+plugin manager [`vim-plug`](https://github.com/junegunn/vim-plug), previously [`pathogen`](https://github.com/tpope/vim-pathogen)
 
 ### Window Manager
 
@@ -23,14 +23,16 @@ awesome wm 4.x.x with `xcompmgr` composition
 ### Preparation
 
 ```sh
-$ sudo apt update
-$ sudo apt upgrade
-$ sudo apt install git vim neovim make
+$ sudo apt update &&\
+  sudo apt upgrade &&\
+  sudo apt install git vim neovim make
 ```
 
 ```sh
-$ git clone https://github.com/ewnd9/dotfiles.git
-$ ./init.sh
+$ git clone https://github.com/ewnd9/dotfiles.git &&\
+  cd $HOME/dotfiles &&\
+  bash sync.sh
+$ bash init.sh
 ```
 
 - manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)

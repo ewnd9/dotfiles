@@ -9,7 +9,7 @@ set expandtab
 
 :nnoremap <C-n> :NERDTreeToggle<CR>
 -
-" https://stackoverflow.com/a/36882670/2544668 
+" https://stackoverflow.com/a/36882670/2544668
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
@@ -51,15 +51,17 @@ highlight MatchParen cterm=none ctermbg=NONE ctermfg=red
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 autocmd vimenter * silent! lcd %:p:h
 
-" Nice cursor in the insert mode
-autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-autocmd InsertEnter,InsertChange *
-  \ if v:insertmode == 'i' |
-  \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-  \ elseif v:insertmode == 'r' |
-  \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-  \ endif
-autocmd VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+if has("gui_running") && g:os == "Linux"
+    " Nice cursor in the insert mode
+    autocmd VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+    autocmd InsertEnter,InsertChange *
+      \ if v:insertmode == 'i' |
+      \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+      \ elseif v:insertmode == 'r' |
+      \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+      \ endif
+    autocmd VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
