@@ -102,6 +102,8 @@ symlinks:
       dest: $HOME/Library/Application Support/Code/User/snippets
     - src: $DOTFILES/config/karabiner
       dest: $HOME/.config/karabiner
+    - src: $DOTFILES/config/alacritty.yml
+      dest: $HOME/.config/alacritty/alacritty.yml
 atom:
   packages:
     - name: atom-file-tags
