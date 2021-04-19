@@ -85,6 +85,7 @@ brew:
     - name: pass
     - name: golang
     - name: terminal-notifier
+    - name: gh
   cask:
     - name: docker
     - name: font-fira-code
