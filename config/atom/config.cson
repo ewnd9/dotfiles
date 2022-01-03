@@ -25,7 +25,6 @@
     ]
     telemetryConsent: "no"
   editor:
-    fontFamily: "Fira Code"
     invisibles: {}
     showInvisibles: true
     zoomFontWhenCtrlScrolling: false
@@ -50,7 +49,7 @@
     quoteCharacters: "\"'`"
   "tree-view":
     autoReveal: true
-    hideVcsIgnoredFiles: false
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "vim-mode": {}
   "vim-mode-plus":

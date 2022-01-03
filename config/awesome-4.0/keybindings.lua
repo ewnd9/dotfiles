@@ -32,6 +32,10 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift" }, "space", function () awful.layout.inc(-1) end),
 
   awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end),
+  awful.key({ modkey }, "y", function ()
+    awful.spawn(home .. "/.screenlayout/laptop.sh")
+    awful.spawn("notify-send laptop.sh")
+  end),
   awful.key({ modkey }, "t", function () awful.spawn(home .. "/dotfiles/scripts/gnome-terminal-tmux.sh") end),
   awful.key({ modkey }, "v", function () awful.spawn(home .. "/dotfiles/scripts/clipboard/open-web.sh") end),
   awful.key({ modkey }, "b", function () awful.spawn(home .. "/dotfiles/scripts/clipboard/open-npm.sh") end),

@@ -94,7 +94,7 @@ export NO_AT_BRIDGE=1 #
 export ANDROID_HOME="$HOME/.android-sdk"
 export PATH="$HOME/.android-sdk/platform-tools:$PATH"
 export PATH="$HOME/.android-sdk/tools/bin:$PATH"
-export JAVA_HOME="/usr/lib/jvm/java-11-oracle"
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules:/usr/local/lib/node_modules
 
@@ -106,6 +106,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH" # pip
 
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 export PATH="$HOME/soft/android-sdk/tools:$PATH"
@@ -124,3 +125,8 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f "$HOME/yandex-cloud/path.bash.inc" ]; then source '/home/ewnd9/yandex-cloud/path.bash.inc'; fi
+if [ -f "$HOME/xtra/gcloud/google-cloud-sdk/path.zsh.inc" ]; then . '/home/ewnd9/xtra/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/xtra/gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . '/home/ewnd9/xtra/gcloud/google-cloud-sdk/completion.zsh.inc'; fi

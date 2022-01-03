@@ -8,6 +8,11 @@
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.parameterHints.enabled": false,
+  "colorize.languages": [
+    "javascript",
+    "shellscript",
+    "bash"
+  ],
   "[markdown]": {
     "editor.parameterHints.enabled": true,
     "editor.quickSuggestions": {
@@ -22,7 +27,6 @@
   "editor.formatOnPaste": false,
   "editor.snippetSuggestions": "top",
   "editor.lineNumbers": "relative",
-  "search.location": "panel",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 0,
@@ -98,7 +102,7 @@
     "**/coverage": true,
     "**/.nyc_output/**": true
   },
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "explorer.confirmDragAndDrop": false,
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,
@@ -141,5 +145,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "go.useLanguageServer": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.sideBar.location": "left"
 }
