@@ -1,10 +1,11 @@
-LANG="en_US.UTF-8"
-LC_COLLATE="en_US.UTF-8"
-LC_CTYPE="en_US.UTF-8"
-LC_MESSAGES="en_US.UTF-8"
-LC_MONETARY="en_US.UTF-8"
-LC_NUMERIC="en_US.UTF-8"
-LC_TIME="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 source $HOME/.zsh/prompt/async.zsh
 source $HOME/.zsh/prompt/pure.zsh
@@ -132,6 +133,7 @@ export PATH="$PATH:$HOME/.deno/bin"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.linuxbrew/bin"
 
+source $HOME/.config/broot/launcher/bash/br
 [ -f $HOME/Dropbox/dotfiles/aliases.zsh ] && source $HOME/Dropbox/dotfiles/aliases.zsh
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
@@ -140,4 +142,10 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 
 export PATH=$PATH:$HOME/.pulumi/bin
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:$VOLTA_HOME/bin"
+
+if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
+export PATH="$PATH:$HOME/yandex-cloud/bin"
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

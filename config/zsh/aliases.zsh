@@ -2,6 +2,7 @@
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias .....="cd ../../../../"
 alias cc="cd && clear"
 $ () {
   $@
@@ -183,6 +184,7 @@ alias yts="yarn test:watch --"
 alias yuii="yarn upgrade-interactive"
 alias yui="yuii --latest"
 alias yaw="yarn workspace"
+alias yarnc="npx yarn@1.19.0"
 
 ## npm/mocha
 alias mb="NODE_ENV=test mocha --require babel/register"
