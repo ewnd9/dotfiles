@@ -12,3 +12,7 @@ $ git clone https://github.com/ewnd9/dotfiles.git
 $ cd dotfiles
 $ ./init.sh
 ```
+
+## Todo
+
+- https://github.com/mathiasbynens/dotfiles

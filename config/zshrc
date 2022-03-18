@@ -144,8 +144,13 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=$PATH:$HOME/.pulumi/bin
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$PATH:$VOLTA_HOME/bin"
+
+if [[ "$OSTYPE" == *darwin* ]]; then
+  export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+else
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$PATH:$VOLTA_HOME/bin"
+fi
 
 if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
 export PATH="$PATH:$HOME/yandex-cloud/bin"

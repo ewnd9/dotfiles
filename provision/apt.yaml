@@ -91,6 +91,9 @@ brew:
     - name: docker
     - name: font-fira-code
     - name: karabiner-elements
+    - name: telegram
+    - name: google-chrome
+    - name: visual-studio-code
 symlinks:
   targets:
     - src: $DOTFILES/config/nvim/init.vim
@@ -113,6 +116,8 @@ symlinks:
       dest: $HOME/.zsh/prompt
     - src: $DOTFILES/config/zsh/aliases.zsh
       dest: $HOME/.zsh/aliases.zsh
+    - src: $DOTFILES/config/wezterm
+      dest: $HOME/.config/wezterm
 atom:
   packages:
     - name: atom-file-tags

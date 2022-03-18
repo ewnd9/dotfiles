@@ -21,7 +21,6 @@ yarn install
 yarn global add @belt/cli
 $HOME/.config/yarn/global/node_modules/.bin/belt link packages/belt-ewnd9
 
-
 if [[ "$OSTYPE" == *darwin* ]]; then
   $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup brew
 else
@@ -33,7 +32,12 @@ $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup submodu
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup npm
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup code
 
-if [[ "$OSTYPE" != *darwin* ]]; then
+if [[ "$OSTYPE" == *darwin* ]]; then
+  defaults write -g ApplePressAndHoldEnabled -bool false
+  defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+  # https://macos-defaults.com/mission-control/mru-spaces.html
+  defaults write com.apple.dock "mru-spaces" -bool "false" && killall Dock
+else
   # firecode
   mkdir -p  ~/.local/share/fonts
 
