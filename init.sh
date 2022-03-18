@@ -2,14 +2,9 @@
 
 set -ex
 
-bash vendor/volta.sh
-volta install node@14
-volta install yarn
 npm config set prefix $HOME/.npm-packages
 
-if [[ "$OSTYPE" == *darwin* ]]; then
-  bash vendor/brew.sh
-else
+if [[ "$OSTYPE" != *darwin* ]]; then
   cd $HOME
   rm -rf Desktop Music Public Videos Documents examples.desktop Templates
   cd $HOME/dotfiles
@@ -26,15 +21,19 @@ yarn install
 yarn global add @belt/cli
 $HOME/.config/yarn/global/node_modules/.bin/belt link packages/belt-ewnd9
 
-$HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup apt
+
+if [[ "$OSTYPE" == *darwin* ]]; then
+  $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup brew
+else
+  $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup apt
+fi
+
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup symlinks
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup submodules
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup npm
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup code
 
-if [[ "$OSTYPE" == *darwin* ]]; then
-  $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup brew
-else
+if [[ "$OSTYPE" != *darwin* ]]; then
   # firecode
   mkdir -p  ~/.local/share/fonts
 

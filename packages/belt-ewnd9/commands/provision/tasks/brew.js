@@ -14,12 +14,8 @@ async function setup({ packages, repositories, cask }) {
   for (const repo of repositories) {
     await execa('brew', ['tap', repo.name], { stdio: 'inherit' });
   }
-  for (const pkg of packages) {
-    await execa('brew', ['install', pkg.name], { stdio: 'inherit' });
-  }
-  for (const pkg of cask) {
-    await execa('brew', ['cask', 'install', pkg.name], { stdio: 'inherit' });
-  }
+  await execa('brew', ['install', ...packages.map(pkg => pkg.name)], { stdio: 'inherit' });
+  await execa('brew', ['install', ...cask.map(pkg => pkg.name), '--cask'], { stdio: 'inherit' });
 }
 
 async function extract(opts) {

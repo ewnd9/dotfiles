@@ -86,9 +86,11 @@ brew:
     - name: golang
     - name: terminal-notifier
     - name: gh
+    - name: shellcheck
   cask:
     - name: docker
     - name: font-fira-code
+    - name: karabiner-elements
 symlinks:
   targets:
     - src: $DOTFILES/config/nvim/init.vim
@@ -105,6 +107,12 @@ symlinks:
       dest: $HOME/.config/karabiner
     - src: $DOTFILES/config/alacritty.yml
       dest: $HOME/.config/alacritty/alacritty.yml
+    - src: $DOTFILES/config/zshrc
+      dest: $HOME/.zshrc
+    - src: $DOTFILES/config/zsh/prompt
+      dest: $HOME/.zsh/prompt
+    - src: $DOTFILES/config/zsh/aliases.zsh
+      dest: $HOME/.zsh/aliases.zsh
 atom:
   packages:
     - name: atom-file-tags

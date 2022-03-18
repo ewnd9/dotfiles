@@ -10,6 +10,10 @@ export LC_ALL="en_US.UTF-8"
 source $HOME/.zsh/prompt/async.zsh
 source $HOME/.zsh/prompt/pure.zsh
 
+if [[ "$OSTYPE" == *darwin* ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 PURE_GIT_PULL=0
 PURE_PROMPT_SYMBOL=λ
 # source $HOME/.zsh/git-prompt/zshrc.sh
@@ -133,7 +137,6 @@ export PATH="$PATH:$HOME/.deno/bin"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.linuxbrew/bin"
 
-source $HOME/.config/broot/launcher/bash/br
 [ -f $HOME/Dropbox/dotfiles/aliases.zsh ] && source $HOME/Dropbox/dotfiles/aliases.zsh
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
