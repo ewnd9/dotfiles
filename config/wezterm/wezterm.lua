@@ -15,6 +15,6 @@ return {
     -- Turn off the default CMD-m Hide action on macOS by making it
     -- send the empty string instead of hiding the window
     { key = "m", mods = "CMD", action = "Nop" },
-   -- { key = "space", mods = "SHIFT", action = "Nop" },
+    { key = "phys:Space", mods = "SHIFT", action = "Nop" },
   },
 };

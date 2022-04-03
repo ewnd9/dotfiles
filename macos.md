@@ -15,4 +15,5 @@ $ ./init.sh
 
 ## Todo
 
-- https://github.com/mathiasbynens/dotfiles
+- https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+- https://github.com/kevinSuttle/macOS-Defaults/blob/master/.macos

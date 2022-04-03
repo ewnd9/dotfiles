@@ -12,6 +12,7 @@ source $HOME/.zsh/prompt/pure.zsh
 
 if [[ "$OSTYPE" == *darwin* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  export CPLUS_INCLUDE_PATH=/opt/homebrew/include
 fi
 
 PURE_GIT_PULL=0

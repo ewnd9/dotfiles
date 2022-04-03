@@ -139,7 +139,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "go.useLanguageServer": true,
-  "diffEditor.ignoreTrimWhitespace": false,
   "workbench.colorTheme": "Atom One Dark",
   "terminal.integrated.tabs.location": "left",
   "terminal.integrated.tabs.enabled": false,

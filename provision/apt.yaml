@@ -116,6 +116,8 @@ symlinks:
       dest: $HOME/.zsh/prompt
     - src: $DOTFILES/config/zsh/aliases.zsh
       dest: $HOME/.zsh/aliases.zsh
+    - src: $DOTFILES/config/zsh/functions
+      dest: $HOME/.zsh/functions
     - src: $DOTFILES/config/zshrc
       dest: $HOME/.zshrc
     - src: $DOTFILES/config/wezterm
