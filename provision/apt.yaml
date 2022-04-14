@@ -87,6 +87,7 @@ brew:
     - name: terminal-notifier
     - name: gh
     - name: shellcheck
+    - name: pass
   cask:
     - name: docker
     - name: font-fira-code
@@ -276,9 +277,6 @@ code:
     - name: vscode-todo-highlight
       publisher: wayou
       version: 0.5.11
-    - name: postcss-language
-      publisher: mhmadhamster
-      version: 2.1.0
 npm:
   packages:
     - name: 0x
@@ -461,10 +459,10 @@ submodules:
     - repo: 'https://github.com/ConradIrwin/vim-bracketed-paste'
       sha: 36779ba3b1af4b81fcba7b83095afe794a07b71a
       dest: $HOME/.vim/bundle/vim-bracketed-paste
-    - repo: 'git://github.com/tpope/vim-commentary.git'
+    - repo: 'git@github.com:tpope/vim-commentary.git'
       sha: be79030b3e8c0ee3c5f45b4333919e4830531e80
       dest: $HOME/.vim/bundle/vim-commentary
-    - repo: 'git://github.com/airblade/vim-gitgutter.git'
+    - repo: 'git@github.com:airblade/vim-gitgutter.git'
       sha: f52f875fc7b25b601366bd6c0d67c53ad84f9559
       dest: $HOME/.vim/bundle/vim-gitgutter
     - repo: 'https://github.com/pangloss/vim-javascript.git'

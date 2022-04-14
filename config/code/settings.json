@@ -16,7 +16,7 @@
       "comments": false,
       "strings": true
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "javascript.suggestionActions.enabled": false,
   "editor.tabCompletion": true,
@@ -121,7 +121,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "relative",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -138,6 +138,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "eslint.enable": false,
   "go.useLanguageServer": true,
   "workbench.colorTheme": "Atom One Dark",
   "terminal.integrated.tabs.location": "left",

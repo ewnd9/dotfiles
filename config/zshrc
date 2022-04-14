@@ -135,6 +135,7 @@ export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.deno/bin"
+export PATH="$PATH:$HOME/.pyenv/shims"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.linuxbrew/bin"
 
@@ -147,7 +148,7 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
 export PATH=$PATH:$HOME/.pulumi/bin
 
 if [[ "$OSTYPE" == *darwin* ]]; then
-  export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+  export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 else
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$PATH:$VOLTA_HOME/bin"

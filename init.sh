@@ -2,9 +2,9 @@
 
 set -ex
 
-npm config set prefix $HOME/.npm-packages
-
-if [[ "$OSTYPE" != *darwin* ]]; then
+if [[ "$OSTYPE" == *darwin* ]]; then
+  brew install node@16 yarn
+else
   cd $HOME
   rm -rf Desktop Music Public Videos Documents examples.desktop Templates
   cd $HOME/dotfiles
@@ -16,6 +16,8 @@ if [[ "$OSTYPE" != *darwin* ]]; then
   sudo apt-get update -qq
   sudo apt-get install -y -qq neovim
 fi
+
+npm config set prefix $HOME/.npm-packages
 
 yarn install
 yarn global add @belt/cli
@@ -29,7 +31,7 @@ fi
 
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup symlinks
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup submodules
-$HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup npm
+# $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup npm
 $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup code
 
 if [[ "$OSTYPE" == *darwin* ]]; then
