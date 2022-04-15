@@ -22,6 +22,7 @@ npm config set prefix $HOME/.npm-packages
 yarn install
 yarn global add @belt/cli
 $HOME/.config/yarn/global/node_modules/.bin/belt link packages/belt-ewnd9
+$HOME/.config/yarn/global/node_modules/.bin/belt install @belt/repo
 
 if [[ "$OSTYPE" == *darwin* ]]; then
   $HOME/.config/yarn/global/node_modules/.bin/belt ewnd9:provision --setup brew
