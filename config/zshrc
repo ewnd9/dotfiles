@@ -103,18 +103,19 @@ export LC_TIME=en_US.UTF-8
 # https://unix.stackexchange.com/questions/230238/starting-x-applications-from-the-terminal-and-the-warnings-that-follow
 export NO_AT_BRIDGE=1 #
 
-export ANDROID_HOME="$HOME/.android-sdk"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-export PATH="$HOME/.android-sdk/platform-tools:$PATH"
-export PATH="$HOME/.android-sdk/tools/bin:$PATH"
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
 # export JAVA_HOME="/usr/lib/jvm/java-11-oracle"
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm-packages/lib/node_modules:/usr/local/lib/node_modules
 
 if [[ "$OSTYPE" == *darwin* ]]; then
     export GOPATH=$HOME/golang
-    export GOROOT=/usr/local/opt/go/libexec
+    export GOROOT=/opt/homebrew/opt/golang/libexec
     export PATH=$PATH:$GOPATH/bin
     export PATH=$PATH:$GOROOT/bin
 else
@@ -130,8 +131,6 @@ export PATH="$HOME/.local/bin:$PATH" # pip
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-export PATH="$HOME/soft/android-sdk/tools:$PATH"
-export PATH="$HOME/soft/android-sdk/platform-tools:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH="$PATH:$HOME/.deno/bin"
@@ -149,6 +148,8 @@ export PATH=$PATH:$HOME/.pulumi/bin
 
 if [[ "$OSTYPE" == *darwin* ]]; then
   export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+  export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 else
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$PATH:$VOLTA_HOME/bin"

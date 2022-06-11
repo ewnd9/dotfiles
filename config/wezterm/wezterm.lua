@@ -16,5 +16,6 @@ return {
     -- send the empty string instead of hiding the window
     { key = "m", mods = "CMD", action = "Nop" },
     { key = "phys:Space", mods = "SHIFT", action = "Nop" },
+    { key = "w", mods="CMD", action=wezterm.action{CloseCurrentPane={confirm=true}}},
   },
 };
