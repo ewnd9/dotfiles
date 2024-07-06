@@ -121,6 +121,8 @@ symlinks:
       dest: $HOME/.zshrc
     - src: $DOTFILES/config/wezterm
       dest: $HOME/.config/wezterm
+    - src: $DOTFILES/scripts/daily.sh
+      dest: /usr/local/bin/d
   linux:
     - src: $DOTFILES/config/vim/autoload
       dest: $HOME/.vim/autoload

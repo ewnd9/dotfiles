@@ -61,7 +61,17 @@ alias gca="git checkout ."
 alias gra="git reset ."
 alias gfo="git fetch --prune origin"
 alias gri="git rebase -i"
-alias gfr="git fetch origin && git rebase -i origin/master"
+gfr () {
+  local default_branch
+
+  if git show-ref --verify --quiet refs/heads/main; then
+    default_branch="main"
+  else
+    default_branch="master"
+  fi
+
+  git fetch origin && git rebase -i origin/$default_branch
+}
 alias gfd="git fetch origin && git rebase -i origin/develop"
 gfrc () {
   git fetch origin && git rebase -i origin/$(git rev-parse --abbrev-ref HEAD) "$@"
@@ -78,7 +88,7 @@ alias gpo="git pull origin"
 alias gpom="git pull origin master"
 
 alias gc="git checkout"
-alias gcm="git checkout master"
+alias gcm="git checkout main 2>/dev/null || git checkout master"
 alias gcb="git checkout -b"
 gcbr () {
   gfo && git checkout -b "$1" "origin/$1"
@@ -290,3 +300,6 @@ alias kk="fkill :3000 ; fkill :3001 ; fkill :3010"
 
 ## shfmt
 alias shf="shfmt -w -i 2 ."
+
+## kubectl
+alias k=kubectl

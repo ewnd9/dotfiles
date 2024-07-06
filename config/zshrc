@@ -139,7 +139,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.npm-packages/bin"
 export NODE_PATH="$NODE_PATH:$HOME/.npm-packages/lib/node_modules:/usr/local/lib/node_modules"
-export NODE_OPTIONS="--disable-warning=DEP0040 --disable-warning=DEP0170"
+# export NODE_OPTIONS="--disable-warning=DEP0040 --disable-warning=DEP0170"
 function node22 {
   export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 }
@@ -177,6 +177,11 @@ export PATH="$PATH:$GRIT_INSTALL/bin"
 
 # mise - version manager (https://github.com/jdx/mise)
 eval "$($HOME/.local/bin/mise activate zsh)"
+
+export PATH="$PATH:$HOME/.iximiuz/labctl/bin"
+source <(labctl completion zsh)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 
 # atuin - shell history (https://github.com/atuinsh/atuin)
 # export PATH="$PATH:$HOME/.atuin/bin"

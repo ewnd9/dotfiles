@@ -26,7 +26,13 @@
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 0,
+<<<<<<< HEAD
   "workbench.panel.defaultLocation": "right",
+||||||| parent of 031ffab (wip)
+  "workbench.activityBar.visible": false,
+  "workbench.panel.defaultLocation": "right",
+=======
+>>>>>>> 031ffab (wip)
   "workbench.startupEditor": "newUntitledFile",
   "workbench.iconTheme": "vs-minimal",
   "workbench.colorCustomizations": {
@@ -148,13 +154,6 @@
   "continue.manuallyRunningServer": true,
   "diffEditor.codeLens": true,
   "git.openRepositoryInParentFolders": "never",
-  "python.analysis.extraPaths": [
-    "/Users/dudkiniv/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
-  ],
-  "python.autoComplete.extraPaths": [
-    "/Users/dudkiniv/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
-  ],
-  "window.zoomLevel": 1,
   "workbench.activityBar.location": "hidden",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
@@ -188,10 +187,9 @@
     "terragrunt": false,
     "vue": false
   },
-  "yandex-code-assist.delayedRequestTimeoutMs": 200,
-  "yandex-code-assist.showErrorNotifications": true,
   "gitlab.duoChat.enabled": false,
   "gitlab.duoCodeSuggestions.enabled": false,
   "gitlab.duo.enabledWithoutGitlabProject": false,
-  "playwright.reuseBrowser": false
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": 1
 }
