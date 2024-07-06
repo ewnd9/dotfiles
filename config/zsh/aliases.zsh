@@ -54,7 +54,7 @@ alias gstp="git stash pop"
 alias gll="bash ~/dotfiles/scripts/git-pretty-log.sh"
 
 alias wip="git commit -a -m wip --no-verify"
-alias amend="git commit -a --amend"
+alias amend="git commit -a --amend --no-edit"
 
 alias ga="git add ."
 alias gca="git checkout ."
@@ -204,6 +204,7 @@ alias tldr="tldr --theme ocean"
 
 ## node
 alias na="node --harmony-async-await"
+alias n="node --experimental-transform-types --experimental-strip-types --disable-warning=ExperimentalWarning -r dotenv/config"
 alias nan="nodemon -x 'node --harmony-async-await'"
 deps () {
   # Usage: $ npm install $(deps index.js)
@@ -278,6 +279,7 @@ alias ra="ranger"
 
 ## vim
 alias vim="nvim"
+alias v="nvim"
 
 ## menu
 alias e="$HOME/github/nodemenu/bin/nodemenu"

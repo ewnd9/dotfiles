@@ -50,7 +50,7 @@ autocmd Syntax * highlight Conceal ctermbg=NONE ctermfg=238 guifg=#c5c8c0
 
 highlight MatchParen cterm=none ctermbg=NONE ctermfg=red
 
-autocmd VimLeave * call system("xsel -ib", getreg('+'))
+" autocmd VimLeave * call system("xsel -ib", getreg('+'))
 autocmd vimenter * silent! lcd %:p:h
 
 " Nice cursor in the insert mode
@@ -61,8 +61,9 @@ autocmd InsertEnter,InsertChange *
   \ elseif v:insertmode == 'r' |
   \   silent execute '!echo -ne "\e[3 q"' | redraw! |
   \ endif
-autocmd VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+" autocmd VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 
+let g:loaded_python3_provider = 0
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>

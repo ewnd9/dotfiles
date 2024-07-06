@@ -1,0 +1,9 @@
+/** https://forum.obsidian.md/t/solved-using-fira-code-ligatures-with-amethyst-theme-in-obsidian/18099 **/
+
+body, input,
+.markdown-source-view .CodeMirror-line,
+.markdown-source-view .CodeMirror-line-like,
+.view-header-title,
+.markdown-preview-view .markdown-preview-section {
+  font-family: "Fira Code";
+}
