@@ -97,10 +97,8 @@ brew:
     - name: visual-studio-code
 symlinks:
   targets:
-    - src: $DOTFILES/config/nvim/init.vim
-      dest: $HOME/.config/nvim/init.vim
-    - src: $DOTFILES/config/nvim/plug.vim
-      dest: $HOME/.local/share/nvim/site/autoload/plug.vim
+    - src: $DOTFILES/config/nvim
+      dest: $HOME/.config/nvim
     - src: $DOTFILES/config/code/settings.json
       dest: $HOME/Library/Application Support/Code/User/settings.json
     - src: $DOTFILES/config/code/keybindings.json
