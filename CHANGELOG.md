@@ -1,3 +1,11 @@
+## Dec 2024
+
+- Switched from WezTerm to Ghostty
+
+## Oct 2019
+
+- Switched to macOS
+
 ## Apr 2018
 
 - Move bash scripts setup to belt js commands
