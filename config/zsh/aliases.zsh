@@ -54,7 +54,7 @@ alias gstp="git stash pop"
 alias gll="bash ~/dotfiles/scripts/git-pretty-log.sh"
 
 alias wip="git commit -a -m wip --no-verify"
-alias amend="git commit -a --amend"
+alias amend="git commit -a --amend --no-edit"
 
 alias ga="git add ."
 alias gca="git checkout ."
@@ -137,15 +137,6 @@ alias grep-text="grep -nr"
 alias find-file="find . -type f -name" # $ find-file '.*'
 alias find-dir="find . -type d -name" # $ find-dir '*babel*'
 
-## atom
-a () {
-  belt ewnd9:open-editor atom "$@"
-}
-## code
-aa () {
-  belt ewnd9:open-editor code-insiders "$@"
-}
-
 ## system
 alias restore="echo '\u001b[?25h'"
 
@@ -159,8 +150,6 @@ else
   alias rm="trash"
   alias cal="ncal -M -3"
 fi
-
-alias k="awk '{print \$1}' | xargs kill"
 
 ## apt
 alias i="sudo apt-get install"
@@ -204,6 +193,7 @@ alias tldr="tldr --theme ocean"
 
 ## node
 alias na="node --harmony-async-await"
+alias n="node --experimental-transform-types --experimental-strip-types --disable-warning=ExperimentalWarning -r dotenv/config"
 alias nan="nodemon -x 'node --harmony-async-await'"
 deps () {
   # Usage: $ npm install $(deps index.js)
@@ -276,8 +266,12 @@ alias won="$HOME/won"
 ## ranger
 alias ra="ranger"
 
+## kubectl
+alias k="kubectl"
+
 ## vim
 alias vim="nvim"
+alias v="nvim"
 
 ## menu
 alias e="$HOME/github/nodemenu/bin/nodemenu"
