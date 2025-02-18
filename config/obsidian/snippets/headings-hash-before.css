@@ -1,0 +1,38 @@
+/** https://aaronsaray.com/2023/obsidian-always-show-markdown-header-level/ **/
+
+:not(.cm-formatting).cm-header-1:before {
+    content: '# ';
+}
+
+:not(.cm-formatting).cm-header-2:before {
+    content: '## ';
+}
+
+:not(.cm-formatting).cm-header-3:before {
+    content: '### ';
+}
+
+:not(.cm-formatting).cm-header-4:before {
+    content: '#### ';
+}
+
+:not(.cm-formatting).cm-header-5:before {
+    content: '##### ';
+}
+
+:not(.cm-formatting).cm-header-6:before {
+    content: '###### ';
+}
+
+.cm-header:before {
+    color: var(--text-faint);
+}
+
+.cm-active.cm-line .cm-header-1:before,
+.cm-active.cm-line .cm-header-2:before,
+.cm-active.cm-line .cm-header-3:before,
+.cm-active.cm-line .cm-header-4:before,
+.cm-active.cm-line .cm-header-5:before,
+.cm-active.cm-line .cm-header-6:before {
+    content: '';
+}

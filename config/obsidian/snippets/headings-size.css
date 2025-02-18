@@ -1,0 +1,9 @@
+/** https://forum.obsidian.md/t/headings-are-to-big/45872/6 **/
+
+.cm-s-obsidian .HyperMD-header-1,
+.cm-s-obsidian .HyperMD-header-2,
+.cm-s-obsidian .HyperMD-header-3,
+.cm-s-obsidian .HyperMD-header-4 {
+  font-size: 15px;
+  line-height: 24px;
+}
