@@ -1,6 +1,5 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "debug.javascript.onlyAutoAttachExplicit": true,
   "update.mode": "manual",
   "editor.renderWhitespace": "boundary",
   "editor.fontFamily": "Fira Code",
@@ -9,6 +8,7 @@
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.parameterHints.enabled": false,
+  "editor.semanticHighlighting.enabled": false,
   "[markdown]": {
     "editor.parameterHints.enabled": true,
     "editor.quickSuggestions": {
@@ -19,14 +19,13 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "javascript.suggestionActions.enabled": false,
-  "editor.tabCompletion": true,
+  "editor.tabCompletion": "onlySnippets",
   "editor.formatOnPaste": false,
   "editor.snippetSuggestions": "top",
   "editor.lineNumbers": "relative",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
   "explorer.openEditors.visible": 0,
-  "workbench.activityBar.visible": false,
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.iconTheme": "vs-minimal",
@@ -100,7 +99,6 @@
   "explorer.confirmDragAndDrop": false,
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,
-  "terminal.integrated.copyOnSelection": true,
   "problems.decorations.enabled": false,
   "workbench.statusBar.feedback.visible": false,
   // // https://github.com/Microsoft/TypeScript/issues/6209#issuecomment-310578734
@@ -120,8 +118,9 @@
   "gitlens.historyExplorer.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "[typescript]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -140,9 +139,59 @@
   },
   "eslint.enable": false,
   "go.useLanguageServer": true,
-  "workbench.colorTheme": "Atom One Dark",
   "terminal.integrated.tabs.location": "left",
-  "terminal.integrated.tabs.enabled": false,
   "debug.javascript.autoAttachFilter": "disabled",
-  "window.zoomLevel": 1
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDelete": false,
+  "continue.manuallyRunningServer": true,
+  "diffEditor.codeLens": true,
+  "git.openRepositoryInParentFolders": "never",
+  "python.analysis.extraPaths": [
+    "/Users/dudkiniv/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
+  ],
+  "python.autoComplete.extraPaths": [
+    "/Users/dudkiniv/.vscode/extensions/continue.continue-0.6.15-darwin-arm64"
+  ],
+  "window.zoomLevel": 1,
+  "workbench.activityBar.location": "hidden",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.colorTheme": "Atom One Dark",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "gitlab.duoCodeSuggestions.enabledSupportedLanguages": {
+    "typescript": false,
+    "typescriptreact": false,
+    "javascript": false,
+    "javascriptreact": false,
+    "c": false,
+    "cpp": false,
+    "csharp": false,
+    "go": false,
+    "haml": false,
+    "handlebars": false,
+    "java": false,
+    "kotlin": false,
+    "python": false,
+    "php": false,
+    "ruby": false,
+    "rust": false,
+    "scala": false,
+    "shellscript": false,
+    "sql": false,
+    "swift": false,
+    "svelte": false,
+    "terraform": false,
+    "terragrunt": false,
+    "vue": false
+  },
+  "yandex-code-assist.delayedRequestTimeoutMs": 200,
+  "yandex-code-assist.showErrorNotifications": true,
+  "gitlab.duoChat.enabled": false,
+  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.duo.enabledWithoutGitlabProject": false,
+  "playwright.reuseBrowser": false
 }
