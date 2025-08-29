@@ -3,14 +3,19 @@
   "version": "0.0.0-local",
   "description": "Global CLI scripts registry",
   "private": true,
-  "main": "cli.js",
+  "type": "module",
+  "main": "dist/index.js",
   "bin": {
-    "belt": "cli.js"
+    "belt": "dist/index.js"
   },
-  "preferGlobal": true,
   "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/ewnd9/belt/tree/master/packages/belt-cli",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc --watch",
+    "prepublishOnly": "yarn build"
+  },
   "belt": {
     "commands": {
       "ewnd9:incantation": {
@@ -59,5 +64,9 @@
     "minimist": "^1.2.0",
     "opn": "^6.0.0",
     "prompts": "^0.1.11"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.5",
+    "typescript": "^5.9.2"
   }
 }

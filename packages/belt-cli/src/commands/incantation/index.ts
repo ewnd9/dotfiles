@@ -1,15 +1,14 @@
-'use strict';
 
-const fs = require('fs');
-const yaml = require('js-yaml');
-const globby = require('globby');
 
-const { rootPath, generateCode } = require('./utils');
+import fs from 'fs';
+import yaml from 'js-yaml';
+import globby from 'globby';
+import { rootPath, generateCode } from './utils';
 
 const snippetsPath = `${rootPath}/snippets`;
 const files = globby.sync(['**/*.yaml'], { cwd: snippetsPath, absolute: true  });
 
-module.exports = {
+export default {
   run
 };
 

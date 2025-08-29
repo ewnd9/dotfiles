@@ -1,9 +1,9 @@
-'use strict';
 
-const { execa } = require('execa');
-const { logShell } = require('./log');
 
-module.exports = execaProxy;
+import { execa } from 'execa';
+import { logShell } from './log';
+
+export default execaProxy;
 
 // seems cleaner without abstractions
 async function execaProxy(cmd, args, opts) {

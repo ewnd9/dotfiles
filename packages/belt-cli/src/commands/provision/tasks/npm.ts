@@ -1,9 +1,9 @@
-'use strict';
 
-const execa = require('@belt/tools/modules/execa');
-const { readNodeModules } = require('../utils');
 
-module.exports = {
+import execa from '../modules/execa';
+import { readNodeModules } from '../utils';
+
+export default {
   setup,
   extract
 };

@@ -5,9 +5,13 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "22",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "typescript": "^5.9.2"
   },
   "scripts": {
     "precommit": "yarn lint && yarn lint:shell",

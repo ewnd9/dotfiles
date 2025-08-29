@@ -1,9 +1,9 @@
-'use strict';
 
-const execa = require('@belt/tools/modules/execa');
-const prompts = require('prompts');
 
-module.exports = {
+import execa from '../modules/execa';
+import prompts from 'prompts';
+
+export default {
   run
 };
 

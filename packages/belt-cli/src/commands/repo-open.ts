@@ -1,11 +1,10 @@
-'use strict';
 
-const execa = require('../modules/execa');
-const opn = require('../modules/opn');
 
-const gitUrlParse = require('git-url-parse');
+import execa from '../modules/execa';
+import opn from '../modules/opn';
+import gitUrlParse from 'git-url-parse';
 
-module.exports = {
+export default {
   run
 };
 

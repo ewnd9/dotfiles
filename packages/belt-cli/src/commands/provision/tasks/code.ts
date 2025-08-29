@@ -1,11 +1,12 @@
-'use strict';
+
 
 // https://code.visualstudio.com/docs/editor/extension-gallery
 
-const execa = require('@belt/tools/modules/execa');
-const { readNodeModules } = require('../utils');
+import execa from '../modules/execa';
 
-module.exports = {
+import { readNodeModules } from '../utils';
+
+export default {
   setup,
   extract
 };

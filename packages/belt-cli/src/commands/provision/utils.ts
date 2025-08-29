@@ -1,11 +1,11 @@
-'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const mkdirp = require('mkdirp');
-const execa = require('@belt/tools/modules/execa');
 
-module.exports = {
+import fs from 'fs';
+import path from 'path';
+import mkdirp from 'mkdirp';
+import execa from '../modules/execa';
+
+export default {
   evalTemplate,
   ensureParentDir,
   readNodeModules,

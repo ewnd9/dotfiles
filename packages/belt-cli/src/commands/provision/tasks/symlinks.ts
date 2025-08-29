@@ -1,11 +1,11 @@
-'use strict';
 
-const fs = require('fs');
-const chalk = require('chalk');
-const execa = require('@belt/tools/modules/execa');
-const { evalTemplate, ensureParentDir } = require('../utils');
 
-module.exports = {
+import fs from 'fs';
+import chalk from 'chalk';
+import execa from '../modules/execa';
+import { evalTemplate, ensureParentDir } from '../utils';
+
+export default {
   setup
 };
 

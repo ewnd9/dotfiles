@@ -1,9 +1,9 @@
-'use strict';
 
-const shellEscape = require('any-shell-escape');
-const chalk = require('chalk');
 
-module.exports = {
+import shellEscape from 'any-shell-escape';
+import chalk from 'chalk';
+
+export default {
   log,
   logShell
 };
