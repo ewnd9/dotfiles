@@ -33,10 +33,7 @@ jobs:
         run: yarn install
 
       - name: Setup legacy belt-cli
-        run: |
-          (cd packages/belt-cli && npm install -g .)
-          (cd packages/belt-ewnd9 && belt link .)
-          (cd packages/belt-repo && belt link .)
+        run: cd packages/belt-cli && npm install -g .
 
       - name: Run lint
         run: yarn precommit
