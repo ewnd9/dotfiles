@@ -3,7 +3,7 @@
 const fs = require('fs');
 const chalk = require('chalk');
 // const parse = require('parse-github-repo-url');
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 const { evalTemplate, ensureParentDir } = require('../utils');
 
 module.exports = {

@@ -26,7 +26,7 @@
   },
   "belt": {
     "prefix": "belt",
-    "body": "'use strict';\n\nconst execa = require('belt-tools/modules/execa');\n\nmodule.exports = {\n  run\n};\n\nasync function run({ argv }) {\n}",
+    "body": "'use strict';\n\nconst execa = require('@belt/tools/modules/execa');\n\nmodule.exports = {\n  run\n};\n\nasync function run({ argv }) {\n}",
     "description": "belt"
   },
   "json-schema-object": {
@@ -244,15 +244,15 @@
     "body": "const delay = ms => new Promise(resolve => setTimeout(resolve, ms));",
     "description": "minimal delay"
   },
-  "require belt-tools": {
+  "require @belt/tools": {
     "prefix": "rebe",
-    "body": "const ${1} = require('belt-tools/modules/${1}');",
-    "description": "require belt-tools"
+    "body": "const ${1} = require('@belt/tools/modules/${1}');",
+    "description": "require @belt/tools"
   },
-  "import belt-tools": {
+  "import @belt/tools": {
     "prefix": "imbe",
-    "body": "import ${1} from 'belt-tools/modules/${1}';",
-    "description": "import belt-tools"
+    "body": "import ${1} from '@belt/tools/modules/${1}';",
+    "description": "import @belt/tools"
   },
   "import material": {
     "prefix": "imma",

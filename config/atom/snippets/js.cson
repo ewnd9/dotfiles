@@ -41,7 +41,7 @@
     body: '''
       'use strict';
 
-      const execa = require('belt-tools/modules/execa');
+      const execa = require('@belt/tools/modules/execa');
 
       module.exports = {
         run
@@ -279,12 +279,12 @@
   "minimal delay":
     prefix: "delay"
     body: "const delay = ms => new Promise(resolve => setTimeout(resolve, ms));"
-  "require belt-tools":
+  "require @belt/tools":
     prefix: "rebe"
-    body: "const ${1} = require('belt-tools/modules/${1}');"
-  "import belt-tools":
+    body: "const ${1} = require('@belt/tools/modules/${1}');"
+  "import @belt/tools":
     prefix: "imbe"
-    body: "import ${1} from 'belt-tools/modules/${1}';"
+    body: "import ${1} from '@belt/tools/modules/${1}';"
   "import material":
     prefix: "imma"
     body: "import ${1} from '@material-ui/core/${1}';"

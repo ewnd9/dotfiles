@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 
 module.exports = {
   run

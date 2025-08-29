@@ -51,12 +51,12 @@ snippets:
   - name: minimal delay
     prefix: delay
     body: const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-  - name: require belt-tools
+  - name: require @belt/tools
     prefix: rebe
-    body: 'const ${1} = require(''belt-tools/modules/${1}'');'
-  - name: import belt-tools
+    body: 'const ${1} = require(''@belt/tools/modules/${1}'');'
+  - name: import @belt/tools
     prefix: imbe
-    body: 'import ${1} from ''belt-tools/modules/${1}'';'
+    body: 'import ${1} from ''@belt/tools/modules/${1}'';'
   - name: import material
     prefix: imma
     body: 'import ${1} from ''@material-ui/core/${1}'';'

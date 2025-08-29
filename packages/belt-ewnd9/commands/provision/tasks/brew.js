@@ -1,7 +1,7 @@
 'use strict';
 
 const prompts = require('prompts');
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 const uniq = require('lodash/uniq');
 const { readZshHistory } = require('../utils');
 

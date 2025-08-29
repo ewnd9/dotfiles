@@ -2,7 +2,7 @@
 
 // https://code.visualstudio.com/docs/editor/extension-gallery
 
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 const { readNodeModules } = require('../utils');
 
 module.exports = {

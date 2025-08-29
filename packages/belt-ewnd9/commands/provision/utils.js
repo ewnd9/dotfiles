@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 
 module.exports = {
   evalTemplate,
