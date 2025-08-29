@@ -1,29 +1,25 @@
+import execa from "../../../modules/execa.js";
 
-
-import execa from '../modules/execa';
-
-export default {
-  setup,
-  extract
-};
-
-async function setup({ packages }) {
+export async function setup({ packages }: { packages: { name: string }[] }) {
   await execa('sudo', ['apt-get', 'update'], { stdio: 'inherit' });
 
   for (const pkg of packages) {
-    await execa('sudo', ['apt-get', 'install', '-y', pkg.name], { stdio: 'inherit' });
+    await execa('sudo', ['apt-get', 'install', '-y', pkg.name], {
+      stdio: 'inherit',
+    });
   }
 }
 
-async function extract({ packages }) {
+export async function extract({ packages }: { packages: any }) {
   for (const pkg of packages) {
     if (pkg.disable) {
-      return pkg
+      return pkg;
     }
 
-    const stdout = await execa.stdout('dpkg', ['-s', pkg.name])
+    const result = (await execa('dpkg', ['-s', pkg.name], {})) || '';
+    const stdout = result
       .split('\n')
-      .find(line => line.startsWith('Version'));
+      .find((line: string) => line.startsWith('Version'));
 
     pkg.version = stdout ? stdout.split(' ')[1] : undefined;
   }
@@ -82,4 +78,3 @@ async function extract({ packages }) {
 //   neovim
 
 // sudo apt-get purge -y nautilus
-

@@ -2,19 +2,14 @@
 
 import fs from 'fs';
 import yaml from 'js-yaml';
-import globby from 'globby';
-import { rootPath, generateCode } from './utils';
+import { globby } from 'globby';
+import { rootPath, generateCode } from "./utils.js";
 
-const snippetsPath = `${rootPath}/snippets`;
-const files = globby.sync(['**/*.yaml'], { cwd: snippetsPath, absolute: true  });
-
-export default {
-  run
-};
-
-async function run() {
-  const snippets = files.reduce((total, file) => {
-    const content = yaml.safeLoad(fs.readFileSync(file));
+export async function run() {
+  const snippetsPath = `${rootPath}/snippets`;
+  const files = await globby(['**/*.yaml'], { cwd: snippetsPath, absolute: true });
+  const snippets = files.reduce((total: any, file: string) => {
+    const content = yaml.load(fs.readFileSync(file, 'utf8')) as any;
 
     if (!total[content.lang]) {
       total[content.lang] = [];
@@ -55,46 +50,15 @@ async function run() {
     }
   };
 
-  Object.entries(snippets).forEach(([lang, snippets]) => {
+  Object.entries(snippets).forEach(([lang, snippets]: [string, any]) => {
     generateCode(
       lang,
       snippets,
-      arrayify(paths[lang].code)
+      arrayify((paths as any)[lang].code)
     );
   });
 }
 
-function arrayify(xs) {
+function arrayify(xs: any) {
   return Array.isArray(xs) ? xs : [xs];
 }
-
-// const js = transformAtom(
-//   'javascript',
-//   `${rootPath}/config/atom/snippets/js.cson`,
-//   `${__dirname}/snippets/javascript/javascript.yaml`
-// );
-//
-// transformAtom(
-//   'bash',
-//   `${rootPath}/config/atom/snippets/bash.cson`,
-//   `${__dirname}/snippets/bash/bash.yaml`
-// );
-//
-// transformAtom(
-//   'css',
-//   `${rootPath}/config/atom/snippets/css.cson`,
-//   `${__dirname}/snippets/css/css.yaml`
-// );
-//
-// transformAtom(
-//   'html',
-//   `${rootPath}/config/atom/snippets/html.cson`,
-//   `${__dirname}/snippets/html/html.yaml`
-// );
-//
-// transformAtom(
-//   'markdown',
-//   `${rootPath}/config/atom/snippets/md.cson`,
-//   `${__dirname}/snippets/md/md.yaml`
-// );
-//

@@ -1,19 +1,16 @@
-
-
 import fs from 'fs';
 import chalk from 'chalk';
 
 // const parse = require('parse-github-repo-url');
-import execa from '../modules/execa';
+import execa from "../../../modules/execa.js";
 
-import { evalTemplate, ensureParentDir } from '../utils';
+import { evalTemplate, ensureParentDir } from "../utils.js";
 
-export default {
-  setup,
-  extract
-};
-
-async function setup({ modules }) {
+export async function setup({
+  modules,
+}: {
+  modules: { repo: string; sha: string; dest: string }[];
+}) {
   for (const mod of modules) {
     // const repoName = parse(mod.repo)[1];
     const dest = evalTemplate(mod.dest);
@@ -23,7 +20,7 @@ async function setup({ modules }) {
       await execa('git', ['clone', mod.repo, dest]);
     }
 
-    const sha = await execa.stdout('git', ['rev-parse', 'HEAD'], { cwd: dest });
+    const sha = await execa('git', ['rev-parse', 'HEAD'], { cwd: dest });
 
     if (sha !== mod.sha) {
       await execa('git', ['checkout', mod.sha], { cwd: dest });
@@ -33,6 +30,6 @@ async function setup({ modules }) {
   }
 }
 
-function extract() {
+export function extract() {
   throw new Error(`not implemented`);
 }

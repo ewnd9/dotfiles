@@ -1,13 +1,9 @@
 
 
-import execa from '../modules/execa';
+import execa from "../modules/execa.js";
 import prompts from 'prompts';
 
-export default {
-  run
-};
-
-async function run() {
+export async function run() {
   const dir = '/media/flashdrive';
   const devices = await getDevices();
   const mounts = await getMounts();
@@ -16,7 +12,7 @@ async function run() {
     type: 'select',
     name: 'value',
     message: 'Pick a device',
-    choices: devices.map(({ name, size }, i) => {
+    choices: devices.map(({ name, size }: { name: string; size: string }, i: number) => {
       const parts = [`${name} (${size})`];
 
       if (mounts[name] === dir) {
@@ -43,12 +39,12 @@ async function run() {
 }
 
 async function getDevices() {
-  const stdout = await execa.stdout('sudo', ['fdisk', '-l'], { stdio: [0, 'pipe', 'pipe'] });
+  const stdout = (await execa('sudo', ['fdisk', '-l'], { stdio: [0, 'pipe', 'pipe'] })) || '';
   const lines = stdout.split('\n');
 
   return lines
-    .filter(_ => _.startsWith('/dev/sd'))
-    .map(line => {
+    .filter((_: string) => _.startsWith('/dev/sd'))
+    .map((line: string) => {
       const parts = line.split(/\s+/);
 
       const name = parts[0];
@@ -59,10 +55,10 @@ async function getDevices() {
 }
 
 async function getMounts() {
-  const stdout = await execa.stdout('cat', ['/proc/mounts']);
+  const stdout = (await execa('cat', ['/proc/mounts'], {})) || '';
   return stdout
     .split('\n')
-    .reduce((acc, line) => {
+    .reduce((acc: Record<string, string>, line: string) => {
       const [src, dest] = line.split(' ');
 
       if (src.startsWith('/dev/sd')) {
@@ -70,6 +66,6 @@ async function getMounts() {
       }
 
       return acc;
-    }, {})
+    }, {} as Record<string, string>)
 }
 

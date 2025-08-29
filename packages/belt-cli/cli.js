@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 
-require('./dist');
+// eslint-disable-next-line
+await import('./dist/index.js');

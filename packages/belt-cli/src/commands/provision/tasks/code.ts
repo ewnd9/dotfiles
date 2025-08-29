@@ -1,26 +1,27 @@
-
-
 // https://code.visualstudio.com/docs/editor/extension-gallery
 
-import execa from '../modules/execa';
+import execa from "../../../modules/execa.js";
 
-import { readNodeModules } from '../utils';
+import { readNodeModules } from "../utils.js";
 
-export default {
-  setup,
-  extract
-};
-
-async function setup({ extensions }) {
+export async function setup({
+  extensions,
+}: {
+  extensions: { publisher: string; name: string }[];
+}) {
   for (const ext of extensions) {
-    await execa('code', ['--install-extension', `${ext.publisher}.${ext.name}`], { stdio: 'inherit' });
+    await execa(
+      'code',
+      ['--install-extension', `${ext.publisher}.${ext.name}`],
+      { stdio: 'inherit' }
+    );
   }
 }
 
-function extract() {
+export function extract() {
   const codeExtensionsPath = `${process.env.HOME}/.vscode/extensions`;
 
-  const extensions = readNodeModules(codeExtensionsPath).map(pkg => {
+  const extensions = readNodeModules(codeExtensionsPath).map((pkg) => {
     return { name: pkg.name, publisher: pkg.publisher, version: pkg.version };
   });
 
