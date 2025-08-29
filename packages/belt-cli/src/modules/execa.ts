@@ -1,13 +1,9 @@
-
-
-import { execa } from 'execa';
-import { logShell } from './log';
-
-export default execaProxy;
+import { execa as ogExeca } from 'execa';
+import { logShell } from "./log.js";
 
 // seems cleaner without abstractions
-async function execaProxy(cmd, args, opts) {
+export default async function execaProxy(cmd: string, args: string[], opts?: any) {
   logShell([cmd, ...args]);
-  const { stdout } = await execa(cmd, args, opts);
+  const { stdout } = await ogExeca(cmd, args, opts);
   return stdout;
 }

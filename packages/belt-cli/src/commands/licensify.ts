@@ -3,11 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export default {
-  run
-};
-
-async function run() {
+export async function run() {
   const pkgPath = './package.json';
   const json = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
 

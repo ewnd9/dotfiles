@@ -2,15 +2,11 @@
 
 import fs from 'fs';
 import chalk from 'chalk';
-import execa from '../modules/execa';
-import { evalTemplate, ensureParentDir } from '../utils';
+import execa from "../../../modules/execa.js";
+import { evalTemplate, ensureParentDir } from "../utils.js";
 
-export default {
-  setup
-};
-
-async function setup(symLinks) {
-  for (const { src, dest, disable } of symLinks.targets) {
+export async function setup(symLinks: any) {
+  for (const { src, dest, disable } of symLinks.targets as any[]) {
     if (disable) {
       console.log(`${chalk.grey('✔️')} ${dest} (skip)`);
       continue;
@@ -22,7 +18,7 @@ async function setup(symLinks) {
     ensureParentDir(destPath);
 
     if (!fs.existsSync(destPath)) {
-      await execa('ln', ['-s', srcPath, destPath]);
+      await execa('ln', ['-s', srcPath, destPath], {});
       console.log(`${chalk.green('✔️')} ${srcPath} -> ${destPath}`);
     } else {
       const stat = fs.lstatSync(destPath);

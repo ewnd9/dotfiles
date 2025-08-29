@@ -58,15 +58,19 @@
     "execa": "^9.6.0",
     "git-url-parse": "^16.1.0",
     "globby": "^14.1.0",
-    "lodash.groupby": "^4.6.0",
-    "lodash.sortby": "^4.7.0",
+    "lodash": "^4.17.21",
     "make-dir": "^1.3.0",
     "minimist": "^1.2.0",
     "opn": "^6.0.0",
     "prompts": "^0.1.11"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/lodash": "^4.17.20",
+    "@types/make-dir": "^2.1.0",
     "@types/minimist": "^1.2.5",
+    "@types/opn": "^5.5.0",
+    "@types/prompts": "^2.4.9",
     "typescript": "^5.9.2"
   }
 }
