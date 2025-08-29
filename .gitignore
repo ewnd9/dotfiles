@@ -5,6 +5,7 @@ test.sh
 config/vim/.netrwhist
 config/karabiner/automatic_backups
 dist
+.turbo
 
 node_modules
 .yarn/*

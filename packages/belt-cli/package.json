@@ -13,7 +13,8 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "dev": "tsc --watch",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "test": "echo 1"
   },
   "belt": {
     "commands": {
