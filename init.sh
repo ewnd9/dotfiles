@@ -17,6 +17,7 @@ else
   sudo apt-get install -y -qq neovim
 fi
 
+git clone https://github.com/LazyVim/starter ~/.config/nvim
 npm config set prefix $HOME/.npm-packages
 
 yarn install
