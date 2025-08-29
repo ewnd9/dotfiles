@@ -1,6 +1,6 @@
 'use strict';
 
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 const { readNodeModules } = require('../utils');
 
 module.exports = {

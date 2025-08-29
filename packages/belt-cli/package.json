@@ -1,0 +1,25 @@
+{
+  "name": "@belt/cli",
+  "version": "0.0.0-local",
+  "description": "Global CLI scripts registry",
+  "private": true,
+  "main": "cli.js",
+  "bin": {
+    "belt": "cli.js"
+  },
+  "preferGlobal": true,
+  "author": "ewnd9 <ewndnine@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/ewnd9/belt/tree/master/packages/belt-cli",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "configstore": "^3.1.2",
+    "env-paths": "^1.0.0",
+    "global-npm": "^0.3.0",
+    "lodash.groupby": "^4.6.0",
+    "lodash.sortby": "^4.7.0",
+    "make-dir": "^1.3.0",
+    "minimist": "^1.2.0",
+    "prompts": "^0.1.11"
+  }
+}

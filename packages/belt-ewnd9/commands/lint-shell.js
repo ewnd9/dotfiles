@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const execa = require('belt-tools/modules/execa');
+const execa = require('@belt/tools/modules/execa');
 const globby = require('globby');
 const rootPath = path.resolve(`${__dirname}/../../..`);
 
