@@ -3,7 +3,7 @@
 set -ex
 
 if [[ "$OSTYPE" == *darwin* ]]; then
-  brew install node@16 yarn
+  brew install node@22 yarn
 else
   cd $HOME
   rm -rf Desktop Music Public Videos Documents examples.desktop Templates
