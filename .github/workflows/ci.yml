@@ -35,8 +35,8 @@ jobs:
       - name: Setup legacy belt-cli
         run: cd packages/belt-cli && npm install -g .
 
-      - name: Run lint
-        run: ./.husky/pre-commit
+      - name: Run turbo
+        run: yarn turbo --env-mode=loose typecheck build test
 
-      # - name: Run turbo
-      #   run: SKIP_ENV_VALIDATION=true yarn turbo --env-mode=loose typecheck build
+      - name: Run lint
+        run: bash ./.husky/pre-commit
