@@ -1,9 +1,7 @@
-
-
-import fs from 'fs';
+import fs from 'node:fs';
 import chalk from 'chalk';
-import execa from "../../../modules/execa.js";
-import { evalTemplate, ensureParentDir } from "../utils.js";
+import execa from '../../../modules/execa.js';
+import { ensureParentDir, evalTemplate } from '../utils.js';
 
 export async function setup(symLinks: any) {
   for (const { src, dest, disable } of symLinks.targets as any[]) {

@@ -4,9 +4,8 @@
   "description": "Global CLI scripts registry",
   "private": true,
   "type": "module",
-  "main": "dist/index.js",
   "bin": {
-    "belt": "dist/index.js"
+    "belt": "cli.js"
   },
   "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",

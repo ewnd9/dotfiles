@@ -1,15 +1,16 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export const rootPath = path.resolve(`${__dirname}/../../../..`);
 
-export function generateCode(lang: string, snippets: any[], paths: string[]) {
+export function generateCode(_lang: string, snippets: any[], paths: string[]) {
   const result = snippets.reduce((total: any, { name, prefix, body }: any) => {
     total[name] = {
       prefix,
       // vs-code needs to encode ${string} to $\\{string\\}
       // see https://github.com/Microsoft/vscode/issues/1670
       // body: body.replace(/\\([\{\}])/gm, '$1'),
+      // biome-ignore lint/suspicious/noTemplateCurlyInString: see above
       body: body.replace(/\$\{([_a-zA-Z]+)\}/gm, '${$1\\}'),
       description: name,
     };

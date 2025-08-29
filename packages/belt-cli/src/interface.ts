@@ -1,4 +1,4 @@
-import type minimist from "minimist";
+import type minimist from 'minimist';
 
 export interface Ctx {
   command: Command;

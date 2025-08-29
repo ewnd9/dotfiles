@@ -1,7 +1,5 @@
-
-
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export async function run() {
   const pkgPath = './package.json';
@@ -11,20 +9,13 @@ export async function run() {
   Object.assign(json, {
     repository: {
       type: 'git',
-      url: `git+https://github.com/ewnd9/${path.basename(process.cwd())}.git`
+      url: `git+https://github.com/ewnd9/${path.basename(process.cwd())}.git`,
     },
     author: 'ewnd9 <ewndnine@gmail.com>',
-    license: 'MIT'
+    license: 'MIT',
   });
 
   fs.writeFileSync(pkgPath, JSON.stringify(json, null, 2));
 
-  fs.appendFileSync('./README.md', [
-    '## License',
-    '',
-    'MIT © [ewnd9](http://ewnd9.com)',
-    ''
-  ].join('\n'));
+  fs.appendFileSync('./README.md', ['## License', '', 'MIT © [ewnd9](http://ewnd9.com)', ''].join('\n'));
 }
-
-

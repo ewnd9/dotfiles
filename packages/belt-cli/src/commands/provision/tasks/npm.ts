@@ -1,5 +1,5 @@
-import execa from "../../../modules/execa.js";
-import { readNodeModules } from "../utils.js";
+import execa from '../../../modules/execa.js';
+import { readNodeModules } from '../utils.js';
 
 export async function setup({ packages }: { packages: { name: string }[] }) {
   for (const pkg of packages) {

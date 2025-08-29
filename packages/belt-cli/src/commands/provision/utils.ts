@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import execa from "../../modules/execa.js";
+import fs from 'node:fs';
+import path from 'node:path';
+import execa from '../../modules/execa.js';
 
 const ctx = {
   HOME: process.env.HOME,
@@ -10,7 +10,7 @@ const ctx = {
 export function evalTemplate(template: string) {
   const regExp = /\$(\w+)/g;
 
-  return template.replace(regExp, (match: string, group: string) => {
+  return template.replace(regExp, (_match: string, group: string) => {
     const variable = (ctx as any)[group];
 
     if (!variable) {
@@ -26,22 +26,20 @@ export function ensureParentDir(filePath: string) {
 }
 
 export function readNodeModules(dirPath: string): any[] {
-  const packages = fs
-    .readdirSync(dirPath)
-    .reduce((total: any[], dir: string) => {
-      const modulePath = `${dirPath}/${dir}`;
+  const packages = fs.readdirSync(dirPath).reduce((total: any[], dir: string) => {
+    const modulePath = `${dirPath}/${dir}`;
 
-      if (dir[0] === '@') {
-        total.push.apply(total, readNodeModules(modulePath));
-      } else {
-        const pkgPath = `${modulePath}/package.json`;
-        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+    if (dir[0] === '@') {
+      total.push.apply(total, readNodeModules(modulePath));
+    } else {
+      const pkgPath = `${modulePath}/package.json`;
+      const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
 
-        total.push(pkg);
-      }
+      total.push(pkg);
+    }
 
-      return total;
-    }, [] as any[]);
+    return total;
+  }, [] as any[]);
 
   return packages;
 }
