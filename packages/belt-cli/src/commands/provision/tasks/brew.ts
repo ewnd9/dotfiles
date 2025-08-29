@@ -1,11 +1,11 @@
-'use strict';
 
-const prompts = require('prompts');
-const execa = require('@belt/tools/modules/execa');
-const uniq = require('lodash/uniq');
-const { readZshHistory } = require('../utils');
 
-module.exports = {
+import prompts from 'prompts';
+import execa from '../modules/execa';
+import uniq from 'lodash/uniq';
+import { readZshHistory } from '../utils';
+
+export default {
   setup,
   extract,
 };

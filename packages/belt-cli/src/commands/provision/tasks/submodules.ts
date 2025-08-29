@@ -1,12 +1,14 @@
-'use strict';
 
-const fs = require('fs');
-const chalk = require('chalk');
+
+import fs from 'fs';
+import chalk from 'chalk';
+
 // const parse = require('parse-github-repo-url');
-const execa = require('@belt/tools/modules/execa');
-const { evalTemplate, ensureParentDir } = require('../utils');
+import execa from '../modules/execa';
 
-module.exports = {
+import { evalTemplate, ensureParentDir } from '../utils';
+
+export default {
   setup,
   extract
 };

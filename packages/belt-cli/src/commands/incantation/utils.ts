@@ -1,11 +1,11 @@
-'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const mkdirp = require('mkdirp');
-const CSON = require('season');
-const yaml = require('js-yaml');
-const invert = require('lodash/fp/invert');
+
+import fs from 'fs';
+import path from 'path';
+import mkdirp from 'mkdirp';
+import CSON from 'season';
+import yaml from 'js-yaml';
+import invert from 'lodash/fp/invert';
 
 const rootPath = path.resolve(`${__dirname}/../../../..`);
 
@@ -20,7 +20,7 @@ const atomGrammars = {
 
 const atomGrammarsByLang = invert(atomGrammars);
 
-module.exports = {
+export default {
   rootPath,
   transformAtom,
   generateAtom,

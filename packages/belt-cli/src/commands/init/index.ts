@@ -1,19 +1,19 @@
-'use strict';
 
-const fs = require('fs');
-const execa = require('execa');
-const makeDir = require('make-dir');
-const gitUrlParse = require('git-url-parse');
-const qs = require('qs');
-const ncp = require('ncp');
-const prompts = require('prompts');
-const kebabCase = require('lodash/kebabCase');
-const snakeCase = require('lodash/snakeCase');
-const camelCase = require('lodash/camelCase');
-const upperFirst = require('lodash/camelCase');
-const upperCase = require('lodash/upperCase');
 
-module.exports = {
+import fs from 'fs';
+import execa from 'execa';
+import makeDir from 'make-dir';
+import gitUrlParse from 'git-url-parse';
+import qs from 'qs';
+import ncp from 'ncp';
+import prompts from 'prompts';
+import kebabCase from 'lodash/kebabCase';
+import snakeCase from 'lodash/snakeCase';
+import camelCase from 'lodash/camelCase';
+import upperFirst from 'lodash/camelCase';
+import upperCase from 'lodash/upperCase';
+
+export default {
   run
 };
 

@@ -1,11 +1,11 @@
-'use strict';
 
-const path = require('path');
-const execa = require('../modules/execa');
-const { globby } = require('globby');
+
+import path from 'path';
+import execa from '../modules/execa';
+import { globby } from 'globby';
 const rootPath = path.resolve(`${__dirname}/../../..`);
 
-module.exports = {
+export default {
   run
 };
 

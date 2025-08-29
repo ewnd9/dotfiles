@@ -1,16 +1,15 @@
-'use strict';
 
-const fs = require('fs');
-const { promisify: pify } = require('util');
+
+import fs from 'fs';
+import { promisify as pify } from 'util';
 const readFile = pify(fs.readFile);
-const path = require('path');
+import path from 'path';
+import { parse } from 'babylon';
+import { traverse } from 'babel-core';
+import builtinModules from 'builtin-modules';
+import globby from 'globby';
 
-const { parse } = require('babylon');
-const { traverse } = require('babel-core');
-const builtinModules = require('builtin-modules');
-const globby = require('globby');
-
-module.exports = {
+export default {
   run
 };
 
