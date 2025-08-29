@@ -1,3 +1,7 @@
+## Aug 2025
+
+- Clean up `alacritty`, `atom`, `awesome-wm`, `fusuma`, `vim`, `wezterm`
+
 ## Dec 2024
 
 - Switched from WezTerm to Ghostty

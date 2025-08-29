@@ -1,66 +1,18 @@
 # dotfiles
 
-awesome-wm, atom, gnome-terminal, vim, tmux, zsh
-
-![screen](/screen.png?raw=true)
-
-## Overview
-
-### Terminal
-
-`gnome-terminal` with [Atom's One Dark theme](https://github.com/denysdovhan/one-gnome-terminal)
-
-### Vim
-
-plugin manager [`vim-plug`](https://github.com/junegunn/vim-plug), previously [`pathogen`](https://github.com/tpope/vim-pathogen)
-
-### Window Manager
-
-awesome wm 4.x.x with `xcompmgr` composition
-
 ## Install
 
-### Preparation
+### macOS
 
 ```sh
-$ sudo apt update &&\
-  sudo apt upgrade &&\
-  sudo apt install git vim neovim make
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ cd ~
+$ git clone https://github.com/ewnd9/dotfiles.git
+$ cd dotfiles
+$ ln -s $HOME/dotfiles/config/zshrc $HOME/.zshrc
+$ brew install node@16 yarn
+$ ./init.sh
 ```
-
-```sh
-$ git clone https://github.com/ewnd9/dotfiles.git &&\
-  cd $HOME/dotfiles &&\
-  bash sync.sh
-$ bash init.sh
-```
-
-- manual-install: [google-chrome](https://www.google.ru/chrome/browser/desktop/)
-
-- manual-install: [dropbox](https://www.dropbox.com)
-
-- manual-install: `arc-theme`
-  - Open `gnome-tweaks`
-    - Themes -> `Arc-Dark`
-    - Icons -> `Ubuntu-mono-dark`
-
-- manual setup: zsh
-
-```sh
-$ chsh -s $(which zsh)
-```
-
-- manual-install: [gnome-terminal atom dark one theme](https://github.com/denysdovhan/one-gnome-terminal)
-
-```sh
-$ wget https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh && . one-dark.sh
-```
-
-`Edit -> Profiles -> Select as default`
-
-## Credits
-
-- [`config/awesome-4.0/theme/mountains.jpg`](https://wallpaperscraft.com/download/mountains_paraglider_top_121654/1920x1200)
 
 ## Temporary Chrome Extensions
 
