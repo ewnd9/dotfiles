@@ -1,7 +1,5 @@
-
-
-import execa from "../modules/execa.js";
 import prompts from 'prompts';
+import execa from '../modules/execa.js';
 
 export async function run() {
   const dir = '/media/flashdrive';
@@ -21,10 +19,10 @@ export async function run() {
 
       return {
         title: parts.join(' '),
-        value: i
+        value: i,
       };
     }),
-    initial: devices.length - 1
+    initial: devices.length - 1,
   });
 
   const device = devices[value];
@@ -56,9 +54,8 @@ async function getDevices() {
 
 async function getMounts() {
   const stdout = (await execa('cat', ['/proc/mounts'], {})) || '';
-  return stdout
-    .split('\n')
-    .reduce((acc: Record<string, string>, line: string) => {
+  return stdout.split('\n').reduce(
+    (acc: Record<string, string>, line: string) => {
       const [src, dest] = line.split(' ');
 
       if (src.startsWith('/dev/sd')) {
@@ -66,6 +63,7 @@ async function getMounts() {
       }
 
       return acc;
-    }, {} as Record<string, string>)
+    },
+    {} as Record<string, string>,
+  );
 }
-

@@ -1,7 +1,7 @@
-import prompts from 'prompts';
-import execa from "../../../modules/execa.js";
 import uniq from 'lodash/uniq';
-import { readZshHistory } from "../utils.js";
+import prompts from 'prompts';
+import execa from '../../../modules/execa.js';
+import { readZshHistory } from '../utils.js';
 
 interface BrewOptions {
   packages: { name: string }[];
@@ -24,26 +24,11 @@ export async function setup({ packages, repositories, cask }: BrewOptions) {
 export async function extract(opts: BrewOptions) {
   const lines = readZshHistory();
 
-  await parseMissingCommands(
-    lines,
-    'brew install',
-    (pkg) => `Add "brew install ${pkg}"?`,
-    opts.packages
-  );
+  await parseMissingCommands(lines, 'brew install', (pkg) => `Add "brew install ${pkg}"?`, opts.packages);
 
-  await parseMissingCommands(
-    lines,
-    'brew cask install',
-    (pkg) => `Add "brew cask install ${pkg}"?`,
-    opts.cask
-  );
+  await parseMissingCommands(lines, 'brew cask install', (pkg) => `Add "brew cask install ${pkg}"?`, opts.cask);
 
-  await parseMissingCommands(
-    lines,
-    'brew tap',
-    (pkg) => `Add "brew tap ${pkg}"?`,
-    opts.repositories
-  );
+  await parseMissingCommands(lines, 'brew tap', (pkg) => `Add "brew tap ${pkg}"?`, opts.repositories);
 
   return opts;
 }
@@ -52,18 +37,16 @@ async function parseMissingCommands(
   lines: string[],
   pattern: string,
   buildMessage: (pkg: any) => string,
-  source: { name: string }[]
+  source: { name: string }[],
 ) {
   const pkgs = uniq(
     lines
       .filter((line) => line.startsWith(pattern))
       .map((line) => line.substring(pattern.length + 1))
-      .flatMap((line) => line.split(/\s+/g))
+      .flatMap((line) => line.split(/\s+/g)),
   );
 
-  const missingPkgs = pkgs.filter(
-    (pkg) => !source.some(({ name }) => name === pkg)
-  );
+  const missingPkgs = pkgs.filter((pkg) => !source.some(({ name }) => name === pkg));
 
   for (const pkg of missingPkgs) {
     const { value } = await prompts({

@@ -1,20 +1,12 @@
 // https://code.visualstudio.com/docs/editor/extension-gallery
 
-import execa from "../../../modules/execa.js";
+import execa from '../../../modules/execa.js';
 
-import { readNodeModules } from "../utils.js";
+import { readNodeModules } from '../utils.js';
 
-export async function setup({
-  extensions,
-}: {
-  extensions: { publisher: string; name: string }[];
-}) {
+export async function setup({ extensions }: { extensions: { publisher: string; name: string }[] }) {
   for (const ext of extensions) {
-    await execa(
-      'code',
-      ['--install-extension', `${ext.publisher}.${ext.name}`],
-      { stdio: 'inherit' }
-    );
+    await execa('code', ['--install-extension', `${ext.publisher}.${ext.name}`], { stdio: 'inherit' });
   }
 }
 

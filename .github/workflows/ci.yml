@@ -26,8 +26,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "yarn"
+          node-version: '22'
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install
@@ -36,7 +36,7 @@ jobs:
         run: cd packages/belt-cli && npm install -g .
 
       - name: Run lint
-        run: yarn precommit
+        run: ./.husky/pre-commit
 
       # - name: Run turbo
       #   run: SKIP_ENV_VALIDATION=true yarn turbo --env-mode=loose typecheck build

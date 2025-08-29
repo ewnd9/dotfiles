@@ -1,7 +1,5 @@
-
-
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import yaml from 'js-yaml';
 
 export async function run({ argv }: { argv: any }) {
@@ -22,4 +20,3 @@ export async function run({ argv }: { argv: any }) {
     console.log('use --extract <target> or --setup <target>');
   }
 }
-

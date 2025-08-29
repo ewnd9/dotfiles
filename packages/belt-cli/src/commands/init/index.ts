@@ -1,15 +1,15 @@
-import fs from 'fs';
-import execa from "../../modules/execa.js";
+import fs from 'node:fs';
 import gitUrlParse from 'git-url-parse';
-import qs from 'qs';
-import ncp from 'ncp';
-import prompts from 'prompts';
-import kebabCase from 'lodash/kebabCase';
-import snakeCase from 'lodash/snakeCase';
 import camelCase from 'lodash/camelCase';
 import upperFirst from 'lodash/camelCase';
+import kebabCase from 'lodash/kebabCase';
+import snakeCase from 'lodash/snakeCase';
 import upperCase from 'lodash/upperCase';
-import type { Ctx } from "../../interface.js";
+import ncp from 'ncp';
+import prompts from 'prompts';
+import qs from 'qs';
+import type { Ctx } from '../../interface.js';
+import execa from '../../modules/execa.js';
 
 export async function run({ argv }: Ctx) {
   const ctx = getContext(argv as any);
@@ -72,26 +72,11 @@ export async function run({ argv }: Ctx) {
             }
 
             const result = data
-              .replace(
-                new RegExp('generator-template', 'g'),
-                kebabCase(ctx.name)
-              )
-              .replace(
-                new RegExp('generator_template', 'g'),
-                snakeCase(ctx.name)
-              )
-              .replace(
-                new RegExp('generatorTemplate', 'g'),
-                camelCase(ctx.name)
-              )
-              .replace(
-                new RegExp('GeneratorTemplate', 'g'),
-                upperFirst(camelCase(ctx.name))
-              )
-              .replace(
-                new RegExp('GENERATOR_TEMPLATE', 'g'),
-                upperCase(snakeCase(ctx.name))
-              );
+              .replace(/generator-template/g, kebabCase(ctx.name))
+              .replace(/generator_template/g, snakeCase(ctx.name))
+              .replace(/generatorTemplate/g, camelCase(ctx.name))
+              .replace(/GeneratorTemplate/g, upperFirst(camelCase(ctx.name)))
+              .replace(/GENERATOR_TEMPLATE/g, upperCase(snakeCase(ctx.name)));
 
             fs.writeFile(write.path, result, 'utf8', (err) => {
               if (err) {
@@ -109,7 +94,7 @@ export async function run({ argv }: Ctx) {
         } else {
           resolve(true);
         }
-      }
+      },
     );
   });
 }
@@ -124,9 +109,7 @@ function getContext({
   template: string | undefined;
 }) {
   const parseResult = gitUrlParse(repoUrl);
-  const { branch = 'master', path: overridenTemplatePath } = qs.parse(
-    parseResult.search
-  );
+  const { branch = 'master', path: overridenTemplatePath } = qs.parse(parseResult.search);
   const templatePath = overridenTemplatePath || template;
 
   return {
@@ -134,10 +117,7 @@ function getContext({
     repoUrl,
     branch,
     templatePath,
-    repoDir: `${process.env.HOME}/.cache/belt-ewnd9-init/${[
-      parseResult.source,
-      parseResult.full_name,
-    ]
+    repoDir: `${process.env.HOME}/.cache/belt-ewnd9-init/${[parseResult.source, parseResult.full_name]
       .join('-')
       .replace(/\W+/g, '-')}`,
     name: name || templatePath.split('/').pop(),

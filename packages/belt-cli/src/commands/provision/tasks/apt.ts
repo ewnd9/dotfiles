@@ -1,4 +1,4 @@
-import execa from "../../../modules/execa.js";
+import execa from '../../../modules/execa.js';
 
 export async function setup({ packages }: { packages: { name: string }[] }) {
   await execa('sudo', ['apt-get', 'update'], { stdio: 'inherit' });
@@ -17,9 +17,7 @@ export async function extract({ packages }: { packages: any }) {
     }
 
     const result = (await execa('dpkg', ['-s', pkg.name], {})) || '';
-    const stdout = result
-      .split('\n')
-      .find((line: string) => line.startsWith('Version'));
+    const stdout = result.split('\n').find((line: string) => line.startsWith('Version'));
 
     pkg.version = stdout ? stdout.split(' ')[1] : undefined;
   }

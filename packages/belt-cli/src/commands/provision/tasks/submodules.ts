@@ -1,16 +1,12 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import chalk from 'chalk';
 
 // const parse = require('parse-github-repo-url');
-import execa from "../../../modules/execa.js";
+import execa from '../../../modules/execa.js';
 
-import { evalTemplate, ensureParentDir } from "../utils.js";
+import { ensureParentDir, evalTemplate } from '../utils.js';
 
-export async function setup({
-  modules,
-}: {
-  modules: { repo: string; sha: string; dest: string }[];
-}) {
+export async function setup({ modules }: { modules: { repo: string; sha: string; dest: string }[] }) {
   for (const mod of modules) {
     // const repoName = parse(mod.repo)[1];
     const dest = evalTemplate(mod.dest);

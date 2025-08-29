@@ -5,17 +5,16 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
     "@tsconfig/node-ts": "^23.6.1",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "22",
-    "babel-eslint": "^8.2.3",
-    "eslint": "^4.19.1",
-    "husky": "^0.14.3",
+    "husky": "^9.1.7",
     "typescript": "^5.9.2"
   },
   "scripts": {
-    "precommit": "yarn lint && yarn lint:shell",
-    "lint": "eslint 'packages/**/*.js'",
-    "lint:shell": "belt ewnd9:lint-shell"
+    "lint": "biome check ./packages/belt-cli/ --write",
+    "lint:shell": "belt ewnd9:lint-shell",
+    "prepare": "husky"
   }
 }

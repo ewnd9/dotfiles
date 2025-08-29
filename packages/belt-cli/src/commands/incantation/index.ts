@@ -1,9 +1,7 @@
-
-
-import fs from 'fs';
-import yaml from 'js-yaml';
+import fs from 'node:fs';
 import { globby } from 'globby';
-import { rootPath, generateCode } from "./utils.js";
+import yaml from 'js-yaml';
+import { generateCode, rootPath } from './utils.js';
 
 export async function run() {
   const snippetsPath = `${rootPath}/snippets`;
@@ -34,28 +32,22 @@ export async function run() {
         `${rootPath}/config/code/snippets/javascript.json`,
         `${rootPath}/config/code/snippets/javascriptreact.json`,
         `${rootPath}/config/code/snippets/typescript.json`,
-        `${rootPath}/config/code/snippets/typescriptreact.json`
-      ]
+        `${rootPath}/config/code/snippets/typescriptreact.json`,
+      ],
     },
     json: {
-      code: `${rootPath}/config/code/snippets/json.json`
+      code: `${rootPath}/config/code/snippets/json.json`,
     },
     jsonc: {
-      code: `${rootPath}/config/code/snippets/jsonc.json`
+      code: `${rootPath}/config/code/snippets/jsonc.json`,
     },
     markdown: {
-      code: [
-        `${rootPath}/config/code/snippets/markdown.json`
-      ]
-    }
+      code: [`${rootPath}/config/code/snippets/markdown.json`],
+    },
   };
 
   Object.entries(snippets).forEach(([lang, snippets]: [string, any]) => {
-    generateCode(
-      lang,
-      snippets,
-      arrayify((paths as any)[lang].code)
-    );
+    generateCode(lang, snippets, arrayify((paths as any)[lang].code));
   });
 }
 
