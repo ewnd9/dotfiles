@@ -1,4 +1,4 @@
-import { query } from '@anthropic-ai/claude-code';
+import { claude } from '../modules/claude.js';
 import execa from '../modules/execa.js';
 
 export async function run(_: { argv: any }) {
@@ -16,7 +16,6 @@ export async function run(_: { argv: any }) {
 }
 
 async function generateCommitMessage(diff: string): Promise<string> {
-  const abortController = new AbortController();
   const prompt = `Based on the git status and diff below, generate a brief commit message (max 50 chars):
 
 Git Diff:
@@ -27,22 +26,7 @@ Rules:
 - Use present tense (add, update, fix, etc.)
 - Be specific but concise
 - No periods at the end`;
-
-  for await (const message of query({
-    prompt,
-    options: {
-      abortController,
-      maxTurns: 5,
-      allowedTools: [],
-    },
-  })) {
-    if (message.type === 'result' && message.subtype === 'success') {
-      abortController.abort();
-      return message.result;
-    }
-  }
-
-  throw new Error('Failed to generate commit message');
+  return claude(prompt);
 }
 
 async function getGitDiff(): Promise<string> {
