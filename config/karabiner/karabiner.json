@@ -1190,7 +1190,7 @@
                                     "key_code": "e",
                                     "modifiers": { "mandatory": ["right_command", "right_control", "right_shift", "right_option"] }
                                 },
-                                "to": [{ "shell_command": "bash $HOME/Dropbox/dotfiles/plan-journal.sh" }],
+                                "to": [{ "shell_command": "open -a 'Notes'" }],
                                 "type": "basic"
                             },
                             {

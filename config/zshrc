@@ -113,6 +113,10 @@ export NO_AT_BRIDGE=1 #
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# docker
+export PATH="$PATH:$HOME/.docker/bin"
+
+# android
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
