@@ -49,10 +49,15 @@
       "repo:open": {
         "script": "commands/repo-open",
         "description": "open repo in a browser"
+      },
+      "commit": {
+        "script": "commands/commit",
+        "description": "commit changes with brief message"
       }
     }
   },
   "dependencies": {
+    "@anthropic-ai/claude-code": "^1.0.108",
     "any-shell-escape": "^0.1.1",
     "chalk": "^2.4.1",
     "execa": "^9.6.0",
