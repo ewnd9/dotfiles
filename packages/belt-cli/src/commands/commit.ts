@@ -1,3 +1,6 @@
+import boxen from 'boxen';
+import prompts from 'prompts';
+
 import { claude } from '../modules/claude.js';
 import execa from '../modules/execa.js';
 
@@ -8,11 +11,27 @@ export async function run(_: { argv: any }) {
     process.exit(1);
   }
 
-  const commitMessage = await generateCommitMessage(diff);
+  const commitMessages = await Promise.all([
+    generateCommitMessage(diff),
+    generateCommitMessage(diff),
+    generateCommitMessage(diff),
+  ]);
 
-  console.log(`\nCommit message: ${commitMessage}`);
+  const { value } = await prompts({
+    type: 'select',
+    name: 'value',
+    message: 'Pick a message',
+    choices: commitMessages.map((message, i) => ({
+      title: message.split('\n')[0],
+      value: i,
+    })),
+    initial: commitMessages.length - 1,
+  });
+
+  const commitMessage = commitMessages[value];
+
+  console.log(boxen(commitMessage));
   await execa('git', ['commit', '-m', commitMessage], { stdio: 'inherit' });
-  console.log('Changes committed successfully');
 }
 
 async function generateCommitMessage(diff: string): Promise<string> {
@@ -25,7 +44,8 @@ Rules:
 - Keep it under 50 characters
 - Use present tense (add, update, fix, etc.)
 - Be specific but concise
-- No periods at the end`;
+- No periods at the end
+- Return only the message, no other text`;
   return claude(prompt);
 }
 

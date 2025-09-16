@@ -59,6 +59,7 @@
   "dependencies": {
     "@anthropic-ai/claude-code": "^1.0.108",
     "any-shell-escape": "^0.1.1",
+    "boxen": "^8.0.1",
     "chalk": "^2.4.1",
     "execa": "^9.6.0",
     "git-url-parse": "^16.1.0",
