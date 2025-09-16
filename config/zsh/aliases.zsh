@@ -3,7 +3,7 @@ alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
-alias cc="cd && clear"
+alias cdclear="cd && clear"
 $ () {
   $@
 }
@@ -72,7 +72,6 @@ gfr () {
 
   git fetch origin && git rebase -i origin/$default_branch
 }
-alias gfd="git fetch origin && git rebase -i origin/develop"
 gfrc () {
   git fetch origin && git rebase -i origin/$(git rev-parse --abbrev-ref HEAD) "$@"
 }
@@ -91,9 +90,16 @@ alias gc="git checkout"
 alias gcm="git checkout main 2>/dev/null || git checkout master"
 alias gcb="git checkout -b"
 gcbr () {
-  gfo && git checkout -b "$1" "origin/$1"
+  local default_branch
+
+  if git show-ref --verify --quiet refs/heads/main; then
+    default_branch="main"
+  else
+    default_branch="master"
+  fi
+
+  gfo && git checkout -b "$1" "origin/${2:-$default_branch}"
 }
-alias gcl="git checkout -"
 alias gcd="git checkout develop"
 
 gt () {
