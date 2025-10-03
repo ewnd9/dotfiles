@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@anthropic-ai/claude-code@npm:^1.0.108":
-  version: 1.0.108
-  resolution: "@anthropic-ai/claude-code@npm:1.0.108"
+"@anthropic-ai/claude-code@npm:^1.0.111":
+  version: 1.0.128
+  resolution: "@anthropic-ai/claude-code@npm:1.0.128"
   dependencies:
     "@img/sharp-darwin-arm64": "npm:^0.33.5"
     "@img/sharp-darwin-x64": "npm:^0.33.5"
@@ -30,7 +30,7 @@ __metadata:
       optional: true
   bin:
     claude: cli.js
-  checksum: 10c0/d06e265b030fa523f5215bf4292adb4a0af0d0ecc84e5a85a4cf4e9dcda73ede3208c197b23142b9db963ce6989f409016042108c6febb9ab27e3fdc138994f3
+  checksum: 10c0/b0474179e5a4748758b7114e2aec6081bc6fc88803ae940f45a39184c239311802761afe886f4c425ef1edf332cc4d13a44a08f8f2b0af607759a9bb71d48eb6
   languageName: node
   linkType: hard
 
@@ -38,7 +38,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@belt/cli@workspace:packages/belt-cli"
   dependencies:
-    "@anthropic-ai/claude-code": "npm:^1.0.108"
+    "@anthropic-ai/claude-code": "npm:^1.0.111"
     "@types/js-yaml": "npm:^4.0.9"
     "@types/lodash": "npm:^4.17.20"
     "@types/make-dir": "npm:^2.1.0"
