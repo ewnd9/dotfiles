@@ -5,15 +5,17 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@anthropic-ai/claude-code@npm:^1.0.108":
-  version: 1.0.108
-  resolution: "@anthropic-ai/claude-code@npm:1.0.108"
+"@anthropic-ai/claude-code@npm:^2.0.74":
+  version: 2.1.30
+  resolution: "@anthropic-ai/claude-code@npm:2.1.30"
   dependencies:
     "@img/sharp-darwin-arm64": "npm:^0.33.5"
     "@img/sharp-darwin-x64": "npm:^0.33.5"
     "@img/sharp-linux-arm": "npm:^0.33.5"
     "@img/sharp-linux-arm64": "npm:^0.33.5"
     "@img/sharp-linux-x64": "npm:^0.33.5"
+    "@img/sharp-linuxmusl-arm64": "npm:^0.33.5"
+    "@img/sharp-linuxmusl-x64": "npm:^0.33.5"
     "@img/sharp-win32-x64": "npm:^0.33.5"
   dependenciesMeta:
     "@img/sharp-darwin-arm64":
@@ -26,11 +28,15 @@ __metadata:
       optional: true
     "@img/sharp-linux-x64":
       optional: true
+    "@img/sharp-linuxmusl-arm64":
+      optional: true
+    "@img/sharp-linuxmusl-x64":
+      optional: true
     "@img/sharp-win32-x64":
       optional: true
   bin:
     claude: cli.js
-  checksum: 10c0/d06e265b030fa523f5215bf4292adb4a0af0d0ecc84e5a85a4cf4e9dcda73ede3208c197b23142b9db963ce6989f409016042108c6febb9ab27e3fdc138994f3
+  checksum: 10c0/74f316ccdd976c67eccfb0463517d4cefe80c23bd9144ef4b68440c18457e9f3b41a6b7a4087ad38b03cab4a2df8c57b84cb2d36fc22659d7755f4cf713dced9
   languageName: node
   linkType: hard
 
@@ -38,7 +44,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@belt/cli@workspace:packages/belt-cli"
   dependencies:
-    "@anthropic-ai/claude-code": "npm:^1.0.108"
+    "@anthropic-ai/claude-code": "npm:^2.0.74"
     "@types/js-yaml": "npm:^4.0.9"
     "@types/lodash": "npm:^4.17.20"
     "@types/make-dir": "npm:^2.1.0"
@@ -212,6 +218,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@img/sharp-libvips-linuxmusl-arm64@npm:1.0.4":
+  version: 1.0.4
+  resolution: "@img/sharp-libvips-linuxmusl-arm64@npm:1.0.4"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@img/sharp-libvips-linuxmusl-x64@npm:1.0.4":
+  version: 1.0.4
+  resolution: "@img/sharp-libvips-linuxmusl-x64@npm:1.0.4"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
 "@img/sharp-linux-arm64@npm:^0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-linux-arm64@npm:0.33.5"
@@ -245,6 +265,30 @@ __metadata:
     "@img/sharp-libvips-linux-x64":
       optional: true
   conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@img/sharp-linuxmusl-arm64@npm:^0.33.5":
+  version: 0.33.5
+  resolution: "@img/sharp-linuxmusl-arm64@npm:0.33.5"
+  dependencies:
+    "@img/sharp-libvips-linuxmusl-arm64": "npm:1.0.4"
+  dependenciesMeta:
+    "@img/sharp-libvips-linuxmusl-arm64":
+      optional: true
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@img/sharp-linuxmusl-x64@npm:^0.33.5":
+  version: 0.33.5
+  resolution: "@img/sharp-linuxmusl-x64@npm:0.33.5"
+  dependencies:
+    "@img/sharp-libvips-linuxmusl-x64": "npm:1.0.4"
+  dependenciesMeta:
+    "@img/sharp-libvips-linuxmusl-x64":
+      optional: true
+  conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
